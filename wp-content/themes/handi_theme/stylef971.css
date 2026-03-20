@@ -1,0 +1,1266 @@
+/*
+Theme Name: H+I Theme
+Author: FORM DIGITAL
+Author URI: http://www.form-digital.com
+Version: 1.2026.02.04.01
+*/
+
+@import url("assets/css/main2026.css");
+
+/* IE Hack */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	
+}
+
+/* TOUR 
+
+.itinerary-split-image {
+	width: 40% !important;
+}
+.itinerary-split-image img {
+	width: 100% !important;
+	height: auto;
+}
+
+*/
+
+/* ERROR */
+
+#error-page {
+	margin: 0 !important;
+	padding: 0 !important;
+	max-width: 100% !important;
+	border: none !important;
+}
+
+/* RECAPTCHA */
+
+.grecaptcha-badge {
+	display: none !important;
+}
+
+/* COOKIE */
+
+.cky-btn-revisit-wrapper.cky-revisit-bottom-left {
+	display: none !important;
+}
+
+/* NEWS POSTS */
+
+@media (max-width: 767px) {
+    .wpb_text_column.wpb_content_element {
+	    border: none !important;
+	    padding-right: 0 !important;
+    }
+}
+
+/* LOGIN / REGISTER FORMS */
+
+.tc-alert-success {
+  color: #f2f0e8 !important;
+  background-color: #2f2f2c !important;
+  border-color: #8ABDCC !important;
+  border-width: 2px !important;
+  border-radius: 0 !important;
+  margin-top: 10px;
+}
+.login {
+    max-width: 960px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.logincontainer h2,
+.logincontainer p {
+    text-align: center;
+}
+.logincontainer fieldset p {
+    text-align: left;
+}
+.logintype .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: clamp(3rem,2.5rem + 1.5vw,4rem) !important;
+    padding: 0 1rem !important;
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    color: #f2f0e8 !important;
+    border: none !important;
+    background: #3a3a37 !important;
+}
+.logintype .btn:hover {
+    color: #242421 !important;
+    background: #f2f0e8 !important;
+}
+.loginpanel,
+.registerpanel {
+    padding: 2rem 0 0 0 !important;
+    border: none !important;
+    background: none !important;
+}
+.loginpanel .panel-body,
+.registerpanel .panel-body {
+    padding: 0 !important;
+}
+.loginform {
+    padding: 0 !important;
+}
+.forgotpassword {
+    padding: 2rem 0 0 0 !important;
+}
+* + #update_password {
+    margin-top: 2rem !important;
+}
+.loginform .col-xs-12,
+.registerpanel .col-xs-12,
+.forgotpassword .col-xs-12,
+.update-travel-info .col-xs-12,
+.secure-payment-title .col-xs-12,
+#rider_profile .col-xs-12,
+#update_password .col-xs-12,
+#create_traveller .col-xs-12,
+#add_discount_tour .col-xs-12
+#personal_details .col-xs-12,
+#payment-form .col-xs-12,
+#reset-password .col-xs-12 {
+    padding-right: calc(var(--bs-gutter-x)*.5) !important;
+    padding-left: calc(var(--bs-gutter-x)*.5) !important;
+}
+.loginform fieldset h3,
+.registerpanel fieldset h3,
+.forgotpassword fieldset h3,
+.update-travel-info fieldset h3,
+#rider_profile fieldset h3,
+#update_password fieldset h3,
+#create_traveller fieldset h3,
+#add_discount_tour fieldset h3,
+#personal_details fieldset h3,
+#payment-form fieldset h3,
+#reset-password fieldset h3 {
+    margin-bottom: 1.5rem !important;
+}
+.loginform label,
+.registerpanel label,
+.forgotpassword label,
+.traveller-extra-option label,
+.update-travel-info label,
+#rider_profile label,
+#update_password label,
+#create_traveller label,
+#add_discount_tour label,
+#personal_details label,
+#payment-form label,
+#reset-password label {
+    display: block !important;
+    margin: 0 0 0.5em 0 !important;
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    font-size: 0.875rem !important;
+    text-transform: uppercase !important;
+    line-height: 1.25 !important;
+    color: #f2f0e8 !important;
+}
+.loginform label .text-danger,
+.registerpanel label .text-danger,
+.forgotpassword label .text-danger,
+.update-travel-info label .text-danger,
+#personal_details label .text-danger,
+#rider_profile label .text-danger,
+#update_password label .text-danger,
+#create_traveller label .text-danger,
+#add_discount_tour label .text-danger,
+#payment-form label .text-danger,
+#reset-password label .text-danger {
+    color: #BD5F59 !important;
+}
+.loginform input:not([type="radio"]):not([type="checkbox"]),
+.registerpanel input:not([type="radio"]):not([type="checkbox"]),
+.forgotpassword input:not([type="radio"]):not([type="checkbox"]),
+.traveller-extra-option input:not([type="radio"]):not([type="checkbox"]),
+.update-travel-info input:not([type="radio"]):not([type="checkbox"]),
+#personal_details input:not([type="radio"]):not([type="checkbox"]),
+#rider_profile input:not([type="radio"]):not([type="checkbox"]),
+#update_password input:not([type="radio"]):not([type="checkbox"]),
+#create_traveller input:not([type="radio"]):not([type="checkbox"]),
+#add_discount_tour input:not([type="radio"]):not([type="checkbox"]),
+#payment-form input:not([type="radio"]):not([type="checkbox"]),
+#reset-password input:not([type="radio"]):not([type="checkbox"]),
+.loginform select,
+.registerpanel select,
+.forgotpassword select,
+.traveller-extra-option select,
+.update-travel-info select,
+#rider_profile select,
+#update_password select,
+#create_traveller select,
+#add_discount_tour select,
+#payment-form select,
+#personal_details select,
+#reset-password select,
+.loginform textarea,
+.registerpanel textarea,
+.forgotpassword textarea,
+.traveller-extra-option textarea,
+.update-travel-info textarea,
+#rider_profile textarea,
+#update_password textarea,
+#create_traveller textarea,
+#add_discount_tour textarea,
+#payment-form textarea,
+#personal_details textarea,
+#reset-password textarea {
+    display: block !important;
+    width: 100% !important;
+    font-size: 1rem !important;
+    color: #f2f0e8 !important;
+    border: 1px solid #3a3a37 !important;
+    border-radius: 0 !important;
+    background-color: #2f2f2c !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: border 0.2s, background-color 0.2s !important;
+}
+.loginform input:not([type="radio"]):not([type="checkbox"]),
+.registerpanel input:not([type="radio"]):not([type="checkbox"]),
+.forgotpassword input:not([type="radio"]):not([type="checkbox"]),
+.traveller-extra-option input:not([type="radio"]):not([type="checkbox"]),
+.update-travel-info input:not([type="radio"]):not([type="checkbox"]),
+#rider_profile input:not([type="radio"]):not([type="checkbox"]),
+#update_password input:not([type="radio"]):not([type="checkbox"]),
+#create_traveller input:not([type="radio"]):not([type="checkbox"]),
+#add_discount_tour input:not([type="radio"]):not([type="checkbox"]),
+#personal_details input:not([type="radio"]):not([type="checkbox"]),
+#payment-form input:not([type="radio"]):not([type="checkbox"]),
+#reset-password input:not([type="radio"]):not([type="checkbox"]),
+.loginform select,
+.registerpanel select,
+.forgotpassword select,
+.traveller-extra-option select,
+.update-travel-info select,
+#rider_profile select,
+#update_password select,
+#create_traveller select,
+#add_discount_tour select,
+#personal_details select,
+#payment-form select,
+#reset-password select {
+    height: clamp(3rem,2.5rem + 1.5vw,4rem) !important;
+    padding: 0 clamp(1rem, 1rem + 0.5vw, 1.5rem) !important;
+}
+.loginform textarea,
+.registerpanel textarea,
+.forgotpassword textarea,
+.traveller-extra-option textarea,
+.update-travel-info textarea,
+#rider_profile textarea,
+#update_password textarea,
+#create_traveller textarea,
+#personal_details textarea,
+#payment-form textarea,
+#add_discount_tour textarea,
+#reset-password textarea {
+    min-height: 8rem !important;
+    padding: 1rem clamp(1rem, 1rem + 0.5vw, 1.5rem) !important;
+}
+.loginform select,
+.registerpanel select,
+.forgotpassword select,
+.traveller-extra-option select,
+.update-travel-info select,
+#rider_profile select,
+#update_password select,
+#create_traveller select,
+#add_discount_tour select,
+#personal_details select,
+#payment-form select,
+#reset-password select {
+    padding-right: 56px !important;
+    background-image: url('https://h-i.form-digital-staging.com/wp-content/themes/handi_theme/assets/img/dropdown-arrow.svg') !important;
+    background-position: right 1rem center !important;
+    background-repeat: no-repeat !important;
+}
+.loginform input:not([type="radio"]):not([type="checkbox"]):focus,
+.registerpanel input:not([type="radio"]):not([type="checkbox"]):focus,
+.forgotpassword input:not([type="radio"]):not([type="checkbox"]):focus,
+.traveller-extra-option input:not([type="radio"]):not([type="checkbox"]):focus,
+.update-travel-info input:not([type="radio"]):not([type="checkbox"]):focus,
+#rider_profile input:not([type="radio"]):not([type="checkbox"]):focus,
+#update_password input:not([type="radio"]):not([type="checkbox"]):focus,
+#create_traveller input:not([type="radio"]):not([type="checkbox"]):focus,
+#add_discount_tour input:not([type="radio"]):not([type="checkbox"]):focus,
+#personal_details input:not([type="radio"]):not([type="checkbox"]):focus,
+#payment-form input:not([type="radio"]):not([type="checkbox"]):focus,
+.loginform textarea:focus,
+.registerpanel textarea:focus,
+.forgotpassword textarea:focus,
+.traveller-extra-option textarea:focus,
+.update-travel-info textarea:focus,
+#rider_profile textarea:focus,
+#update_password textarea:focus,
+#create_traveller textarea:focus,
+#add_discount_tour textarea:focus,
+#payment-form textarea:focus,
+#personal_details textarea:focus {
+    border: 1px solid #f2f0e8 !important;
+    background-color: #242421 !important;
+}
+.loginform .btn,
+.registerpanel .btn,
+.forgotpassword .btn,
+.update-travel-info .btn,
+.account-intro .btn,
+.step .btn,
+#booking .btn,
+#booking_list .btn,
+#rider_profile .btn,
+#update_password .btn,
+#create_traveller .btn,
+#add_discount_tour .btn,
+#payment-form .btn,
+#personal_details .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: clamp(3rem,2.5rem + 1.5vw,4rem) !important;
+    padding: 0 calc(var(--font-size-lg) * 1.25) !important;
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    color: #2f2f2c !important;
+    border: none !important;
+    border-radius: 2rem !important;
+    background: #f2f0e8 !important;
+}
+.loginform .help-block,
+.registerpanel .help-block,
+.forgotpassword .help-block,
+.update-travel-info .help-block,
+#rider_profile .help-block,
+#update_password .help-block,
+#create_traveller .help-block,
+#add_discount_tour .help-block,
+#payment-form .help-block,
+#personal_details .help-block {
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+}
+.loginform .help-block.with-errors,
+.registerpanel .help-block.with-errors,
+.forgotpassword .help-block.with-errors,
+.update-travel-info .help-block.with-errors,
+#rider_profile .help-block.with-errors,
+#update_password .help-block.with-errors,
+#create_traveller .help-block.with-errors,
+#add_discount_tour .help-block.with-errors,
+#payment-form .help-block.with-errors,
+#personal_details .help-block.with-errors {
+    color: #f2f0e8 !important;
+    background: #BD5F59 !important;
+}
+.loginform .help-block.with-errors ul,
+.registerpanel .help-block.with-errors ul,
+.forgotpassword .help-block.with-errors ul,
+.update-travel-info .help-block.with-errors ul,
+#rider_profile .help-block.with-errors ul,
+#update_password .help-block.with-errors ul,
+#create_traveller .help-block.with-errors ul,
+#add_discount_tour .help-block.with-errors ul,
+#payment-form .help-block.with-errors ul,
+#personal_details .help-block.with-errors ul {
+    margin: 0 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25 !important;
+}
+.loginform .help-block.with-errors ul > li,
+.registerpanel .help-block.with-errors ul > li,
+.forgotpassword .help-block.with-errors ul > li,
+.update-travel-info .help-block.with-errors ul > li,
+#rider_profile .help-block.with-errors ul > li,
+#update_password .help-block.with-errors ul > li,
+#create_traveller .help-block.with-errors ul > li,
+#add_discount_tour .help-block.with-errors ul > li,
+#payment-form .help-block.with-errors ul > li,
+#personal_details .help-block.with-errors ul > li {
+    padding: 0.75em 1.25em !important;
+}
+.loginform .help-block.with-errors ul > li::before,
+.registerpanel .help-block.with-errors ul > li::before,
+.forgotpassword .help-block.with-errors ul > li::before,
+.update-travel-info .help-block.with-errors ul > li::before,
+#rider_profile .help-block.with-errors ul > li::before,
+#update_password .help-block.with-errors ul > li::before,
+#create_traveller .help-block.with-errors ul > li::before,
+#add_discount_tour .help-block.with-errors ul > li::before,
+#payment-form .help-block.with-errors ul > li::before,
+#personal_details .help-block.with-errors ul > li::before {
+    display: none !important;
+}
+.showpasswordreset {
+    color: #b6b4ae !important;
+}
+.registerpanel fieldset legend {
+    font-family: 'ABCGintoNordCondensed-Medium', sans-serif !important;
+    font-weight: normal !important;
+    text-transform: uppercase !important;
+    margin: 1.5rem 0 1.5rem 0 !important;
+    color: #f2f0e8 !important;
+    border-bottom: 1px solid #f2f0e8 !important;
+}
+.loginform .intl-tel-input .selected-flag .iti-arrow,
+.registerpanel .intl-tel-input .selected-flag .iti-arrow,
+.forgotpassword .intl-tel-input .selected-flag .iti-arrow,
+.update-travel-info .intl-tel-input .selected-flag .iti-arrow,
+#rider_profile .intl-tel-input .selected-flag .iti-arrow,
+#update_password .intl-tel-input .selected-flag .iti-arrow,
+#create_traveller .intl-tel-input .selected-flag .iti-arrow,
+#add_discount_tour .intl-tel-input .selected-flag .iti-arrow,
+#payment-form .intl-tel-input .selected-flag .iti-arrow,
+#personal_details .intl-tel-input .selected-flag .iti-arrow {
+    border-top: 4px solid #f2f0e8 !important;
+}
+.loginform .intl-tel-input .selected-flag .iti-arrow.up,
+.registerpanel .intl-tel-input .selected-flag .iti-arrow.up,
+.forgotpassword .intl-tel-input .selected-flag .iti-arrow.up,
+.update-travel-info .intl-tel-input .selected-flag .iti-arrow.up,
+#rider_profile .intl-tel-input .selected-flag .iti-arrow.up,
+#update_password .intl-tel-input .selected-flag .iti-arrow.up,
+#create_traveller .intl-tel-input .selected-flag .iti-arrow.up,
+#add_discount_tour .intl-tel-input .selected-flag .iti-arrow.up,
+#payment-form .intl-tel-input .selected-flag .iti-arrow.up,
+#personal_details .intl-tel-input .selected-flag .iti-arrow.up {
+    border-top: none !important;
+    border-bottom: 4px solid #f2f0e8 !important;
+}
+.loginform .intl-tel-input input:not([type="radio"]):not([type="checkbox"]),
+.registerpanel .intl-tel-input input:not([type="radio"]):not([type="checkbox"]),
+.forgotpassword .intl-tel-input input:not([type="radio"]):not([type="checkbox"]),
+.update-travel-info .intl-tel-input input:not([type="radio"]):not([type="checkbox"]),
+#rider_profile .intl-tel-input input:not([type="radio"]):not([type="checkbox"]),
+#update_password .intl-tel-input input:not([type="radio"]):not([type="checkbox"]),
+#create_traveller .intl-tel-input input:not([type="radio"]):not([type="checkbox"]),
+#add_discount_tour .intl-tel-input input:not([type="radio"]):not([type="checkbox"]),
+#payment-form .intl-tel-input input:not([type="radio"]):not([type="checkbox"]),
+#personal_details .intl-tel-input input:not([type="radio"]):not([type="checkbox"]) {
+    padding-left: 50px !important;
+}
+.loginform input[type="date"],
+.registerpanel input[type="date"],
+.forgotpassword input[type="date"],
+.update-travel-info input[type="date"],
+#rider_profile input[type="date"],
+#update_password input[type="date"],
+#create_traveller input[type="date"],
+#add_discount_tour input[type="date"],
+#payment-form input[type="date"],
+#personal_details input[type="date"],
+.loginform input[type="time"],
+.registerpanel input[type="time"],
+.forgotpassword input[type="time"],
+.update-travel-info input[type="time"],
+#rider_profile input[type="time"],
+#update_password input[type="time"],
+#create_traveller input[type="time"],
+#add_discount_tour input[type="time"],
+#payment-form input[type="time"],
+#personal_details input[type="time"] {
+    color-scheme: dark !important;
+}
+.form-group {
+    margin-bottom: 1.5rem !important;
+}
+.loginform h4,
+.registerpanel h4,
+.forgotpassword h4,
+.update-travel-info h4,
+#rider_profile h4,
+#update_password h4,
+#create_traveller h4,
+#add_discount_tour h4,
+#payment-form h4,
+#personal_details h4 {
+    margin-bottom: 0.75rem !important;
+}
+.country-list {
+    color: #f2f0e8 !important;
+    border: 1px solid #3a3a37 !important;
+    border-radius: 0 !important;
+    background: #2f2f2c !important;
+}
+.country-list li {
+    border: none !important;
+}
+.country-list li::before {
+    display: none !important;
+}
+.loginform .has-error label,
+.registerpanel .has-error label,
+.forgotpassword .has-error label,
+.update-travel-info .has-error label,
+#rider_profile .has-error label,
+#update_password .has-error label,
+#create_traveller .has-error label,
+#add_discount_tour .has-error label,
+#payment-form .has-error label,
+#personal_details .has-error label {
+    color: #f2f0e8 !important;
+}
+.loginform .has-error input:not([type="radio"]):not([type="checkbox"]),
+.registerpanel .has-error input:not([type="radio"]):not([type="checkbox"]),
+.forgotpassword .has-error input:not([type="radio"]):not([type="checkbox"]),
+.update-travel-info .has-error input:not([type="radio"]):not([type="checkbox"]),
+#rider_profile .has-error input:not([type="radio"]):not([type="checkbox"]),
+#update_password .has-error input:not([type="radio"]):not([type="checkbox"]),
+#create_traveller .has-error input:not([type="radio"]):not([type="checkbox"]),
+#add_discount_tour .has-error input:not([type="radio"]):not([type="checkbox"]),
+#payment-form .has-error input:not([type="radio"]):not([type="checkbox"]),
+#personal_details .has-error input:not([type="radio"]):not([type="checkbox"]),
+.loginform .has-error select,
+.registerpanel .has-error select,
+.forgotpassword .has-error select,
+.update-travel-info .has-error select,
+#rider_profile .has-error select,
+#update_password .has-error select,
+#create_traveller .has-error select,
+#add_discount_tour .has-error select,
+#payment-form .has-error select,
+#personal_details .has-error select,
+.loginform .has-error textarea,
+.registerpanel .has-error textarea,
+.forgotpassword .has-error textarea,
+.update-travel-info .has-error textarea,
+#rider_profile .has-error textarea,
+#update_password .has-error textarea,
+#create_traveller .has-error textarea,
+#add_discount_tour .has-error textarea,
+#payment-form .has-error textarea,
+#personal_details .has-error textarea {
+    border: 1px solid #BD5F59 !important;
+}
+.alert {
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    font-size: 0.875rem !important;
+    padding: 0.75em 1.25em !important;
+    line-height: 1.25 !important;
+    border-radius: 0 !important;
+}
+.alert.alert-danger {
+    color: #f2f0e8 !important;
+    border: none !important;
+    background: #BD5F59 !important;
+}
+
+/* PASSWORD RESET FORM */
+#reset-password {
+    max-width: 640px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+#reset-password .form-group:not(:last-child) {
+    margin-bottom: 1rem !important;
+}
+#reset-password .btn {
+    width: 100% !important;
+    color: #242421 !important;
+    background: #f2f0e8 !important;
+}
+
+/* MY ACCOUNT */
+.account-tabs .nav-tabs {
+    margin: 0 !important;
+}
+.account-tabs .nav-tabs > li {
+    float: none !important;
+    flex: 1 !important;
+    padding: 0 !important;
+    border: 1px solid #797874 !important;
+    border-right: none !important;
+}
+.account-tabs .nav-tabs > li:last-child {
+    border-right: 1px solid #797874 !important;
+}
+.account-tabs .nav-tabs > li::before {
+    display: none !important;
+}
+.account-tabs .nav-tabs > li > a {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 1.5em 1em !important;
+    font-size: 0.875rem !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    color: #b6b4ae !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: #2f2f2c !important;
+}
+.account-tabs .nav-tabs > li.active {
+    border-bottom: 1px solid #242421 !important;
+}
+.account-tabs .nav-tabs > li.active > a {
+    color: #f2f0e8 !important;
+    background: #242421 !important;
+}
+.account-tabs .tab-content {
+    padding: 1rem !important;
+    border: 1px solid #797874 !important;
+    border-top: none !important;
+}
+@media (min-width: 768px) {
+    .account-tabs .tab-content {
+        padding: 2rem !important;
+    }
+}
+#booking_list .row.booking {
+    overflow: hidden !important;
+    margin: 1rem 0 0 0 !important;
+    padding: 2rem 1.5rem !important;
+    border: none !important;
+    border-radius: 8px !important;
+    background: #2f2f2c !important;
+}
+@media (min-width: 768px) {
+    #booking_list .row.booking {
+        margin: 1.5rem 0 0 0 !important;
+        padding: 2rem !important;
+    }
+}
+#booking_list .row.booking > .col-xs-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+#booking_list .table {
+    margin: 0 !important;
+}
+#booking_list .table th,
+#booking_list .table td,
+.step .table th,
+.step .table td {
+    padding: 1em 0.5rem !important;
+}
+#booking_list .table th:first-child,
+#booking_list .table td:first-child,
+.step .table th:first-child,
+.step .table td:first-child {
+    padding-left: 0 !important;
+}
+#booking_list .table th:last-child,
+#booking_list .table td:last-child,
+.step .table th:last-child,
+.step .table td:last-child {
+    padding-right: 0 !important;
+}
+#booking_list .table thead td,
+#booking_list .table thead th,
+.step .table thead td,
+.step .table thead th {
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    font-size: 0.875rem !important;
+    border-bottom: 1px solid #f2f0e8 !important;
+}
+#booking_list .table tbody td,
+#booking_list .table tbody th,
+.step .table tbody td,
+.step .table tbody th {
+    border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+}
+#booking_list .alert,
+.booking-financials .alert {
+    margin: 0 !important;
+    padding: 1rem 1.5rem !important;
+}
+#booking_list .alert.tc-alert-warning,
+#booking_list .alert.tc-alert-danger,
+.booking-financials .alert.alert-warning {
+    color: #f2f0e8 !important;
+    border: none !important;
+    background: #3a3a37 !important;
+}
+#booking_list .alert.tc-alert-warning,
+.booking-financials .alert.alert-warning {
+    border-left: 4px solid #FFC166 !important;
+}
+#booking_list .alert.tc-alert-danger {
+    border-left: 4px solid #BD5F59 !important;
+}
+.alert.tc-alert-info {
+    padding: 1rem 1.5rem !important;
+    color: #f2f0e8 !important;
+    border: none !important;
+    border-left: 4px solid #8ABDCC !important;
+    background: #3a3a37 !important;
+}
+#booking_list .alert .btn {
+    margin-top: 1rem !important;
+}
+@media (min-width: 768px) {
+    #booking_list .alert .btn {
+        margin-top: 0 !important;
+    }
+}
+#booking_list .table + *,
+#booking_list .alert + *,
+* + #booking_list .table,
+* + #booking_list .alert {
+    margin-top: 1.5rem !important;
+}
+/* MANAGE BOOKING */
+#booking .traveller {
+    margin: 0 !important;
+    padding: 2rem 0rem !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: #20201e !important;
+}
+#booking .traveller .travel-info {
+    background: #20201e !important;
+}
+#booking .booking-info .departure-status.unconfirmed {
+    color: #BD5F59 !important;
+}
+#booking .booking-financials {
+    margin: 2rem 0 !important;
+}
+#paybalance h2 {
+    margin-bottom: 1.5rem !important;
+}
+#paybalance #payment-form {
+    padding: 0 !important;
+}
+
+/* BOOKING PROCESS */
+.tc-progresscontainer {
+    float: none !important;
+    margin: 0 !important;
+}
+.tc-progressbar {
+    display: flex !important;
+    counter-reset: progressStep !important;
+}
+.tc-progressbar > li {
+    position: relative !important;
+    float: none !important;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 !important;
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    font-size: 0.625rem !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    color: #797874 !important;
+    border: none !important;
+    counter-increment: progressStep !important;
+}
+@media (min-width: 768px) {
+    .tc-progressbar > li {
+        font-size: 0.875rem !important;
+    }
+}
+.tc-progressbar > li::before {
+    content: counter(progressStep) !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    font-size: 0.75rem !important;
+    color: #f2f0e8 !important;
+    border: 1px solid #797874 !important;
+    border-radius: 50% !important;
+    background: transparent !important;
+    transform: none !important;
+}
+@media (min-width: 768px) {
+    .tc-progressbar > li::before {
+        width: 2rem !important;
+        height: 2rem !important;
+        font-size: 0.875rem !important;
+    }
+}
+.tc-progressbar > li::after {
+    content: '' !important;
+    position: absolute !important;
+    z-index: 1 !important;
+    left: calc(50% + 1.5rem) !important;
+    top: 0.75rem !important;
+    width: calc(100% - 3rem) !important;
+    height: 1px !important;
+    background: #3a3a37 !important;
+}
+@media (min-width: 768px) {
+    .tc-progressbar > li::after {
+        left: calc(50% + 2rem) !important;
+        top: 1rem !important;
+        width: calc(100% - 4rem) !important;
+    }
+}
+.tc-progressbar > li:last-child::after {
+    display: none !important;
+}
+.tc-progressbar > li.active {
+    color: #f2f0e8 !important;
+}
+.tc-progressbar > li.active::before {
+    color: #242421 !important;
+    border: 1px solid #f2f0e8 !important;
+    background: #f2f0e8 !important;
+}
+.mobile-table {
+    padding: 1rem !important;
+    border: none !important;
+    background: #2f2f2c !important;
+}
+.mobile-table-row strong {
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    font-size: 0.875rem !important;
+    text-transform: uppercase !important;
+}
+.addusers h3 {
+    margin-bottom: 1.5rem !important;
+}
+.btn.create_user.pull-right {
+    float: none !important;
+}
+.assign-extras {
+    margin: 0 !important;
+}
+.assign-extras > li {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+.assign-extras > li::before {
+    display: none !important;
+}
+.assign-extras > li + li {
+    margin-top: 0.5rem !important;
+}
+.assign-extras > li .add-extra {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 2.5rem !important;
+    padding: 0 1.25rem !important;
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    font-size: 0.875rem !important;
+    text-transform: uppercase !important;
+    color: #f2f0e8 !important;
+    border: 1px solid #f2f0e8 !important;
+    border-radius: 1.25rem !important;
+    background: transparent !important;
+    transition: color 0.3s, background-color 0.3s !important;
+}
+.assign-extras > li .add-extra:hover {
+    text-decoration: none !important;
+    color: #242421 !important;
+    background: #f2f0e8 !important;
+}
+.assigned-extras .traveller {
+    font-family: 'ABCGintoNordCondensed-Medium', sans-serif !important;
+    font-weight: normal !important;
+    font-size: var(--font-size-md) !important;
+    text-transform: uppercase !important;
+}
+.assigned-extras .extra .title strong {
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+}
+.traveller-extra-option + .traveller-extra-option {
+    margin-top: 1rem !important;
+}
+.traveller-extra-remove {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 2rem !important;
+    margin-top: 0.5rem !important;
+    padding: 0 1rem !important;
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    font-size: 0.875rem !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    color: #f2f0e8 !important;
+    border: 1px solid #f2f0e8 !important;
+    border-radius: 1rem !important;
+    background: transparent !important;
+    transition: color 0.3s, background-color 0.3s !important;
+}
+.traveller-extra-remove:hover {
+    text-decoration: none !important;
+    color: #242421 !important;
+    background: #f2f0e8 !important;
+}
+.mobile-table.assigned-extras {
+    padding: 0 !important;
+    background: transparent !important;
+}
+.mobile-table.assigned-extras .assigned-extra {
+    padding: 0 !important;
+    border: 1px solid #797874 !important;
+    border-radius: 0.5rem !important;
+}
+.mobile-table.assigned-extras .mobile-table-row {
+    margin: 0 !important;
+    padding: 1rem 1.5rem !important;
+    border-top: 1px solid #3a3a37 !important;
+}
+.mobile-table.assigned-extras .mobile-table-row:first-child {
+    border-top: none !important;
+}
+.mobile-table.assigned-extras .mobile-table-row.extra .title {
+    padding: 0 !important;
+}
+.mobile-table.assigned-extras .mobile-table-row.extra .options {
+    margin-top: 1.5rem !important;
+}
+.booking-summary .extra .title a {
+    color: #f2f0e8 !important;
+}
+.traveller-summary .traveller,
+.booking-summary .traveller {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-bottom: 1px solid #3a3a37 !important;
+}
+.traveller-summary .traveller:last-child,
+.booking-summary .traveller:last-child {
+    border-bottom: none !important;
+}
+.traveller-summary .traveller .name {
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+}
+.booking-summary.table th {
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+}
+.booking-summary.table > tbody > tr > td,
+.booking-summary.table > tbody > tr > th,
+.booking-summary.table > tfoot > tr > td,
+.booking-summary.table > tfoot > tr > th,
+.booking-summary.table > thead > tr > td,
+.booking-summary.table > thead > tr > th,
+.booking-summary.table > tfoot > tr:first-child > td {
+    border-top: none !important;
+}
+#gotostage5 {
+    margin-bottom: 4rem !important;
+}
+#gotostage5 .col-md-offset-8 {
+    margin-left: 0 !important;
+}
+#gotostage5 .booking-terms:not(:first-child) {
+    margin-top: 1.5rem !important;
+}
+#gotostage5 .btn {
+    float: none !important;
+}
+#gotostage5 .btn.hidden-xs {
+    display: none !important;
+}
+@media (min-width: 768px) {
+    #gotostage5 .btn.hidden-xs {
+        display: inline-flex !important;
+    }
+}
+#gotostage5 .btn.visible-xs {
+    display: inline-flex !important;
+}
+@media (min-width: 768px) {
+    #gotostage5 .btn.visible-xs {
+        display: none !important;
+    }
+}
+.booking-terms label {
+    position: relative !important;
+    margin-bottom: 1rem !important;
+    padding: 0 0 0 2em !important;
+    font-family: "Aeonik Fono Light",sans-serif !important;
+    font-weight: 300 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+    text-transform: none !important;
+}
+.booking-terms label a {
+    text-decoration: underline !important;
+    color: #f2f0e8 !important;
+}
+.booking-terms label input[type="checkbox"] {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    display: inline-block !important;
+    width: calc(0.875rem * 1.5) !important;
+    height: calc(0.875rem * 1.5) !important;
+    margin: 0 !important;
+}
+#booking ul.booking-items,
+#booking ul.options {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#booking ul.booking-items > li,
+#booking ul.options > li {
+    padding: 1rem 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+#booking ul.booking-items > li:not(:last-child),
+#booking ul.options > li:not(:last-child) {
+    border-bottom: 1px solid #3a3a37 !important;
+}
+#booking ul.booking-items > li::before,
+#booking ul.options > li::before {
+    display: none !important;
+}
+#booking ul.booking-items .btn.update-extra,
+#booking ul.options .btn.update-extra {
+    height: 2.5rem !important;
+    margin-top: 1rem !important;
+    padding: 0 1.25rem !important;
+    border-radius: 1.35rem !important;
+    color: #f2f0e8 !important;
+    border: 1px solid #f2f0e8 !important;
+    background: transparent !important;
+    transition: color 0.3s, background-color 0.3s !important;
+}
+#booking ul.booking-items .btn.update-extra:hover,
+#booking ul.options .btn.update-extra:hover {
+    color: #20201e !important;
+    background: #f2f0e8 !important;
+}
+#booking .traveller + .traveller {
+    margin-top: 1rem !important;
+}
+#booking .traveller h4 {
+    margin-top: 1rem !important;
+    font-family: 'ABCGintoNordCondensed-Medium', sans-serif !important;
+    font-weight: normal !important;
+    text-transform: uppercase !important;
+}
+
+/* News Entry */
+
+/*
+.vc_row .vc_col-sm-2 {
+	width: 25% !important;
+}
+.vc_row .vc_col-sm-8 {
+	width: 75% !important;
+}
+*/
+.vc_row .vc_col-sm-2:nth-child(2) {
+	display: none !important;
+}
+.wpb_wrapper h1,
+.wpb_wrapper h2,
+.wpb_wrapper h3 {
+    font-family: 'ABCGintoNordCondensed-Medium', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+.wpb_wrapper h1 {
+    margin: 0 0 0.75em 0;
+    font-size: var(--font-size-xl);
+    line-height: 1;
+}
+.wpb_wrapper h2 {
+    margin: 0 0 0.75em 0;
+    font-size: var(--font-size-lg);
+    line-height: 1;
+}
+.wpb_wrapper h3 {
+    margin: 0 0 0.75em 0;
+    font-size: var(--font-size-md);
+    line-height: 1;
+}
+.wpb_wrapper h1 a,
+.wpb_wrapper h2 a,
+.wpb_wrapper h3 a,
+.wpb_wrapper h4 a,
+.wpb_wrapper h5 a,
+.wpb_wrapper h6 a {
+    color: #242421;
+}
+.wpb_wrapper h1 span[style="color: #3bd8f2;"],
+.wpb_wrapper h2 span[style="color: #3bd8f2;"],
+.wpb_wrapper h3 span[style="color: #3bd8f2;"],
+.wpb_wrapper h4 span[style="color: #3bd8f2;"],
+.wpb_wrapper h5 span[style="color: #3bd8f2;"],
+.wpb_wrapper h6 span[style="color: #3bd8f2;"] {
+    color: #242421 !important;
+}
+.wpb_wrapper p,
+.wpb_wrapper ul,
+.wpb_wrapper ol {
+    margin: 0 0 1.25em 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--font-size-base);
+    line-height: 1.625;
+}
+.wpb_wrapper p strong,
+.wpb_wrapper ul strong,
+.wpb_wrapper ol strong {
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+}
+.wpb_wrapper p a,
+.wpb_wrapper ul a,
+.wpb_wrapper ol a {
+    font-family: "Aeonik Fono",sans-serif !important;
+    font-weight: normal !important;
+    color: #242421;
+    background-image: linear-gradient(rgba(36,36,33,0.5), rgba(36,36,33,0.5));
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    transition: background-size 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.wpb_wrapper p a:hover,
+.wpb_wrapper ul a:hover,
+.wpb_wrapper ol a:hover {
+    background-position: 100% 100%;
+    background-size: 0% 1px;
+}
+.wpb_wrapper p + h2,
+.wpb_wrapper p + h3,
+.wpb_wrapper ul + h2,
+.wpb_wrapper ul + h3,
+.wpb_wrapper ol + h2,
+.wpb_wrapper ol + h3 {
+    margin-top: 2em;
+}
+.wpb_wrapper ul > li,
+.wpb_wrapper ol > li {
+    position: relative;
+    padding: 0.75em 0 0.75em 2em;
+}
+.wpb_wrapper ul > li:not(:last-child),
+.wpb_wrapper ol > li:not(:last-child) {
+    border-bottom: 1px dashed rgba(36,36,33,0.15);
+}
+.wpb_wrapper ul > li::before,
+.wpb_wrapper ol > li::before {
+    position: absolute;
+    left: 0;
+}
+.wpb_wrapper ol {
+    counter-reset: ol-counter;
+}
+.wpb_wrapper ol > li {
+    counter-increment: ol-counter;
+}
+.wpb_wrapper ol > li::before {
+    content: counter(ol-counter) ".";
+    top: 0.75em;
+}
+.wpb_wrapper ul > li::before {
+    content: '';
+    top: 1.5em;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #242421;
+    transform: translateY(-50%);
+}
+.vc_sep_line[style="border-color:#00daef;"] {
+    border-color: #242421 !important;
+}
+
+/* Cookies */
+
+.cc-window {
+    position: fixed;
+    z-index: 1000;
+    bottom: 4.5rem !important;
+    left: 50% !important;
+    background: #fff;
+    height: 4rem;
+    width: calc(100% - 6rem);
+    max-width: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3rem !important;
+    box-shadow: 0 2rem 4rem 0 rgba(0,0,0,.15);
+    transform: translate(-50%,2rem);
+    transition: all .2s ease-in-out;
+    font-size: 0.85rem;
+}
+
+.cc-window a {
+	text-decoration: none;
+    color: rgba(24,97,95,.5) !important;
+}
+
+.cc-window .cc-compliance {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.cc-window .cc-btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #18615f;
+    cursor: pointer;
+    margin-left: auto;
+    min-width: 0 !important;
+    -webkit-mask: url(assets/img/constants/menu-close.svg) no-repeat center center;
+    mask: url(assets/img/constants/menu-close.svg) no-repeat center center;
+}
+
+@media (max-width: 767px) {
+	.cc-window {
+		height: auto !important;
+		padding: 15px !important;
+		bottom: 2.5rem !important;
+		width: 85% !important;
+	}
+}
+
+div.wpcr3_rating_style1_average {
+    background-image: url('wp-customer-reviews/css/newstars.png');
+}
+
+input.error {
+    border-color: #f00 !important;
+}
+
+input.error + button.dropdown-toggle {
+    border-color: #f00 !important;
+}
+
+.dropdown.error button{
+    border-color: #f00 !important;
+}
+
+
+/**
+Handi Commerce Plugin Overrides
+*/
+.booking-summary .extra td.title {
+    padding-left: 1em !important;
+}
+.booking-summary .extra td {
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}

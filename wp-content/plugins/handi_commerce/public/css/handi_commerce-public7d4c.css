@@ -1,0 +1,730 @@
+.tc-progresscontainer{
+  /* margin:40px 0; */
+  margin:0;
+  width:100%;
+  float:none;
+}
+.tc-progressbar {
+  display: flex;
+  counter-reset: progressStep;
+  padding: 0;
+}
+
+.tc-progressbar li {
+  list-style-type: none;
+  width: 20%;
+  float: left;
+  font-size: 12px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  color: #7d7d7d;
+  line-height:18px;
+}
+
+.event-cart .tc-progressbar li {
+  width: 25%;
+}
+
+.tc-progressbar li:before {
+  width: 30px;
+  height: 30px;
+  /* content: counter(progressStep);
+  counter-increment: progressStep; */
+  line-height: 25px;
+  border: 2px solid #7d7d7d;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: white;
+  font-weight:700;
+}
+
+.tc-progressbar li:after {
+  width: 100%;
+  height: 2px;
+  content: '';
+  position: absolute;
+  background-color: #7d7d7d;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+
+.tc-progressbar li:first-child:after {
+  content: none;
+}
+
+.tc-progressbar li:first-child:before{
+  border-color: #3D8CB3;
+}
+
+.tc-progressbar li.active {
+  color: #3D8CB3;
+}
+
+.tc-progressbar li.active:before {
+  border-color: #3D8CB3;
+  background-color: #3D8CB3;
+  color:#fff;
+}
+
+.tc-progressbar li.active + li:after {
+  background-color: #3D8CB3;
+}
+
+.tc-progressbar li.active + li:before {
+  border-color: #3D8CB3;
+}
+
+.tc-progressbar li.active + li a {
+  color: #3D8CB3;
+}
+
+.booking-tour-title h3 {
+  margin-bottom: 1.5rem !important;
+}
+
+.event-cart .booking-summary td.title { padding-left: 20px; }
+
+
+.mobile-table{
+  border:1px solid #000;
+  margin-bottom:20px;
+}
+.mobile-table-row{
+  padding:5px 10px;     
+}
+.mobile-table-header{
+  background:#000;
+  color:#fff;
+  padding:12px 0 8px;
+  margin-top: -5px;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+.mobile-table-row strong{
+  /* font-family: Neutra !important; */
+  text-transform: uppercase !important;
+  font-weight:700;
+  font-size:12px;
+}
+
+.btn.btn-hi{
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 2px solid #2A2A2A;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  top: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  line-height: normal;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  font-size: 14px;
+  padding: 14px 20px 10px;
+  border-radius:0;
+  /* font-family: Neutra !important; */
+  text-transform: uppercase !important;
+}
+
+.btn.btn-hi:focus{
+  /* color:#2A2A2A !important; */
+}
+
+.btn.btn-hi:hover{
+  /* background-color: #2A2A2A;  */
+  /* color: #ffffff !important; */
+}
+
+.btn.btn-hi.btn-danger{
+  border-color: #e74c3c; 
+}
+
+.btn.btn-hi.btn-danger:hover{
+  background-color: #e74c3c; 
+  color: #ffffff !important;
+}
+
+.btn.btn-hi.btn-success{
+  border-color: #2ecc71; 
+}
+
+.btn.btn-hi.btn-success:hover{
+  background-color: #2ecc71; 
+  color: #ffffff !important;
+}
+
+.input-group-btn:last-child>.btn.btn-hi, .input-group-btn:last-child>.btn-group {
+  border-width:1px;
+}
+
+.input-group-addon:first-child {
+  border-right: 0;
+  border-radius: 0;
+  border-width: 1px;
+  background-color:#f5f6f7;
+}
+
+.input-group-addon:last-child {
+  border-left: 0;
+  border-width: 1px;
+  border-radius: 0;
+  background-color:#f5f6f7;
+}
+
+.form-control[disabled]{
+  background-color:#f5f6f7;
+}
+
+label{
+  /* font-family: Neutra !important; */
+  text-transform: uppercase !important;
+  font-weight:300;
+  font-size:12px;
+}
+
+table.table th{
+  /* font-family: Neutra !important; */
+  text-transform: uppercase !important;
+  font-weight:500;
+  font-size:16px;
+}
+
+table.table>tbody>tr>td, 
+table.table>tbody>tr>th, 
+table.table>tfoot>tr>td, 
+table.table>tfoot>tr>th, 
+table.table>thead>tr>td, 
+table.table>thead>tr>th {
+  border-top: 1px solid #f5f6f7;
+}
+
+table.table>tbody>tr>th{
+  padding:12px;
+}
+
+table.table>thead>tr>th {
+  border-bottom: 2px solid #000;
+}
+
+hr{
+  border-color:#000 !important;
+}
+
+
+ul.previoususer {
+  margin:0 0 20px 0;
+  padding:0;
+}
+ul.previoususer li {
+  border: 1px solid #fff;
+  border-bottom:0;
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 5px 10px;
+  margin-left: 0;
+}
+ul.previoususer li:last-child {
+  border-bottom:1px solid #fff;
+}
+
+ul.previoususer input.form-control{
+  height:42px;
+}
+
+/* .order_summary {
+  margin-top: 40px;
+  background: #fff;
+  border: 2px solid #2A2A2A;
+  padding: 20px;
+} */
+
+.order_summary {
+  margin-top: 0px;
+  background: #fff;
+  border: 2px solid #fff;
+  padding: 0px;
+  /*box-shadow: 0px 10px 30px rgba(0,0,0,0.1);*/
+}
+
+.booking-summary th.traveller {
+  width: 70%
+}
+
+.booking-summary th.price {
+  width: 30%;
+}
+
+.booking-summary .extra .title, .assigned-extras .extra .title {
+  padding-left: 2rem;
+}
+
+.booking-summary tfoot th {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.booking-summary.table.table>tfoot>tr:first-child>td {
+  border-top: 2px solid #000;
+}
+
+.booking-summary div.traveller {
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+.booking-summary .totals .cost {
+  font-weight: bold;
+}
+
+.traveller-summary {
+  margin-top: 3rem;
+}
+
+.traveller-summary td, .traveller-summary th {
+  border: 0;
+}
+
+.traveller-summary th.traveller {
+  width: 35%;
+}
+.traveller-summary th.email {
+  width: 35%;
+}
+.traveller-summary th.country {
+  width: 30%;
+}
+
+.traveller-summary div.traveller {
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+.traveller-summary.event-travellers .rider_name { width:30%;}
+.traveller-summary.event-travellers .actions { width:10%;}
+
+.tour-extras-assign,
+.tour-extras-add,
+.booking-summary,
+.booking-summary-wrap,
+.continue-booking,
+.customer-summary,
+.booking-discount,
+.payment-summary,
+.booking-terms,
+.abtot-disclaimer,
+.secure-payment
+ {
+  margin-top: 3rem;
+}
+
+.available-extras {
+  margin-top: 3rem;
+}
+
+.available-extras td, .available-extras th {
+  border: 0;
+}
+
+.available-extras th.travellers, .available-extras td.travellers {
+  width: 15%;
+}
+.available-extras th.price, .available-extras td.price {
+  width: 15%;
+}
+.available-extras th.title, .available-extras td.title {
+  width: 70%;
+}
+
+.available-extras.mobile-table {
+  border: none;
+}
+
+.available-extras div.available-extra {
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+.assigned-extras {
+  margin-top: 3rem;
+}
+
+.assigned-extras td, .assigned-extras th {
+  border: 0;
+}
+
+.assigned-extras th.traveller, .assigned-extras td.traveller {
+  width: 70%;
+}
+.assigned-extras th.options, .assigned-extras td.options {
+  width: 30%;
+}
+
+.assigned-extras.mobile-table {
+  border: none;
+}
+
+.assigned-extras div.assigned-extra {
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+.text-left-xs {
+  text-align: left;
+}
+
+.removeextra{
+  margin-top:5px
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .text-left-sm {
+      text-align: left !important;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .text-left-md {
+      text-align: left !important;
+  }
+  .removeextra{
+      margin-top:0px
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .text-left-lg {
+      text-align: left !important;
+  }
+}
+
+.text-center-xs {
+  text-align: center;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .text-center-sm {
+      text-align: center;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .text-center-md {
+      text-align: center;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .text-center-lg {
+      text-align: center;
+  }
+}
+
+.nav.nav-tabs>li {
+  border-right: 0px solid #EBEBEB;
+  padding-bottom:0;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.nav.nav-tabs>li.active, .nav.nav-tabs>li a:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.account-tabs {
+  margin-top: 3rem;
+}
+
+.tc-avatar{
+  max-width:150px;
+  width:auto;
+  border-radius:50%;
+  text-align:center;
+  image-orientation: from-image;
+}
+
+.form-control{
+  /* height: 44px !important; */
+  border:1px solid #ccc!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+
+.tc-central-text{
+  width:66.66666%;
+  margin-left:16.66666%;
+  text-align:center;
+}
+
+.tc-alert-warning {
+  color: #f39c12;
+  background-color: #fff;
+  border-color: #f1c40f !important;
+  border-width:2px !important;
+  border-radius:0 !important;
+}
+
+.tc-alert-danger {
+  color: #c0392b;
+  background-color: #fff;
+  border-color: #e74c3c !important;
+  border-width:2px !important;
+  border-radius:0 !important;
+}
+
+.tc-alert-success {
+  color: #27ae60;
+  background-color: #fff;
+  border-color: #2ecc71 !important;
+  border-width:2px !important;
+  border-radius:0 !important;
+}
+
+.tc-alert-info {
+  color: #000;
+  background-color: #fff;
+  border-color: #000 !important;
+  border-width:2px !important;
+  border-radius:0 !important;
+}
+
+.panel {
+  border-radius:0 !important;
+}
+
+/* Select fix */
+
+select:not([multiple]) {
+  border-radius: 0;
+  appearance: none;
+  background-position: right 50%;
+  background-repeat: no-repeat;
+  background-image: url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%20%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%20%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2214px%22%20height%3D%2212px%22%20viewBox%3D%220%200%2014%2012%22%20enable-background%3D%22new%200%200%2014%2012%22%20xml%3Aspace%3D%22preserve%22%3E%20%3Cpolygon%20points%3D%223.862%2C7.931%200%2C4.069%207.725%2C4.069%20%22/%3E%3C/svg%3E);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* height:44px !important; */
+}
+
+.form-control.datepicker[readonly],
+.form-control.timepicker[readonly]{
+  background-color:#fff !important;
+}
+
+#booking_list .row.booking {
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#booking .booking-info .departure-status {
+  font-size: 0.8em;
+}
+
+#booking .booking-info .departure-status.confirmed {
+  color: #00aa00;
+}
+#booking .booking-info .departure-status.unconfirmed {
+  color: #aa0000;
+}
+
+#booking .booking-travellers {
+  margin-top: 30px; 
+}
+
+/* #booking .booking-financials {
+} */
+
+#booking ul.financials {
+  list-style-type: none;
+  padding: 10px;
+}
+
+#booking ul.booking-items {
+  list-style-type: none;
+  padding: 10px;
+}
+
+#booking ul.booking-items > li {
+  margin-bottom: 1em;
+  border-bottom: 1px solid darkgrey;
+  padding-bottom: 0.75em;
+}
+
+#booking ul.booking-items li.extra ul {
+  list-style-type: none;
+  padding: 0.5em 1em;
+}
+
+#booking ul.booking-items li.extra ul .row {
+  display:flex;
+  align-items: flex-end;
+}
+
+
+#booking ul.booking-items li.extra ul  .traveller-extra-option .form-control {
+  /* width: 50%; */
+}
+
+#booking .traveller {
+  border: 1px solid #505050;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: #03030324;
+  padding-top: 15px;
+  }
+
+
+#booking .traveller .travel-info {
+  display: none;
+  background-color: #35353524;
+  padding: 10px 0;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
+
+#booking .traveller .travel-info.show {
+  display:block;
+}
+
+.forgotpasswordpanel {
+  display:none;
+}
+
+#forgot-password {
+  margin-top: 1rem;
+}
+
+#reset-password {
+  max-width:800px;
+  margin:0 auto;
+  padding-right:30px"
+}
+
+h2.cart-stage {
+  text-align:center;
+  padding-top:20px;
+}
+
+.account-intro {
+  margin-bottom: 3rem;
+}
+
+.account-intro ul {
+  list-style-type: none;
+  margin-bottom: 0.9em;
+  padding-left: 1em;
+}
+
+.account-intro ul li {
+  margin-bottom: 0.5em;
+}
+
+.assign-extras {
+  list-style-type: none;
+  padding: 0;
+}
+
+#payment-form button.pay {
+  width: 100%;
+}
+
+.tour-summary .traveller {
+  margin-bottom: 1em; 
+}
+
+.tour-summary .traveller .financials {
+  margin-top: 0.5em;
+  padding-left: 1em;
+}
+.tour-summary .traveller .financials .traveller-extra {
+  margin-bottom: 0.5em;
+}
+
+.tour-summary .traveller .financials .traveller-extra .title {
+  margin: 0;
+}
+.tour-summary .traveller .financials .traveller-extra .options {
+  list-style-type: none;
+  padding-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.tour-summary .traveller .financials .traveller-extra .options li::before {
+  content: none;
+}
+
+.btn-block {
+  width: 100% !important;
+}
+
+
+
+.iti--inline-dropdown {
+  width: 100%;
+}
+.iti--inline-dropdown .iti__dropdown-content {
+  background-color: #2f2f2c;
+  border-color: #2f2f2c;
+}
+
+.iti--inline-dropdown .iti__dropdown-content ul>li {
+  padding: .6em 0 .6em 1em;
+}
+.iti--inline-dropdown .iti__dropdown-content ul>li.iti__divider {
+  padding: .2em 0;
+}
+.iti--inline-dropdown .iti__dropdown-content ul>li::before {
+  background: transparent !important;
+}
+
+
+iti__dropdown-content ul>li.iti__highlight {
+  background-color: #242421 
+}
+.iti__country-name, .iti__flag-box {
+  margin-right: 12px;
+}
+
+.iti.iti--allow-dropdown.iti--show-flags {
+  width: 100%;
+}
+
+#personal_details input:not([type="radio"]):not([type="checkbox"]).iti__tel-input,
+#rider_profile input:not([type="radio"]):not([type="checkbox"]).iti__tel-input,
+#create_traveller input:not([type="radio"]):not([type="checkbox"]).iti__tel-input,
+#register input:not([type="radio"]):not([type="checkbox"]).iti__tel-input,
+#payment-form input:not([type="radio"]):not([type="checkbox"]).iti__tel-input,
+.update-travel-info input:not([type="radio"]):not([type="checkbox"]).iti__tel-input
+{
+  padding: 0 clamp(1rem, 1rem + 0.5vw, 1.5rem) 0 var(--iti-selected-country-arrow-padding) !important
+}
