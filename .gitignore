@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+.next/
+*.tmp
+*.py
+*.ps1
+www.mountainbikeworldwide.com.zip
+wordpress.txt
+clean_and_brand.py
+apply_brand.py
+apply_brand.ps1
+clean.ps1
+rename_text.ps1
+deep_purge.ps1
+rename_urls_and_files.ps1

@@ -1,0 +1,1549 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Equipment Rentals — Basswoods Camp</title>
+
+  <!-- Remix Icons (matches existing stack) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+
+  <!-- Swiper.js (matches existing stack) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- Google Fonts: Playfair Display (editorial) + Mulish (clean body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+
+  
+  
+
+  <style>
+    /* ========================================
+       CSS VARIABLES — handi_theme overrides
+       (mirrors what apply_brand.py would inject)
+    ======================================== */
+    :root {
+      --clr-primary:     #2D5016;   /* deep forest green */
+      --clr-accent:      #C9872A;   /* warm amber */
+      --clr-accent-lt:   #E8A84E;
+      --clr-bg:          #0F1A0B;   /* near-black forest */
+      --clr-surface:     #192410;
+      --clr-surface2:    #243318;
+      --clr-border:      #3A4F28;
+      --clr-text:        #E8EAE3;
+      --clr-text-muted:  #8EA07A;
+      --clr-white:       #F5F3EE;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Mulish', sans-serif;
+
+      --radius-sm: 6px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ========================================
+       RESET & BASE
+    ======================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--clr-bg);
+      color: var(--clr-text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; object-fit: cover; }
+    ul { list-style: none; }
+
+    /* ========================================
+       NOISE TEXTURE OVERLAY
+    ======================================== */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ========================================
+       HEADER / NAV  (mirrors handi_theme nav)
+    ======================================== */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 2.5rem;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(15,26,11,0.96), transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(58,79,40,0.3);
+      transition: background var(--transition);
+    }
+
+    .site-header.scrolled {
+      background: rgba(15,26,11,0.97);
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--clr-white);
+      letter-spacing: 0.03em;
+    }
+
+    .logo span { color: var(--clr-accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--clr-text-muted);
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--clr-accent-lt); }
+
+    .btn-enquire {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.3rem;
+      background: var(--clr-accent);
+      color: var(--clr-bg);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform 0.2s;
+    }
+
+    .btn-enquire:hover {
+      background: var(--clr-accent-lt);
+      transform: translateY(-1px);
+    }
+
+    /* ========================================
+       HERO SECTION
+    ======================================== */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 2.5rem 7rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 60% 30%, rgba(45,80,22,0.35) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 20% 70%, rgba(201,135,42,0.12) 0%, transparent 55%),
+        linear-gradient(160deg, #0a1207 0%, #182310 45%, #0f1a0b 100%);
+    }
+
+    /* Animated forest silhouette */
+    .hero-silhouette {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 55%;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 400' preserveAspectRatio='none'%3E%3Cpath d='M0 400 L0 280 L40 260 L70 200 L100 240 L130 180 L160 220 L190 150 L220 190 L250 130 L280 170 L310 110 L340 160 L370 100 L400 145 L430 85 L460 130 L490 75 L520 120 L550 65 L580 115 L610 55 L640 105 L670 50 L700 100 L730 45 L760 95 L790 40 L820 90 L850 35 L880 90 L910 50 L940 95 L970 55 L1000 100 L1030 60 L1060 105 L1090 65 L1120 110 L1150 70 L1180 115 L1210 75 L1240 120 L1270 85 L1300 130 L1330 95 L1360 145 L1400 280 L1440 400 Z' fill='%230a1207'/%3E%3C/svg%3E")
+        no-repeat bottom / 100%;
+      opacity: 0.85;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid var(--clr-border);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 1.4rem;
+      backdrop-filter: blur(4px);
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: var(--clr-white);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--clr-accent);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--clr-text-muted);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--clr-accent);
+      color: var(--clr-bg);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--clr-accent-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(201,135,42,0.35);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--clr-text);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--clr-border);
+      cursor: pointer;
+      transition: border-color var(--transition), color var(--transition);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--clr-accent);
+      color: var(--clr-accent);
+    }
+    /* Stats row */
+    .hero-stats {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      display: flex;
+      gap: 2.5rem;
+      z-index: 2;
+    }
+
+    .stat-item {
+      text-align: right;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--clr-accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--clr-text-muted);
+      margin-top: 0.3rem;
+    }
+
+    /* ========================================
+       HOW IT WORKS STRIP
+    ======================================== */
+    .how-strip {
+      background: var(--clr-surface);
+      border-top: 1px solid var(--clr-border);
+      border-bottom: 1px solid var(--clr-border);
+      padding: 2.8rem 2.5rem;
+    }
+
+    .how-strip-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .how-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.1rem;
+    }
+
+    .how-step-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: rgba(201,135,42,0.12);
+      border: 1px solid rgba(201,135,42,0.25);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--clr-accent);
+    }
+
+    .how-step-num {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clr-text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .how-step-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--clr-white);
+    }
+
+    /* ========================================
+       SECTION LAYOUT HELPERS
+    ======================================== */
+    .section {
+      padding: 6rem 2.5rem;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--clr-accent);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: var(--clr-white);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--clr-text-muted);
+      max-width: 560px;
+      font-weight: 300;
+    }
+
+    /* ========================================
+       FILTER TABS
+    ======================================== */
+    .filter-bar {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin: 3rem 0 2.5rem;
+    }
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.25rem;
+      background: var(--clr-surface);
+      color: var(--clr-text-muted);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--clr-border);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--clr-accent);
+      color: var(--clr-accent);
+    }
+
+    .filter-btn.active {
+      background: var(--clr-accent);
+      color: var(--clr-bg);
+      border-color: var(--clr-accent);
+    }
+
+    /* ========================================
+       TOURS-LISTINGS (handi_theme pattern)
+       .tours-listings-media / .tours-listings-details
+    ======================================== */
+    .tours-listings {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .tours-listings-item {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      cursor: pointer;
+    }
+
+    .tours-listings-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 0 1px var(--clr-accent);
+      border-color: var(--clr-accent);
+    }
+
+    .tours-listings-item[data-category] {
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .tours-listings-item.hidden {
+      display: none;
+    }
+
+    /* Media area — matches .tours-listings-media */
+    .tours-listings-media {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: var(--clr-surface2);
+    }
+
+    .tours-listings-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .tours-listings-item:hover .tours-listings-media img {
+      transform: scale(1.07);
+    }
+
+    .media-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: 0.3rem 0.75rem;
+      background: rgba(15,26,11,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--clr-border);
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+    }
+
+    .media-avail {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--clr-bg);
+    }
+
+    .media-avail.available { background: #5CBA4A; }
+    .media-avail.limited  { background: var(--clr-accent); }
+    .media-avail.booked   { background: #E05252; }
+
+    .media-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: var(--clr-text-muted);
+      font-size: 3rem;
+    }
+
+    .media-placeholder span {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Details area — matches .tours-listings-details */
+    .tours-listings-details {
+      padding: 1.5rem 1.6rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .listing-cat {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .listing-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--clr-white);
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+    }
+
+    .listing-desc {
+      font-size: 0.88rem;
+      color: var(--clr-text-muted);
+      line-height: 1.6;
+      font-weight: 300;
+      margin-bottom: 1.1rem;
+      flex: 1;
+    }
+
+    .listing-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .spec-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.28rem 0.7rem;
+      background: rgba(58,79,40,0.45);
+      border: 1px solid rgba(58,79,40,0.7);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--clr-text-muted);
+    }
+
+    .spec-pill i { font-size: 0.85rem; color: var(--clr-accent); }
+
+    .listing-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .listing-price {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--clr-text-muted);
+    }
+
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--clr-accent);
+      line-height: 1.1;
+    }
+
+    .price-unit {
+      font-size: 0.75rem;
+      color: var(--clr-text-muted);
+      font-weight: 400;
+    }
+
+    .btn-book {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.4rem;
+      background: var(--clr-accent);
+      color: var(--clr-bg);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform 0.15s;
+    }
+
+    .btn-book:hover {
+      background: var(--clr-accent-lt);
+      transform: translateY(-1px);
+    }
+
+    /* ========================================
+       FEATURED SWIPER (top picks carousel)
+    ======================================== */
+    .featured-section {
+      background: var(--clr-surface);
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .swiper-featured .swiper-slide {
+      width: 360px;
+    }
+
+    .swiper-nav {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .swiper-btn {
+      width: 44px;
+      height: 44px;
+      background: var(--clr-surface2);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--clr-text-muted);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .swiper-btn:hover {
+      background: var(--clr-accent);
+      color: var(--clr-bg);
+      border-color: var(--clr-accent);
+    }
+
+    /* ========================================
+       PACKAGES SECTION
+    ======================================== */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .package-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: 2rem 2rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .package-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--clr-border);
+      transition: background var(--transition);
+    }
+
+    .package-card:hover {
+      border-color: rgba(201,135,42,0.5);
+      transform: translateY(-4px);
+    }
+
+    .package-card:hover::before { background: var(--clr-accent); }
+
+    .package-card.featured-pkg {
+      border-color: var(--clr-accent);
+      background: linear-gradient(160deg, rgba(45,80,22,0.2), var(--clr-surface));
+    }
+
+    .package-card.featured-pkg::before { background: var(--clr-accent); }
+
+    .pkg-badge {
+      display: inline-block;
+      padding: 0.25rem 0.7rem;
+      background: var(--clr-accent);
+      color: var(--clr-bg);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      margin-bottom: 1.3rem;
+      align-self: flex-start;
+    }
+
+    .pkg-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--clr-white);
+      margin-bottom: 0.4rem;
+    }
+
+    .pkg-tagline {
+      font-size: 0.85rem;
+      color: var(--clr-text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .pkg-price {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--clr-accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .pkg-period {
+      font-size: 0.78rem;
+      color: var(--clr-text-muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .pkg-includes {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+      flex: 1;
+    }
+
+    .pkg-includes li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.87rem;
+      color: var(--clr-text);
+    }
+
+    .pkg-includes li i {
+      color: var(--clr-accent);
+      font-size: 1rem;
+      min-width: 1rem;
+    }
+
+    /* ========================================
+       RENTAL ENQUIRY FORM SECTION
+    ======================================== */
+    .enquiry-section {
+      background:
+        radial-gradient(ellipse 60% 70% at 80% 50%, rgba(45,80,22,0.2) 0%, transparent 60%),
+        var(--clr-surface);
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .enquiry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .enquiry-info h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      color: var(--clr-white);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .enquiry-info p {
+      color: var(--clr-text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-item i {
+      font-size: 1.1rem;
+      color: var(--clr-accent);
+    }
+
+    .contact-item span {
+      font-size: 0.9rem;
+      color: var(--clr-text-muted);
+    }
+
+    /* Form (matches jquery.validate.js structure in handi_theme) */
+    .rental-form {
+      background: var(--clr-surface2);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clr-text-muted);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: var(--clr-bg);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--clr-text);
+      width: 100%;
+      transition: border-color var(--transition);
+      outline: none;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder { color: var(--clr-text-muted); opacity: 0.5; }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus { border-color: var(--clr-accent); }
+
+    .form-select option { background: var(--clr-bg); }
+
+    .form-textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .submit-note {
+      font-size: 0.75rem;
+      color: var(--clr-text-muted);
+    }
+
+    /* ========================================
+       FOOTER  (mirrors handi_theme footer)
+    ======================================== */
+    .site-footer {
+      background: rgba(10,18,7,0.98);
+      border-top: 1px solid var(--clr-border);
+      padding: 3.5rem 2.5rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--clr-white);
+    }
+
+    .footer-logo span { color: var(--clr-accent); }
+
+    .footer-links {
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--clr-text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover { color: var(--clr-accent); }
+
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--clr-text-muted);
+      padding-top: 2rem;
+      border-top: 1px solid var(--clr-border);
+      margin-top: 2rem;
+    }
+
+    /* ========================================
+       MODAL
+    ======================================== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(5,10,4,0.88);
+      backdrop-filter: blur(8px);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 520px;
+      position: relative;
+      animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.9) translateY(20px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      width: 36px; height: 36px;
+      background: var(--clr-surface2);
+      border: 1px solid var(--clr-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--clr-text-muted);
+      font-size: 1.1rem;
+      transition: all var(--transition);
+    }
+
+    .modal-close:hover { background: var(--clr-accent); color: var(--clr-bg); border-color: var(--clr-accent); }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--clr-white);
+      margin-bottom: 0.4rem;
+    }
+
+    .modal-sub {
+      font-size: 0.88rem;
+      color: var(--clr-text-muted);
+      margin-bottom: 1.8rem;
+    }
+
+    /* ========================================
+       ENTRANCE ANIMATIONS
+    ======================================== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .anim-up {
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.4,0,0.2,1) forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.25s; }
+    .delay-3 { animation-delay: 0.4s; }
+    .delay-4 { animation-delay: 0.55s; }
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+    @media (max-width: 900px) {
+      .enquiry-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-stats { display: none; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .section { padding: 4rem 1.2rem; }
+      .hero { padding: 0 1.2rem 5rem; }
+      .site-header { padding: 0 1.2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .tours-listings { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <link href="assets/css/basswoods-menu.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+          <div class="site-menu" data-lenis-prevent>
+            <div class="site-menu-bg"></div>
+            <div class="site-menu-header">
+                <div class="site-header-left">
+                    <button class="site-menu-close">
+                        <span class="site-menu-close-icon"></span>
+                        <span>Close</span>
+                    </button>
+                </div>
+                <div class="site-header-logo">
+                    <a aria-label="Basswoods Camp" href="index.html" style="text-decoration:none;">
+                        <span style="color: #f2f0e8; font-family: sans-serif; font-size: 24px; font-weight: bold; letter-spacing: 2px;">BASS WOODS</span>
+                    </a>
+                </div>
+                <div class="site-header-right">
+                                            <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
+                                                                                    <a class="btn btn-sm btn-inverted" href="tel:8011228979">
+                            <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
+                            <span class="d-none d-md-inline">Call Us</span>
+                        </a>
+                                                        </div>
+            </div>
+                                    <div class="site-menu-main site-header-offset bg-charcoal">
+                <div class="site-menu-main-container px-container pb-md">
+                    <ul id="menu-primary-menu" class="site-menu-nav ginto-normal-black py-xl">
+<li id="menu-item-new-1" class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-302" href="tours.html"><span>Tour package</span></a></li>
+<li id="menu-item-new-2" class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-296" href="rentals.html"><span>Vehicles Rentals</span></a></li>
+<li id="menu-item-new-3" class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="#"><span>Camping equipment rentals</span></a></li>
+<li id="menu-item-new-4" class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-295" href="camping.html"><span>Campings</span></a></li>
+<li id="menu-item-new-5" class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-298" href="#"><span>Trekking</span></a></li>
+<li id="menu-item-new-6" class="menu-item"><a title="Outdoor activities" class="site-menu-nav-item" data-image="menu-item-image-297" href="#"><span>Outdoor activities</span></a></li>
+<li id="menu-item-new-7" class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-299" href="#"><span>Off beat Tours</span></a></li>
+</ul>                    <ul class="site-menu-social">
+                                                                                    <li>
+                                    <a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank">
+                                        <i class="ri-instagram-fill"></i>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a aria-label="Location" href="camping.html" target="_blank">
+                                        <i class="ri-map-pin-fill"></i>
+                                    </a>
+                                </li>
+                                                                            <li><a aria-label="Contact us" href="mailto:basswoodscamp@gmail.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
+                    </ul>
+                </div>
+                                    <a class="site-menu-account-btn" data-no-swup href="my-account.html">
+                        <span>My account</span>
+                    </a>
+                                            </div>
+            <div class="site-menu-images">
+                <div class="site-menu-images-container">
+                                                                                                                                    <div class="site-menu-images-item active" id="menu-item-image-295">
+
+                            
+<img width="1500" height="1500" src="wp-content/uploads/2023/11/cat_nepal_30.jpg" class="" alt="" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/11/cat_nepal_30.jpg 1500w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/cat_nepal_30-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/cat_nepal_30-1024x1024.jpg 1024w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/cat_nepal_30-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/cat_nepal_30-768x768.jpg 768w" />
+                        </div>
+                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-296">
+
+                            
+<img width="1200" height="1200" src="wp-content/uploads/2023/10/Menu-e-mtb-1.jpg" class="" alt="E Basswoods Adventure Tour - Basswoods Camp Tours" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/10/Menu-e-mtb-1.jpg 1200w, https://www.basswoodscamp.com/wp-content/uploads/2023/10/Menu-e-mtb-1-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/10/Menu-e-mtb-1-1024x1024.jpg 1024w, https://www.basswoodscamp.com/wp-content/uploads/2023/10/Menu-e-mtb-1-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/10/Menu-e-mtb-1-768x768.jpg 768w" />
+                        </div>
+                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-297">
+
+                            
+<img width="1500" height="1500" src="wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6.jpg" class="" alt="" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6.jpg 1500w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6-1024x1024.jpg 1024w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6-768x768.jpg 768w" />
+                        </div>
+                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-302">
+
+                            
+<img width="1000" height="1000" src="wp-content/uploads/2023/09/GUIDES.jpg" class="" alt="" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/09/GUIDES.jpg 1000w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/GUIDES-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/GUIDES-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/GUIDES-768x768.jpg 768w" />
+                        </div>
+                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-298">
+
+                            
+<img width="1500" height="1500" src="wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374.jpg" class="" alt="Basswoods Adventure tour Ecuador, rider carrying his bike" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374.jpg 1500w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374-1024x1024.jpg 1024w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374-768x768.jpg 768w" />
+                        </div>
+                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-299">
+
+                            
+<img width="1500" height="1500" src="wp-content/uploads/2023/11/Milner_NPL015_0136.jpg" class="" alt="" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/11/Milner_NPL015_0136.jpg 1500w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Milner_NPL015_0136-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Milner_NPL015_0136-1024x1024.jpg 1024w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Milner_NPL015_0136-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Milner_NPL015_0136-768x768.jpg 768w" />
+                        </div>
+                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-300">
+
+                            
+<img width="1000" height="1000" src="wp-content/uploads/2023/09/CONTACT.jpg" class="" alt="" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/09/CONTACT.jpg 1000w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/CONTACT-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/CONTACT-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/CONTACT-768x768.jpg 768w" />
+                        </div>
+                                                            </div>
+            </div>
+        </div>
+                <header class="site-header" style="display:flex; justify-content:space-between; align-items:center; padding: 1.5rem 4rem; position:absolute; top:0; left:0; right:0; z-index:100;">
+    <div class="site-header-left">
+        <button class="site-menu-toggle" style="background:transparent; border:none; color:inherit; cursor:pointer; display:flex; align-items:center; gap:10px; font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; transition:color 0.2s;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    <span>Menu</span>
+</button>
+    </div>
+    <div class="site-header-logo">
+        <a aria-label="Basswoods Camp" href="index.html" style="text-decoration:none;">
+            <span style="color: #f2f0e8; font-family: sans-serif; font-size: 24px; font-weight: bold; letter-spacing: 2px;">BASS WOODS</span>
+        </a>
+    </div>
+    <div class="site-header-right">
+        <a class="nav-cta btn btn-sm btn-inverted" href="camping.html">Book Now</a>
+    </div>
+</header>
+
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-silhouette"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag anim-up delay-1">
+        <i class="ri-tent-line"></i> Equipment Rentals
+      </div>
+      <h1 class="hero-title anim-up delay-2">
+        Everything You Need,<br/><em>Ready at Camp.</em>
+      </h1>
+      <p class="hero-desc anim-up delay-3">
+        Premium camping gear, Basswoods Adventures, and adventure equipment — cleaned, maintained, and waiting for your arrival. Pack light. Live fully.
+      </p>
+      <div class="hero-actions anim-up delay-4">
+        <button class="btn-primary" onclick="document.getElementById('listings').scrollIntoView({behavior:'smooth'})">
+          <i class="ri-search-line"></i> Browse Equipment
+        </button>
+        <a href="#packages" class="btn-outline">
+          <i class="ri-gift-2-line"></i> View Packages
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">150+</div>
+        <div class="stat-label">Items in Stock</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4.9★</div>
+        <div class="stat-label">Avg. Rating</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24hr</div>
+        <div class="stat-label">Turnaround</div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ HOW IT WORKS ============ -->
+  <div class="how-strip">
+    <div class="how-strip-inner">
+      <div class="how-step">
+        <div class="how-step-icon"><i class="ri-cursor-line"></i></div>
+        <div>
+          <div class="how-step-num">Step 01</div>
+          <div class="how-step-title">Browse & Select</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-icon"><i class="ri-calendar-2-line"></i></div>
+        <div>
+          <div class="how-step-num">Step 02</div>
+          <div class="how-step-title">Choose Your Dates</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-icon"><i class="ri-checkbox-circle-line"></i></div>
+        <div>
+          <div class="how-step-num">Step 03</div>
+          <div class="how-step-title">Confirm & Pay</div>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-step-icon"><i class="ri-map-pin-2-line"></i></div>
+        <div>
+          <div class="how-step-num">Step 04</div>
+          <div class="how-step-title">Pick Up at Camp</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FEATURED SWIPER ============ -->
+  <section class="featured-section section">
+    <div class="container">
+      <div class="section-eyebrow">Staff Picks</div>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+        <h2 class="section-title" style="margin-bottom:0">Top Picks This Season</h2>
+        <div class="swiper-nav">
+          <button class="swiper-btn" id="featPrev"><i class="ri-arrow-left-s-line"></i></button>
+          <button class="swiper-btn" id="featNext"><i class="ri-arrow-right-s-line"></i></button>
+        </div>
+      </div>
+
+      <div class="swiper swiper-featured" style="margin-top:2.5rem; overflow:hidden;">
+        <div class="swiper-wrapper">
+
+          <!-- Featured Slide 1 -->
+          <div class="swiper-slide">
+            <div class="tours-listings-item" data-category="tents">
+              <div class="tours-listings-media">
+                <div class="media-placeholder">
+                  <i class="ri-tent-fill"></i>
+                  <span>4-Season Tent</span>
+                </div>
+                <span class="media-badge">Tents</span>
+                <span class="media-avail available" title="Available"></span>
+              </div>
+              <div class="tours-listings-details">
+                <div class="listing-cat">Shelter</div>
+                <div class="listing-title">Alpine Pro 4-Season Tent</div>
+                <div class="listing-desc">Double-wall construction with full-coverage fly. Fits 2 people comfortably.</div>
+                <div class="listing-specs">
+                  <span class="spec-pill"><i class="ri-group-line"></i> Sleeps 2</span>
+                  <span class="spec-pill"><i class="ri-scales-line"></i> 2.4 kg</span>
+                  <span class="spec-pill"><i class="ri-cloud-windy-line"></i> 4-Season</span>
+                </div>
+                <div class="listing-footer">
+                  <div class="listing-price">
+                    <span class="price-label">From</span>
+                    <span class="price-amount">Ã¢â€šÂ¹2,800 <span class="price-unit">/ night</span></span>
+                  </div>
+                  <button class="btn-book" onclick="openModal('Alpine Pro 4-Season Tent')">
+                    Book <i class="ri-arrow-right-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Slide 2 -->
+          <div class="swiper-slide">
+            <div class="tours-listings-item" data-category="bikes">
+              <div class="tours-listings-media">
+                <div class="media-placeholder">
+                  <i class="ri-bike-line"></i>
+                  <span>Trail Basswoods Adventure</span>
+                </div>
+                <span class="media-badge">Bikes</span>
+                <span class="media-avail available"></span>
+              </div>
+              <div class="tours-listings-details">
+                <div class="listing-cat">Bikes</div>
+                <div class="listing-title">Hardtail Trail Bike — 29"</div>
+                <div class="listing-desc">Aluminum hardtail built for flowy singletrack and technical terrain.</div>
+                <div class="listing-specs">
+                  <span class="spec-pill"><i class="ri-tools-line"></i> Shimano 1Ãƒâ€”12</span>
+                  <span class="spec-pill"><i class="ri-ruler-2-line"></i> S / M / L / XL</span>
+                </div>
+                <div class="listing-footer">
+                  <div class="listing-price">
+                    <span class="price-label">From</span>
+                    <span class="price-amount">Ã¢â€šÂ¹5,500 <span class="price-unit">/ day</span></span>
+                  </div>
+                  <button class="btn-book" onclick="openModal('Hardtail Trail Bike')">
+                    Book <i class="ri-arrow-right-line"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ALL RENTALS LISTINGS ============ -->
+  <section class="section" id="listings">
+    <div class="container">
+      <div class="section-eyebrow">Our Inventory</div>
+      <h2 class="section-title">All Rental Equipment</h2>
+      <p class="section-sub">Every item is inspected, cleaned, and ready before your arrival.</p>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all"><i class="ri-apps-line"></i> All</button>
+        <button class="filter-btn" data-filter="tents"><i class="ri-tent-line"></i> Tents</button>
+        <button class="filter-btn" data-filter="sleep"><i class="ri-moon-line"></i> Sleep Systems</button>
+        <button class="filter-btn" data-filter="bikes"><i class="ri-bike-line"></i> Bikes</button>
+        <button class="filter-btn" data-filter="cooking"><i class="ri-fire-line"></i> Cooking</button>
+      </div>
+
+      <div class="tours-listings">
+        <!-- Grid Item 1: Alpine Pro -->
+        <div class="tours-listings-item" data-category="tents">
+          <div class="tours-listings-media">
+            <div class="media-placeholder"><i class="ri-tent-fill"></i></div>
+            <span class="media-badge">Tents</span>
+          </div>
+          <div class="tours-listings-details">
+            <div class="listing-title">Alpine Pro 2P Tent</div>
+            <div class="listing-desc">Double-wall 4-season tent for high-altitude camping.</div>
+            <div class="listing-footer">
+              <div class="price-amount">Ã¢â€šÂ¹2,800 <span class="price-unit">/ night</span></div>
+              <button class="btn-book" onclick="openModal('Alpine Pro 2P Tent')">Book</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid Item 2: Mummy Bag -->
+        <div class="tours-listings-item" data-category="sleep">
+          <div class="tours-listings-media">
+            <div class="media-placeholder"><i class="ri-moon-clear-line"></i></div>
+            <span class="media-badge">Sleep</span>
+          </div>
+          <div class="tours-listings-details">
+            <div class="listing-title">Ultralight Mummy Bag</div>
+            <div class="listing-desc">Rated to -5Ã‚Â°C. Compact and high-loft synthetic.</div>
+            <div class="listing-footer">
+              <div class="price-amount">Ã¢â€šÂ¹1,200 <span class="price-unit">/ night</span></div>
+              <button class="btn-book" onclick="openModal('Mummy Bag')">Book</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Grid Item 3: Cook Kit -->
+        <div class="tours-listings-item" data-category="cooking">
+          <div class="tours-listings-media">
+            <div class="media-placeholder"><i class="ri-fire-line"></i></div>
+            <span class="media-badge">Cooking</span>
+          </div>
+          <div class="tours-listings-details">
+            <div class="listing-title">Basecamp Cooking Kit</div>
+            <div class="listing-desc">Everything needed for a group of 4 to cook in the wild.</div>
+            <div class="listing-footer">
+              <div class="price-amount">Ã¢â€šÂ¹1,500 <span class="price-unit">/ night</span></div>
+              <button class="btn-book" onclick="openModal('Cooking Kit')">Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PACKAGES ============ -->
+  <section class="section" id="packages" style="background:var(--clr-surface)">
+    <div class="container">
+      <div class="section-eyebrow">Bundles</div>
+      <h2 class="section-title">Adventure Packages</h2>
+      <div class="packages-grid">
+        <div class="package-card featured-pkg">
+          <span class="pkg-badge">Best Seller</span>
+          <div class="pkg-name">Camp & Ride</div>
+          <div class="pkg-tagline">Everything for a weekend at Basswoods.</div>
+          <div class="pkg-price">Ã¢â€šÂ¹8,500</div>
+          <div class="pkg-period">per day</div>
+          <button class="btn-primary" onclick="openModal('Camp & Ride Package')">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENQUIRY SECTION ============ -->
+  <section class="section enquiry-section">
+    <div class="container">
+      <div class="enquiry-grid">
+        <div class="enquiry-info">
+          <h2>Ready to Gear Up?</h2>
+          <p>Drop us a line and we'll have your equipment ready at basecamp.</p>
+          <div class="contact-item"><i class="ri-whatsapp-line"></i> <span>+91 98765 43210</span></div>
+        </div>
+        <form class="rental-form">
+          <div class="form-row">
+            <div class="form-group"><input type="text" class="form-input" placeholder="Name" required/></div>
+            <div class="form-group"><input type="email" class="form-input" placeholder="Email" required/></div>
+          </div>
+          <textarea class="form-textarea" placeholder="Message"></textarea>
+          <button type="submit" class="btn-primary" style="margin-top:1rem">Send Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Basswoods<span>Camp</span></div>
+      <div class="footer-copy">&copy; 2026 Basswoods Camp. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ============ MODAL ============ -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box">
+      <div class="modal-close" onclick="closeModal()"><i class="ri-close-line"></i></div>
+      <h3 class="modal-title">Rental Request</h3>
+      <input type="text" id="targetGear" class="form-input" readonly style="margin-bottom:1rem"/>
+      <button class="btn-primary" style="width:100%" onclick="alert('Request Sent!'); closeModal();">Confirm Interest</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    /* Header Scroll */
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    });
+
+    /* Swiper */
+    new Swiper('.swiper-featured', {
+      slidesPerView: 'auto',
+      spaceBetween: 24,
+      grabCursor: true,
+      navigation: { nextEl: '#featNext', prevEl: '#featPrev' },
+    });
+
+    /* Filters */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.tours-listings-item');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        items.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) item.style.display = 'flex';
+          else item.style.display = 'none';
+        });
+      });
+    });
+
+    /* Modal */
+    const modal = document.getElementById('bookingModal');
+    const targetInput = document.getElementById('targetGear');
+    function openModal(name) { targetInput.value = name; modal.classList.add('open'); }
+    function closeModal() { modal.classList.remove('open'); }
+
+    /* Animations */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.tours-listings-item, .package-card, .how-step').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'all 0.6s ease-out';
+      observer.observe(el);
+    });
+  </script>
+  
+  
+  
+  
+
+  <script src="assets/js/basswoods-menu.js" defer></script>
+</body>
+</html>
+
+

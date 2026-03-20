@@ -1,0 +1,711 @@
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+.ne-map-wrapper {
+  --bg:    #2a2a2a;
+  --bg2:   #222;
+  --bg3:   #1a1a1a;
+  --bg4:   #111;
+  --card:  #1e1e1e;
+  --or:    #e85d2f;
+  --orh:   #ff6b3d;
+  --or10:  rgba(232,93,47,.10);
+  --or20:  rgba(232,93,47,.20);
+  --wh:    #fff;
+  --w80:   rgba(255,255,255,.80);
+  --w60:   rgba(255,255,255,.60);
+  --w40:   rgba(255,255,255,.40);
+  --w20:   rgba(255,255,255,.20);
+  --w10:   rgba(255,255,255,.10);
+  --w06:   rgba(255,255,255,.06);
+  --wa:    #25D366;
+  --D:     'Barlow Condensed', sans-serif;
+  --B:     'Barlow', sans-serif;
+  --ease:  cubic-bezier(.25,.46,.45,.94);
+
+  background: var(--bg);
+  color: var(--wh);
+  font-family: var(--B);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+.ne-map-wrapper *, .ne-map-wrapper *::before, .ne-map-wrapper *::after { box-sizing: border-box; }
+
+/* ── Section header ── */
+.ne-map-wrapper .map-section-head {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+.ne-map-wrapper .ey {
+  font-family: var(--B); font-size: .68rem; font-weight: 400;
+  letter-spacing: .24em; text-transform: uppercase; color: var(--or);
+  margin-bottom: 12px;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+}
+.ne-map-wrapper .ey::before, .ne-map-wrapper .ey::after {
+  content: ''; display: block; width: 28px; height: 1px; background: var(--or);
+}
+.ne-map-wrapper .map-section-head h2 {
+  font-family: var(--D); font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-weight: 900; text-transform: uppercase; letter-spacing: .02em;
+  line-height: .9; color: var(--wh); margin-bottom: 14px;
+  margin-top: 0; border: none; padding: 0;
+}
+.ne-map-wrapper .map-section-head p {
+  font-size: .9rem; font-weight: 300; color: var(--w60); line-height: 1.75; margin: 0;
+}
+
+/* ── Outer container ── */
+.ne-map-wrapper .map-outer {
+  width: 100%; max-width: 1100px;
+  border: 1px solid var(--w10); overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  min-height: 540px;
+}
+
+/* ── Left: SVG canvas ── */
+.ne-map-wrapper .map-canvas {
+  background: var(--bg4);
+  display: flex; align-items: center; justify-content: center;
+  padding: 32px; position: relative;
+}
+.ne-map-wrapper .map-canvas svg {
+  width: 100%; max-width: 580px; height: auto;
+  overflow: visible; display: block;
+}
+
+/* State paths */
+.ne-map-wrapper .state-path {
+  fill: #2c2c2c;
+  stroke: rgba(255,255,255,.18);
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition: fill .3s var(--ease), filter .3s;
+}
+.ne-map-wrapper .state-path:hover { fill: #3d3d3d; filter: brightness(1.2); }
+.ne-map-wrapper .state-path.active { fill: var(--or); stroke: var(--orh); stroke-width: 2; }
+
+/* State labels */
+.ne-map-wrapper .state-label {
+  font-family: var(--D); font-weight: 700; font-size: 11px;
+  fill: rgba(255,255,255,.55);
+  pointer-events: none; transition: fill .3s;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+.ne-map-wrapper .state-path.active ~ text.state-label,
+.ne-map-wrapper .state-label.active { fill: #fff; }
+
+/* Animated dots */
+.ne-map-wrapper .loc-dot {
+  fill: var(--or);
+  cursor: pointer;
+  filter: drop-shadow(0 0 4px rgba(232,93,47,.7));
+}
+.ne-map-wrapper .loc-dot-ring {
+  fill: none;
+  stroke: var(--or);
+  stroke-width: 1.5;
+  opacity: 0;
+  animation: ripple 2.5s ease-out infinite;
+}
+.ne-map-wrapper .loc-dot-ring:nth-child(2) { animation-delay: .4s; }
+.ne-map-wrapper .loc-dot-ring:nth-child(3) { animation-delay: .8s; }
+
+@keyframes ripple {
+  0%   { r: 5;  opacity: .8; }
+  100% { r: 18; opacity: 0;  }
+}
+
+/* Tooltip on dot hover */
+.ne-map-wrapper .dot-tooltip {
+  opacity: 0; pointer-events: none;
+  transition: opacity .2s;
+}
+.ne-map-wrapper .dot-group:hover .dot-tooltip { opacity: 1; }
+.ne-map-wrapper .dot-tooltip rect { fill: var(--bg3); stroke: var(--or); stroke-width: 1; rx: 3; }
+.ne-map-wrapper .dot-tooltip text { font-family: var(--B); font-size: 9px; fill: var(--wh); }
+
+/* Map legend */
+.ne-map-wrapper .map-legend {
+  position: absolute; bottom: 16px; left: 16px;
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--B); font-size: .62rem; font-weight: 400;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--w40);
+}
+.ne-map-wrapper .legend-dot { width: 8px; height: 8px; background: var(--or); border-radius: 50%; flex-shrink: 0; }
+
+/* "Click to explore" hint */
+.ne-map-wrapper .map-hint {
+  position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+  font-family: var(--B); font-size: .62rem; font-weight: 400;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--w40);
+  white-space: nowrap;
+  animation: fadeHint 4s ease 1.5s forwards;
+}
+@keyframes fadeHint { 0%,70%{opacity:1} 100%{opacity:0;pointer-events:none} }
+
+/* ── Right: Info panel ── */
+.ne-map-wrapper .map-panel {
+  border-left: 1px solid var(--w10);
+  display: flex; flex-direction: column;
+  background: var(--card); overflow-y: auto;
+  max-height: 600px;
+}
+.ne-map-wrapper .map-panel::-webkit-scrollbar { width: 2px; }
+.ne-map-wrapper .map-panel::-webkit-scrollbar-thumb { background: var(--or); }
+
+/* Default state */
+.ne-map-wrapper .panel-default {
+  padding: 32px 26px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  height: 100%;
+  transition: opacity .3s; margin: 0;
+}
+.ne-map-wrapper .panel-default h3 {
+  font-family: var(--D); font-size: 1.7rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px;
+  color: var(--wh); line-height: 1.2;
+}
+.ne-map-wrapper .panel-default p { font-size: .82rem; font-weight: 300; color: var(--w60); line-height: 1.7; margin-bottom: 22px; }
+.ne-map-wrapper .states-list { display: flex; flex-direction: column; gap: 4px; }
+.ne-map-wrapper .states-list-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; cursor: pointer;
+  border: 1px solid transparent;
+  transition: border-color .2s, background .2s;
+}
+.ne-map-wrapper .states-list-item:hover { border-color: var(--w10); background: var(--w06); }
+.ne-map-wrapper .states-list-item.active { border-color: var(--or); background: var(--or10); }
+.ne-map-wrapper .sli-dot { width: 6px; height: 6px; background: var(--or); border-radius: 50%; flex-shrink: 0; }
+.ne-map-wrapper .sli-name { font-family: var(--D); font-size: .95rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.ne-map-wrapper .sli-count { font-size: .65rem; font-weight: 300; color: var(--w40); letter-spacing: .04em; margin-left: auto; }
+
+/* State detail panel */
+.ne-map-wrapper .panel-state {
+  display: none; padding: 28px 26px;
+  flex-direction: column; height: 100%;
+  animation: panelIn .35s var(--ease) forwards; text-align: left;
+}
+.ne-map-wrapper .panel-state.show { display: flex; }
+@keyframes panelIn { from{opacity:0;transform:translateX(12px)} to{opacity:1;transform:translateX(0)} }
+
+.ne-map-wrapper .ps-back {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--B); font-size: .65rem; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--w40);
+  cursor: pointer; margin-bottom: 20px; transition: color .2s;
+  background: none; border: none; padding: 0; width: fit-content;
+}
+.ne-map-wrapper .ps-back:hover { color: var(--wh); }
+.ne-map-wrapper .ps-back::before { content: '←'; font-size: .8rem; }
+
+.ne-map-wrapper .ps-name {
+  font-family: var(--D); font-size: 2.4rem; font-weight: 900;
+  text-transform: uppercase; letter-spacing: .01em; line-height: .9;
+  color: var(--wh); margin-bottom: 4px;
+}
+.ne-map-wrapper .ps-tagline {
+  font-family: var(--B); font-size: .68rem; font-weight: 400;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--or);
+  margin-bottom: 18px;
+}
+
+/* Service badges */
+.ne-map-wrapper .ps-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 18px; }
+.ne-map-wrapper .ps-badge {
+  font-family: var(--B); font-size: .6rem; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 4px 10px; border: 1px solid var(--w20); color: var(--w60);
+  border-radius: 0;
+}
+.ne-map-wrapper .ps-badge.or { border-color: var(--or); color: var(--or); background: var(--or10); }
+
+/* Location list */
+.ne-map-wrapper .ps-loc-title {
+  font-family: var(--D); font-size: .72rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--w40);
+  margin-bottom: 10px;
+}
+.ne-map-wrapper .ps-locs { display: flex; flex-direction: column; gap: 5px; margin-bottom: 18px; flex: 1; }
+.ne-map-wrapper .ps-loc {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 12px;
+  background: var(--w06); border: 1px solid var(--w10);
+  transition: border-color .2s, background .2s;
+}
+.ne-map-wrapper .ps-loc:hover { border-color: var(--w20); background: var(--w10); }
+.ne-map-wrapper .ps-loc-dot { width: 6px; height: 6px; background: var(--or); border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.ne-map-wrapper .ps-loc-name { font-family: var(--B); font-size: .82rem; font-weight: 400; color: var(--wh); margin-bottom: 2px; }
+.ne-map-wrapper .ps-loc-type { font-size: .68rem; font-weight: 300; color: var(--w60); margin: 0;}
+
+/* CTA button */
+.ne-map-wrapper .btn-ne {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--B); font-size: .72rem; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: 13px 22px; border: 1px solid; cursor: pointer;
+  transition: all .22s; text-decoration: none; width: 100%;
+}
+.ne-map-wrapper .btn-or  { background: var(--or);  border-color: var(--or);  color: #fff; }
+.ne-map-wrapper .btn-or:hover { background: var(--orh); border-color: var(--orh); color: #fff;}
+.ne-map-wrapper .btn-wa  { background: var(--wa);  border-color: var(--wa);  color: #fff; margin-top: 6px; }
+.ne-map-wrapper .btn-wa:hover { background: #20bf5a; color: #fff; }
+
+/* ── Stats bar below map ── */
+.ne-map-wrapper .map-stats {
+  width: 100%; max-width: 1100px;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--w10); border-top: none;
+}
+.ne-map-wrapper .mstat {
+  padding: 22px 20px; border-right: 1px solid var(--w10);
+  text-align: center; transition: background .2s;
+}
+.ne-map-wrapper .mstat:last-child { border-right: none; }
+.ne-map-wrapper .mstat:hover { background: var(--w06); }
+.ne-map-wrapper .mstat-num {
+  font-family: var(--D); font-size: 2rem; font-weight: 900;
+  color: var(--or); line-height: 1; margin-bottom: 3px;
+}
+.ne-map-wrapper .mstat-label {
+  font-family: var(--B); font-size: .62rem; font-weight: 400;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--w60);
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .ne-map-wrapper .map-outer { grid-template-columns: 1fr; }
+  .ne-map-wrapper .map-panel { border-left: none; border-top: 1px solid var(--w10); max-height: 400px; }
+  .ne-map-wrapper .map-stats { grid-template-columns: repeat(2, 1fr); }
+  .ne-map-wrapper .map-stats .mstat:nth-child(2) { border-right: none; }
+  .ne-map-wrapper .map-stats .mstat:nth-child(3) { border-top: 1px solid var(--w10); }
+}
+@media (max-width: 480px) {
+  .ne-map-wrapper { padding: 48px 16px; }
+  .ne-map-wrapper .map-canvas { padding: 20px; }
+  .ne-map-wrapper .map-stats { grid-template-columns: repeat(2, 1fr); }
+  .ne-map-wrapper .panel-default, .ne-map-wrapper .panel-state { padding: 22px 18px; }
+}
+</style>
+
+<div class="ne-map-wrapper">
+  <!-- Section header -->
+  <div class="map-section-head">
+    <div class="ey">Our Coverage</div>
+    <h2>Northeast India<br>Interactive Map</h2>
+    <p>Click any state to explore Basswoods Camp's festival partnerships, adventure activities, and services. Operating across all 7 Northeast Indian states.</p>
+  </div>
+
+  <!-- Map + Panel -->
+  <div class="map-outer">
+
+    <!-- SVG MAP -->
+    <div class="map-canvas">
+      <div class="map-hint">Click any state to explore →</div>
+
+      <svg id="ne-map" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- ── STATE PATHS ── -->
+        <path id="path-arunachal" class="state-path" data-state="arunachal"
+          d="M 185 42 L 210 28 L 255 22 L 310 20 L 365 24 L 410 32 L 450 48 L 468 72 L 462 100
+             L 448 120 L 425 134 L 395 142 L 358 148 L 320 150 L 285 148 L 255 144 L 225 136
+             L 200 122 L 188 100 L 182 72 Z"
+          onclick="selectState('arunachal')"/>
+        <text class="state-label" id="lbl-arunachal" x="325" y="95" text-anchor="middle">ARUNACHAL</text>
+        <text class="state-label" x="325" y="110" text-anchor="middle">PRADESH</text>
+
+        <path id="path-assam" class="state-path" data-state="assam"
+          d="M 78 160 L 105 148 L 145 142 L 190 138 L 230 138 L 260 145 L 290 150
+             L 310 155 L 320 152 L 355 150 L 370 158 L 372 175 L 360 192 L 330 202
+             L 300 208 L 268 212 L 230 215 L 192 218 L 155 215 L 120 208 L 92 196
+             L 72 182 Z"
+          onclick="selectState('assam')"/>
+        <text class="state-label" id="lbl-assam" x="218" y="183" text-anchor="middle">ASSAM</text>
+
+        <path id="path-nagaland" class="state-path" data-state="nagaland"
+          d="M 360 155 L 395 144 L 428 140 L 455 148 L 468 165 L 465 188 L 450 205
+             L 425 215 L 395 218 L 370 212 L 358 198 L 355 180 Z"
+          onclick="selectState('nagaland')"/>
+        <text class="state-label" id="lbl-nagaland" x="412" y="182" text-anchor="middle">NAGALAND</text>
+
+        <path id="path-meghalaya" class="state-path" data-state="meghalaya"
+          d="M 95 218 L 135 215 L 175 218 L 215 218 L 255 215 L 270 228 L 268 252
+             L 255 272 L 232 285 L 205 290 L 175 288 L 148 280 L 122 268 L 102 252
+             L 90 235 Z"
+          onclick="selectState('meghalaya')"/>
+        <text class="state-label" id="lbl-meghalaya" x="180" y="255" text-anchor="middle">MEGHALAYA</text>
+
+        <path id="path-manipur" class="state-path" data-state="manipur"
+          d="M 420 218 L 455 212 L 480 220 L 495 240 L 492 268 L 478 288 L 455 298
+             L 428 295 L 408 280 L 400 260 L 400 238 Z"
+          onclick="selectState('manipur')"/>
+        <text class="state-label" id="lbl-manipur" x="447" y="258" text-anchor="middle">MANIPUR</text>
+
+        <path id="path-mizoram" class="state-path" data-state="mizoram"
+          d="M 178 292 L 210 288 L 242 285 L 260 300 L 265 325 L 262 355 L 252 382
+             L 238 405 L 218 415 L 195 412 L 175 398 L 162 375 L 158 345 L 160 315 Z"
+          onclick="selectState('mizoram')"/>
+        <text class="state-label" id="lbl-mizoram" x="212" y="355" text-anchor="middle">MIZORAM</text>
+
+        <path id="path-tripura" class="state-path" data-state="tripura"
+          d="M 100 256 L 120 252 L 148 258 L 162 275 L 162 308 L 155 335 L 138 348
+             L 118 342 L 102 325 L 95 302 L 94 278 Z"
+          onclick="selectState('tripura')"/>
+        <text class="state-label" id="lbl-tripura" x="126" y="300" text-anchor="middle">TRIPURA</text>
+
+        <path id="path-sikkim" class="state-path" data-state="sikkim"
+          d="M 48 90 L 68 82 L 82 90 L 85 108 L 75 120 L 58 118 L 45 108 Z"
+          onclick="selectState('sikkim')"/>
+        <text class="state-label" x="66" y="104" text-anchor="middle" font-size="8">SIKKIM</text>
+
+        <!-- ── PULSING LOCATION DOTS ── -->
+
+        <g class="dot-group" onclick="selectState('assam')" style="cursor:pointer">
+          <circle class="loc-dot-ring" cx="155" cy="180" r="5"/>
+          <circle class="loc-dot-ring" cx="155" cy="180" r="5" style="animation-delay:.5s"/>
+          <circle class="loc-dot" cx="155" cy="180" r="5" filter="url(#glow)"/>
+          <g class="dot-tooltip" transform="translate(165,168)">
+            <rect x="0" y="0" width="82" height="22" rx="3" fill="#1a1a1a" stroke="#e85d2f" stroke-width="1"/>
+            <text x="6" y="14" font-family="Barlow" font-size="9.5" fill="white">Guwahati HQ</text>
+          </g>
+        </g>
+
+        <g class="dot-group" onclick="selectState('meghalaya')" style="cursor:pointer">
+          <circle class="loc-dot-ring" cx="190" cy="248" r="5" style="animation-delay:1s"/>
+          <circle class="loc-dot-ring" cx="190" cy="248" r="5" style="animation-delay:1.5s"/>
+          <circle class="loc-dot" cx="190" cy="248" r="5" filter="url(#glow)"/>
+          <g class="dot-tooltip" transform="translate(200,236)">
+            <rect x="0" y="0" width="72" height="22" rx="3" fill="#1a1a1a" stroke="#e85d2f" stroke-width="1"/>
+            <text x="6" y="14" font-family="Barlow" font-size="9.5" fill="white">Shillong</text>
+          </g>
+        </g>
+
+        <g class="dot-group" onclick="selectState('nagaland')" style="cursor:pointer">
+          <circle class="loc-dot-ring" cx="420" cy="178" r="5" style="animation-delay:.8s"/>
+          <circle class="loc-dot-ring" cx="420" cy="178" r="5" style="animation-delay:1.3s"/>
+          <circle class="loc-dot" cx="420" cy="178" r="5" filter="url(#glow)"/>
+          <g class="dot-tooltip" transform="translate(428,166)">
+            <rect x="0" y="0" width="90" height="22" rx="3" fill="#1a1a1a" stroke="#e85d2f" stroke-width="1"/>
+            <text x="6" y="14" font-family="Barlow" font-size="9.5" fill="white">Kisama / Hornbill</text>
+          </g>
+        </g>
+
+        <g class="dot-group" onclick="selectState('arunachal')" style="cursor:pointer">
+          <circle class="loc-dot-ring" cx="318" cy="88" r="5" style="animation-delay:1.2s"/>
+          <circle class="loc-dot-ring" cx="318" cy="88" r="5" style="animation-delay:1.7s"/>
+          <circle class="loc-dot" cx="318" cy="88" r="5" filter="url(#glow)"/>
+          <g class="dot-tooltip" transform="translate(326,76)">
+            <rect x="0" y="0" width="82" height="22" rx="3" fill="#1a1a1a" stroke="#e85d2f" stroke-width="1"/>
+            <text x="6" y="14" font-family="Barlow" font-size="9.5" fill="white">Ziro Festival</text>
+          </g>
+        </g>
+
+        <g class="dot-group" onclick="selectState('mizoram')" style="cursor:pointer">
+          <circle class="loc-dot-ring" cx="215" cy="350" r="5" style="animation-delay:2s"/>
+          <circle class="loc-dot-ring" cx="215" cy="350" r="5" style="animation-delay:2.5s"/>
+          <circle class="loc-dot" cx="215" cy="350" r="5" filter="url(#glow)"/>
+          <g class="dot-tooltip" transform="translate(224,338)">
+            <rect x="0" y="0" width="85" height="22" rx="3" fill="#1a1a1a" stroke="#e85d2f" stroke-width="1"/>
+            <text x="6" y="14" font-family="Barlow" font-size="9.5" fill="white">Serchipp Paragliding</text>
+          </g>
+        </g>
+
+        <g class="dot-group" onclick="selectState('tripura')" style="cursor:pointer">
+          <circle class="loc-dot-ring" cx="115" cy="300" r="5" style="animation-delay:2.4s"/>
+          <circle class="loc-dot-ring" cx="115" cy="300" r="5" style="animation-delay:2.9s"/>
+          <circle class="loc-dot" cx="115" cy="300" r="5" filter="url(#glow)"/>
+          <g class="dot-tooltip" transform="translate(124,288)">
+            <rect x="0" y="0" width="70" height="22" rx="3" fill="#1a1a1a" stroke="#e85d2f" stroke-width="1"/>
+            <text x="6" y="14" font-family="Barlow" font-size="9.5" fill="white">Agartala</text>
+          </g>
+        </g>
+
+        <g class="dot-group" onclick="selectState('arunachal')" style="cursor:pointer">
+          <circle class="loc-dot-ring" cx="390" cy="118" r="5" style="animation-delay:3s"/>
+          <circle class="loc-dot-ring" cx="390" cy="118" r="5" style="animation-delay:3.5s"/>
+          <circle class="loc-dot" cx="390" cy="118" r="5" filter="url(#glow)"/>
+          <g class="dot-tooltip" transform="translate(398,106)">
+            <rect x="0" y="0" width="95" height="22" rx="3" fill="#1a1a1a" stroke="#e85d2f" stroke-width="1"/>
+            <text x="6" y="14" font-family="Barlow" font-size="9.5" fill="white">Dambuk Orange Fest</text>
+          </g>
+        </g>
+
+        <g class="dot-group" onclick="selectState('nagaland')" style="cursor:pointer">
+          <circle class="loc-dot-ring" cx="440" cy="245" r="5" style="animation-delay:.3s"/>
+          <circle class="loc-dot-ring" cx="440" cy="245" r="5" style="animation-delay:.8s"/>
+          <circle class="loc-dot" cx="440" cy="245" r="5" filter="url(#glow)"/>
+          <g class="dot-tooltip" transform="translate(448,233)">
+            <rect x="0" y="0" width="95" height="22" rx="3" fill="#1a1a1a" stroke="#e85d2f" stroke-width="1"/>
+            <text x="6" y="14" font-family="Barlow" font-size="9.5" fill="white">Dzükou Valley Trek</text>
+          </g>
+        </g>
+      </svg>
+
+      <!-- Legend -->
+      <div class="map-legend">
+        <span class="legend-dot"></span>
+        Basswoods Camp Location
+      </div>
+    </div>
+
+    <!-- PANEL -->
+    <div class="map-panel" id="mapPanel">
+
+      <!-- DEFAULT view -->
+      <div class="panel-default" id="panelDefault">
+        <div>
+          <div style="font-family:var(--D);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--or);margin-bottom:8px">Our Coverage</div>
+          <h3>7 States</h3>
+          <p>Basswoods Camp operates across all 7 Northeast Indian states — select any state on the map to see festivals, activities, and locations.</p>
+          <div class="states-list" id="statesList">
+            <div class="states-list-item" onclick="selectState('assam')" data-item="assam">
+              <span class="sli-dot"></span>
+              <span class="sli-name">Assam</span>
+              <span class="sli-count">4 locations</span>
+            </div>
+            <div class="states-list-item" onclick="selectState('meghalaya')" data-item="meghalaya">
+              <span class="sli-dot"></span>
+              <span class="sli-name">Meghalaya</span>
+              <span class="sli-count">4 locations</span>
+            </div>
+            <div class="states-list-item" onclick="selectState('nagaland')" data-item="nagaland">
+              <span class="sli-dot"></span>
+              <span class="sli-name">Nagaland</span>
+              <span class="sli-count">3 locations</span>
+            </div>
+            <div class="states-list-item" onclick="selectState('arunachal')" data-item="arunachal">
+              <span class="sli-dot"></span>
+              <span class="sli-name">Arunachal Pradesh</span>
+              <span class="sli-count">2 locations</span>
+            </div>
+            <div class="states-list-item" onclick="selectState('mizoram')" data-item="mizoram">
+              <span class="sli-dot"></span>
+              <span class="sli-name">Mizoram</span>
+              <span class="sli-count">2 locations</span>
+            </div>
+            <div class="states-list-item" onclick="selectState('tripura')" data-item="tripura">
+              <span class="sli-dot"></span>
+              <span class="sli-name">Tripura</span>
+              <span class="sli-count">1 location</span>
+            </div>
+            <div class="states-list-item" onclick="selectState('manipur')" data-item="manipur">
+              <span class="sli-dot"></span>
+              <span class="sli-name">Manipur</span>
+              <span class="sli-count">1 location</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATE PANELS — one per state -->
+
+      <!-- ASSAM -->
+      <div class="panel-state" id="panel-assam">
+        <button class="ps-back" type="button" onclick="resetMap()">All States</button>
+        <div class="ps-name">Assam</div>
+        <div class="ps-tagline">Base State · Guwahati HQ · Vehicle Rentals</div>
+        <div class="ps-badges">
+          <span class="ps-badge or">Rentals HQ</span>
+          <span class="ps-badge or">Camping</span>
+          <span class="ps-badge">2 Festivals</span>
+          <span class="ps-badge">Adventure</span>
+        </div>
+        <div class="ps-loc-title">Locations & Activities</div>
+        <div class="ps-locs">
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Guwahati</div><div class="ps-loc-type">Vehicle Rentals HQ · Car, Bike, ATV, Buggy</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Abhayapuri, Bongaigaon</div><div class="ps-loc-type">Golden Langur Festival Camping · Jan</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Umrangso, Dima Hasao</div><div class="ps-loc-type">Falcon Festival Camping · Feb</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Nakkati Hill</div><div class="ps-loc-type">Adventure Campsite · Year-round</div></div></div>
+        </div>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20I%27m%20interested%20in%20Assam%20activities!" target="_blank" class="btn-ne btn-or">Book Assam →</a>
+        <a href="https://wa.me/917577911795?text=Hi%2C%20vehicle%20rental%20from%20Guwahati!" target="_blank" class="btn-ne btn-wa">📱 Rentals: 7577911795</a>
+      </div>
+
+      <!-- MEGHALAYA -->
+      <div class="panel-state" id="panel-meghalaya">
+        <button class="ps-back" type="button" onclick="resetMap()">All States</button>
+        <div class="ps-name">Meghalaya</div>
+        <div class="ps-tagline">Shillong · Ri Bhoi · Jowai · Sohra</div>
+        <div class="ps-badges">
+          <span class="ps-badge or">Cherry Blossom</span>
+          <span class="ps-badge or">Full Moon NYE</span>
+          <span class="ps-badge">NH7 Weekender</span>
+          <span class="ps-badge">Camping</span>
+        </div>
+        <div class="ps-loc-title">Locations & Activities</div>
+        <div class="ps-locs">
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Shillong / Lariti</div><div class="ps-loc-type">Cherry Blossom Festival · Nov · 2km from venue</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Umbir, Ri Bhoi</div><div class="ps-loc-type">Full Moon NYE Party Camping · Dec 31</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Jowai</div><div class="ps-loc-type">NH7 Weekender · The Hills Festival</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Sohra (Cherrapunji)</div><div class="ps-loc-type">Offbeat Camping · Waterfall Treks</div></div></div>
+        </div>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Meghalaya%20camping%20enquiry!" target="_blank" class="btn-ne btn-or">Book Meghalaya →</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Cherry%20Blossom%20Festival%20camp!" target="_blank" class="btn-ne btn-wa">📱 Cherry Blossom Camp</a>
+      </div>
+
+      <!-- NAGALAND -->
+      <div class="panel-state" id="panel-nagaland">
+        <button class="ps-back" type="button" onclick="resetMap()">All States</button>
+        <div class="ps-name">Nagaland</div>
+        <div class="ps-tagline">Hornbill Country · Dzükou Valley</div>
+        <div class="ps-badges">
+          <span class="ps-badge or">Hornbill Festival</span>
+          <span class="ps-badge or">Trekking</span>
+          <span class="ps-badge">Official Partner</span>
+        </div>
+        <div class="ps-loc-title">Locations & Activities</div>
+        <div class="ps-locs">
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Kisama Heritage Village</div><div class="ps-loc-type">Hornbill Festival Official Camp · Dec 1–10</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Dzükou Valley</div><div class="ps-loc-type">Multi-Day Trek · 2–4 Days · Moderate–Hard</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Dimapur</div><div class="ps-loc-type">Gateway City · Arrival Hub for Hornbill</div></div></div>
+        </div>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Hornbill%20Festival%20camping%20enquiry!" target="_blank" class="btn-ne btn-or">Book Hornbill Camp →</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Dzukou%20Valley%20trek%20enquiry!" target="_blank" class="btn-ne btn-wa">📍 Dzükou Trek</a>
+      </div>
+
+      <!-- ARUNACHAL PRADESH -->
+      <div class="panel-state" id="panel-arunachal">
+        <button class="ps-back" type="button" onclick="resetMap()">All States</button>
+        <div class="ps-name">Arunachal</div>
+        <div class="ps-tagline">Pradesh · Land of the Rising Sun</div>
+        <div class="ps-badges">
+          <span class="ps-badge or">Ziro Festival</span>
+          <span class="ps-badge or">Orange Festival</span>
+          <span class="ps-badge">Music + Camping</span>
+        </div>
+        <div class="ps-loc-title">Locations & Activities</div>
+        <div class="ps-locs">
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Ziro Valley</div><div class="ps-loc-type">Ziro Festival of Music · Sep · Indie + Camping</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Dambuk</div><div class="ps-loc-type">Orange Festival · Jan · Orchard Camping</div></div></div>
+        </div>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Ziro%20Festival%20camping%20enquiry!" target="_blank" class="btn-ne btn-or">Book Ziro Camp →</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Orange%20Festival%20Dambuk%20enquiry!" target="_blank" class="btn-ne btn-wa">📍 Orange Festival</a>
+      </div>
+
+      <!-- MIZORAM -->
+      <div class="panel-state" id="panel-mizoram">
+        <button class="ps-back" type="button" onclick="resetMap()">All States</button>
+        <div class="ps-name">Mizoram</div>
+        <div class="ps-tagline">Serchipp · Paragliding Capital of NE India</div>
+        <div class="ps-badges">
+          <span class="ps-badge or">Paragliding</span>
+          <span class="ps-badge or">Hot Air Balloon</span>
+          <span class="ps-badge">Dec 9–14</span>
+        </div>
+        <div class="ps-loc-title">Locations & Activities</div>
+        <div class="ps-locs">
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Serchipp</div><div class="ps-loc-type">Paragliding · Dec 9–14 · Tandem + Solo</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Mizoram (TBC)</div><div class="ps-loc-type">Hot Air Balloon Joy Rides · Sunrise Flights</div></div></div>
+        </div>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Paragliding%20at%20Serchipp%20Dec%209-14%20enquiry!" target="_blank" class="btn-ne btn-or">Book Paragliding →</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Hot%20Air%20Balloon%20Mizoram%20enquiry!" target="_blank" class="btn-ne btn-wa">🎈 Hot Air Balloon</a>
+      </div>
+
+      <!-- TRIPURA -->
+      <div class="panel-state" id="panel-tripura">
+        <button class="ps-back" type="button" onclick="resetMap()">All States</button>
+        <div class="ps-name">Tripura</div>
+        <div class="ps-tagline">Agartala · Coming Soon</div>
+        <div class="ps-badges">
+          <span class="ps-badge">Events</span>
+          <span class="ps-badge">Activities</span>
+          <span class="ps-badge">Expanding</span>
+        </div>
+        <div class="ps-loc-title">Locations & Activities</div>
+        <div class="ps-locs">
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Agartala</div><div class="ps-loc-type">Events & Adventure Activities · Details coming soon</div></div></div>
+        </div>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Tripura%20activities%20enquiry!" target="_blank" class="btn-ne btn-or">Enquire About Tripura →</a>
+      </div>
+
+      <!-- MANIPUR -->
+      <div class="panel-state" id="panel-manipur">
+        <button class="ps-back" type="button" onclick="resetMap()">All States</button>
+        <div class="ps-name">Manipur</div>
+        <div class="ps-tagline">Dzükou Valley Gateway</div>
+        <div class="ps-badges">
+          <span class="ps-badge or">Trekking</span>
+          <span class="ps-badge">Dzükou Valley</span>
+        </div>
+        <div class="ps-loc-title">Locations & Activities</div>
+        <div class="ps-locs">
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Dzükou Valley (Manipur Entry)</div><div class="ps-loc-type">Trek Entry from Manipur Side · 2–4 Days</div></div></div>
+        </div>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Dzukou%20Valley%20trek%20from%20Manipur%20side!" target="_blank" class="btn-ne btn-or">Book Dzükou Trek →</a>
+      </div>
+
+      <!-- SIKKIM -->
+      <div class="panel-state" id="panel-sikkim">
+        <button class="ps-back" type="button" onclick="resetMap()">All States</button>
+        <div class="ps-name">Sikkim</div>
+        <div class="ps-tagline">Coming Soon</div>
+        <div class="ps-badges"><span class="ps-badge">Expanding</span></div>
+        <div class="ps-locs">
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Gangtok area</div><div class="ps-loc-type">Future expansion · Watch this space</div></div></div>
+        </div>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Sikkim%20activities%20enquiry!" target="_blank" class="btn-ne btn-or">Register Interest →</a>
+      </div>
+
+    </div><!-- /mapPanel -->
+
+  </div><!-- /map-outer -->
+
+  <!-- Stats bar -->
+  <div class="map-stats">
+    <div class="mstat"><div class="mstat-num">7</div><div class="mstat-label">NE States</div></div>
+    <div class="mstat"><div class="mstat-num">8+</div><div class="mstat-label">Festival Partners</div></div>
+    <div class="mstat"><div class="mstat-num">16+</div><div class="mstat-label">Active Locations</div></div>
+    <div class="mstat"><div class="mstat-num">2019</div><div class="mstat-label">Operating Since</div></div>
+  </div>
+</div>
+
+<script>
+// ─── SELECT STATE ───
+function selectState(state) {
+  // Deactivate all paths
+  document.querySelectorAll('.state-path').forEach(p => p.classList.remove('active'));
+  // Activate selected path
+  const path = document.getElementById('path-' + state);
+  if (path) path.classList.add('active');
+
+  // Highlight list item
+  document.querySelectorAll('.states-list-item').forEach(i => i.classList.remove('active'));
+  const item = document.querySelector(`[data-item="${state}"]`);
+  if (item) item.classList.add('active');
+
+  // Hide default, show state panel
+  document.getElementById('panelDefault').style.display = 'none';
+  document.querySelectorAll('.panel-state').forEach(p => p.classList.remove('show'));
+  const panel = document.getElementById('panel-' + state);
+  if (panel) {
+    panel.classList.add('show');
+    // Scroll panel to top
+    // document.getElementById('mapPanel').scrollTop = 0;
+  }
+}
+
+// ─── RESET MAP ───
+function resetMap() {
+  document.querySelectorAll('.state-path').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.states-list-item').forEach(i => i.classList.remove('active'));
+  document.querySelectorAll('.panel-state').forEach(p => p.classList.remove('show'));
+  document.getElementById('panelDefault').style.display = '';
+}
+
+// ─── KEYBOARD: ESC to reset ───
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') resetMap();
+});
+</script>

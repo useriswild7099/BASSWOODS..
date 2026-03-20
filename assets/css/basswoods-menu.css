@@ -1,0 +1,103 @@
+/* standalone custom offcanvas menu style for custom pages */
+
+@font-face {
+    font-family: "Aeonik Fono";
+    src: url("../../wp-content/themes/handi_theme/assets/fonts/68ecd804097d058f4fa8.woff2") format("woff2"),
+         url("../../wp-content/themes/handi_theme/assets/fonts/345578dfa2e15a600f90.woff") format("woff");
+    font-weight: normal; font-style: normal; font-display: swap;
+}
+
+@font-face {
+    font-family: "ABCGintoNordCondensed-Medium";
+    src: url("../../wp-content/themes/handi_theme/assets/fonts/1ff4a6b144a167a40f19.woff2") format("woff2"),
+         url("../../wp-content/themes/handi_theme/assets/fonts/497047169fe462babd07.woff") format("woff");
+    font-weight: normal; font-style: normal; font-display: swap;
+}
+
+.site-menu {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 999999;
+    background: #10120d;
+    color: #f4f0e6;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-100%);
+    transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+    visibility: hidden;
+    font-family: "Aeonik Fono", 'DM Sans', sans-serif;
+}
+.site-menu.is-active {
+    transform: translateY(0);
+    visibility: visible;
+}
+.site-menu-header {
+    height: 90px;
+    padding: 0 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.site-menu-close {
+    background: transparent; border: none; color: #fff;
+    cursor: pointer; display: flex; align-items: center; gap: 0.8rem;
+    font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em;
+}
+.site-menu-close-icon {
+    display: inline-block; width: 20px; height: 2px; background: #fff;
+    position: relative; transform: rotate(45deg);
+}
+.site-menu-close-icon::after {
+    content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    background: #fff; transform: rotate(-90deg);
+}
+.site-menu-main {
+    flex: 1; display: flex;
+}
+.site-menu-main-container {
+    flex: 1; padding: 4rem; display: flex; flex-direction: column; justify-content: space-between;
+}
+.site-menu-nav {
+    list-style: none; padding: 0; margin: 0;
+}
+.site-menu-nav-item {
+    font-size: clamp(2rem, 3.8vw, 3.8rem);
+    font-family: "ABCGintoNordCondensed-Medium", 'Cormorant Garamond', serif;
+    color: #f4f0e6; text-decoration: none;
+    line-height: 1.25; display: inline-block;
+    transition: color 0.3s, transform 0.3s;
+}
+.site-menu-nav-item:hover { color: #b8d96c; transform: translateX(10px); }
+.site-menu-social {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; gap: 1.5rem; font-size: 1.2rem;
+}
+.site-menu-social a { color: #f4f0e6; transition: color 0.3s; }
+.site-menu-social a:hover { color: #b8d96c; }
+.site-menu-account-btn { display: none; }
+.site-menu-images {
+    width: 45vw; position: relative; overflow: hidden;
+    border-left: 1px solid rgba(255,255,255,0.06);
+}
+.site-menu-images-item {
+    position: absolute; inset: 0; opacity: 0; transition: opacity 0.5s ease;
+}
+.site-menu-images-item.active { opacity: 1; }
+.site-menu-images-item img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+@media(max-width: 960px){
+    .site-menu-header { padding: 0 1.5rem; height: 70px; }
+    .site-menu-main-container { padding: 2rem 1.5rem; }
+    .site-menu-nav-item { font-size: 2.2rem; }
+    .site-menu-images { display: none; }
+    .site-header-logo span { font-size: 18px !important; }
+}
+
+/* Base button styles since theme CSS is missing */
+.btn-inverted {
+    background: #fff; color: #10120d; padding: 0.6rem 1.2rem; border-radius: 2rem;
+    text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+}
+.site-header-account-btn {
+    color: #fff; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 1.5rem;
+}
