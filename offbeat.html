@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -279,6 +279,46 @@
     @media(max-width:700px){ 
       .nav{display:none} 
       .hero-body{padding:0 1.5rem} 
+    }
+
+    /* Phone Optimization (< 480px) */
+    @media (max-width: 480px) {
+      .section { padding: 4rem 1.5rem !important; }
+      .container { width: 100% !important; }
+      
+      .hero-content { padding: 0 1.5rem !important; }
+      .hero-eyebrow { font-size: 0.65rem !important; letter-spacing: 0.3em !important; margin-bottom: 1.5rem !important; }
+      .hero-title { font-size: clamp(2.5rem, 12vw, 3.5rem) !important; line-height: 1.1 !important; margin-bottom: 2rem !important; }
+      .hero-desc { font-size: 1rem !important; line-height: 1.6 !important; margin-bottom: 2.5rem !important; }
+      .hero-ctas { flex-direction: column !important; gap: 1rem !important; }
+      .btn-primary, .btn-outline { width: 100% !important; justify-content: center !important; padding: 1rem 2rem !important; font-size: 0.8rem !important; }
+      
+      .sec-h2 { font-size: clamp(2.2rem, 10vw, 2.8rem) !important; margin-bottom: 2rem !important; }
+      .sec-p { font-size: 1rem !important; line-height: 1.6 !important; margin-bottom: 3rem !important; }
+      .eyebrow { font-size: 0.65rem !important; letter-spacing: 0.3em !important; gap: 0.8rem !important; }
+      .eyebrow::after { width: 30px !important; }
+      
+      .wf-card { padding: 2.5rem 1.5rem !important; }
+      .wf-number { font-size: 2.5rem !important; top: 0.5rem !important; right: 1rem !important; }
+      .wf-title { font-size: 1.4rem !important; }
+      
+      .exp-grid { gap: 1.5rem !important; }
+      .exp-card .card-body { padding: 1.5rem !important; }
+      .exp-card h3 { font-size: 1.5rem !important; }
+      
+      .region-row { margin-bottom: 4rem !important; }
+      .region-row h3 { font-size: 2.2rem !important; margin-bottom: 1rem !important; }
+      .region-row p { font-size: 1rem !important; line-height: 1.6 !important; }
+      .region-row ul { grid-template-columns: 1fr !important; gap: 0.8rem !important; }
+      .region-row div[style*="height: 500px"], 
+      .region-row div[style*="height: 350px"] { height: 280px !important; }
+      
+      .swiper-slide { padding: 2rem 1.5rem !important; }
+      .swiper-slide h3 { font-size: 1.8rem !important; margin-bottom: 1rem !important; }
+      .swiper-slide p { font-size: 0.9rem !important; margin-bottom: 1.5rem !important; }
+      .swiper-slide ul { margin-bottom: 1.5rem !important; }
+      
+      .scroll-hint { display: none !important; }
     }
 
     /* btn-hdr styling (Yellow/Gold) */
