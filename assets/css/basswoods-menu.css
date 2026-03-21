@@ -18,7 +18,7 @@
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
     z-index: 999999;
-    background: #10120d;
+    background: transparent;
     color: #f4f0e6;
     display: flex;
     flex-direction: column;
@@ -31,12 +31,30 @@
     transform: translateY(0);
     visibility: visible;
 }
+
+/* Hide original headers when menu is open to prevent text overlap */
+body:has(.site-menu.is-active) .site-header,
+body:has(.site-menu.is-active) .hdr,
+body:has(.site-menu.is-active) nav.site-nav {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Responsive grouping for the header navigation on all pages */
+.header-left-group {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
 .site-menu-header {
     height: 90px;
     padding: 0 4rem;
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; align-items: center;
     border-bottom: 1px solid rgba(255,255,255,0.06);
 }
+.site-header-logo { margin-left: auto; margin-right: 3rem; }
+.site-header-right { display: flex; align-items: center; gap: 1.5rem; }
 .site-menu-close {
     background: transparent; border: none; color: #fff;
     cursor: pointer; display: flex; align-items: center; gap: 0.8rem;
@@ -50,11 +68,17 @@
     content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%;
     background: #fff; transform: rotate(-90deg);
 }
+.site-menu-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
 .site-menu-main {
     flex: 1; display: flex;
+    background-color: #1b4332; /* Match brand green */
 }
 .site-menu-main-container {
-    flex: 1; padding: 4rem; display: flex; flex-direction: column; justify-content: space-between;
+    flex: 1; padding: 4rem; display: flex; flex-direction: column; justify-content: center;
 }
 .site-menu-nav {
     list-style: none; padding: 0; margin: 0;
@@ -63,34 +87,50 @@
     font-size: clamp(2rem, 3.8vw, 3.8rem);
     font-family: "ABCGintoNordCondensed-Medium", 'Cormorant Garamond', serif;
     color: #f4f0e6; text-decoration: none;
-    line-height: 1.25; display: inline-block;
+    line-height: 1.1; display: inline-block;
     transition: color 0.3s, transform 0.3s;
+    margin-bottom: 0.5rem;
 }
-.site-menu-nav-item:hover { color: #b8d96c; transform: translateX(10px); }
+.site-menu-nav-item:hover { color: #ffb703; transform: translateX(10px); }
 .site-menu-social {
     list-style: none; padding: 0; margin: 0;
-    display: flex; gap: 1.5rem; font-size: 1.2rem;
+    display: flex; gap: 1.5rem; font-size: 1.5rem;
+    margin-top: 2rem;
 }
 .site-menu-social a { color: #f4f0e6; transition: color 0.3s; }
-.site-menu-social a:hover { color: #b8d96c; }
+.site-menu-social a:hover { color: #ffb703; }
 .site-menu-account-btn { display: none; }
 .site-menu-images {
-    width: 45vw; position: relative; overflow: hidden;
-    border-left: 1px solid rgba(255,255,255,0.06);
+    width: 50vw; position: relative; overflow: hidden;
+    background: #081c15;
 }
 .site-menu-images-item {
-    position: absolute; inset: 0; opacity: 0; transition: opacity 0.5s ease;
+    position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: scale(1.1); transition-property: opacity, transform;
 }
-.site-menu-images-item.active { opacity: 1; }
+.site-menu-images-item.active { opacity: 1; transform: scale(1); }
 .site-menu-images-item img {
     width: 100%; height: 100%; object-fit: cover;
 }
 @media(max-width: 960px){
     .site-menu-header { padding: 0 1.5rem; height: 70px; }
-    .site-menu-main-container { padding: 2rem 1.5rem; }
-    .site-menu-nav-item { font-size: 2.2rem; }
+    .site-menu-body { flex-direction: column; }
+    .site-menu-main-container { padding: 3rem 1.5rem; align-items: center; }
+    .site-menu-nav { text-align: center; }
+    .site-menu-nav .menu-item { text-align: center; }
+    .site-menu-nav-item { font-size: 2.2rem; display: block; text-align: center; transform: none; margin-bottom: 1rem; }
+    .site-menu-nav-item:hover { transform: none; }
     .site-menu-images { display: none; }
-    .site-header-logo span { font-size: 18px !important; }
+    .site-header-logo span { font-size: 20px !important; }
+    .site-header-logo { margin-right: 0 !important; margin-left: auto; }
+    .site-menu-social { justify-content: center; }
+    
+    .header-left-group { gap: 1rem; }
+}
+@media(max-width: 480px){
+    .site-menu-header { padding: 0 1rem; }
+    .site-menu-main-container { padding: 1.5rem 1rem; }
+    .site-menu-nav-item { font-size: 1.8rem; }
 }
 
 /* Base button styles since theme CSS is missing */

@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Offbeat Tours â€” Basswoods Camp</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  
+  <!-- Premium Menu CSS -->
+  <link rel="stylesheet" href="assets/css/basswoods-menu.css">
+  
+  <!-- Swiper.js for Carousels -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <style>
+    /* ============================================================
+       BRAND TOKENS â€” High Fidelity [Basswoods Core]
+    ============================================================ */
+    :root {
+      --ink:      #0C120A;
+      --soil:     #141C11;
+      --bark:     #1E160D;
+      --moss:     #2D4018;
+      --moss-lt:  #425C24;
+      --ember:    #D4622A;
+      --ember-lt: #E8854E;
+      --gold:     #C9A03A;
+      --cream:    #F5F1E8;
+      --fog:      #BDB5A9;
+      --mist:     #8C8476;
+      --border:   rgba(255,255,255,0.06);
+      
+      --ff-d: 'Cormorant Garamond', Georgia, serif;
+      --ff-b: 'DM Sans', system-ui, sans-serif;
+      
+      --ease:    cubic-bezier(0.4, 0, 0.2, 1);
+      --spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+      --r-lg:    24px;
+      --r-md:    12px;
+    }
+
+    /* â”€â”€ BASE & RESET â”€â”€ */
+    *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-b);
+      background: var(--ink);
+      color: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Noise Overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* â”€â”€ HEADER (Integrated) â”€â”€ */
+    .hdr {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000; height: 90px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 4rem;
+      transition: all 0.5s var(--ease);
+      border-bottom: 1px solid transparent;
+    }
+    .hdr.stuck {
+      height: 75px;
+      background: rgba(12, 18, 10, 0.96);
+      backdrop-filter: blur(12px);
+      border-color: var(--border);
+    }
+
+    .site-menu-toggle {
+      background: transparent; border: none; cursor: pointer;
+      display: flex; align-items: center; gap: 1rem;
+      color: var(--cream); transition: color 0.3s;
+    }
+    .site-menu-toggle:hover { color: var(--ember); }
+    .site-menu-toggle span {
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em;
+    }
+    .burger-icon {
+      width: 24px; height: 14px; position: relative;
+    }
+    .burger-icon::before, .burger-icon::after {
+      content: ''; position: absolute; left: 0; width: 100%; height: 1.5px;
+      background: currentColor; transition: transform 0.3s;
+    }
+    .burger-icon::before { top: 0; }
+    .burger-icon::after { bottom: 0; }
+
+    .logo {
+      font-family: var(--ff-d); font-size: 1.6rem; font-weight: 700;
+      letter-spacing: -0.02em; color: var(--cream);
+    }
+    .logo em { font-style: italic; color: var(--ember); font-weight: 400; }
+    
+    .nav { display: flex; gap: 2.5rem; align-items: center; }
+    .nav a {
+      font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--mist); transition: color 0.3s;
+    }
+    .nav a:hover, .nav a.on { color: var(--cream); }
+    .nav a.on { color: var(--ember); }
+
+    .btn-hdr {
+      padding: 0.6rem 1.4rem;
+      background: var(--ember); color: var(--ink);
+      font-size: 0.8rem; font-weight: 700; border: none; border-radius: 4px;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      cursor: pointer; transition: all 0.3s;
+    }
+    .btn-hdr:hover { background: var(--ember-lt); transform: translateY(-2px); }
+
+    /* â”€â”€ HERO: The Untracked Path â”€â”€ */
+    .hero {
+      position: relative; height: 100vh;
+      display: flex; align-items: center; overflow: hidden;
+      background: var(--ink);
+    }
+    .hero-layers { position: absolute; inset: 0; z-index: 1; }
+    
+    /* Parallax BG Layers */
+    .hero-layer { position: absolute; inset: -10%; background-size: cover; background-position: center; pointer-events: none; }
+    .l-base {
+      background: 
+        radial-gradient(circle at 80% 20%, rgba(212, 98, 42, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(66, 92, 36, 0.12) 0%, transparent 60%),
+        var(--ink);
+    }
+    
+    /* Interactive "Journey" Lines */
+    .hero-canvas { position: absolute; inset: 0; mix-blend-mode: color-dodge; opacity: 0.4; }
+    
+    .hero-content {
+      position: relative; z-index: 10;
+      padding: 0 4rem; max-width: 1000px;
+    }
+    
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 1rem;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.45em; color: var(--ember);
+      margin-bottom: 2rem;
+    }
+    .hero-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--ember); }
+    
+    .hero-title {
+      font-family: var(--ff-d); font-size: clamp(4rem, 10vw, 8.5rem);
+      font-weight: 700; line-height: 0.85; color: var(--cream);
+      margin-bottom: 3rem; position: relative;
+    }
+    .hero-title span { display: block; overflow: hidden; }
+    .hero-title .t-inner { display: block; animation: slideUp 1.2s var(--spring) forwards; transform: translateY(110%); }
+    .hero-title em { font-style: italic; color: var(--ember); font-weight: 400; }
+    
+    @keyframes slideUp { to { transform: translateY(0); } }
+
+    .hero-desc {
+      font-size: 1.2rem; color: var(--fog); font-weight: 300;
+      max-width: 580px; line-height: 1.8; margin-bottom: 4rem;
+      animation: fadeIn 1.5s var(--ease) 0.5s forwards; opacity: 0;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    .hero-ctas { display: flex; gap: 1.5rem; animation: fadeIn 1.5s var(--ease) 0.8s forwards; opacity: 0; }
+    
+    .btn-primary {
+      padding: 1.2rem 2.8rem; background: var(--ember); color: var(--ink);
+      font-size: 0.9rem; font-weight: 700; border: none; border-radius: 4px;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      cursor: pointer; transition: all 0.4s var(--ease);
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .btn-primary:hover { 
+      background: var(--ember-lt); 
+      transform: translateY(-4px); 
+      box-shadow: 0 20px 40px rgba(212, 98, 42, 0.3); 
+    }
+    
+    .btn-outline {
+      padding: 1.2rem 2.8rem; background: transparent; color: var(--cream);
+      font-size: 0.9rem; font-weight: 600; border: 1px solid var(--border); border-radius: 4px;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      cursor: pointer; transition: all 0.4s var(--ease);
+    }
+    .btn-outline:hover { border-color: var(--ember); color: var(--ember-lt); }
+
+    /* Scroll Hint */
+    .scroll-hint {
+      position: absolute; bottom: 4rem; right: 4rem;
+      display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+      z-index: 10;
+    }
+    .sh-text {
+      writing-mode: vertical-rl; font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.4em; color: var(--mist);
+    }
+    .sh-line {
+      width: 1px; height: 80px; background: rgba(255,255,255,0.1);
+      position: relative; overflow: hidden;
+    }
+    .sh-line::after {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 40%;
+      background: var(--ember); animation: scrollLine 2s infinite;
+    }
+    @keyframes scrollLine { 
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(250%); }
+    }
+
+    /* â”€â”€ SECTION ATOMS â”€â”€ */
+    .section { padding: 12rem 4rem; }
+    .container { max-width: 1300px; margin: 0 auto; }
+    
+    .eyebrow {
+      display: flex; align-items: center; gap: 1.2rem;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.45em; color: var(--ember);
+      margin-bottom: 2rem;
+    }
+    .eyebrow::after { content: ''; width: 60px; height: 1px; background: var(--ember); }
+    
+    .sec-h2 {
+      font-family: var(--ff-d); font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 700; color: var(--cream); line-height: 1; margin-bottom: 3rem;
+    }
+    .sec-h2 em { font-style: italic; color: var(--ember); font-weight: 400; }
+    
+    .sec-p {
+      font-size: 1.25rem; color: var(--fog); font-weight: 300;
+      max-width: 750px; line-height: 1.8; margin-bottom: 5rem;
+    }
+
+    /* â”€â”€ REGIONS (Mobile) â”€â”€ */
+    @media (max-width: 991px) {
+      .region-row { flex-direction: column !important; gap: 2rem !important; margin-bottom: 5rem !important; }
+      .region-row div { width: 100% !important; }
+      .region-row div[style*="height: 500px"] { height: 350px !important; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 6rem 2rem; }
+      .hdr { padding: 0 2rem; }
+      .wayfinder-grid { grid-template-columns: 1fr; }
+    }
+
+    /* â”€â”€ WAYFINDER (Timeline) â”€â”€ */
+    .wayfinder-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+    .wf-card {
+      background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-md);
+      padding: 3rem; position: relative; transition: all 0.4s var(--ease);
+    }
+    .wf-card:hover { border-color: var(--ember); transform: translateY(-5px); }
+    .wf-number {
+      font-family: var(--ff-d); font-size: 4rem; font-weight: 700;
+      color: var(--ember); opacity: 0.15; position: absolute; top: 1rem; right: 2rem;
+    }
+    .wf-title { font-family: var(--ff-d); font-size: 1.6rem; margin-bottom: 1rem; color: var(--cream); }
+    .wf-desc { font-size: 0.9rem; color: var(--mist); line-height: 1.6; }
+
+    /* â”€â”€ FAQ ACCORDION â”€â”€ */
+    .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .faq-item { background: var(--soil); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .faq-trigger {
+      width: 100%; padding: 1.5rem 2rem; background: none; border: none;
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; color: var(--cream); font-family: var(--ff-b);
+      font-weight: 600; text-align: left;
+    }
+    .faq-trigger i { transition: transform 0.3s; }
+    .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); background: rgba(0,0,0,0.2); }
+    .faq-content-inner { padding: 2rem; font-size: 0.95rem; color: var(--fog); line-height: 1.7; font-weight: 300; }
+    .faq-item.active .faq-content { max-height: 500px; }
+    .faq-item.active .faq-trigger i { transform: rotate(180deg); color: var(--ember); }
+
+    /* â”€â”€ WHAT IS OFFBEAT â”€â”€ */
+    .intro-sec{background:var(--soil);border-top:1px solid var(--border)}
+    .intro-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+
+    .vs-banner{display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:center;background:var(--bark);border:1px solid var(--border);border-radius:14px;padding:1.8rem;margin-bottom:2.5rem}
+    .vs-col-title{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);margin-bottom:.8rem}
+    .vs-list{display:flex;flex-direction:column;gap:.5rem}
+    .vs-item{font-size:.84rem;color:var(--fog);display:flex;align-items:center;gap:.5rem}
+    .vs-item i{font-size:.85rem;flex-shrink:0}
+    .vs-item.off i{color:var(--mist)}
+    .vs-item.on i{color:var(--ember)}
+    .vs-divider{display:flex;flex-direction:column;align-items:center;gap:.4rem}
+    .vs-word{font-family:var(--ff-d);font-size:1.6rem;font-weight:700;font-style:italic;color:var(--ember)}
+    .vs-line{width:1px;height:40px;background:linear-gradient(to bottom,transparent,var(--ember),transparent)}
+
+    /* Experience cards */
+    .exp-sec{background:var(--ink)}
+    .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3.5rem}
+    .exp-card{background:var(--soil);border:1px solid var(--border);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s,border-color .3s;cursor:pointer;position:relative}
+    .exp-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.5);border-color:rgba(212,98,42,.35)}
+    .exp-card.tall{grid-row:span 2}
+
+    .tours-listings-media{position:relative;height:200px;background:var(--bark);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+    .exp-card.tall .tours-listings-media{height:280px}
+    .tlm-icon{font-size:6rem;color:rgba(255,255,255,.05);transition:transform .6s var(--ease),color .3s}
+    .exp-card:hover .tlm-icon{transform:scale(1.12) rotate(-5deg);color:rgba(212,98,42,.1)}
+    .tlm-badges{position:absolute;top:1rem;left:1rem;display:flex;flex-direction:column;gap:.4rem}
+    .tbadge{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .65rem;background:rgba(18,13,8,.85);backdrop-filter:blur(6px);border:1px solid var(--border);border-radius:999px;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .tb-ember{color:var(--ember-lt)} .tb-moss{color:#7BC48A} .tb-gold{color:var(--gold)}
+    .enquire-flag{position:absolute;top:1rem;right:1rem;padding:.22rem .65rem;background:rgba(58,74,32,.35);border:1px solid rgba(58,74,32,.5);border-radius:999px;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7BC48A}
+
+    .tours-listings-details{padding:1.5rem 1.7rem 1.9rem;display:flex;flex-direction:column;flex:1}
+    .ec-cat{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:.4rem}
+    .ec-name{font-family:var(--ff-d);font-size:1.25rem;font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:.55rem}
+    .ec-desc{font-size:.87rem;color:var(--fog);font-weight:300;line-height:1.72;flex:1;margin-bottom:1rem}
+    .ec-footer{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid var(--border)}
+    .ec-price{font-family:var(--ff-d);font-size:1rem;font-weight:700;color:var(--ember)}
+
+    .btn-sm{display:inline-flex;align-items:center;gap:.4rem;padding:.58rem 1.2rem;background:var(--ember);color:var(--ink);font-size:.76rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border-radius:4px;border:none;cursor:pointer;transition:background .2s,transform .15s}
+
+    /* Additional styles omitted for brevity, focusing on structure for creation */
+    .dest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-top:3rem}
+    .dest-card{background:var(--soil);border:1px solid var(--border);border-radius:14px;padding:1.6rem;position:relative}
+
+    /* Modal / Veil */
+    .m-veil{display:none;position:fixed;inset:0;background:rgba(8,5,3,.92);backdrop-filter:blur(12px);z-index:900;align-items:center;justify-content:center;padding:1.5rem}
+    .m-box{background:var(--soil);border:1px solid var(--border);border-radius:22px;width:100%;max-width:530px;animation:popIn .32s var(--spring)}
+    .m-veil.open{display:flex}
+
+    /* Responsive */
+    @media(max-width:1100px){ .exp-grid{grid-template-columns:1fr 1fr} }
+    @media(max-width:768px){ .exp-grid{grid-template-columns:1fr} }
+    @media(max-width:700px){ 
+      .nav{display:none} 
+      .hero-body{padding:0 1.5rem} 
+    }
+  </style>
+</head>
+<body>
+
+                                            <div class="site-menu" data-lenis-prevent>
+            <div class="site-menu-bg"></div>
+            <div class="site-menu-header">
+                <div class="site-header-left">
+                    <button class="site-menu-close">
+                        <span class="site-menu-close-icon"></span>
+                        <span>Close</span>
+                    </button>
+                </div>
+                <div class="site-header-logo">
+                    <a aria-label="Basswoods Camp" href="index.html" style="text-decoration:none;">
+                        <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
+                    </a>
+                </div>
+                <div class="site-header-right">
+                    <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
+                    <a class="btn btn-sm btn-inverted" href="tel:8011228979">
+                        <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
+                        <span class="d-none d-md-inline">Call Us</span>
+                    </a>
+                </div>
+            </div>
+            <div class="site-menu-body">
+                <div class="site-menu-main site-header-offset bg-charcoal">
+                    <div class="site-menu-main-container px-container pb-md">
+                        <ul id="menu-primary-menu" class="site-menu-nav ginto-normal-black py-xl">
+                            <li id="menu-item-new-1" class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-302" href="tours.html"><span>Tour package</span></a></li>
+                            <li id="menu-item-new-2" class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-296" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
+                            <li id="menu-item-new-3" class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="rentals.html"><span>Camping equipment rentals</span></a></li>
+                            <li id="menu-item-new-4" class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-295" href="camping.html"><span>Campings</span></a></li>
+                            <li id="menu-item-new-5" class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-298" href="trekking.html"><span>Trekking</span></a></li>
+                            <li id="menu-item-new-6" class="menu-item"><a title="Outdoor activities" class="site-menu-nav-item" data-image="menu-item-image-297" href="trekking.html#activities"><span>Outdoor activities</span></a></li>
+                            <li id="menu-item-new-7" class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-299" href="offbeat.html"><span>Off beat Tours</span></a></li>
+                        </ul>
+                        <ul class="site-menu-social">
+                            <li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a></li>
+                            <li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a></li>
+                            <li><a aria-label="Location" href="camping.html" target="_blank"><i class="ri-map-pin-fill"></i></a></li>
+                            <li><a aria-label="Contact us" href="mailto:basswoodscamp@gmail.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-menu-images">
+                    <div class="site-menu-images-container">
+                        <div class="site-menu-images-item active" id="menu-item-image-295">
+                            <img src="assets/basswoods/menu_campings.png" alt="Campings" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-296">
+                            <img src="assets/basswoods/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-rentals">
+                            <img src="assets/basswoods/menu_camping_equipment.png" alt="Camping Equipment" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-302">
+                            <img src="assets/basswoods/menu_tour_package.png" alt="Tour Package" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-298">
+                            <img src="assets/basswoods/camp-1.jpg" alt="Trekking" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-297">
+                            <img src="assets/basswoods/camp-2.jpg" alt="Outdoor Activities" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-299">
+                            <img src="assets/basswoods/blue-sky-camp.jpg" alt="Offbeat Tours" loading="lazy" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <div class="header-left-group">
+    <button class="site-menu-toggle">
+        <div class="burger-icon"></div>
+        <span>Menu</span>
+    </button>
+    <a href="index.html" class="logo">Basswoods<em>Camp</em></a>
+  </div>
+  
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="tours.html">Tours</a>
+    <a href="camping.html">Camping</a>
+    <a href="trekking.html">Trekking</a>
+    <a href="offbeat.html" class="on">Offbeat</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  
+  <div class="site-header-right">
+    <button class="btn-hdr" onclick="openModal()">Plan My Tour</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-layers">
+    <div class="hero-layer l-base"></div>
+  </div>
+  
+  <div class="hero-content">
+    <div class="hero-eyebrow">The Untracked Path</div>
+    <h1 class="hero-title">
+      <span><span class="t-inner">Leave the <em>Trail.</em></span></span>
+      <span><span class="t-inner" style="animation-delay: 0.1s;">Find the <em>Journey.</em></span></span>
+    </h1>
+    <p class="hero-desc">
+      No fixed routes. No tourist playbooks. Just you, the Northeast, and an itinerary built around what you actually want to experience â€” hammock in the forest, waterfall at dawn, food cooked by strangers who become friends.
+    </p>
+    <div class="hero-ctas">
+      <button class="btn-primary" onclick="document.getElementById('experiences').scrollIntoView({behavior:'smooth'})">
+        <i class="ri-compass-line"></i> Explore Experiences
+      </button>
+      <button class="btn-outline" onclick="openModal()">
+        Build My Tour
+      </button>
+    </div>
+  </div>
+  
+  <div class="scroll-hint">
+    <div class="sh-text">Scroll to explore</div>
+    <div class="sh-line"></div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="section philosophy-sec" style="background: var(--soil); border-bottom: 1px solid var(--border);">
+    <div class="container" style="text-align: center;">
+        <div class="eyebrow" style="justify-content: center;">Our Ethos</div>
+        <h2 class="sec-h2" style="max-width: 900px; margin: 0 auto 4rem;">"Travel is not about <em>checking boxes</em>, it's about <em>losing the map</em>."</h2>
+        <p class="sec-p" style="margin: 0 auto; color: var(--mist);">
+            At Basswoods Camp, we believe the most profound experiences happen between destinations. Our offbeat tours are designed for the curious traveler â€” the one who values a local's secret waterfall over a TripAdvisor landmark.
+        </p>
+    </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section class="section exp-sec" id="experiences">
+    <div class="container">
+        <div class="eyebrow">The Collection</div>
+        <h2 class="sec-h2">Ways to <em>Go Offbeat</em></h2>
+        <p class="sec-p">Every journey is custom-curated. Use these as your starting points for inspiration.</p>
+
+        <div class="exp-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+            
+            <!-- 1. Wilderness Camping -->
+            <div class="exp-card" style="background: var(--soil); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: all 0.4s var(--ease);">
+                <div class="card-media" style="height: 240px; background: var(--bark); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <i class="ri-tent-line" style="font-size: 5rem; color: var(--ember); opacity: 0.2;"></i>
+                    <div style="position: absolute; top: 1.5rem; left: 1.5rem; background: rgba(0,0,0,0.4); padding: 0.3rem 0.8rem; border-radius: 99px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase;">Signature</div>
+                </div>
+                <div class="card-body" style="padding: 2rem;">
+                    <h3 style="font-family: var(--ff-d); font-size: 1.8rem; margin-bottom: 1rem;">Wilderness Camping</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2rem; font-weight: 300;">Setting up camp in a forest clearing or by a river bank. No festival noise, just the cracks of a campfire.</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <span style="font-family: var(--ff-d); color: var(--ember); font-weight: 700;">â‚¹ On Enquiry</span>
+                        <button class="btn-hdr" style="padding: 0.4rem 1rem; font-size: 0.7rem;">Plan Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Ethnic Food Journey -->
+            <div class="exp-card" style="background: var(--soil); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: all 0.4s var(--ease);">
+                <div class="card-media" style="height: 240px; background: var(--bark); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <img src="assets/basswoods/ethintic food.jpeg" alt="Ethnic Food" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" />
+                </div>
+                <div class="card-body" style="padding: 2rem;">
+                    <h3 style="font-family: var(--ff-d); font-size: 1.8rem; margin-bottom: 1rem;">Ethnic Food Trails</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2rem; font-weight: 300;">Smoked Naga pork, Garo bamboo shoot, and Khasi red rice â€” cooked in village kitchens, not hotels.</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <span style="font-family: var(--ff-d); color: var(--ember); font-weight: 700;">â‚¹ On Enquiry</span>
+                        <button class="btn-hdr" style="padding: 0.4rem 1rem; font-size: 0.7rem;">Plan Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Sacred Groves Trek -->
+            <div class="exp-card" style="background: var(--soil); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: all 0.4s var(--ease);">
+                <div class="card-media" style="height: 240px; background: var(--bark); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <i class="ri-landscape-line" style="font-size: 5rem; color: var(--moss-lt); opacity: 0.2;"></i>
+                </div>
+                <div class="card-body" style="padding: 2rem;">
+                    <h3 style="font-family: var(--ff-d); font-size: 1.8rem; margin-bottom: 1rem;">Sacred Groves</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2rem; font-weight: 300;">Explore ancient forests protected by local tribes for centuries. A spiritual and botanical adventure.</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <span style="font-family: var(--ff-d); color: var(--ember); font-weight: 700;">â‚¹ On Enquiry</span>
+                        <button class="btn-hdr" style="padding: 0.4rem 1rem; font-size: 0.7rem;">Plan Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Riverside Fishing -->
+            <div class="exp-card" style="background: var(--soil); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: all 0.4s var(--ease);">
+                <div class="card-media" style="height: 240px; background: var(--bark); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <i class="ri-anchor-line" style="font-size: 5rem; color: var(--ember); opacity: 0.2;"></i>
+                </div>
+                <div class="card-body" style="padding: 2rem;">
+                    <h3 style="font-family: var(--ff-d); font-size: 1.8rem; margin-bottom: 1rem;">Riverside Angling</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2rem; font-weight: 300;">Quiet afternoons by the Umngot or Kopili rivers. Catch and release, or cook on the riverbed.</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <span style="font-family: var(--ff-d); color: var(--ember); font-weight: 700;">â‚¹ On Enquiry</span>
+                        <button class="btn-hdr" style="padding: 0.4rem 1rem; font-size: 0.7rem;">Plan Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Artisanal Workshops -->
+            <div class="exp-card" style="background: var(--soil); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: all 0.4s var(--ease);">
+                <div class="card-media" style="height: 240px; background: var(--bark); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <img src="assets/basswoods/handmade craft.jpeg" alt="Local Craft" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" />
+                </div>
+                <div class="card-body" style="padding: 2rem;">
+                    <h3 style="font-family: var(--ff-d); font-size: 1.8rem; margin-bottom: 1rem;">Local Craft Skills</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2rem; font-weight: 300;">Learn bamboo weaving or pottery from master artisans. Bring home a skill, not just a souvenir.</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <span style="font-family: var(--ff-d); color: var(--ember); font-weight: 700;">â‚¹ On Enquiry</span>
+                        <button class="btn-hdr" style="padding: 0.4rem 1rem; font-size: 0.7rem;">Plan Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Stargazing Expeditions -->
+            <div class="exp-card" style="background: var(--soil); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: all 0.4s var(--ease);">
+                <div class="card-media" style="height: 240px; background: var(--bark); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <i class="ri-moon-clear-line" style="font-size: 5rem; color: var(--ember); opacity: 0.2;"></i>
+                </div>
+                <div class="card-body" style="padding: 2rem;">
+                    <h3 style="font-family: var(--ff-d); font-size: 1.8rem; margin-bottom: 1rem;">High-Altitude Sky</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2rem; font-weight: 300;">Travel to zero-pollution zones in Arunachal for a view of the Milky Way you'll never forget.</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <span style="font-family: var(--ff-d); color: var(--ember); font-weight: 700;">â‚¹ On Enquiry</span>
+                        <button class="btn-hdr" style="padding: 0.4rem 1rem; font-size: 0.7rem;">Plan Now</button>
+                    </div>
+                </div>
+            </div>
+
+             <!-- 7. Cave Exploration -->
+             <div class="exp-card" style="background: var(--soil); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: all 0.4s var(--ease);">
+                <div class="card-media" style="height: 240px; background: var(--bark); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <i class="ri-flashlight-line" style="font-size: 5rem; color: var(--fog); opacity: 0.2;"></i>
+                </div>
+                <div class="card-body" style="padding: 2rem;">
+                    <h3 style="font-family: var(--ff-d); font-size: 1.8rem; margin-bottom: 1rem;">Cave Mysteries</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2rem; font-weight: 300;">The limestone caves of Meghalaya â€” from easy walks to challenging crawls into the earth's belly.</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <span style="font-family: var(--ff-d); color: var(--ember); font-weight: 700;">â‚¹ On Enquiry</span>
+                        <button class="btn-hdr" style="padding: 0.4rem 1rem; font-size: 0.7rem;">Plan Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Musical Heritage -->
+            <div class="exp-card" style="background: var(--soil); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: all 0.4s var(--ease);">
+                <div class="card-media" style="height: 240px; background: var(--bark); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <img src="assets/basswoods/northeast culture.jpeg" alt="Cultural Rhythms" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" />
+                </div>
+                <div class="card-body" style="padding: 2rem;">
+                    <h3 style="font-family: var(--ff-d); font-size: 1.8rem; margin-bottom: 1rem;">Cultural Rhythms</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2rem; font-weight: 300;">Northeast's soul resides in its music. Jam sessions with local folk musicians under the stars.</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <span style="font-family: var(--ff-d); color: var(--ember); font-weight: 700;">â‚¹ On Enquiry</span>
+                        <button class="btn-hdr" style="padding: 0.4rem 1rem; font-size: 0.7rem;">Plan Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- REGIONAL DEEP-DIVES -->
+<section class="section regions-sec" style="background: var(--ink); border-top: 1px solid var(--border);">
+    <div class="container">
+        <div class="eyebrow">The Map</div>
+        <h2 class="sec-h2">Explore <em>The Regions</em></h2>
+        
+        <div class="region-row" style="display: flex; gap: 4rem; align-items: center; margin-bottom: 8rem;">
+            <div style="flex: 1;">
+                <h3 style="font-family: var(--ff-d); font-size: 3rem; margin-bottom: 1.5rem; color: var(--ember);">Meghalaya</h3>
+                <p style="font-size: 1.1rem; color: var(--fog); font-weight: 300; line-height: 1.8;">
+                    The Land of Clouds. Not just the famous root bridges, but the hidden canyons of Sohra, the crystal clear waters of Shnongpdeng, and the ancient sacred groves of Mawphlang. We take you to the edges where the tourists stop and the wilderness begins.
+                </p>
+                <ul style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: var(--ember);"></i> Living Root Bridges</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: var(--ember);"></i> Limestone Caves</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: var(--ember);"></i> Hidden Waterfalls</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: var(--ember);"></i> Village Homestays</li>
+                </ul>
+            </div>
+            <div style="flex: 1.2; height: 500px; background: var(--bark); border-radius: var(--r-lg); overflow: hidden; position: relative;">
+                <img src="assets/basswoods/meghalaya lake.jpeg" alt="Meghalaya" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;"/>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--ink), transparent);"></div>
+            </div>
+        </div>
+
+        <div class="region-row" style="display: flex; flex-direction: row-reverse; gap: 4rem; align-items: center; margin-bottom: 8rem;">
+            <div style="flex: 1;">
+                <h3 style="font-family: var(--ff-d); font-size: 3rem; margin-bottom: 1.5rem; color: var(--gold);">Nagaland</h3>
+                <p style="font-size: 1.1rem; color: var(--fog); font-weight: 300; line-height: 1.8;">
+                    The Land of Festivals and Warriors. Beyond the Hornbill Festival, explore the Dzukou Valley, the heritage villages of Kohima, and the remote tribes of Mon. Experience a culture that is as fierce as it is hospitable.
+                </p>
+                <ul style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: var(--gold);"></i> Dzukou Valley</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: var(--gold);"></i> Tribal Heritage</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: var(--gold);"></i> Smoked Cuisine</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: var(--gold);"></i> Craft Villages</li>
+                </ul>
+            </div>
+            <div style="flex: 1.2; height: 500px; background: var(--bark); border-radius: var(--r-lg); overflow: hidden; position: relative;">
+                <img src="assets/basswoods/nagaland.jpeg" alt="Nagaland" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;"/>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--ink), transparent);"></div>
+            </div>
+        </div>
+
+        <div class="region-row" style="display: flex; gap: 4rem; align-items: center; margin-bottom: 8rem;">
+            <div style="flex: 1;">
+                <h3 style="font-family: var(--ff-d); font-size: 3rem; margin-bottom: 1.5rem; color: #6FCF7A;">Mizoram</h3>
+                <p style="font-size: 1.1rem; color: var(--fog); font-weight: 300; line-height: 1.8;">
+                    The Land of the Hill People. Discover the blue mountains of Phawngpui, the pristine Reiek Tlang, and the rolling emerald hills that define this peaceful sanctuary. Experience the unique Mizo hospitality and the vibrant bamboo dance traditions.
+                </p>
+                <ul style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #6FCF7A;"></i> Blue Mountains</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #6FCF7A;"></i> Reiek Peak Trek</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #6FCF7A;"></i> Bamboo Forest Trails</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #6FCF7A;"></i> Traditional Crafts</li>
+                </ul>
+            </div>
+            <div style="flex: 1.2; height: 500px; background: var(--bark); border-radius: var(--r-lg); overflow: hidden; position: relative;">
+                <img src="assets/basswoods/mizoram.jpeg" alt="Mizoram" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;"/>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--ink), transparent);"></div>
+            </div>
+        </div>
+
+        <div class="region-row" style="display: flex; flex-direction: row-reverse; gap: 4rem; align-items: center; margin-bottom: 8rem;">
+            <div style="flex: 1;">
+                <h3 style="font-family: var(--ff-d); font-size: 3rem; margin-bottom: 1.5rem; color: #FFD700;">Manipur</h3>
+                <p style="font-size: 1.1rem; color: var(--fog); font-weight: 300; line-height: 1.8;">
+                    The Jewel of India. From the floating islands of Loktak Lake to the unique Keibul Lamjao National Park, Manipur offers a landscape like no other. Discover the rich heritage of Polo's birthplace and the graceful movements of the Ras Leela dance.
+                </p>
+                <ul style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #FFD700;"></i> Loktak Lake</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #FFD700;"></i> Floating Phumdis</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #FFD700;"></i> Imphal Heritage</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #FFD700;"></i> Thang-Ta Martial Arts</li>
+                </ul>
+            </div>
+            <div style="flex: 1.2; height: 500px; background: var(--bark); border-radius: var(--r-lg); overflow: hidden; position: relative;">
+                <img src="assets/basswoods/manipur.jpeg" alt="Manipur" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;"/>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--ink), transparent);"></div>
+            </div>
+        </div>
+
+        <div class="region-row" style="display: flex; gap: 4rem; align-items: center; margin-bottom: 8rem;">
+            <div style="flex: 1;">
+                <h3 style="font-family: var(--ff-d); font-size: 3rem; margin-bottom: 1.5rem; color: #A5F2F3;">Sikkim</h3>
+                <p style="font-size: 1.1rem; color: var(--fog); font-weight: 300; line-height: 1.8;">
+                    The Himalayan Gateway. Home to Kangchenjunga, the world's third highest peak, Sikkim is a land of monasteries, alpine meadows, and high-altitude lakes. Trek through the rhododendron forests or find peace in the ancient chants of Rumtek.
+                </p>
+                <ul style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #A5F2F3;"></i> Kangchenjunga Views</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #A5F2F3;"></i> Tsomgo Lake</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #A5F2F3;"></i> Buddhist Monasteries</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #A5F2F3;"></i> Yumthang Valley</li>
+                </ul>
+            </div>
+            <div style="flex: 1.2; height: 500px; background: var(--bark); border-radius: var(--r-lg); overflow: hidden; position: relative;">
+                <img src="assets/basswoods/sikkim.jpeg" alt="Sikkim" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;"/>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--ink), transparent);"></div>
+            </div>
+        </div>
+
+        <div class="region-row" style="display: flex; flex-direction: row-reverse; gap: 4rem; align-items: center; margin-bottom: 8rem;">
+            <div style="flex: 1;">
+                <h3 style="font-family: var(--ff-d); font-size: 3rem; margin-bottom: 1.5rem; color: #FF8C00;">Tripura</h3>
+                <p style="font-size: 1.1rem; color: var(--fog); font-weight: 300; line-height: 1.8;">
+                    The Sacred Legacy. Discover the stunning Neermahal water palace, the rock carvings of Unakoti, and the architectural splendors of Ujjayanta Palace. A blend of royal history and deep-rooted tribal culture awaits in this quiet corner of the Northeast.
+                </p>
+                <ul style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #FF8C00;"></i> Neermahal Palace</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #FF8C00;"></i> Unakoti Carvings</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #FF8C00;"></i> Tribal Traditions</li>
+                    <li style="font-size: 0.9rem; color: var(--mist); display: flex; align-items: center; gap: 0.5rem;"><i class="ri-check-line" style="color: #FF8C00;"></i> Wildlife Sanctuaries</li>
+                </ul>
+            </div>
+            <div style="flex: 1.2; height: 500px; background: var(--bark); border-radius: var(--r-lg); overflow: hidden; position: relative;">
+                <img src="assets/basswoods/tripura.jpeg" alt="Tripura" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;"/>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--ink), transparent);"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SIGNATURE ITINERARIES -->
+<section class="section itineraries-sec" style="background: var(--soil);">
+    <div class="container">
+        <div class="eyebrow">The Journey</div>
+        <h2 class="sec-h2">Signature <em>Itineraries</em></h2>
+        
+        <!-- Swiper -->
+        <div class="swiper itinerarySwiper" style="padding: 2rem 0 5rem;">
+            <div class="swiper-wrapper">
+                
+                <!-- Slide 1 -->
+                <div class="swiper-slide" style="width: 400px; background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-md); padding: 3rem; height: auto; display: flex; flex-direction: column;">
+                    <div style="color: var(--gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.2em;">10 Days Â· Remote</div>
+                    <h3 style="font-family: var(--ff-d); font-size: 2.2rem; margin-bottom: 1.5rem;">The Naga Highlands</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7;">A deep dive into the tribal heartlands. From Kohima's history to Mon's last tattooed warriors.</p>
+                    <div style="margin-top: auto;">
+                        <ul style="margin-bottom: 2.5rem;">
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Village Homestays</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Dzukou Valley Trek</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Private Vehicle & Guide</li>
+                        </ul>
+                        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openModal()">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide" style="width: 400px; background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-md); padding: 3rem; height: auto; display: flex; flex-direction: column;">
+                    <div style="color: var(--amber); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.2em;">7 Days Â· Nature</div>
+                    <h3 style="font-family: var(--ff-d); font-size: 2.2rem; margin-bottom: 1.5rem;">Canyons & Clouds</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7;">The best of Meghalaya's hidden vertical world. Canyoning, caving, and camping on the rim.</p>
+                    <div style="margin-top: auto;">
+                        <ul style="margin-bottom: 2.5rem;">
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Adventure Gear</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Caving Expedition</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Riverside Camping</li>
+                        </ul>
+                        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openModal()">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide" style="width: 400px; background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-md); padding: 3rem; height: auto; display: flex; flex-direction: column;">
+                    <div style="color: var(--moss-lt); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.2em;">12 Days Â· Spiritual</div>
+                    <h3 style="font-family: var(--ff-d); font-size: 2.2rem; margin-bottom: 1.5rem;">Arunachal Ascent</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7;">Climb into the high Himalayas. Monasteries, zero-point explorations, and nomadic culture.</p>
+                    <div style="margin-top: auto;">
+                        <ul style="margin-bottom: 2.5rem;">
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">PERMIT assistance</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">High Altitude Expert</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Stargazing Expert</li>
+                        </ul>
+                        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openModal()">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide" style="width: 400px; background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-md); padding: 3rem; height: auto; display: flex; flex-direction: column;">
+                    <div style="color: #6FCF7A; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.2em;">8 Days Â· Tranquility</div>
+                    <h3 style="font-family: var(--ff-d); font-size: 2.2rem; margin-bottom: 1.5rem;">Emerald Mizoram</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7;">A peaceful journey through the rolling green hills and traditional villages of Mizoram.</p>
+                    <div style="margin-top: auto;">
+                        <ul style="margin-bottom: 2.5rem;">
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Homestay Experiences</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Reiek Hill Trek</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Craft Workshop</li>
+                        </ul>
+                        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openModal()">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="swiper-slide" style="width: 400px; background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-md); padding: 3rem; height: auto; display: flex; flex-direction: column;">
+                    <div style="color: #FFD700; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.2em;">9 Days Â· Culture</div>
+                    <h3 style="font-family: var(--ff-d); font-size: 2.2rem; margin-bottom: 1.5rem;">Mystic Manipur</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7;">Explore the floating world of Loktak and the ancient traditions of the Meitei people.</p>
+                    <div style="margin-top: auto;">
+                        <ul style="margin-bottom: 2.5rem;">
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Loktak Homestays</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Cultural Performances</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Wildlife Sanctuary</li>
+                        </ul>
+                        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openModal()">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="swiper-slide" style="width: 400px; background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-md); padding: 3rem; height: auto; display: flex; flex-direction: column;">
+                    <div style="color: #A5F2F3; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.2em;">14 Days Â· Adventure</div>
+                    <h3 style="font-family: var(--ff-d); font-size: 2.2rem; margin-bottom: 1.5rem;">Sikkim Serenity</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7;">A high-altitude trek through the heart of the Himalayas, monasteries and lakes.</p>
+                    <div style="margin-top: auto;">
+                        <ul style="margin-bottom: 2.5rem;">
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Monastery Retreats</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">High Altitude Gear</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Sherpa Guides</li>
+                        </ul>
+                        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openModal()">Enquire Now</button>
+                    </div>
+                </div>
+
+                <!-- Slide 7 -->
+                <div class="swiper-slide" style="width: 400px; background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-md); padding: 3rem; height: auto; display: flex; flex-direction: column;">
+                    <div style="color: #FF8C00; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.2em;">7 Days Â· History</div>
+                    <h3 style="font-family: var(--ff-d); font-size: 2.2rem; margin-bottom: 1.5rem;">Tripura Trails</h3>
+                    <p style="font-size: 0.95rem; color: var(--fog); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7;">Journey through time with the royal palaces and sacred rock carvings of Tripura.</p>
+                    <div style="margin-top: auto;">
+                        <ul style="margin-bottom: 2.5rem;">
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Palace Tours</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Artisan Interactions</li>
+                            <li style="font-size: 0.85rem; color: var(--mist); border-bottom: 1px solid var(--border); padding: 0.6rem 0;">Native Cuisine</li>
+                        </ul>
+                        <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openModal()">Enquire Now</button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<!-- WAYFINDER: THE PROCESS -->
+<section class="section wayfinder-sec" style="background: var(--ink); border-top: 1px solid var(--border);">
+    <div class="container">
+        <div class="eyebrow">The Map</div>
+        <h2 class="sec-h2">The <em>Wayfinder</em> Process</h2>
+        <p class="sec-p">We don't sell tours; we design journeys. Here is how your offbeat adventure comes to life.</p>
+        
+        <div class="wayfinder-grid">
+            <div class="wf-card">
+                <div class="wf-number">01</div>
+                <h3 class="wf-title">The Dialogue</h3>
+                <p class="wf-desc">We start with a conversation. Tell us about your past travels, your physical comfort level, and the kind of "wow" moments you crave.</p>
+            </div>
+            <div class="wf-card">
+                <div class="wf-number">02</div>
+                <h3 class="wf-title">Draft Route</h3>
+                <p class="wf-desc">Our regional experts draft a logistics plan, identifying hidden trails, reliable local guides, and the best village homestays.</p>
+            </div>
+            <div class="wf-card">
+                <div class="wf-number">03</div>
+                <h3 class="wf-title">Refinement</h3>
+                <p class="wf-desc">We iterate based on your feedback. We finalize the vehicle types (4x4s for the high passes) and the specific cultural encounters.</p>
+            </div>
+            <div class="wf-card">
+                <div class="wf-number">04</div>
+                <h3 class="wf-title">Commencement</h3>
+                <p class="wf-desc">Once confirmed, we handle the permits, gear, and briefings. You arrive, we meet you, and the untracked path begins.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section faq-sec" style="background: var(--soil);">
+    <div class="container">
+        <div class="eyebrow" style="justify-content: center;">Clarifications</div>
+        <h2 class="sec-h2" style="text-align: center;">Common <em>Questions</em></h2>
+        
+        <div class="faq-grid">
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>How "difficult" are these tours?</span>
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-content-inner">
+                        They are as difficult as you want them to be. We have itineraries ranging from luxury village stays with light walks to 15-day wilderness expeditions. During our first call, we assess your fitness and comfort level.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>Is it safe for solo or female travelers?</span>
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-content-inner">
+                        Absolutely. The communities we work with in the Northeast are incredibly hospitable. We also provide dedicated local guides and stay in verified homestays to ensure a safe and respectful environment.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>What about Inner Line Permits (ILP)?</span>
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-content-inner">
+                        For states like Nagaland and Arunachal Pradesh, permits are required. As part of our service, we handle the application and processing of all required permits for you.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">
+                    <span>What should I pack?</span>
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-content-inner">
+                        We provide a detailed packing list tailored to your itinerary. Generally, you'll need sturdy footwear, layers for changing temperatures, and a spirit of adventure. We provide the technical camping gear.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section cta-sec" style="background: var(--ember); color: var(--ink); text-align: center; padding: 10rem 4rem;">
+    <div class="container">
+        <h2 style="font-family: var(--ff-d); font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 2rem; line-height: 1;">Ready to <em>Lose the Map?</em></h2>
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 4rem; opacity: 0.9;">Start your custom offbeat journey today. No obligation, just a conversation about where the road ends.</p>
+        <button class="btn-primary" style="background: var(--ink); color: var(--cream); margin: 0 auto;" onclick="openModal()">
+            Plan My Offbeat Tour
+        </button>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="foot-inner">
+    <div class="foot-logo">Basswoods<em>Camp</em></div>
+    <nav class="foot-nav">
+      <a href="index.html">Home</a>
+      <a href="tours.html">Tours</a>
+      <a href="camping.html">Camping</a>
+      <a href="trekking.html">Trekking</a>
+      <a href="offbeat.html">Offbeat</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <div class="foot-copy">Â© 2025 Basswoods Camp Â· basswoodscamp@gmail.com</div>
+</footer>
+
+<!-- MODAL -->
+<div class="m-veil" id="mVeil" onclick="handleVeil(event)">
+    <div class="m-box">
+      <div style="padding:1.5rem;background:var(--ember);display:flex;justify-content:space-between;border-radius:22px 22px 0 0">
+        <div style="color:var(--ink);font-weight:700">Plan My Tour</div>
+        <button onclick="closeModal()" style="background:none;border:none;cursor:pointer;font-size:1.2rem">Ã—</button>
+      </div>
+      <div style="padding:2rem">
+        <label style="display:block;margin-bottom:.5rem;font-size:.7rem;text-transform:uppercase">Email Address</label>
+        <input type="text" style="width:100%;padding:.8rem;background:var(--ink);border:1px solid var(--border);color:var(--cream);margin-bottom:1rem"/>
+        <button class="btn-primary" style="width:100%;justify-content:center" onclick="closeModal()">Send Enquiry</button>
+      </div>
+    </div>
+</div>
+
+<script>
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => hdr.classList.toggle('stuck', scrollY > 50));
+
+  const rl = document.getElementById('rainLines');
+  for (let i = 0; i < 12; i++) {
+    const line = document.createElement('div');
+    line.className = 'rain-line';
+    line.style.left = Math.random()*100 + '%';
+    line.style.height = (100 + Math.random()*200) + 'px';
+    line.style.setProperty('--rd', (7 + Math.random()*10) + 's');
+    line.style.setProperty('--rdy', (Math.random()*5) + 's');
+    rl.appendChild(line);
+  }
+
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.rev').forEach(el => ro.observe(el));
+
+  function openModal() { document.getElementById('mVeil').classList.add('open'); }
+  function closeModal() { document.getElementById('mVeil').classList.remove('open'); }
+  function handleVeil(e) { if (e.target.id === 'mVeil') closeModal(); }
+</script>
+
+<!-- Scripts -->
+<script src="assets/js/basswoods-menu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  // Swiper Init
+  const swiperI = new Swiper('.itinerarySwiper', {
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      320: { slidesPerView: 1.2 },
+      768: { slidesPerView: "auto" }
+    }
+  });
+
+  // FAQ Toggle
+  function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isActive = item.classList.contains('active');
+      
+      // Close all others
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+      
+      if (!isActive) {
+          item.classList.add('active');
+      }
+  }
+</script>
+
+</body>
+</html>

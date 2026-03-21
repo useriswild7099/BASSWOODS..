@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vehicle Rentals Ã¢â‚¬â€ Basswoods Camp</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <!-- Cormorant Garamond (display) + DM Sans (body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    
+    <!-- Premium Menu CSS -->
+    <link rel="stylesheet" href="assets/css/basswoods-menu.css">
+
+    <style>
+        /* ============================================================
+           BRAND TOKENS
+        ============================================================ */
+        :root {
+            --ink:        #120D08;
+            --soil:       #1C1208;
+            --bark:       #2B1D0E;
+            --moss:       #3A4A20;
+            --ember:      #D4622A;
+            --ember-lt:   #E8854E;
+            --gold:       #C9A03A;
+            --cream:      #F4EFE4;
+            --fog:        #B8AE9C;
+            --mist:       #7A7060;
+            --border:     rgba(255,255,255,0.08);
+            --glow:       rgba(212,98,42,0.18);
+
+            --ff-display: 'Cormorant Garamond', Georgia, serif;
+            --ff-body:    'DM Sans', system-ui, sans-serif;
+
+            --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+            --spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
+            --r-sm:  4px;
+            --r-md:  12px;
+            --r-lg:  22px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--ff-body);
+            background: var(--ink);
+            color: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        body::after {
+            content: '';
+            position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            opacity: 0.032;
+            pointer-events: none;
+            z-index: 9000;
+        }
+
+        /* ============================================================
+           HEADER (Integrated with Premium Menu)
+        ============================================================ */
+        .site-header {
+            position: fixed; top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: transparent;
+            border-bottom: 1px solid transparent;
+            transition: background 0.4s var(--ease), border-color 0.4s;
+        }
+        .site-header.stuck { background: rgba(18,13,8,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+
+        .site-header-container {
+            max-width: 1400px; margin: 0 auto;
+            height: 80px; display: flex; align-items: center; justify-content: space-between;
+            padding: 0 3rem;
+        }
+
+        .site-header-left { flex: 1; }
+        .site-header-logo { flex: 1; text-align: center; }
+        .site-header-right { flex: 1; display: flex; justify-content: flex-end; gap: 1.5rem; align-items: center; }
+
+        .site-menu-toggle {
+            background: transparent; border: none; cursor: pointer;
+            display: flex; align-items: center; gap: 0.8rem;
+            color: var(--cream); font-size: 0.75rem; font-weight: 600;
+            letter-spacing: 0.15em; text-transform: uppercase;
+        }
+        .site-menu-toggle-icon {
+            width: 24px; height: 12px; position: relative;
+        }
+        .site-menu-toggle-icon::before, .site-menu-toggle-icon::after {
+            content: ''; position: absolute; left: 0; width: 100%; height: 1.5px; background: currentColor;
+            transition: transform 0.3s var(--ease);
+        }
+        .site-menu-toggle-icon::before { top: 0; }
+        .site-menu-toggle-icon::after { bottom: 0; }
+
+        .logo-font { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 700; letter-spacing: 2px; }
+        .logo-font em { font-style: italic; color: var(--ember); }
+
+        .btn-hdr {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.6rem 1.4rem;
+            background: var(--ember); color: var(--ink);
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+            border-radius: var(--r-sm); border: none; cursor: pointer;
+            transition: background 0.25s, transform 0.2s;
+        }
+        .btn-hdr:hover { background: var(--ember-lt); transform: translateY(-1px); }
+
+        /* ============================================================
+           HERO
+        ============================================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 55% 55% at 72% 45%, rgba(212,98,42,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 18% 75%, rgba(201,160,58,0.08) 0%, transparent 55%),
+                linear-gradient(to bottom, rgba(18,13,8,0.6), rgba(14,10,5,0.9)),
+                url('assets/basswoods/carvan rent.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .road-lines {
+            position: absolute; inset: 0; overflow: hidden;
+        }
+        .road-lines::before {
+            content: '';
+            position: absolute;
+            bottom: -5%; left: 50%;
+            transform: translateX(-50%);
+            width: 4px; height: 60%;
+            background: repeating-linear-gradient(
+                to top, rgba(201,160,58,0.1) 0px, rgba(201,160,58,0.1) 24px,
+                transparent 24px, transparent 48px
+            );
+        }
+        .road-lines::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0; height: 50%;
+            background:
+                linear-gradient(to top right, transparent 48.5%, rgba(201,160,58,0.05) 49%, transparent 49.5%),
+                linear-gradient(to top left,  transparent 48.5%, rgba(201,160,58,0.05) 49%, transparent 49.5%);
+        }
+
+        .hero-glow {
+            position: absolute; top: 25%; right: 5%;
+            width: 580px; height: 580px;
+            background: radial-gradient(circle, rgba(212,98,42,0.09) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-watermark {
+            position: absolute; right: -1%; bottom: 10%;
+            font-family: var(--ff-display);
+            font-size: clamp(9rem, 22vw, 20rem);
+            font-weight: 700; font-style: italic;
+            color: rgba(212,98,42,0.035);
+            line-height: 1; user-select: none; pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .hero-hills {
+            position: absolute; bottom: 0; left: 0; right: 0;
+        }
+        .hero-hills svg { width: 100%; display: block; }
+
+        .hero-body {
+            position: relative; z-index: 5;
+            padding: 0 3rem;
+            max-width: 800px;
+        }
+
+        .hero-kicker {
+            display: inline-flex; align-items: center; gap: 0.55rem;
+            padding: 0.35rem 1rem;
+            border: 1px solid rgba(212,98,42,0.3);
+            border-radius: 999px;
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--ember-lt); margin-bottom: 2rem;
+        }
+
+        .hero-h1 {
+            font-family: var(--ff-display);
+            font-size: clamp(3.2rem, 8vw, 6.5rem);
+            font-weight: 700; line-height: 0.95;
+            color: var(--cream); margin-bottom: 2rem;
+        }
+        .hero-h1 span { display: block; }
+        .hero-h1 em { font-style: italic; color: var(--ember); }
+
+        .hero-p { font-size: 1.1rem; color: var(--fog); font-weight: 300; max-width: 520px; line-height: 1.8; margin-bottom: 3.5rem; }
+
+        .hero-ctas { display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: center; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 1rem 2.4rem;
+            background: var(--ember); color: var(--ink);
+            font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+            border-radius: var(--r-sm); border: none; cursor: pointer;
+            transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+        }
+        .btn-primary:hover { background: var(--ember-lt); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(212,98,42,0.35); }
+
+        .btn-ghost {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 1rem 2.4rem;
+            background: transparent; color: var(--cream);
+            font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+            border-radius: var(--r-sm); border: 1px solid var(--border); cursor: pointer;
+            transition: border-color 0.25s, color 0.25s;
+        }
+        .btn-ghost:hover { border-color: var(--ember); color: var(--ember-lt); }
+
+        .hero-stats-bar {
+            position: absolute; bottom: 0; left: 0; right: 0; z-index: 5;
+            background: rgba(28,18,8,0.88); backdrop-filter: blur(12px);
+            border-top: 1px solid var(--border);
+            display: flex;
+        }
+        .hstat { flex: 1; padding: 1.5rem 2.5rem; border-right: 1px solid var(--border); display: flex; align-items: center; gap: 1rem; }
+        .hstat:last-child { border-right: none; }
+        .hstat-icon { font-size: 1.8rem; color: var(--ember); opacity: 0.8; }
+        .hstat-num { font-family: var(--ff-display); font-size: 2rem; font-weight: 700; color: var(--cream); line-height: 1; }
+        .hstat-lbl { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); margin-top: 0.25rem; }
+
+        /* ============================================================
+           PROMO STRIP
+        ============================================================ */
+        .promo-strip {
+            background: var(--ember);
+            padding: 1.2rem 3rem;
+            display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+        }
+        .promo-left { display: flex; align-items: center; gap: 1.2rem; }
+        .promo-left i { font-size: 1.5rem; color: var(--ink); }
+        .promo-text { font-size: 1rem; font-weight: 700; color: var(--ink); }
+        .promo-sub  { font-size: 0.8rem; color: rgba(18,13,8,0.65); }
+        .promo-code-btn {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 0.6rem 1.5rem;
+            background: var(--ink); color: var(--ember);
+            font-family: var(--ff-display); font-size: 1.2rem; font-weight: 700; font-style: italic; letter-spacing: 0.1em;
+            border-radius: var(--r-sm); border: none; cursor: pointer; transition: opacity 0.2s;
+        }
+        .promo-code-btn:hover { opacity: 0.85; }
+
+        /* ============================================================
+           SECTION ATOMS
+        ============================================================ */
+        .section { padding: 8rem 3rem; }
+        .container { max-width: 1300px; margin: 0 auto; }
+
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 0.8rem;
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--ember); margin-bottom: 1.2rem;
+        }
+        .eyebrow::before { content: ''; width: 32px; height: 1.5px; background: var(--ember); }
+
+        .sec-h2 {
+            font-family: var(--ff-display);
+            font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700;
+            color: var(--cream); line-height: 1.1; margin-bottom: 1.5rem;
+        }
+        .sec-h2 em { font-style: italic; color: var(--ember); }
+
+        .sec-p { font-size: 1.1rem; color: var(--fog); font-weight: 300; max-width: 600px; line-height: 1.8; }
+
+        /* ============================================================
+           TAB BAR
+        ============================================================ */
+        .tab-bar {
+            display: flex; gap: 0;
+            margin-top: 4.5rem;
+            border: 1px solid rgba(58,74,32,0.4);
+            border-radius: var(--r-sm);
+            overflow: hidden;
+            width: fit-content;
+        }
+        .tab-btn {
+            display: flex; align-items: center; gap: 0.7rem;
+            padding: 1rem 2.2rem;
+            background: transparent; color: var(--mist);
+            font-family: var(--ff-body); font-size: 0.85rem; font-weight: 700;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            border: none; border-right: 1px solid rgba(58,74,32,0.3); cursor: pointer;
+            transition: background 0.25s, color 0.25s;
+        }
+        .tab-btn:last-child { border-right: none; }
+        .tab-btn i { font-size: 1.2rem; }
+        .tab-btn.active { background: var(--ember); color: var(--ink); }
+        .tab-btn:not(.active):hover { background: rgba(212,98,42,0.1); color: var(--ember-lt); }
+
+        .tab-panel { display: none; margin-top: 3.5rem; }
+        .tab-panel.active { display: block; }
+
+        /* ============================================================
+           VEHICLE CARDS
+        ============================================================ */
+        .vehicle-card {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            background: var(--soil);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            transition: transform 0.4s var(--ease), box-shadow 0.4s, border-color 0.3s;
+        }
+        .vehicle-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212,98,42,0.4);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+
+        .tours-listings-media {
+            position: relative;
+            overflow: hidden;
+            background: var(--bark);
+            min-height: 340px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .tours-listings-media::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(212,98,42,0.09) 0%, transparent 70%);
+        }
+
+        .tlm-inner {
+            position: relative; z-index: 1;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 1rem; width: 100%; height: 100%; padding: 3rem;
+        }
+
+        .tlm-icon {
+            font-size: 7rem;
+            color: rgba(244,239,228,0.06);
+            transition: transform 0.6s var(--ease), color 0.4s;
+        }
+        .vehicle-card:hover .tlm-icon { color: rgba(212,98,42,0.14); transform: scale(1.1) translateY(-8px); }
+
+        .tlm-watermark {
+            position: absolute; bottom: 1.5rem; left: 1.5rem;
+            font-family: var(--ff-display);
+            font-size: 6rem; font-weight: 700; font-style: italic;
+            color: rgba(255,255,255,0.02);
+            line-height: 1; user-select: none;
+        }
+
+        .tlm-badges {
+            position: absolute; top: 1.5rem; left: 1.5rem;
+            display: flex; flex-direction: column; gap: 0.6rem;
+        }
+        .badge {
+            display: inline-flex; align-items: center; gap: 0.45rem;
+            padding: 0.35rem 0.8rem;
+            background: rgba(18,13,8,0.8); backdrop-filter: blur(8px);
+            border: 1px solid var(--border); border-radius: 999px;
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--ember-lt);
+        }
+        .avail-badge {
+            position: absolute; top: 1.5rem; right: 1.5rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.35rem 0.9rem;
+            background: rgba(18,13,8,0.8); border: 1px solid var(--border); border-radius: 999px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist);
+        }
+        .dot { width: 8px; height: 8px; border-radius: 50%; }
+        .dot-on  { background: #6FCF7A; box-shadow: 0 0 10px #6FCF7A; }
+        .dot-ltd { background: var(--gold); box-shadow: 0 0 10px var(--gold); }
+
+        .tours-listings-details {
+            padding: 3rem 3.5rem;
+            display: flex; flex-direction: column;
+        }
+
+        .vcard-cat { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ember); margin-bottom: 0.8rem; }
+        .vcard-title { font-family: var(--ff-display); font-size: 2.4rem; font-weight: 700; color: var(--cream); line-height: 1.1; margin-bottom: 1.2rem; }
+        .vcard-desc { font-size: 1rem; color: var(--fog); font-weight: 300; line-height: 1.8; margin-bottom: 2rem; flex: 1; }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 0.8rem; margin-bottom: 2rem;
+        }
+        .spec-cell { background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 0.8rem 1.2rem; }
+        .spec-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mist); margin-bottom: 0.3rem; }
+        .spec-val { font-family: var(--ff-display); font-size: 1.1rem; font-weight: 700; color: var(--cream); }
+        .spec-val.gold { color: var(--gold); }
+
+        .includes-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 2rem; }
+        .inc-pill {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: rgba(58,74,32,0.25); border: 1px solid rgba(58,74,32,0.4); border-radius: 999px;
+            font-size: 0.8rem; font-weight: 600; color: var(--fog);
+        }
+        .inc-pill i { font-size: 1rem; color: var(--gold); }
+
+        .vcard-foot {
+            display: flex; align-items: center; justify-content: space-between;
+            padding-top: 2rem; border-top: 1px solid var(--border);
+            flex-wrap: wrap; gap: 1.5rem;
+        }
+        .price-from { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--mist); margin-bottom: 0.2rem; }
+        .price-amount { font-family: var(--ff-display); font-size: 2.2rem; font-weight: 700; color: var(--ember); line-height: 1; }
+
+        .vcard-actions { display: flex; gap: 1rem; align-items: center; }
+
+        .btn-book-v {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 0.8rem 1.8rem;
+            background: var(--ember); color: var(--ink);
+            font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+            border-radius: var(--r-sm); border: none; cursor: pointer;
+            transition: background 0.25s, transform 0.2s;
+        }
+        .btn-book-v:hover { background: var(--ember-lt); transform: translateY(-2px); }
+
+        .btn-enquire-v {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 0.8rem 1.6rem;
+            background: transparent; color: var(--fog);
+            font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+            border: 1px solid var(--border); border-radius: var(--r-sm); cursor: pointer;
+            transition: border-color 0.25s, color 0.25s;
+        }
+        .btn-enquire-v:hover { border-color: var(--ember); color: var(--ember-lt); }
+
+        .panel-note {
+            display: flex; align-items: center; gap: 0.8rem;
+            padding: 1rem 1.5rem;
+            background: rgba(58,74,32,0.15); border: 1px solid rgba(58,74,32,0.3); border-radius: var(--r-sm);
+            font-size: 0.9rem; color: var(--fog); margin-top: 1rem;
+        }
+        .panel-note i { color: var(--gold); font-size: 1.1rem; }
+
+        /* ============================================================
+           REVEAL ANIMATIONS
+        ============================================================ */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+        .reveal.in { opacity: 1; transform: translateY(0); }
+
+        /* ============================================================
+           HOW IT WORKS
+        ============================================================ */
+        .hiw-section { background: var(--soil); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .hiw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 5rem; position: relative; }
+        .hiw-grid::before {
+            content: '';
+            position: absolute; top: 35px; left: 10%; right: 10%; height: 1.5px;
+            background: linear-gradient(to right, transparent, rgba(58,74,32,0.6) 20%, rgba(58,74,32,0.6) 80%, transparent);
+        }
+        .hiw-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 2rem; }
+        .hiw-circle {
+            width: 70px; height: 70px;
+            background: var(--bark); border: 2px solid rgba(58,74,32,0.6); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--ff-display); font-size: 1.6rem; font-weight: 700; color: var(--mist);
+            margin-bottom: 2rem; position: relative; z-index: 2;
+            transition: border-color 0.4s, color 0.4s, background 0.4s;
+        }
+        .hiw-step:hover .hiw-circle { border-color: var(--ember); color: var(--ember); background: rgba(212,98,42,0.05); }
+        .hiw-title { font-family: var(--ff-display); font-size: 1.25rem; font-weight: 700; color: var(--cream); margin-bottom: 0.8rem; }
+        .hiw-desc { font-size: 0.95rem; color: var(--mist); font-weight: 300; line-height: 1.7; }
+
+        /* ============================================================
+           MODAL
+        ============================================================ */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(8,5,3,0.94); backdrop-filter: blur(15px); z-index: 1000; align-items: center; justify-content: center; padding: 1.5rem; }
+        .modal-overlay.open { display: flex; }
+        .modal-box { background: var(--soil); border: 1px solid var(--border); border-radius: var(--r-lg); width: 100%; max-width: 600px; overflow: hidden; animation: popIn 0.4s var(--spring); }
+        @keyframes popIn { from { opacity: 0; transform: scale(0.9) translateY(40px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        .modal-head { background: var(--ember); padding: 2rem 2.5rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
+        .modal-head-title { font-family: var(--ff-display); font-size: 2rem; font-weight: 700; color: var(--ink); }
+        .modal-head-sub { font-size: 0.9rem; color: rgba(18,13,8,0.6); font-weight: 500; margin-top: 0.2rem; }
+        .modal-close { width: 40px; height: 40px; background: rgba(18,13,8,0.1); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.5rem; color: var(--ink); flex-shrink: 0; transition: background 0.2s; }
+        .modal-close:hover { background: rgba(18,13,8,0.2); }
+        .modal-body { padding: 3rem 2.5rem; }
+
+        .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .f-grp { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+        .f-grp.wide { grid-column: 1 / -1; }
+        .f-lbl { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mist); }
+        .f-ctrl { background: var(--ink); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 0.9rem 1.2rem; font-family: var(--ff-body); font-size: 1rem; color: var(--cream); width: 100%; outline: none; transition: border-color 0.3s; }
+        .f-ctrl:focus { border-color: var(--gold); }
+
+        /* ============================================================
+           FAQ
+        ============================================================ */
+        .faq-section { background: var(--ink); padding-top: 2rem; }
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 4.5rem; }
+        .faq-item { background: var(--soil); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: border-color 0.3s; }
+        .faq-item.open { border-color: rgba(212,98,42,0.5); }
+        .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 1.8rem; cursor: pointer; gap: 1.5rem; }
+        .faq-q-text { font-size: 1rem; font-weight: 700; color: var(--cream); }
+        .faq-arrow { font-size: 1.2rem; color: var(--mist); transition: transform 0.3s; }
+        .faq-item.open .faq-arrow { transform: rotate(45deg); color: var(--ember); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); padding: 0 1.8rem; }
+        .faq-item.open .faq-a { max-height: 250px; padding: 0 1.8rem 1.8rem; }
+        .faq-a p { font-size: 0.95rem; color: var(--fog); line-height: 1.8; font-weight: 300; }
+
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+        .footer { background: var(--ink); border-top: 1px solid var(--border); padding: 4rem 3rem 2.5rem; }
+        .footer-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+        .footer-logo { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; }
+        .footer-links { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mist); transition: color 0.3s; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-copy { max-width: 1300px; margin: 0 auto; font-size: 0.8rem; color: var(--mist); }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .vehicle-card { grid-template-columns: 1fr; }
+            .hiw-grid { grid-template-columns: 1fr 1fr; }
+            .hiw-grid::before { display: none; }
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 800px) {
+            .section { padding: 6rem 1.5rem; }
+            .site-header-container { padding: 0 1.5rem; }
+            .hero-body { padding: 0 1.5rem; }
+            .hero-stats-bar { display: none; }
+            .promo-strip { padding: 1.2rem 1.5rem; }
+            .tab-btn { padding: 0.8rem 1.5rem; flex: 1 1 auto; text-align: center; justify-content: center; }
+            .tab-bar { width: 100%; border-right: none; }
+            .tab-btn { border-bottom: 1px solid rgba(58,74,32,0.3); }
+            .tab-btn:last-child { border-bottom: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PREMIUM OFF-CANVAS MENU SNIPPET -->
+                                            <div class="site-menu" data-lenis-prevent>
+            <div class="site-menu-bg"></div>
+            <div class="site-menu-header">
+                <div class="site-header-left">
+                    <button class="site-menu-close">
+                        <span class="site-menu-close-icon"></span>
+                        <span>Close</span>
+                    </button>
+                </div>
+                <div class="site-header-logo">
+                    <a aria-label="Basswoods Camp" href="index.html" style="text-decoration:none;">
+                        <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
+                    </a>
+                </div>
+                <div class="site-header-right">
+                    <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
+                    <a class="btn btn-sm btn-inverted" href="tel:8011228979">
+                        <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
+                        <span class="d-none d-md-inline">Call Us</span>
+                    </a>
+                </div>
+            </div>
+            <div class="site-menu-body">
+                <div class="site-menu-main site-header-offset bg-charcoal">
+                    <div class="site-menu-main-container px-container pb-md">
+                        <ul id="menu-primary-menu" class="site-menu-nav ginto-normal-black py-xl">
+                            <li id="menu-item-new-1" class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-302" href="tours.html"><span>Tour package</span></a></li>
+                            <li id="menu-item-new-2" class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-296" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
+                            <li id="menu-item-new-3" class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="rentals.html"><span>Camping equipment rentals</span></a></li>
+                            <li id="menu-item-new-4" class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-295" href="camping.html"><span>Campings</span></a></li>
+                            <li id="menu-item-new-5" class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-298" href="trekking.html"><span>Trekking</span></a></li>
+                            <li id="menu-item-new-6" class="menu-item"><a title="Outdoor activities" class="site-menu-nav-item" data-image="menu-item-image-297" href="trekking.html#activities"><span>Outdoor activities</span></a></li>
+                            <li id="menu-item-new-7" class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-299" href="offbeat.html"><span>Off beat Tours</span></a></li>
+                        </ul>
+                        <ul class="site-menu-social">
+                            <li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a></li>
+                            <li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a></li>
+                            <li><a aria-label="Location" href="camping.html" target="_blank"><i class="ri-map-pin-fill"></i></a></li>
+                            <li><a aria-label="Contact us" href="mailto:basswoodscamp@gmail.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-menu-images">
+                    <div class="site-menu-images-container">
+                        <div class="site-menu-images-item active" id="menu-item-image-295">
+                            <img src="assets/basswoods/menu_campings.png" alt="Campings" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-296">
+                            <img src="assets/basswoods/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-rentals">
+                            <img src="assets/basswoods/menu_camping_equipment.png" alt="Camping Equipment" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-302">
+                            <img src="assets/basswoods/menu_tour_package.png" alt="Tour Package" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-298">
+                            <img src="assets/basswoods/camp-1.jpg" alt="Trekking" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-297">
+                            <img src="assets/basswoods/camp-2.jpg" alt="Outdoor Activities" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-299">
+                            <img src="assets/basswoods/blue-sky-camp.jpg" alt="Offbeat Tours" loading="lazy" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- MAIN HEADER -->
+    <header class="site-header" id="hdr">
+        <div class="site-header-container">
+            <div class="header-left-group">
+                <button class="site-menu-toggle">
+                    <span class="site-menu-toggle-icon"></span>
+                    <span>Menu</span>
+                </button>
+                <a href="index.html" class="logo-font">Basswoods<em>Camp</em></a>
+            </div>
+            <div class="site-header-right">
+                <button class="btn-hdr" onclick="openModal()"><i class="ri-steering-2-line"></i> <span style="margin-left:5px" class="d-none d-md-inline">Book a Vehicle</span></button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="road-lines"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-watermark">Drive</div>
+
+        <div class="hero-hills">
+            <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 220 L0 160 L120 130 L260 90 L380 125 L500 70 L620 110 L740 52 L860 100 L980 48 L1100 95 L1220 65 L1440 130 L1440 220 Z" fill="#0E0A05" opacity="0.9"/>
+            </svg>
+        </div>
+
+        <div class="hero-body">
+            <div class="hero-kicker reveal"><i class="ri-route-line"></i> Self-Drive &amp; Guided Ã‚Â· Northeast India</div>
+            <h1 class="hero-h1 reveal">
+                <span>Your Road.</span>
+                <span>Your <em>Rules.</em></span>
+            </h1>
+            <p class="hero-p reveal">
+                Motorcycles, cars, quad bikes, and caravans Ã¢â‚¬â€ maintained, briefed, and ready from Guwahati. Coverage across all seven Northeast states.
+            </p>
+            <div class="hero-ctas reveal">
+                <button class="btn-primary" onclick="document.getElementById('fleet').scrollIntoView({behavior:'smooth'})">
+                    <i class="ri-search-line"></i> Browse Fleet
+                </button>
+                <button class="btn-ghost" onclick="openModal()">
+                    <i class="ri-map-2-line"></i> Get a Quote
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-stats-bar reveal">
+            <div class="hstat"><i class="ri-car-line hstat-icon"></i><div><div class="hstat-num">4</div><div class="hstat-lbl">Vehicle Types</div></div></div>
+            <div class="hstat"><i class="ri-map-pin-2-line hstat-icon"></i><div><div class="hstat-num">7</div><div class="hstat-lbl">States Covered</div></div></div>
+            <div class="hstat"><i class="ri-time-line hstat-icon"></i><div><div class="hstat-num">24 hr</div><div class="hstat-lbl">Quote Response</div></div></div>
+            <div class="hstat"><i class="ri-shield-check-line hstat-icon"></i><div><div class="hstat-num">100%</div><div class="hstat-lbl">Maintained</div></div></div>
+        </div>
+    </section>
+
+
+    <!-- PROMO -->
+    <div class="promo-strip">
+        <div class="promo-left">
+            <i class="ri-percent-line"></i>
+            <div>
+                <div class="promo-text">Up to 20% off your first vehicle rental</div>
+                <div class="promo-sub">Valid on all vehicle categories Ã‚Â· Apply at checkout</div>
+            </div>
+        </div>
+        <button class="promo-code-btn" onclick="copyPromo(this)"><i class="ri-coupon-3-line"></i> IOLI20</button>
+    </div>
+
+
+    <!-- FLEET -->
+    <section class="section" id="fleet">
+        <div class="container">
+            <div class="eyebrow reveal">Our Fleet</div>
+            <h2 class="sec-h2 reveal">Pick Your <em>Machine</em></h2>
+            <p class="sec-p reveal">Every vehicle is cleaned, mechanically inspected, and fully briefed before handover. You ride Ã¢â‚¬â€ we handle the rest.</p>
+
+            <div class="tab-bar reveal">
+                <button class="tab-btn active" onclick="switchTab(this,'bikes')"><i class="ri-motorbike-fill"></i> Motorcycles</button>
+                <button class="tab-btn" onclick="switchTab(this,'cars')"><i class="ri-car-fill"></i> Cars</button>
+                <button class="tab-btn" onclick="switchTab(this,'atvs')"><i class="ri-4wd-fill"></i> ATVs &amp; Quads</button>
+                <button class="tab-btn" onclick="switchTab(this,'caravans')"><i class="ri-caravan-fill"></i> Caravans</button>
+            </div>
+
+            <!-- MOTORCYCLES -->
+            <div class="tab-panel active" id="tab-bikes">
+                <div class="vehicle-card reveal">
+                    <div class="tours-listings-media">
+                        <div class="tlm-inner"><img src="assets/basswoods/bycycle rent.jpeg" alt="Motorcycles" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" /></div>
+                        <div class="tlm-watermark">MOTO</div>
+                        <div class="tlm-badges"><span class="badge">Motorcycle</span><span class="badge">Self-Drive</span></div>
+                        <div class="avail-badge"><span class="dot dot-on"></span> Available</div>
+                    </div>
+                    <div class="tours-listings-details">
+                        <div class="vcard-cat">Adventure Tourer</div>
+                        <div class="vcard-title">Royal Enfield Himalayan</div>
+                        <div class="vcard-desc">The go-anywhere bike built for Northeast India's mountain passes and river crossings. Long-travel suspension and upright seat for 500+ km days. Riding gear and maps included.</div>
+                        <div class="spec-grid">
+                            <div class="spec-cell"><div class="spec-label">Engine</div><div class="spec-val">411cc Single</div></div>
+                            <div class="spec-cell"><div class="spec-label">Power</div><div class="spec-val">24.3 bhp</div></div>
+                            <div class="spec-cell"><div class="spec-label">Min. Rental</div><div class="spec-val gold">1 Day</div></div>
+                        </div>
+                        <div class="vcard-foot">
+                            <div><div class="price-from">INR Pricing on enquiry</div><div class="price-amount">Custom Quote</div></div>
+                            <div class="vcard-actions">
+                                <button class="btn-enquire-v" onclick="openModal('Royal Enfield Himalayan')">Enquire</button>
+                                <button class="btn-book-v" onclick="openModal('Royal Enfield Himalayan')">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- (Other panels follow similar patterns) -->
+            <div class="tab-panel" id="tab-cars">
+                <div class="vehicle-card reveal">
+                    <div class="tours-listings-media">
+                        <div class="tlm-inner"><img src="assets/basswoods/suv rent.jpeg" alt="SUVs and Cars" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" /></div>
+                        <div class="tlm-watermark">CAR</div>
+                        <div class="tlm-badges"><span class="badge">SUV / Hatch</span><span class="badge">Self-Drive</span></div>
+                        <div class="avail-badge"><span class="dot dot-on"></span> Available</div>
+                    </div>
+                    <div class="tours-listings-details">
+                        <div class="vcard-cat">4 Wheels</div>
+                        <div class="vcard-title">Self-Drive Hatch / SUV</div>
+                        <div class="vcard-desc">Well-maintained vehicles for independent exploration. Driver option available on request for those who want to focus on the scenery.</div>
+                        <div class="vcard-foot">
+                            <div><div class="price-from">INR Pricing on enquiry</div><div class="price-amount">Custom Quote</div></div>
+                            <button class="btn-book-v" onclick="openModal('Car Rental')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+             <div class="tab-panel" id="tab-atvs">
+                <div class="vehicle-card reveal">
+                    <div class="tours-listings-media">
+                        <div class="tlm-inner"><img src="assets/basswoods/atv rent.jpeg" alt="ATVs and Quads" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" /></div>
+                        <div class="tlm-watermark">ATV</div>
+                        <div class="tlm-badges"><span class="badge">Quad / Buggy</span><span class="badge">Rent or Buy</span></div>
+                        <div class="avail-badge"><span class="dot dot-ltd"></span> Limited</div>
+                    </div>
+                    <div class="tours-listings-details">
+                        <div class="vcard-title">ATVs &amp; Quads</div>
+                        <div class="vcard-desc">Perfect for corporate events or serious off-road adventure. Also available for purchase for tourism operators.</div>
+                        <button class="btn-book-v" onclick="openModal('ATV')">Enquire Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-caravans">
+                <div class="vehicle-card reveal">
+                    <div class="tours-listings-media">
+                        <div class="tlm-inner"><img src="assets/basswoods/carvan rent.jpeg" alt="Caravans" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;" /></div>
+                        <div class="tlm-watermark">VAN</div>
+                        <div class="tlm-badges"><span class="badge">Caravan</span><span class="badge">Long-Stay</span></div>
+                        <div class="avail-badge"><span class="dot dot-ltd"></span> Limited</div>
+                    </div>
+                    <div class="tours-listings-details">
+                        <div class="vcard-title">Festival Caravan</div>
+                        <div class="vcard-desc">Your home on wheels for the festival circuit. No tent setup needed Ã¢â‚¬â€ just park and enjoy the festivities in comfort.</div>
+                        <button class="btn-book-v" onclick="openModal('Caravan')">Check Dates</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-note reveal"><i class="ri-information-line"></i> Fuel is the customer's responsibility. Maintenance and 24/7 support included.</div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section hiw-section">
+        <div class="container">
+            <div class="eyebrow reveal">The Process</div>
+            <h2 class="sec-h2 reveal">From Enquiry <em>to Open Road</em></h2>
+            <div class="hiw-grid">
+                <div class="hiw-step reveal"><div class="hiw-circle">01</div><div class="hiw-title">Pick Your Vehicle</div><div class="hiw-desc">Choose your category and send us your dates.</div></div>
+                <div class="hiw-step reveal"><div class="hiw-circle">02</div><div class="hiw-title">Receive a Quote</div><div class="hiw-desc">We confirm availability and send a custom quote.</div></div>
+                <div class="hiw-step reveal"><div class="hiw-circle">03</div><div class="hiw-title">Confirm &amp; Pay</div><div class="hiw-desc">Secure your booking with an advance deposit.</div></div>
+                <div class="hiw-step reveal"><div class="hiw-circle">04</div><div class="hiw-title">Pick Up &amp; Go</div><div class="hiw-desc">Collect from Guwahati and hit the mountain roads.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo logo-font">Basswoods<em>Camp</em></div>
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="tours.html">Tours</a>
+                <a href="camping.html">Camping</a>
+                <a href="trekking.html">Trekking</a>
+                <a href="offbeat.html">Offbeat</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <div class="footer-copy">Ã‚Â© 2025 Basswoods Camp Ã‚Â· basswoodscamp@gmail.com</div>
+    </footer>
+
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal" onclick="handleOverlay(event)">
+        <div class="modal-box">
+            <div class="modal-head">
+                <div>
+                    <div class="modal-head-title" id="modalTitle">Book a Vehicle</div>
+                    <div class="modal-head-sub">Quotes sent within 24 hours.</div>
+                </div>
+                <button class="modal-close" onclick="closeModal()"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="f-row">
+                    <div class="f-grp"><label class="f-lbl">Name</label><input class="f-ctrl" type="text" id="mName" placeholder="Your name"/></div>
+                    <div class="f-grp"><label class="f-lbl">Phone</label><input class="f-ctrl" type="tel" id="mPhone" placeholder="+91 ..."/></div>
+                </div>
+                <div class="f-grp"><label class="f-lbl">Vehicle Category</label>
+                    <select class="f-ctrl" id="mVehicle">
+                        <option>Motorcycle</option>
+                        <option>Car (Self-Drive)</option>
+                        <option>Car (With Driver)</option>
+                        <option>ATV / Quad</option>
+                        <option>Caravan</option>
+                    </select>
+                </div>
+                <button class="btn-primary" style="width:100%;justify-content:center;" onclick="submitModal()">Send Request</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const hdr = document.getElementById('hdr');
+        addEventListener('scroll', () => hdr.classList.toggle('stuck', scrollY > 50));
+
+        // Off-canvas Menu Toggle Logic
+        const menuToggle = document.querySelector('.site-menu-toggle');
+        const menuClose = document.querySelector('.site-menu-close');
+        const siteMenu = document.querySelector('.site-menu');
+
+        menuToggle.addEventListener('click', () => {
+            siteMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', () => {
+            siteMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Tab Logic
+        function switchTab(btn, id) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('tab-' + id).classList.add('active');
+            document.querySelectorAll('#tab-' + id + ' .reveal:not(.in)').forEach(el => setTimeout(() => el.classList.add('in'), 80));
+        }
+
+        // Reveal logic
+        const ro = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+        // Modal Logic
+        function openModal(vehicle) {
+            if (vehicle) document.getElementById('modalTitle').textContent = 'Book: ' + vehicle;
+            document.getElementById('modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function handleOverlay(e) { if (e.target === document.getElementById('modal')) closeModal(); }
+
+        function submitModal() {
+            alert('Request sent! We will contact you shortly.');
+            closeModal();
+        }
+
+        function copyPromo(btn) {
+            navigator.clipboard?.writeText('IOLI20');
+            btn.textContent = 'COPIED!';
+            setTimeout(() => btn.textContent = 'IOLI20', 2000);
+        }
+
+        // Image Hover Logic inside Menu
+        const menuItems = document.querySelectorAll('.site-menu-nav-item');
+        const menuImages = document.querySelectorAll('.site-menu-images-item');
+
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const imageId = item.getAttribute('data-image');
+                menuImages.forEach(img => {
+                    img.classList.toggle('active', img.id === imageId);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

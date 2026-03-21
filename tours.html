@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tour Packages â€” Basswoods Camp</title>
+  <title>Tour Packages ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Basswoods Camp</title>
 
   <!-- Remix Icon -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
   <style>
-    /* â”€â”€â”€ TOKENS â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ TOKENS ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     :root {
       --ink:       #0e110d;
       --bark:      #1c2018;
@@ -30,7 +30,7 @@
       --ease:      cubic-bezier(.16,1,.3,1);
     }
 
-    /* â”€â”€â”€ RESET â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ RESET ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -42,7 +42,7 @@
     img { display: block; width: 100%; object-fit: cover; }
     a { text-decoration: none; color: inherit; }
 
-    /* â”€â”€â”€ NOISE TEXTURE â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ NOISE TEXTURE ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -52,7 +52,7 @@
       opacity: .5;
     }
 
-    /* â”€â”€â”€ NAV â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ NAV ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     .site-nav {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 100;
@@ -85,7 +85,7 @@
     }
     .nav-cta:hover { background: var(--rust-lt); transform: scale(1.04); }
 
-    /* â”€â”€â”€ HERO â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ HERO ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     .hero {
       position: relative;
       height: 100svh;
@@ -181,7 +181,7 @@
     }
     .hero-stat-label { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--sand); margin-top: .2rem; }
 
-    /* â”€â”€â”€ SECTION HEADERS â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ SECTION HEADERS ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     .section-eyebrow {
       display: inline-flex; align-items: center; gap: .6rem;
       font-size: .75rem; font-weight: 600;
@@ -206,7 +206,7 @@
     .section-title a { color: var(--lime); }
     .section-desc { font-size: 1rem; color: var(--sand); line-height: 1.75; max-width: 520px; margin-top: .9rem; }
 
-    /* â”€â”€â”€ TOUR SECTION WRAPPER â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ TOUR SECTION WRAPPER ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     .tours-section {
       padding: 6rem 4rem;
       position: relative;
@@ -219,7 +219,7 @@
     }
     .tours-header-right { display: flex; gap: 1rem; align-items: center; }
 
-    /* â”€â”€â”€ FILTER PILLS â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ FILTER PILLS ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     .filter-pills { display: flex; gap: .6rem; flex-wrap: wrap; }
     .pill {
       padding: .45rem 1.1rem;
@@ -238,7 +238,7 @@
       color: var(--white);
     }
 
-    /* â”€â”€â”€ TOUR CARD â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ TOUR CARD ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     .tours-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -374,7 +374,7 @@
     }
     .card-btn:hover { background: var(--fern); transform: scale(1.04); }
 
-    /* â”€â”€â”€ FEATURED WIDE CARD â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ FEATURED WIDE CARD ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     .tour-featured {
       grid-column: 1 / -1;
       display: grid;
@@ -417,7 +417,7 @@
     }
     .feat-link:hover { gap: .7rem; border-color: var(--lime); }
 
-    /* â”€â”€â”€ REGION BANNER â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ REGION BANNER ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     .region-banner {
       display: flex; align-items: center; gap: 1.5rem;
       padding: 1.4rem 2rem;
@@ -441,7 +441,7 @@
     }
     .region-banner-text p { font-size: .83rem; color: var(--sand); }
 
-    /* â”€â”€â”€ DIVIDER â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ DIVIDER ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     .section-divider {
       width: calc(100% - 8rem);
       margin: 0 4rem;
@@ -449,7 +449,7 @@
       border-top: 1px solid rgba(255,255,255,.07);
     }
 
-    /* â”€â”€â”€ CTA STRIP â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ CTA STRIP ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     .cta-strip {
       margin: 3rem 4rem 6rem;
       background: linear-gradient(135deg, var(--moss) 0%, var(--ink) 100%);
@@ -492,7 +492,7 @@
     }
     .btn-lime:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 30px rgba(184,217,108,.25); }
 
-    /* â”€â”€â”€ FADE-IN ANIMATION â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ FADE-IN ANIMATION ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -503,7 +503,7 @@
     .fade-up-d3 { animation-delay: .35s; }
     .fade-up-d4 { animation-delay: .5s; }
 
-    /* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
+    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ RESPONSIVE ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
     @media (max-width: 960px) {
       .site-nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -523,7 +523,7 @@
 </head>
 <body>
 <!-- STANDALONE OFFCANVAS MENU -->
-        <div class="site-menu" data-lenis-prevent>
+                                                <div class="site-menu" data-lenis-prevent>
             <div class="site-menu-bg"></div>
             <div class="site-menu-header">
                 <div class="site-header-left">
@@ -534,110 +534,85 @@
                 </div>
                 <div class="site-header-logo">
                     <a aria-label="Basswoods Camp" href="index.html" style="text-decoration:none;">
-                        <span style="color: #f2f0e8; font-family: sans-serif; font-size: 24px; font-weight: bold; letter-spacing: 2px;">BASS WOODS</span>
+                        <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
                     </a>
                 </div>
                 <div class="site-header-right">
-                                            <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
-                                                                                    <a class="btn btn-sm btn-inverted" href="tel:8011228979">
-                            <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
-                            <span class="d-none d-md-inline">Call Us</span>
-                        </a>
-                                                        </div>
-            </div>
-                                    <div class="site-menu-main site-header-offset bg-charcoal">
-                <div class="site-menu-main-container px-container pb-md">
-                    <ul id="menu-primary-menu" class="site-menu-nav ginto-normal-black py-xl">
-<li id="menu-item-new-1" class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-302" href="tours.html"><span>Tour package</span></a></li>
-<li id="menu-item-new-2" class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-296" href="rentals.html"><span>Vehicles Rentals</span></a></li>
-<li id="menu-item-new-3" class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="#"><span>Camping equipment rentals</span></a></li>
-<li id="menu-item-new-4" class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-295" href="camping.html"><span>Campings</span></a></li>
-<li id="menu-item-new-5" class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-298" href="#"><span>Trekking</span></a></li>
-<li id="menu-item-new-6" class="menu-item"><a title="Outdoor activities" class="site-menu-nav-item" data-image="menu-item-image-297" href="#"><span>Outdoor activities</span></a></li>
-<li id="menu-item-new-7" class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-299" href="#"><span>Off beat Tours</span></a></li>
-</ul>                    <ul class="site-menu-social">
-                                                                                    <li>
-                                    <a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank">
-                                        <i class="ri-facebook-fill"></i>
-                                    </a>
-                                </li>
-                                                            <li>
-                                    <a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank">
-                                        <i class="ri-instagram-fill"></i>
-                                    </a>
-                                </li>
-                                                            <li>
-                                    <a aria-label="Location" href="camping.html" target="_blank">
-                                        <i class="ri-map-pin-fill"></i>
-                                    </a>
-                                </li>
-                                                                            <li><a aria-label="Contact us" href="mailto:basswoodscamp@gmail.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
-                    </ul>
-                </div>
-                                    <a class="site-menu-account-btn" data-no-swup href="my-account.html">
-                        <span>My account</span>
+                    <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
+                    <a class="btn btn-sm btn-inverted" href="tel:8011228979">
+                        <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
+                        <span class="d-none d-md-inline">Call Us</span>
                     </a>
-                                            </div>
-            <div class="site-menu-images">
-                <div class="site-menu-images-container">
-                                                                                                                                    <div class="site-menu-images-item active" id="menu-item-image-295">
-
-                            
-<img width="1500" height="1500" src="wp-content/uploads/2023/11/cat_nepal_30.jpg" class="" alt="" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/11/cat_nepal_30.jpg 1500w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/cat_nepal_30-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/cat_nepal_30-1024x1024.jpg 1024w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/cat_nepal_30-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/cat_nepal_30-768x768.jpg 768w" />
-                        </div>
-                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-296">
-
-                            
-<img width="1200" height="1200" src="wp-content/uploads/2023/10/Menu-e-mtb-1.jpg" class="" alt="E Basswoods Adventure Tour - Basswoods Camp Tours" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/10/Menu-e-mtb-1.jpg 1200w, https://www.basswoodscamp.com/wp-content/uploads/2023/10/Menu-e-mtb-1-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/10/Menu-e-mtb-1-1024x1024.jpg 1024w, https://www.basswoodscamp.com/wp-content/uploads/2023/10/Menu-e-mtb-1-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/10/Menu-e-mtb-1-768x768.jpg 768w" />
-                        </div>
-                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-297">
-
-                            
-<img width="1500" height="1500" src="wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6.jpg" class="" alt="" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6.jpg 1500w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6-1024x1024.jpg 1024w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/D-Shearer-Nepal-Portraits-6-768x768.jpg 768w" />
-                        </div>
-                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-302">
-
-                            
-<img width="1000" height="1000" src="wp-content/uploads/2023/09/GUIDES.jpg" class="" alt="" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/09/GUIDES.jpg 1000w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/GUIDES-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/GUIDES-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/GUIDES-768x768.jpg 768w" />
-                        </div>
-                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-298">
-
-                            
-<img width="1500" height="1500" src="wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374.jpg" class="" alt="Basswoods Adventure tour Ecuador, rider carrying his bike" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374.jpg 1500w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374-1024x1024.jpg 1024w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Basswoods Adventures-Mountain-Bike-Tour-Ecuador-High-Res-374-768x768.jpg 768w" />
-                        </div>
-                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-299">
-
-                            
-<img width="1500" height="1500" src="wp-content/uploads/2023/11/Milner_NPL015_0136.jpg" class="" alt="" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/11/Milner_NPL015_0136.jpg 1500w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Milner_NPL015_0136-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Milner_NPL015_0136-1024x1024.jpg 1024w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Milner_NPL015_0136-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/11/Milner_NPL015_0136-768x768.jpg 768w" />
-                        </div>
-                                                                                                                    <div class="site-menu-images-item " id="menu-item-image-300">
-
-                            
-<img width="1000" height="1000" src="wp-content/uploads/2023/09/CONTACT.jpg" class="" alt="" loading="lazy" sizes="100vw" decoding="async" srcset="https://www.basswoodscamp.com/wp-content/uploads/2023/09/CONTACT.jpg 1000w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/CONTACT-300x300.jpg 300w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/CONTACT-150x150.jpg 150w, https://www.basswoodscamp.com/wp-content/uploads/2023/09/CONTACT-768x768.jpg 768w" />
-                        </div>
-                                                            </div>
+                </div>
             </div>
-        </div>
+            <div class="site-menu-body">
+                <div class="site-menu-main site-header-offset bg-charcoal">
+                    <div class="site-menu-main-container px-container pb-md">
+                        <ul id="menu-primary-menu" class="site-menu-nav ginto-normal-black py-xl">
+                            <li id="menu-item-new-1" class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-302" href="tours.html"><span>Tour package</span></a></li>
+                            <li id="menu-item-new-2" class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-296" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
+                            <li id="menu-item-new-3" class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="rentals.html"><span>Camping equipment rentals</span></a></li>
+                            <li id="menu-item-new-4" class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-295" href="camping.html"><span>Campings</span></a></li>
+                            <li id="menu-item-new-5" class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-298" href="trekking.html"><span>Trekking</span></a></li>
+                            <li id="menu-item-new-6" class="menu-item"><a title="Outdoor activities" class="site-menu-nav-item" data-image="menu-item-image-297" href="trekking.html#activities"><span>Outdoor activities</span></a></li>
+                            <li id="menu-item-new-7" class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-299" href="offbeat.html"><span>Off beat Tours</span></a></li>
+                        </ul>
+                        <ul class="site-menu-social">
+                            <li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a></li>
+                            <li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a></li>
+                            <li><a aria-label="Location" href="camping.html" target="_blank"><i class="ri-map-pin-fill"></i></a></li>
+                            <li><a aria-label="Contact us" href="mailto:basswoodscamp@gmail.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-menu-images">
+                    <div class="site-menu-images-container">
+                        <div class="site-menu-images-item active" id="menu-item-image-295">
+                            <img src="assets/basswoods/menu_campings.png" alt="Campings" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-296">
+                            <img src="assets/basswoods/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-rentals">
+                            <img src="assets/basswoods/menu_camping_equipment.png" alt="Camping Equipment" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-302">
+                            <img src="assets/basswoods/menu_tour_package.png" alt="Tour Package" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-298">
+                            <img src="assets/basswoods/camp-1.jpg" alt="Trekking" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-297">
+                            <img src="assets/basswoods/camp-2.jpg" alt="Outdoor Activities" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-299">
+                            <img src="assets/basswoods/blue-sky-camp.jpg" alt="Offbeat Tours" loading="lazy" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!-- â”€â”€â”€ NAV â”€â”€â”€ -->
 <nav class="site-nav">
-  <button class="site-menu-toggle" style="background:transparent; border:none; color:inherit; cursor:pointer; display:flex; align-items:center; gap:10px; font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; transition:color 0.2s;">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-    <span>Menu</span>
-</button>
-  <div class="nav-logo">Basswoods<span>Camp</span></div>
+  <div class="header-left-group">
+    <button class="site-menu-toggle" style="background:transparent; border:none; color:inherit; cursor:pointer; display:flex; align-items:center; gap:10px; font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; transition:color 0.2s;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <span class="d-none d-md-inline">Menu</span>
+    </button>
+    <a href="index.html" class="nav-logo" style="text-decoration:none; color:inherit;">Basswoods<em>Camp</em></a>
+  </div>
   <ul class="nav-links" style="list-style:none">
     <li><a href="index.html">Home</a></li>
     <li><a href="tours.html" class="active">Tours</a></li>
     <li><a href="rentals.html">Rentals</a></li>
     <li><a href="camping.html">Camping</a></li>
-    <li><a href="calendar.html">Calendar</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="trekking.html">Trekking</a></li>
+    <li><a href="offbeat.html">Offbeat</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   <a href="camping.html" class="nav-cta">Book Now</a>
 </nav>
-
-<!-- â”€â”€â”€ HERO â”€â”€â”€ -->
+<!-- ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ HERO ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-ring hero-ring-1"></div>
@@ -652,7 +627,7 @@
       Experience the magic<br>of the <em>Northeast</em><br>&amp; Festivals
     </h1>
     <p class="hero-sub fade-up fade-up-d3">
-      From rugged Adirondack single-tracks to Himalayan ridge-lines â€” hand-curated Basswoods Adventure experiences led by expert guides.
+      From rugged Adirondack single-tracks to Himalayan ridge-lines ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â hand-curated Basswoods Adventure experiences led by expert guides.
     </p>
     <div class="hero-btns fade-up fade-up-d4">
       <a href="#northeast" class="btn-primary">
@@ -674,15 +649,15 @@
       <div class="hero-stat-label">Countries</div>
     </div>
     <div class="hero-stat">
-      <div class="hero-stat-num">4.9â˜…</div>
+      <div class="hero-stat-num">4.9&#9733;</div>
       <div class="hero-stat-label">Avg Rating</div>
     </div>
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â
      NORTHEAST SECTION
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â -->
 <section class="tours-section" id="northeast">
   <div class="tours-header">
     <div>
@@ -704,8 +679,8 @@
   <div class="region-banner">
     <div class="region-banner-icon"><i class="ri-tree-line"></i></div>
     <div class="region-banner-text">
-      <h3>Northeast Season: May â€“ October</h3>
-      <p>Peak foliage rides in Septemberâ€“October. Muddy spring trails open from late April. All tours include shuttle, guide &amp; snacks.</p>
+      <h3>Northeast Season: May ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ October</h3>
+      <p>Peak foliage rides in SeptemberÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“October. Muddy spring trails open from late April. All tours include shuttle, guide &amp; snacks.</p>
     </div>
   </div>
 
@@ -714,7 +689,7 @@
 
     <article class="tours-listings-item tour-featured" data-difficulty="expert">
       <div class="tours-listings-media">
-        <img src="https://images.unsplash.com/photo-1542388248-f8b2e6ca4c27?w=800&q=80&auto=format&fit=crop" alt="Adirondack Epic"/>
+        <img src="assets/basswoods/nagaland.jpeg" alt="Nagaland Trek"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row">
           <span class="badge badge-feat">Featured</span>
@@ -723,9 +698,9 @@
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
       </div>
       <div class="tours-listings-details">
-        <div class="card-category">Adirondacks, NY</div>
-        <h3 class="card-title">DzÃƒÂ¼kou Valley Trek & Camping</h3>
-        <p class="tour-featured-desc">A 5-day expedition through the breathtaking DzÃƒÂ¼kou Valley. Tackle the pristine trails, camp under the stars, and experience the raw beauty of Nagaland.</p>
+        <div class="card-category">Nagaland</div>
+        <h3 class="card-title">Dz&#252;kou Valley Trek & Camping</h3>
+        <p class="tour-featured-desc">A 5-day expedition through the breathtaking Dz&#252;kou Valley. Tackle the pristine trails, camp under the stars, and experience the raw beauty of Nagaland.</p>
         <div class="card-meta">
           <span class="card-meta-item"><i class="ri-time-line"></i> 5 Days</span>
           <span class="card-meta-item"><i class="ri-route-line"></i> 148 km</span>
@@ -736,7 +711,7 @@
         <div class="feat-actions">
           <div>
             <div class="card-price-from">Per person from</div>
-            <div class="card-price-num">&#8377;6500</div>
+            <div class="card-price-num">INR &#8377;6500</div>
           </div>
           <a href="#enquire" class="btn-primary" style="margin-left:auto">
             Book This Tour <i class="ri-arrow-right-line"></i>
@@ -749,17 +724,17 @@
     <!-- Card 2 -->
     <article class="tours-listings-item" data-difficulty="intermediate">
       <div class="tours-listings-media">
-        <img src="https://images.unsplash.com/photo-1558980394-dbb977039a2e?w=600&q=80&auto=format&fit=crop" alt="Vermont Green"/>
+        <img src="assets/basswoods/arunachal.jpeg" alt="Arunachal Music Festival"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Intermediate</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">&#8377;1200</div>
+          <div class="card-price-num">INR &#8377;1200</div>
         </div>
       </div>
       <div class="tours-listings-details">
-        <div class="card-category">Vermont</div>
+        <div class="card-category">Arunachal Pradesh</div>
         <h3 class="card-title">Ziro Festival of Music Camping</h3>
         <div class="card-meta">
           <span class="card-meta-item"><i class="ri-time-line"></i> 3 Days</span>
@@ -769,7 +744,7 @@
         <hr class="card-divider"/>
         <div class="card-footer">
           <div class="card-rating">
-            <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-num">4.9</span>
             <span class="rating-count">(64)</span>
           </div>
@@ -781,17 +756,17 @@
     <!-- Card 3 -->
     <article class="tours-listings-item" data-difficulty="beginner">
       <div class="tours-listings-media">
-        <img src="https://images.unsplash.com/photo-1598983329782-ac87e30d7ede?w=600&q=80&auto=format&fit=crop" alt="Catskill Weekend"/>
+        <img src="assets/basswoods/northeast culture.jpeg" alt="Nagaland Festival"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Beginner</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">&#8377;4500</div>
+          <div class="card-price-num">INR &#8377;4500</div>
         </div>
       </div>
       <div class="tours-listings-details">
-        <div class="card-category">Catskills, NY</div>
+        <div class="card-category">Nagaland</div>
         <h3 class="card-title">Hornbill Festival Tour</h3>
         <div class="card-meta">
           <span class="card-meta-item"><i class="ri-time-line"></i> 2 Days</span>
@@ -801,7 +776,7 @@
         <hr class="card-divider"/>
         <div class="card-footer">
           <div class="card-rating">
-            <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-num">4.8</span>
             <span class="rating-count">(89)</span>
           </div>
@@ -813,17 +788,17 @@
     <!-- Card 4 -->
     <article class="tours-listings-item" data-difficulty="expert">
       <div class="tours-listings-media">
-        <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=600&q=80&auto=format&fit=crop" alt="White Mountains"/>
+        <img src="assets/basswoods/cherrybloassom festival.jpeg" alt="Meghalaya Nature"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Expert</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">&#8377;2500</div>
+          <div class="card-price-num">INR &#8377;2500</div>
         </div>
       </div>
       <div class="tours-listings-details">
-        <div class="card-category">New Hampshire</div>
+        <div class="card-category">Meghalaya</div>
         <h3 class="card-title">Cherry Blossom Festival Camp</h3>
         <div class="card-meta">
           <span class="card-meta-item"><i class="ri-time-line"></i> 4 Days</span>
@@ -833,7 +808,7 @@
         <hr class="card-divider"/>
         <div class="card-footer">
           <div class="card-rating">
-            <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-num">4.9</span>
             <span class="rating-count">(41)</span>
           </div>
@@ -845,17 +820,17 @@
     <!-- Card 5 -->
     <article class="tours-listings-item" data-difficulty="family">
       <div class="tours-listings-media">
-        <img src="https://images.unsplash.com/photo-1519583272095-6433daf26b6e?w=600&q=80&auto=format&fit=crop" alt="Maine Coast Family"/>
+        <img src="assets/basswoods/orange festival.jpeg" alt="Arunachal Orange Festival"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Family</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">&#8377;3500</div>
+          <div class="card-price-num">INR &#8377;3500</div>
         </div>
       </div>
       <div class="tours-listings-details">
-        <div class="card-category">Maine Coast</div>
+        <div class="card-category">Arunachal Pradesh</div>
         <h3 class="card-title">Orange Festival Dhemthok</h3>
         <div class="card-meta">
           <span class="card-meta-item"><i class="ri-time-line"></i> 3 Days</span>
@@ -865,9 +840,137 @@
         <hr class="card-divider"/>
         <div class="card-footer">
           <div class="card-rating">
-            <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-num">5.0</span>
             <span class="rating-count">(32)</span>
+          </div>
+          <a href="#" class="card-btn">View <i class="ri-arrow-right-s-line"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 6 -->
+    <article class="tours-listings-item" data-difficulty="intermediate">
+      <div class="tours-listings-media">
+        <img src="assets/basswoods/mizoram.jpeg" alt="Mizoram Hills"/>
+        <div class="tours-listings-media-overlay"></div>
+        <div class="badge-row"><span class="badge badge-diff">Intermediate</span></div>
+        <div class="card-wishlist"><i class="ri-heart-line"></i></div>
+        <div class="card-price-overlay">
+          <div class="card-price-from">From</div>
+          <div class="card-price-num">INR &#8377;4200</div>
+        </div>
+      </div>
+      <div class="tours-listings-details">
+        <div class="card-category">Mizoram</div>
+        <h3 class="card-title">Blue Mountain Explorer</h3>
+        <div class="card-meta">
+          <span class="card-meta-item"><i class="ri-time-line"></i> 6 Days</span>
+          <span class="card-meta-item"><i class="ri-route-line"></i> 85 km</span>
+          <span class="card-meta-item"><i class="ri-user-line"></i> Max 10</span>
+        </div>
+        <hr class="card-divider"/>
+        <div class="card-footer">
+          <div class="card-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.9</span>
+            <span class="rating-count">(18)</span>
+          </div>
+          <a href="#" class="card-btn">View <i class="ri-arrow-right-s-line"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 7 -->
+    <article class="tours-listings-item" data-difficulty="intermediate">
+      <div class="tours-listings-media">
+        <img src="assets/basswoods/manipur.jpeg" alt="Manipur Loktak Lake"/>
+        <div class="tours-listings-media-overlay"></div>
+        <div class="badge-row"><span class="badge badge-diff">Intermediate</span></div>
+        <div class="card-wishlist"><i class="ri-heart-line"></i></div>
+        <div class="card-price-overlay">
+          <div class="card-price-from">From</div>
+          <div class="card-price-num">INR &#8377;4800</div>
+        </div>
+      </div>
+      <div class="tours-listings-details">
+        <div class="card-category">Manipur</div>
+        <h3 class="card-title">Loktak Floating Life</h3>
+        <div class="card-meta">
+          <span class="card-meta-item"><i class="ri-time-line"></i> 5 Days</span>
+          <span class="card-meta-item"><i class="ri-route-line"></i> 65 km</span>
+          <span class="card-meta-item"><i class="ri-user-line"></i> Max 12</span>
+        </div>
+        <hr class="card-divider"/>
+        <div class="card-footer">
+          <div class="card-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">4.8</span>
+            <span class="rating-count">(24)</span>
+          </div>
+          <a href="#" class="card-btn">View <i class="ri-arrow-right-s-line"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 8 -->
+    <article class="tours-listings-item" data-difficulty="advanced">
+      <div class="tours-listings-media">
+        <img src="assets/basswoods/sikkim.jpeg" alt="Sikkim Mountains"/>
+        <div class="tours-listings-media-overlay"></div>
+        <div class="badge-row"><span class="badge badge-diff">Advanced</span></div>
+        <div class="card-wishlist"><i class="ri-heart-line"></i></div>
+        <div class="card-price-overlay">
+          <div class="card-price-from">From</div>
+          <div class="card-price-num">INR &#8377;6500</div>
+        </div>
+      </div>
+      <div class="tours-listings-details">
+        <div class="card-category">Sikkim</div>
+        <h3 class="card-title">Himalayan Gateway Trek</h3>
+        <div class="card-meta">
+          <span class="card-meta-item"><i class="ri-time-line"></i> 10 Days</span>
+          <span class="card-meta-item"><i class="ri-route-line"></i> 120 km</span>
+          <span class="card-meta-item"><i class="ri-user-line"></i> Max 6</span>
+        </div>
+        <hr class="card-divider"/>
+        <div class="card-footer">
+          <div class="card-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-num">5.0</span>
+            <span class="rating-count">(15)</span>
+          </div>
+          <a href="#" class="card-btn">View <i class="ri-arrow-right-s-line"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 9 -->
+    <article class="tours-listings-item" data-difficulty="family">
+      <div class="tours-listings-media">
+        <img src="assets/basswoods/tripura.jpeg" alt="Tripura Palace"/>
+        <div class="tours-listings-media-overlay"></div>
+        <div class="badge-row"><span class="badge badge-diff">Family</span></div>
+        <div class="card-wishlist"><i class="ri-heart-line"></i></div>
+        <div class="card-price-overlay">
+          <div class="card-price-from">From</div>
+          <div class="card-price-num">INR &#8377;3200</div>
+        </div>
+      </div>
+      <div class="tours-listings-details">
+        <div class="card-category">Tripura</div>
+        <h3 class="card-title">Royal Heritage Trail</h3>
+        <div class="card-meta">
+          <span class="card-meta-item"><i class="ri-time-line"></i> 4 Days</span>
+          <span class="card-meta-item"><i class="ri-route-line"></i> 45 km</span>
+          <span class="card-meta-item"><i class="ri-user-line"></i> Max 14</span>
+        </div>
+        <hr class="card-divider"/>
+        <div class="card-footer">
+          <div class="card-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            <span class="rating-num">4.5</span>
+            <span class="rating-count">(12)</span>
           </div>
           <a href="#" class="card-btn">View <i class="ri-arrow-right-s-line"></i></a>
         </div>
@@ -879,9 +982,9 @@
 
 <hr class="section-divider"/>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â
      WORLDWIDE SECTION
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â -->
 <section class="tours-section" id="worldwide">
   <div class="tours-header">
     <div>
@@ -968,7 +1071,7 @@
         <hr class="card-divider"/>
         <div class="card-footer">
           <div class="card-rating">
-            <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-num">4.9</span>
             <span class="rating-count">(57)</span>
           </div>
@@ -1000,7 +1103,7 @@
         <hr class="card-divider"/>
         <div class="card-footer">
           <div class="card-rating">
-            <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-num">5.0</span>
             <span class="rating-count">(28)</span>
           </div>
@@ -1032,7 +1135,7 @@
         <hr class="card-divider"/>
         <div class="card-footer">
           <div class="card-rating">
-            <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-num">4.8</span>
             <span class="rating-count">(43)</span>
           </div>
@@ -1064,7 +1167,7 @@
         <hr class="card-divider"/>
         <div class="card-footer">
           <div class="card-rating">
-            <span class="stars">â˜…â˜…â˜…â˜…â˜…</span>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span class="rating-num">4.9</span>
             <span class="rating-count">(51)</span>
           </div>
@@ -1076,11 +1179,11 @@
   </div><!-- /ww-grid -->
 </section>
 
-<!-- â”€â”€â”€ CTA STRIP â”€â”€â”€ -->
+<!-- ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ CTA STRIP ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ -->
 <div class="cta-strip" id="enquire">
   <div>
     <h2 class="cta-strip-title">Can't find your <em>perfect ride?</em></h2>
-    <p class="cta-strip-sub">Tell us your dream trail â€” we'll build a custom itinerary around it.</p>
+    <p class="cta-strip-sub">Tell us your dream trail ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â we'll build a custom itinerary around it.</p>
   </div>
   <div class="cta-strip-btns">
     <a href="mailto:basswoodscamp@gmail.com" class="btn-lime">
@@ -1096,7 +1199,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  /* â”€â”€â”€ FILTER LOGIC â”€â”€â”€ */
+  /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ FILTER LOGIC ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
   function initFilters(filterGroupId, gridId, dataAttr) {
     const pills = document.querySelectorAll(`#${filterGroupId} .pill`);
     const cards = document.querySelectorAll(`#${gridId} .tours-listings-item`);
@@ -1122,7 +1225,7 @@
   initFilters('ne-filters', 'ne-grid', 'difficulty');
   initFilters('ww-filters', 'ww-grid', 'region');
 
-  /* â”€â”€â”€ WISHLIST TOGGLE â”€â”€â”€ */
+  /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ WISHLIST TOGGLE ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
   document.querySelectorAll('.card-wishlist').forEach(btn => {
     btn.addEventListener('click', e => {
       e.stopPropagation();
@@ -1134,7 +1237,7 @@
     });
   });
 
-  /* â”€â”€â”€ INTERSECTION OBSERVER for lazy fade-in â”€â”€â”€ */
+  /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ INTERSECTION OBSERVER for lazy fade-in ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1156,5 +1259,8 @@
   <script src="assets/js/basswoods-menu.js" defer></script>
 </body>
 </html>
+
+
+
 
 

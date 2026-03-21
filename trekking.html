@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trekking & Adventures â€” Basswoods Camp</title>
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+  
+  <!-- Premium Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Basswoods Menu CSS -->
+  <link rel="stylesheet" href="assets/css/basswoods-menu.css">
+
+  <style>
+    /* â”€â”€ BRAND TOKENS â”€â”€ */
+    :root {
+      --ink:       #120D08;
+      --soil:      #1C1208;
+      --bark:      #2B1D0E;
+      --moss:      #3A4A20;
+      --moss-lt:   #4A5E2A;
+      --ember:     #D4622A;
+      --ember-lt:  #E8854E;
+      --gold:      #C9A03A;
+      --cream:     #F4EFE4;
+      --fog:       #B8AE9C;
+      --mist:      #7A7060;
+      --border:    rgba(255,255,255,0.08);
+      --ff-d: 'Cormorant Garamond', Georgia, serif;
+      --ff-b: 'DM Sans', system-ui, sans-serif;
+      --ease:   cubic-bezier(.4,0,.2,1);
+      --spring: cubic-bezier(.34,1.56,.64,1);
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--ff-b);background:var(--ink);color:var(--cream);line-height:1.7;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+
+    /* grain */
+    body::after{content:'';position:fixed;inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:.028;pointer-events:none;z-index:9000}
+
+    /* â”€â”€ HEADER â”€â”€ */
+    .hdr{position:fixed;top:0;left:0;right:0;z-index:300;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;transition:background .4s var(--ease),border-color .4s;border-bottom:1px solid transparent}
+    .hdr.stuck{background:rgba(18,13,8,.97);backdrop-filter:blur(12px);border-color:var(--border)}
+    .logo-font{font-family:var(--ff-d);font-size:1.6rem;font-weight:700;color:var(--cream);letter-spacing:1px}
+    .logo-font em{font-style:italic;color:var(--ember)}
+    
+    .nav-links{display:flex;gap:2.2rem;align-items:center}
+    .nav-links a{font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--fog);transition:color .25s}
+    .nav-links a:hover,.nav-links a.active{color:var(--ember-lt)}
+
+    .btn-hdr{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.25rem;background:var(--ember);color:var(--ink);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;border:none;cursor:pointer;transition:background .25s,transform .2s}
+    .btn-hdr:hover{background:var(--ember-lt);transform:translateY(-1px)}
+
+    /* â”€â”€ HERO â”€â”€ */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+
+    .hero-bg{position:absolute;inset:0;
+      background:
+        radial-gradient(ellipse 50% 60% at 70% 35%,rgba(58,74,32,.35) 0%,transparent 60%),
+        radial-gradient(ellipse 40% 50% at 15% 75%,rgba(212,98,42,.1) 0%,transparent 55%),
+        linear-gradient(170deg,rgba(10,16,7,0.7) 0%,rgba(18,13,8,0.85) 45%,rgba(14,10,5,0.95) 100%),
+        url('assets/basswoods/blue-sky-camp.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Contour lines â€” topographic feel */
+    .contours{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+    .contour{position:absolute;border-radius:50%;border:1px solid rgba(58,74,32,.18);transform:translate(-50%,-50%)}
+
+    /* Animated mist ribbons */
+    @keyframes drift{
+      0%{transform:translateX(-8%) translateY(0) scaleX(1)}
+      50%{transform:translateX(5%) translateY(-12px) scaleX(1.04)}
+      100%{transform:translateX(-8%) translateY(0) scaleX(1)}
+    }
+    .mist-ribbon{position:absolute;left:-5%;right:-5%;height:80px;border-radius:50%;background:rgba(58,74,32,.07);filter:blur(18px);animation:drift var(--spd,18s) ease-in-out infinite}
+
+    /* Mountain silhouette layers */
+    .peaks{position:absolute;bottom:0;left:0;right:0}
+    .peaks svg{width:100%;display:block}
+
+    /* Elevation marker */
+    .elev-tag{
+      position:absolute;top:38%;right:10%;
+      display:flex;flex-direction:column;align-items:flex-end;gap:.3rem;
+      z-index:3;
+    }
+    .elev-num{font-family:var(--ff-d);font-size:3.5rem;font-weight:700;color:rgba(201,160,58,.18);line-height:1;letter-spacing:-.02em}
+    .elev-lbl{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,160,58,.25)}
+
+    .hero-body{position:relative;z-index:5;padding:0 3rem;max-width:740px}
+
+    .hero-kicker{display:inline-flex;align-items:center;gap:.55rem;padding:.3rem .9rem .3rem .6rem;border:1px solid rgba(212,98,42,.3);border-radius:999px;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ember-lt);margin-bottom:1.6rem}
+
+    .hero-h1{font-family:var(--ff-d);font-size:clamp(3.4rem,8.5vw,7rem);font-weight:700;line-height:.92;color:var(--cream);margin-bottom:1.8rem}
+    .hero-h1 .line{display:block}
+    .hero-h1 em{font-style:italic;color:var(--ember)}
+
+    .hero-p{font-size:1.08rem;color:var(--fog);font-weight:300;max-width:490px;line-height:1.8;margin-bottom:3rem}
+    .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2.2rem;background:var(--ember);color:var(--ink);font-size:.88rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;border:none;cursor:pointer;transition:background .25s,transform .2s,box-shadow .25s}
+    .btn-primary:hover{background:var(--ember-lt);transform:translateY(-2px);box-shadow:0 14px 40px rgba(212,98,42,.35)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2.2rem;background:transparent;color:var(--cream);font-size:.88rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;border:1px solid var(--border);cursor:pointer;transition:border-color .25s,color .25s}
+    .btn-ghost:hover{border-color:var(--ember);color:var(--ember-lt)}
+
+    /* scroll hint */
+    .scroll-hint{position:absolute;bottom:2.5rem;left:3rem;z-index:5;display:flex;align-items:center;gap:.7rem;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
+    .scroll-hint span{display:block;width:40px;height:1px;background:linear-gradient(to right,var(--mist),transparent)}
+
+    /* â”€â”€ SECTION ATOMS â”€â”€ */
+    .section{padding:6.5rem 3rem}
+    .container{max-width:1260px;margin:0 auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);margin-bottom:.9rem}
+    .eyebrow::before{content:'';width:24px;height:1px;background:var(--ember)}
+    .sec-h2{font-family:var(--ff-d);font-size:clamp(2rem,4vw,3.4rem);font-weight:700;color:var(--cream);line-height:1.1;margin-bottom:.8rem}
+    .sec-h2 em{font-style:italic;color:var(--ember)}
+    .sec-p{font-size:1rem;color:var(--fog);font-weight:300;max-width:540px;line-height:1.8}
+
+    /* â”€â”€ DZÃœKOU FEATURE SECTION â”€â”€ */
+    .feature-sec{background:var(--soil);border-top:1px solid var(--border)}
+
+    .feature-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:center}
+
+    /* Visual panel â€” elevation profile SVG */
+    .visual-panel{position:relative}
+
+    .elev-card{background:var(--bark);border:1px solid var(--border);border-radius:22px;padding:2rem;overflow:hidden;position:relative}
+    .elev-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 30%,rgba(58,74,32,.15),transparent)}
+
+    .elev-profile{width:100%;height:auto;display:block;position:relative;z-index:1}
+
+    /* Stat bubbles overlapping the card */
+    .stat-bubbles{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.2rem}
+    .stat-bub{background:var(--soil);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;transition:border-color .25s}
+    .stat-bub:hover{border-color:rgba(212,98,42,.35)}
+    .stat-bub-num{font-family:var(--ff-d);font-size:1.6rem;font-weight:700;color:var(--ember);line-height:1}
+    .stat-bub-lbl{font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-top:.2rem}
+
+    /* Trek details */
+    .trek-tag{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .7rem;border-radius:999px;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+    .trek-tag.overnight{background:rgba(42,124,184,.15);border:1px solid rgba(42,124,184,.3);color:#6BAED6}
+
+    .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:1.8rem 0}
+    .detail-cell{background:var(--bark);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem}
+    .detail-lbl{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-bottom:.25rem}
+    .detail-val{font-family:var(--ff-d);font-size:.95rem;font-weight:600;color:var(--cream)}
+    .detail-val.highlight{color:var(--ember)}
+
+    /* Includes list */
+    .inc-list{display:flex;flex-direction:column;gap:.5rem;margin:1.5rem 0 2rem}
+    .inc-item{display:flex;align-items:center;gap:.65rem;font-size:.88rem;color:var(--fog)}
+    .inc-item i{font-size:.95rem;color:var(--ember);flex-shrink:0}
+
+    /* Best time ribbon */
+    .best-time{display:flex;align-items:center;gap:.8rem;padding:1rem 1.3rem;background:rgba(58,74,32,.25);border:1px solid rgba(58,74,32,.5);border-radius:8px;margin-bottom:2rem}
+    .best-time i{font-size:1.2rem;color:var(--gold);flex-shrink:0}
+    .best-time-text{font-size:.84rem;color:var(--fog);line-height:1.5}
+    .best-time-text strong{color:var(--gold)}
+
+    /* â”€â”€ WHAT TO EXPECT â€” route timeline â”€â”€ */
+    .route-sec{background:var(--ink)}
+
+    .route-timeline{position:relative;padding-left:3rem;margin-top:4rem}
+    .route-timeline::before{content:'';position:absolute;top:0;bottom:0;left:12px;width:2px;background:linear-gradient(to bottom,var(--ember),rgba(212,98,42,.1) 85%,transparent)}
+
+    .route-stop{position:relative;margin-bottom:2.8rem}
+    .route-stop:last-child{margin-bottom:0}
+
+    .route-marker{position:absolute;left:-3rem;top:.2rem;width:26px;height:26px;border-radius:50%;background:var(--bark);border:2px solid var(--ember);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--ember);z-index:2}
+    .route-marker.base{background:var(--ember);color:var(--ink)}
+    .route-marker.camp{background:var(--moss);border-color:var(--moss-lt);color:var(--cream)}
+
+    .route-content{background:var(--soil);border:1px solid var(--border);border-radius:12px;padding:1.4rem 1.6rem;transition:border-color .25s}
+    .route-content:hover{border-color:rgba(212,98,42,.3)}
+
+    .route-stop-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem}
+    .route-stop-name{font-family:var(--ff-d);font-size:1.2rem;font-weight:700;color:var(--cream)}
+    .route-elev{font-size:.72rem;font-weight:600;letter-spacing:.1em;color:var(--gold);background:rgba(201,160,58,.1);border:1px solid rgba(201,160,58,.2);border-radius:999px;padding:.2rem .6rem;flex-shrink:0}
+    .route-stop-desc{font-size:.87rem;color:var(--fog);font-weight:300;line-height:1.7}
+    .route-stop-meta{display:flex;gap:1rem;margin-top:.7rem;flex-wrap:wrap}
+    .route-meta-pill{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;color:var(--mist)}
+    .route-meta-pill i{font-size:.8rem;color:var(--ember)}
+
+    /* â”€â”€ ACTIVITIES GRID â”€â”€ */
+    .activities-sec{background:var(--soil);border-top:1px solid var(--border)}
+
+    .act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;margin-top:3.5rem}
+
+    .act-card{background:var(--bark);border:1px solid var(--border);border-radius:14px;padding:1.8rem;display:flex;flex-direction:column;gap:.8rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+    .act-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--clr,var(--border));transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+    .act-card:hover{border-color:rgba(212,98,42,.35);transform:translateY(-4px)}
+    .act-card:hover::before{transform:scaleX(1)}
+
+    .act-ico{width:48px;height:48px;background:rgba(212,98,42,.1);border:1px solid rgba(212,98,42,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--ember)}
+    .act-ico.green{background:rgba(58,74,32,.3);border-color:rgba(58,74,32,.5);color:#6FCF7A}
+    .act-ico.gold{background:rgba(201,160,58,.1);border-color:rgba(201,160,58,.2);color:var(--gold)}
+
+    .act-name{font-family:var(--ff-d);font-size:1.2rem;font-weight:700;color:var(--cream);line-height:1.2}
+    .act-desc{font-size:.87rem;color:var(--fog);font-weight:300;line-height:1.7;flex:1}
+    .act-avail{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mist)}
+    .act-avail::before{content:'';width:6px;height:6px;border-radius:50%;background:#6FCF7A;box-shadow:0 0 5px #6FCF7A}
+
+    /* â”€â”€ OFFBEAT TOURS â”€â”€ */
+    .offbeat-sec{background:var(--ink)}
+
+    .offbeat-hero-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center}
+
+    .offbeat-cards{display:flex;flex-direction:column;gap:1rem}
+
+    .offbeat-card{display:flex;gap:1.2rem;padding:1.2rem 1.4rem;background:var(--soil);border:1px solid var(--border);border-left:3px solid transparent;border-radius:12px;transition:all .25s}
+    .offbeat-card:hover{border-color:rgba(212,98,42,.35);border-left-color:var(--ember);background:rgba(212,98,42,.04);transform:translateX(4px)}
+
+    .offbeat-card-ico{width:44px;height:44px;min-width:44px;background:rgba(212,98,42,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--ember)}
+    .offbeat-card-ico.g{background:rgba(58,74,32,.3);color:#6FCF7A}
+    .offbeat-card-ico.au{background:rgba(201,160,58,.1);color:var(--gold)}
+
+    .ofc-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:.3rem}
+    .ofc-desc{font-size:.83rem;color:var(--fog);font-weight:300;line-height:1.65}
+
+    /* Philosophy quote */
+    .philosophy-box{background:var(--soil);border:1px solid var(--border);border-radius:22px;padding:3rem;position:relative;overflow:hidden}
+    .philosophy-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 80% 80%,rgba(58,74,32,.15),transparent)}
+    .quote-mark{font-family:var(--ff-d);font-size:8rem;line-height:.7;color:rgba(212,98,42,.12);position:absolute;top:1.5rem;left:2rem;font-style:italic;user-select:none}
+    .philosophy-text{font-family:var(--ff-d);font-size:1.6rem;font-weight:600;font-style:italic;color:var(--cream);line-height:1.4;position:relative;z-index:1;margin-bottom:1rem}
+    .philosophy-text em{color:var(--ember)}
+    .philosophy-attr{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);position:relative;z-index:1}
+
+    /* â”€â”€ GEAR & PREP SECTION â”€â”€ */
+    .gear-sec{background:var(--soil);border-top:1px solid var(--border)}
+
+    .gear-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3.5rem}
+    .gear-col-title{font-family:var(--ff-d);font-size:1.2rem;font-weight:700;color:var(--cream);margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem}
+    .gear-col-title i{color:var(--ember)}
+
+    .gear-list{display:flex;flex-direction:column;gap:.6rem}
+    .gear-item{display:flex;align-items:flex-start;gap:.7rem;padding:.8rem 1rem;background:var(--bark);border:1px solid var(--border);border-radius:8px}
+    .gear-item i{font-size:.95rem;color:var(--ember);flex-shrink:0;margin-top:.1rem}
+    .gear-item-text{font-size:.85rem;color:var(--fog);line-height:1.55}
+    .gear-item-text strong{color:var(--cream);font-weight:600}
+
+    /* season strip */
+    .season-strip{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin-top:3rem;border-radius:8px;overflow:hidden}
+    .s-cell{padding:.55rem .3rem;text-align:center;font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    .s-cell.off{background:var(--bark);color:var(--mist)}
+    .s-cell.ok{background:rgba(58,74,32,.4);color:#7BC48A}
+    .s-cell.best{background:rgba(58,74,32,.7);color:#B5EEC4}
+    .season-label{font-size:.68rem;color:var(--mist);margin-top:.6rem;display:flex;gap:1.2rem;flex-wrap:wrap}
+    .sl-dot{display:inline-flex;align-items:center;gap:.35rem}
+    .sl-dot span{width:8px;height:8px;border-radius:2px;display:inline-block}
+
+    /* â”€â”€ CTA BAND â”€â”€ */
+    .cta-band{position:relative;padding:8rem 3rem;text-align:center;overflow:hidden}
+    .cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 65% 75% at 50% 50%,rgba(212,98,42,.18) 0%,transparent 65%),var(--bark)}
+    /* animated contour rings on CTA */
+    .cta-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid rgba(212,98,42,.07);transform:translate(-50%,-50%);animation:expand 4s ease-out infinite}
+    .cta-ring:nth-child(2){animation-delay:1.3s}
+    .cta-ring:nth-child(3){animation-delay:2.6s}
+    @keyframes expand{
+      0%{width:80px;height:80px;opacity:.6}
+      100%{width:900px;height:900px;opacity:0}
+    }
+    .cta-content{position:relative;z-index:2;max-width:700px;margin:0 auto}
+    .cta-h2{font-family:var(--ff-d);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;line-height:1.05;color:var(--cream);margin-bottom:1.2rem}
+    .cta-h2 em{font-style:italic;color:var(--ember)}
+    .cta-p{font-size:1rem;color:var(--fog);margin-bottom:2.8rem}
+
+    /* â”€â”€ MODAL â”€â”€ */
+    .m-veil{display:none;position:fixed;inset:0;background:rgba(8,5,3,.92);backdrop-filter:blur(12px);z-index:900;align-items:center;justify-content:center;padding:1.5rem}
+    .m-veil.open{display:flex}
+    .m-box{background:var(--soil);border:1px solid var(--border);border-radius:22px;width:100%;max-width:540px;overflow:hidden;animation:popIn .32s var(--spring)}
+    @keyframes popIn{from{opacity:0;transform:scale(.9) translateY(28px)}to{opacity:1;transform:none}}
+    .m-head{background:var(--ember);padding:1.5rem 2rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+    .m-title{font-family:var(--ff-d);font-size:1.5rem;font-weight:700;color:var(--ink)}
+    .m-sub{font-size:.78rem;color:rgba(18,13,8,.65);margin-top:.15rem}
+    .m-close{width:32px;height:32px;background:rgba(18,13,8,.15);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;color:var(--ink);transition:background .2s}
+    .m-close:hover{background:rgba(18,13,8,.3)}
+    .m-body{padding:2rem}
+    .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .f-grp{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+    .f-grp.w{grid-column:1/-1}
+    .f-lbl{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
+    .f-ctrl{background:var(--ink);border:1px solid var(--border);border-radius:4px;padding:.72rem 1rem;font-family:var(--ff-b);font-size:.9rem;color:var(--cream);width:100%;outline:none;transition:border-color .2s}
+    .f-ctrl::placeholder{color:var(--mist);opacity:.5}
+    .f-ctrl:focus{border-color:var(--ember)}
+    .f-ctrl option{background:var(--ink)}
+
+    /* â”€â”€ FOOTER â”€â”€ */
+    .footer{background:var(--ink);border-top:1px solid var(--border);padding:2.5rem 3rem 1.8rem}
+    .foot-inner{max-width:1260px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+    .foot-logo{font-family:var(--ff-d);font-size:1.3rem;font-weight:700}
+    .foot-logo em{font-style:italic;color:var(--ember)}
+    .foot-nav{display:flex;gap:2rem;flex-wrap:wrap}
+    .foot-nav a{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mist);transition:color .2s}
+    .foot-nav a:hover{color:var(--ember-lt)}
+    .foot-copy{max-width:1260px;margin:0 auto;font-size:.74rem;color:var(--mist)}
+
+    /* â”€â”€ REVEAL â”€â”€ */
+    .rev{opacity:0;transform:translateY(22px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+    .rev.in{opacity:1;transform:none}
+    .rev-left{opacity:0;transform:translateX(-24px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+    .rev-left.in{opacity:1;transform:none}
+    .rev-right{opacity:0;transform:translateX(24px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+    .rev-right.in{opacity:1;transform:none}
+
+    /* stagger delays */
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+
+    /* â”€â”€ RESPONSIVE â”€â”€ */
+    @media(max-width:1024px){
+      .feature-layout,.offbeat-hero-layout,.gear-layout{grid-template-columns:1fr;gap:3rem}
+    }
+    @media(max-width:700px){
+      .section{padding:4rem 1.3rem}
+      .hdr{padding:0 1.3rem}
+      .nav-links{display:none}
+      .hero-body{padding:0 1.3rem}
+      .scroll-hint{left:1.3rem}
+      .stat-bubbles{grid-template-columns:1fr 1fr}
+      .detail-grid{grid-template-columns:1fr 1fr}
+      .f-row{grid-template-columns:1fr}
+      .cta-band{padding:5rem 1.3rem}
+      .footer{padding:2rem 1.3rem 1.5rem}
+      .season-strip{grid-template-columns:repeat(6,1fr)}
+      .route-timeline{padding-left:2rem}
+      .route-marker{left:-2.2rem}
+    }
+  </style>
+</head>
+<body>
+
+                                            <div class="site-menu" data-lenis-prevent>
+            <div class="site-menu-bg"></div>
+            <div class="site-menu-header">
+                <div class="site-header-left">
+                    <button class="site-menu-close">
+                        <span class="site-menu-close-icon"></span>
+                        <span>Close</span>
+                    </button>
+                </div>
+                <div class="site-header-logo">
+                    <a aria-label="Basswoods Camp" href="index.html" style="text-decoration:none;">
+                        <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
+                    </a>
+                </div>
+                <div class="site-header-right">
+                    <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
+                    <a class="btn btn-sm btn-inverted" href="tel:8011228979">
+                        <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
+                        <span class="d-none d-md-inline">Call Us</span>
+                    </a>
+                </div>
+            </div>
+            <div class="site-menu-body">
+                <div class="site-menu-main site-header-offset bg-charcoal">
+                    <div class="site-menu-main-container px-container pb-md">
+                        <ul id="menu-primary-menu" class="site-menu-nav ginto-normal-black py-xl">
+                            <li id="menu-item-new-1" class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-302" href="tours.html"><span>Tour package</span></a></li>
+                            <li id="menu-item-new-2" class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-296" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
+                            <li id="menu-item-new-3" class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="rentals.html"><span>Camping equipment rentals</span></a></li>
+                            <li id="menu-item-new-4" class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-295" href="camping.html"><span>Campings</span></a></li>
+                            <li id="menu-item-new-5" class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-298" href="trekking.html"><span>Trekking</span></a></li>
+                            <li id="menu-item-new-6" class="menu-item"><a title="Outdoor activities" class="site-menu-nav-item" data-image="menu-item-image-297" href="trekking.html#activities"><span>Outdoor activities</span></a></li>
+                            <li id="menu-item-new-7" class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-299" href="offbeat.html"><span>Off beat Tours</span></a></li>
+                        </ul>
+                        <ul class="site-menu-social">
+                            <li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a></li>
+                            <li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a></li>
+                            <li><a aria-label="Location" href="camping.html" target="_blank"><i class="ri-map-pin-fill"></i></a></li>
+                            <li><a aria-label="Contact us" href="mailto:basswoodscamp@gmail.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-menu-images">
+                    <div class="site-menu-images-container">
+                        <div class="site-menu-images-item active" id="menu-item-image-295">
+                            <img src="assets/basswoods/menu_campings.png" alt="Campings" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-296">
+                            <img src="assets/basswoods/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-rentals">
+                            <img src="assets/basswoods/menu_camping_equipment.png" alt="Camping Equipment" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-302">
+                            <img src="assets/basswoods/menu_tour_package.png" alt="Tour Package" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-298">
+                            <img src="assets/basswoods/camp-1.jpg" alt="Trekking" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-297">
+                            <img src="assets/basswoods/camp-2.jpg" alt="Outdoor Activities" loading="lazy" />
+                        </div>
+                        <div class="site-menu-images-item" id="menu-item-image-299">
+                            <img src="assets/basswoods/blue-sky-camp.jpg" alt="Offbeat Tours" loading="lazy" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <div class="header-left-group">
+    <button class="site-menu-toggle" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:0.7rem;">
+        <i class="ri-menu-3-line" style="font-size:1.5rem;color:var(--cream);"></i>
+        <span style="font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);" class="d-none d-md-inline">Menu</span>
+    </button>
+    <a href="index.html" class="logo-font">Basswoods<em>Camp</em></a>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="tours.html">Tours</a>
+    <a href="camping.html">Camping</a>
+    <a href="trekking.html" class="active">Trekking</a>
+    <a href="offbeat.html">Offbeat</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button class="btn-hdr" onclick="openModal()"><i class="ri-footprint-line"></i> <span class="d-none d-md-inline">Book a Trek</span><span class="d-md-none">Book</span></button>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <!-- Topographic contour lines -->
+  <div class="contours" id="contours"></div>
+
+  <!-- Mist ribbons -->
+  <div class="mist-ribbon" style="top:55%;--spd:22s;opacity:.7"></div>
+  <div class="mist-ribbon" style="top:65%;--spd:17s;opacity:.5;animation-delay:-6s"></div>
+  <div class="mist-ribbon" style="top:72%;--spd:25s;opacity:.4;animation-delay:-11s"></div>
+
+  <!-- Elevation watermark -->
+  <div class="elev-tag">
+    <div class="elev-num">2452</div>
+    <div class="elev-lbl">metres above sea level</div>
+  </div>
+
+  <!-- Mountain peaks silhouette -->
+  <div class="peaks">
+    <svg viewBox="0 0 1440 340" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 340 L0 240 L90 200 L180 155 L260 190 L340 130 L420 170 L510 95 L600 145 L680 75 L760 125 L850 55 L940 110 L1020 48 L1110 100 L1200 60 L1300 105 L1380 80 L1440 130 L1440 340 Z" fill="rgba(18,18,12,0.55)"/>
+      <path d="M0 340 L0 270 L80 250 L160 215 L250 245 L340 195 L430 225 L520 175 L610 210 L700 168 L790 200 L880 162 L970 195 L1060 170 L1150 200 L1250 178 L1350 210 L1440 240 L1440 340 Z" fill="rgba(15,22,10,0.75)"/>
+      <path d="M0 340 L0 300 L120 285 L260 270 L400 285 L540 265 L680 278 L820 260 L960 275 L1100 258 L1240 272 L1380 262 L1440 275 L1440 340 Z" fill="#0E0A05" opacity=".95"/>
+    </svg>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-kicker"><i class="ri-footprint-line"></i> Trekking & Outdoor Adventures Â· Northeast India</div>
+    <h1 class="hero-h1">
+      <span class="line">Into the</span>
+      <span class="line"><em>Wild</em> Valley.</span>
+    </h1>
+    <p class="hero-p">
+      Guided overnight treks, offbeat trails, waterfall walks, and fishing expeditions across the most breathtaking landscapes of Northeast India â€” with Basswoods Camp as your base.
+    </p>
+    <div class="hero-ctas">
+      <button class="btn-primary" onclick="document.getElementById('dzukou').scrollIntoView({behavior:'smooth'})">
+        <i class="ri-footprint-line"></i> Explore Treks
+      </button>
+      <a href="#activities" class="btn-ghost">
+        <i class="ri-landscape-line"></i> All Activities
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-hint"><span></span> Scroll to explore</div>
+</section>
+
+
+<!-- DZÃœKOU VALLEY FEATURE -->
+<section class="section feature-sec" id="dzukou">
+  <div class="container">
+    <div class="feature-layout">
+      <div class="rev-left">
+        <div class="elev-card">
+          <svg class="elev-profile" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="50"  x2="500" y2="50"  stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+            <line x1="0" y1="100" x2="500" y2="100" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+            <line x1="0" y1="150" x2="500" y2="150" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+            <path d="M0 180 C30 180 50 170 80 155 C110 140 130 120 160 90 C185 65 200 52 230 48 C255 44 265 50 285 55 C310 62 330 58 360 65 C390 72 420 110 450 135 C470 150 485 160 500 165 L500 200 L0 200 Z" fill="url(#elevFill)" opacity=".6"/>
+            <path d="M0 180 C30 180 50 170 80 155 C110 140 130 120 160 90 C185 65 200 52 230 48 C255 44 265 50 285 55 C310 62 330 58 360 65 C390 72 420 110 450 135 C470 150 485 160 500 165" fill="none" stroke="var(--ember)" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="230" cy="48" r="5" fill="var(--ember)"/>
+            <text x="230" y="14" fill="var(--gold)" font-size="10" font-family="'Cormorant Garamond',serif" font-style="italic" text-anchor="middle">DzÃ¼kou Valley</text>
+            <text x="230" y="26" fill="rgba(201,160,58,.6)" font-size="8" font-family="'DM Sans',sans-serif" text-anchor="middle">~2,452 m</text>
+            <defs>
+              <linearGradient id="elevFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#D4622A" stop-opacity=".4"/>
+                <stop offset="100%" stop-color="#D4622A" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div style="position:absolute;bottom:1rem;right:1.5rem;font-size:1.8rem;opacity:.4">ðŸ•ï¸</div>
+        </div>
+        <div class="stat-bubbles">
+          <div class="stat-bub rev d1">
+            <div class="stat-bub-num">INR â‚¹5,499</div>
+            <div class="stat-bub-lbl">Starting price / person</div>
+          </div>
+          <div class="stat-bub rev d2">
+            <div class="stat-bub-num">~2,452m</div>
+            <div class="stat-bub-lbl">Valley elevation</div>
+          </div>
+          <div class="stat-bub rev d3">
+            <div class="stat-bub-num">Overnight</div>
+            <div class="stat-bub-lbl">Trek duration</div>
+          </div>
+          <div class="stat-bub rev d4">
+            <div class="stat-bub-num">Sepâ€“Nov</div>
+            <div class="stat-bub-lbl">Best season</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-right">
+        <div class="eyebrow">Signature Trek</div>
+        <h2 class="sec-h2">DzÃ¼kou Valley<br/><em>Overnight Trek</em></h2>
+        <span class="trek-tag overnight"><i class="ri-moon-line"></i> Overnight Expedition</span>
+        <p style="font-size:.95rem;color:var(--fog);font-weight:300;line-height:1.8;margin-bottom:1.5rem">
+          One of Northeast India's most breathtaking landscapes â€” a high-altitude valley in Nagaland carpeted with the legendary DzÃ¼kou lily and framed by mist-wrapped ridgelines.
+        </p>
+        <div class="best-time">
+          <i class="ri-flower-line"></i>
+          <div class="best-time-text">Best visited <strong>September to November</strong> â€” when the famous DzÃ¼kou lily blooms.</div>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-cell rev d1"><div class="detail-lbl">Location</div><div class="detail-val">DzÃ¼kou Valley, Nagaland</div></div>
+          <div class="detail-cell rev d2"><div class="detail-lbl">Duration</div><div class="detail-val">Overnight Â· 1 night</div></div>
+          <div class="detail-cell rev d3"><div class="detail-lbl">Starting Price</div><div class="detail-val highlight">INR â‚¹5,499 / person</div></div>
+          <div class="detail-cell rev d4"><div class="detail-lbl">Difficulty</div><div class="detail-val">Moderate</div></div>
+        </div>
+        <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+          <button class="btn-primary" onclick="openModal('DzÃ¼kou Valley Overnight Trek')"><i class="ri-calendar-check-line"></i> Book This Trek</button>
+          <a href="tel:+918011228979" class="btn-ghost"><i class="ri-phone-line"></i> +91 8011228979</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES GRID -->
+<section class="section activities-sec" id="activities">
+  <div class="container">
+    <div class="eyebrow rev">Outdoor Experiences</div>
+    <h2 class="sec-h2 rev">Everything <em>On Offer</em></h2>
+    <div class="act-grid">
+      <div class="act-card rev d1" style="--clr:var(--ember)">
+        <div class="act-ico"><i class="ri-footprint-line"></i></div>
+        <div class="act-name">Guided Trekking</div>
+        <div class="act-desc">Professional local guides who know the trails, the fauna, and the stories behind every ridge.</div>
+        <div class="act-avail">Available year-round</div>
+      </div>
+      <div class="act-card rev d2" style="--clr:var(--gold)">
+        <div class="act-ico gold"><i class="ri-landscape-line"></i></div>
+        <div class="act-name">Waterfall Walks</div>
+        <div class="act-desc">Short to half-day walks to hidden waterfalls across Meghalaya and Arunachal Pradesh.</div>
+        <div class="act-avail">Seasonal Â· Julâ€“Nov ideal</div>
+      </div>
+      <div class="act-card rev d3" style="--clr:var(--moss)">
+        <div class="act-ico green"><i class="ri-fishing-line"></i></div>
+        <div class="act-name">Traditional Fishing</div>
+        <div class="act-desc">Freshwater fishing in the streams and lakes of Ri Bhoi, Meghalaya â€” using traditional methods.</div>
+        <div class="act-avail">Cherry Blossom Camp</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFBEAT TOURS -->
+<section class="section offbeat-sec" id="offbeat">
+  <div class="container">
+    <div class="offbeat-hero-layout">
+      <div>
+        <div class="eyebrow rev">Offbeat Packages</div>
+        <h2 class="sec-h2 rev">Beyond the <em>Beaten Path</em></h2>
+        <p class="sec-p rev">Custom itineraries built around what matters to you â€” not a preset tourist trail.</p>
+        <div class="offbeat-cards">
+          <div class="offbeat-card rev d1">
+            <div class="offbeat-card-ico"><i class="ri-footprint-line"></i></div>
+            <div><div class="ofc-name">Trail Exploration</div><div class="ofc-desc">Multi-day trekking routes through forests and valleys beyond standard paths.</div></div>
+          </div>
+          <div class="offbeat-card rev d2">
+            <div class="offbeat-card-ico g"><i class="ri-landscape-line"></i></div>
+            <div><div class="ofc-name">Nature Walks</div><div class="ofc-desc">Half-day walks to hidden waterfalls and scenic viewpoints.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-right">
+        <div class="philosophy-box">
+          <div class="quote-mark">"</div>
+          <div class="philosophy-text">It's not all about the destination â€” sometimes it's about the <em>journey.</em></div>
+          <div class="philosophy-attr">â€” Basswoods Camp</div>
+        </div>
+        <div style="margin-top:2rem;background:var(--soil);border:1px solid var(--border);border-radius:14px;padding:1.8rem">
+          <div style="font-family:var(--ff-d);font-size:1.1rem;font-weight:700;color:var(--cream);margin-bottom:.8rem">INR Custom Pricing</div>
+          <p style="font-size:.87rem;color:var(--fog);font-weight:300;line-height:1.7;margin-bottom:1.4rem">All offbeat packages are fully customised and priced on request in INR.</p>
+          <button class="btn-primary" style="width:100%;justify-content:center" onclick="openModal('Offbeat Custom Package')"><i class="ri-compass-3-line"></i> Enquire for Custom Trek</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="foot-inner">
+    <div class="foot-logo">Basswoods<em>Camp</em></div>
+    <nav class="foot-nav">
+      <a href="index.html">Home</a>
+      <a href="tours.html">Tours</a>
+      <a href="camping.html">Camping</a>
+      <a href="trekking.html">Trekking</a>
+    </nav>
+  </div>
+  <div class="foot-copy">Â© 2025 Basswoods Camp Â· basswoodscamp@gmail.com</div>
+</footer>
+
+<!-- MODAL -->
+<div class="m-veil" id="mVeil" onclick="handleVeil(event)">
+  <div class="m-box">
+    <div class="m-head">
+      <div><div class="m-title">Book a Trek</div><div class="m-sub" id="mSub">Confirmation within 24 hours.</div></div>
+      <button class="m-close" onclick="closeModal()"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="m-body">
+      <div class="f-row">
+        <div class="f-grp"><label class="f-lbl">Name</label><input class="f-ctrl" type="text" id="mName"/></div>
+        <div class="f-grp"><label class="f-lbl">Phone</label><input class="f-ctrl" type="tel" id="mPhone"/></div>
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:1rem" onclick="submitModal()">Send Enquiry</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/basswoods-menu.js"></script>
+<script>
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => hdr.classList.toggle('stuck', scrollY > 50));
+
+  const contourEl = document.getElementById('contours');
+  for (let i = 0; i < 12; i++) {
+    const c = document.createElement('div');
+    const size = 200 + i * 140;
+    c.className = 'contour';
+    c.style.cssText = `width:${size}px;height:${size * 0.55}px;top:${45 + i * 3}%;left:${62 + Math.sin(i)*8}%`;
+    contourEl.appendChild(c);
+  }
+
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.rev,.rev-left,.rev-right').forEach(el => ro.observe(el));
+
+  function openModal(trek) { 
+    if (trek) document.getElementById('mSub').textContent = `Enquiry for: ${trek}`;
+    document.getElementById('mVeil').classList.add('open'); 
+    document.body.style.overflow = 'hidden'; 
+  }
+  function closeModal() { document.getElementById('mVeil').classList.remove('open'); document.body.style.overflow = ''; }
+  function handleVeil(e) { if (e.target === document.getElementById('mVeil')) closeModal(); }
+  function submitModal() { alert('Enquiry sent!'); closeModal(); }
+</script>
+</body>
+</html>
