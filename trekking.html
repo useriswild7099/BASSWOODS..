@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="assets/css/basswoods-menu.css">
 
   <style>
-    /* â”€â”€ BRAND TOKENS â”€â”€ */
+    /* â”€â”€â”€ BRAND TOKENS â”€â”€â”€ */
     :root {
       --ink:       #120D08;
       --soil:      #1C1208;
@@ -46,20 +46,10 @@
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
       opacity:.028;pointer-events:none;z-index:9000}
 
-    /* â”€â”€ HEADER â”€â”€ */
-    .hdr{position:fixed;top:0;left:0;right:0;z-index:300;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;transition:background .4s var(--ease),border-color .4s;border-bottom:1px solid transparent}
-    .hdr.stuck{background:rgba(18,13,8,.97);backdrop-filter:blur(12px);border-color:var(--border)}
-    .logo-font{font-family:var(--ff-d);font-size:1.6rem;font-weight:700;color:var(--cream);letter-spacing:1px}
-    .logo-font em{font-style:italic;color:var(--ember)}
-    
-    .nav-links{display:flex;gap:2.2rem;align-items:center}
-    .nav-links a{font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--fog);transition:color .25s}
-    .nav-links a:hover,.nav-links a.active{color:var(--ember-lt)}
+    /* site-header-offset */
+    .site-header-offset{padding-top:70px}
 
-    .btn-hdr{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.25rem;background:var(--ember);color:var(--ink);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;border:none;cursor:pointer;transition:background .25s,transform .2s}
-    .btn-hdr:hover{background:var(--ember-lt);transform:translateY(-1px)}
-
-    /* â”€â”€ HERO â”€â”€ */
+    /* â”€â”€â”€ HERO â”€â”€â”€ */
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
 
     .hero-bg{position:absolute;inset:0;
@@ -67,7 +57,7 @@
         radial-gradient(ellipse 50% 60% at 70% 35%,rgba(58,74,32,.35) 0%,transparent 60%),
         radial-gradient(ellipse 40% 50% at 15% 75%,rgba(212,98,42,.1) 0%,transparent 55%),
         linear-gradient(170deg,rgba(10,16,7,0.7) 0%,rgba(18,13,8,0.85) 45%,rgba(14,10,5,0.95) 100%),
-        url('assets/basswoods/blue-sky-camp.jpg');
+        url('wp-content/IMAGES/blue-sky-camp.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -117,7 +107,7 @@
     .scroll-hint{position:absolute;bottom:2.5rem;left:3rem;z-index:5;display:flex;align-items:center;gap:.7rem;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
     .scroll-hint span{display:block;width:40px;height:1px;background:linear-gradient(to right,var(--mist),transparent)}
 
-    /* â”€â”€ SECTION ATOMS â”€â”€ */
+    /* â”€â”€â”€ SECTION ATOMS â”€â”€â”€ */
     .section{padding:6.5rem 3rem}
     .container{max-width:1260px;margin:0 auto}
     .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);margin-bottom:.9rem}
@@ -126,7 +116,7 @@
     .sec-h2 em{font-style:italic;color:var(--ember)}
     .sec-p{font-size:1rem;color:var(--fog);font-weight:300;max-width:540px;line-height:1.8}
 
-    /* â”€â”€ DZÃœKOU FEATURE SECTION â”€â”€ */
+    /* â”€â”€â”€ DZÃœKOU FEATURE SECTION â”€â”€â”€ */
     .feature-sec{background:var(--soil);border-top:1px solid var(--border)}
 
     .feature-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:center}
@@ -167,7 +157,7 @@
     .best-time-text{font-size:.84rem;color:var(--fog);line-height:1.5}
     .best-time-text strong{color:var(--gold)}
 
-    /* â”€â”€ WHAT TO EXPECT â€” route timeline â”€â”€ */
+    /* â”€â”€â”€ WHAT TO EXPECT â€” route timeline â”€â”€â”€ */
     .route-sec{background:var(--ink)}
 
     .route-timeline{position:relative;padding-left:3rem;margin-top:4rem}
@@ -191,7 +181,7 @@
     .route-meta-pill{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;color:var(--mist)}
     .route-meta-pill i{font-size:.8rem;color:var(--ember)}
 
-    /* â”€â”€ ACTIVITIES GRID â”€â”€ */
+    /* â”€â”€â”€ ACTIVITIES GRID â”€â”€â”€ */
     .activities-sec{background:var(--soil);border-top:1px solid var(--border)}
 
     .act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;margin-top:3.5rem}
@@ -210,7 +200,7 @@
     .act-avail{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mist)}
     .act-avail::before{content:'';width:6px;height:6px;border-radius:50%;background:#6FCF7A;box-shadow:0 0 5px #6FCF7A}
 
-    /* â”€â”€ OFFBEAT TOURS â”€â”€ */
+    /* Ã¢â€â‚¬Ã¢â€â‚¬ OFFBEAT TOURS Ã¢â€â‚¬Ã¢â€â‚¬ */
     .offbeat-sec{background:var(--ink)}
 
     .offbeat-hero-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center}
@@ -235,7 +225,7 @@
     .philosophy-text em{color:var(--ember)}
     .philosophy-attr{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);position:relative;z-index:1}
 
-    /* â”€â”€ GEAR & PREP SECTION â”€â”€ */
+    /* Ã¢â€â‚¬Ã¢â€â‚¬ GEAR & PREP SECTION Ã¢â€â‚¬Ã¢â€â‚¬ */
     .gear-sec{background:var(--soil);border-top:1px solid var(--border)}
 
     .gear-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3.5rem}
@@ -258,7 +248,7 @@
     .sl-dot{display:inline-flex;align-items:center;gap:.35rem}
     .sl-dot span{width:8px;height:8px;border-radius:2px;display:inline-block}
 
-    /* â”€â”€ CTA BAND â”€â”€ */
+    /* Ã¢â€â‚¬Ã¢â€â‚¬ CTA BAND Ã¢â€â‚¬Ã¢â€â‚¬ */
     .cta-band{position:relative;padding:8rem 3rem;text-align:center;overflow:hidden}
     .cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 65% 75% at 50% 50%,rgba(212,98,42,.18) 0%,transparent 65%),var(--bark)}
     /* animated contour rings on CTA */
@@ -274,7 +264,7 @@
     .cta-h2 em{font-style:italic;color:var(--ember)}
     .cta-p{font-size:1rem;color:var(--fog);margin-bottom:2.8rem}
 
-    /* â”€â”€ MODAL â”€â”€ */
+    /* Ã¢â€â‚¬Ã¢â€â‚¬ MODAL Ã¢â€â‚¬Ã¢â€â‚¬ */
     .m-veil{display:none;position:fixed;inset:0;background:rgba(8,5,3,.92);backdrop-filter:blur(12px);z-index:900;align-items:center;justify-content:center;padding:1.5rem}
     .m-veil.open{display:flex}
     .m-box{background:var(--soil);border:1px solid var(--border);border-radius:22px;width:100%;max-width:540px;overflow:hidden;animation:popIn .32s var(--spring)}
@@ -294,7 +284,7 @@
     .f-ctrl:focus{border-color:var(--ember)}
     .f-ctrl option{background:var(--ink)}
 
-    /* â”€â”€ FOOTER â”€â”€ */
+    /* Ã¢â€â‚¬Ã¢â€â‚¬ FOOTER Ã¢â€â‚¬Ã¢â€â‚¬ */
     .footer{background:var(--ink);border-top:1px solid var(--border);padding:2.5rem 3rem 1.8rem}
     .foot-inner{max-width:1260px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
     .foot-logo{font-family:var(--ff-d);font-size:1.3rem;font-weight:700}
@@ -304,7 +294,7 @@
     .foot-nav a:hover{color:var(--ember-lt)}
     .foot-copy{max-width:1260px;margin:0 auto;font-size:.74rem;color:var(--mist)}
 
-    /* â”€â”€ REVEAL â”€â”€ */
+    /* Ã¢â€â‚¬Ã¢â€â‚¬ REVEAL Ã¢â€â‚¬Ã¢â€â‚¬ */
     .rev{opacity:0;transform:translateY(22px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
     .rev.in{opacity:1;transform:none}
     .rev-left{opacity:0;transform:translateX(-24px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
@@ -315,7 +305,7 @@
     /* stagger delays */
     .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
-    /* â”€â”€ RESPONSIVE â”€â”€ */
+    /* Ã¢â€â‚¬Ã¢â€â‚¬ RESPONSIVE Ã¢â€â‚¬Ã¢â€â‚¬ */
     @media(max-width:1024px){
       .feature-layout,.offbeat-hero-layout,.gear-layout{grid-template-columns:1fr;gap:3rem}
     }
@@ -383,54 +373,54 @@
                 <div class="site-menu-images">
                     <div class="site-menu-images-container">
                         <div class="site-menu-images-item active" id="menu-item-image-295">
-                            <img src="assets/basswoods/menu_campings.png" alt="Campings" loading="lazy" />
+                            <img src="wp-content/IMAGES/menu_campings.png" alt="Campings" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-296">
-                            <img src="assets/basswoods/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy" />
+                            <img src="wp-content/IMAGES/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-rentals">
-                            <img src="assets/basswoods/menu_camping_equipment.png" alt="Camping Equipment" loading="lazy" />
+                            <img src="wp-content/IMAGES/menu_camping_equipment.png" alt="Camping Equipment" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-302">
-                            <img src="assets/basswoods/menu_tour_package.png" alt="Tour Package" loading="lazy" />
+                            <img src="wp-content/IMAGES/menu_tour_package.png" alt="Tour Package" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-298">
-                            <img src="assets/basswoods/camp-1.jpg" alt="Trekking" loading="lazy" />
+                            <img src="wp-content/IMAGES/camp-1.jpg" alt="Trekking" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-297">
-                            <img src="assets/basswoods/camp-2.jpg" alt="Outdoor Activities" loading="lazy" />
+                            <img src="wp-content/IMAGES/camp-2.jpg" alt="Outdoor Activities" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-299">
-                            <img src="assets/basswoods/blue-sky-camp.jpg" alt="Offbeat Tours" loading="lazy" />
+                            <img src="wp-content/IMAGES/blue-sky-camp.jpg" alt="Offbeat Tours" loading="lazy" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-<!-- HEADER -->
-<header class="hdr" id="hdr">
-  <div class="header-left-group">
-    <button class="site-menu-toggle" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:0.7rem;">
-        <i class="ri-menu-3-line" style="font-size:1.5rem;color:var(--cream);"></i>
-        <span style="font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);" class="d-none d-md-inline">Menu</span>
-    </button>
-    <a href="index.html" class="logo-font">Basswoods<em>Camp</em></a>
-  </div>
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="tours.html">Tours</a>
-    <a href="camping.html">Camping</a>
-    <a href="trekking.html" class="active">Trekking</a>
-    <a href="offbeat.html">Offbeat</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <button class="btn-hdr" onclick="openModal()"><i class="ri-footprint-line"></i> <span class="d-none d-md-inline">Book a Trek</span><span class="d-md-none">Book</span></button>
+<header class="site-header">
+    <div class="site-header-container">
+        <div class="header-left-group">
+            <button class="site-menu-toggle">
+                <span class="site-menu-toggle-icon"></span>
+                <span class="d-none d-md-inline">Menu</span>
+            </button>
+            <a href="index.html" class="logo-font" style="text-decoration:none;">
+                <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
+            </a>
+        </div>
+        <div class="site-header-right">
+            <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
+            <a class="btn btn-sm btn-inverted" href="tel:8011228979">
+                <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
+                <span class="d-none d-md-inline">Call Us</span>
+            </a>
+        </div>
+    </div>
 </header>
 
 
-<!-- HERO -->
-<section class="hero">
+<section class="hero site-header-offset">
   <div class="hero-bg"></div>
 
   <!-- Topographic contour lines -->
@@ -479,7 +469,7 @@
 </section>
 
 
-<!-- DZÃœKOU VALLEY FEATURE -->
+<!-- DZÃƒÅ“KOU VALLEY FEATURE -->
 <section class="section feature-sec" id="dzukou">
   <div class="container">
     <div class="feature-layout">
@@ -501,11 +491,11 @@
               </linearGradient>
             </defs>
           </svg>
-          <div style="position:absolute;bottom:1rem;right:1.5rem;font-size:1.8rem;opacity:.4">ðŸ•ï¸</div>
+          <div style="position:absolute;bottom:1rem;right:1.5rem;font-size:1.8rem;opacity:.4">Ã°Å¸Ââ€¢Ã¯Â¸Â</div>
         </div>
         <div class="stat-bubbles">
           <div class="stat-bub rev d1">
-            <div class="stat-bub-num">INR â‚¹5,499</div>
+            <div class="stat-bub-num">â‚¹5,499</div>
             <div class="stat-bub-lbl">Starting price / person</div>
           </div>
           <div class="stat-bub rev d2">
@@ -536,7 +526,7 @@
         <div class="detail-grid">
           <div class="detail-cell rev d1"><div class="detail-lbl">Location</div><div class="detail-val">DzÃ¼kou Valley, Nagaland</div></div>
           <div class="detail-cell rev d2"><div class="detail-lbl">Duration</div><div class="detail-val">Overnight Â· 1 night</div></div>
-          <div class="detail-cell rev d3"><div class="detail-lbl">Starting Price</div><div class="detail-val highlight">INR â‚¹5,499 / person</div></div>
+          <div class="detail-cell rev d3"><div class="detail-lbl">Starting Price</div><div class="detail-val highlight">â‚¹5,499 / person</div></div>
           <div class="detail-cell rev d4"><div class="detail-lbl">Difficulty</div><div class="detail-val">Moderate</div></div>
         </div>
         <div style="display:flex;gap:.8rem;flex-wrap:wrap">
@@ -602,8 +592,6 @@
           <div class="philosophy-attr">â€” Basswoods Camp</div>
         </div>
         <div style="margin-top:2rem;background:var(--soil);border:1px solid var(--border);border-radius:14px;padding:1.8rem">
-          <div style="font-family:var(--ff-d);font-size:1.1rem;font-weight:700;color:var(--cream);margin-bottom:.8rem">INR Custom Pricing</div>
-          <p style="font-size:.87rem;color:var(--fog);font-weight:300;line-height:1.7;margin-bottom:1.4rem">All offbeat packages are fully customised and priced on request in INR.</p>
           <button class="btn-primary" style="width:100%;justify-content:center" onclick="openModal('Offbeat Custom Package')"><i class="ri-compass-3-line"></i> Enquire for Custom Trek</button>
         </div>
       </div>
@@ -611,18 +599,73 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="foot-inner">
-    <div class="foot-logo">Basswoods<em>Camp</em></div>
-    <nav class="foot-nav">
-      <a href="index.html">Home</a>
-      <a href="tours.html">Tours</a>
-      <a href="camping.html">Camping</a>
-      <a href="trekking.html">Trekking</a>
-    </nav>
-  </div>
-  <div class="foot-copy">Â© 2025 Basswoods Camp Â· basswoodscamp@gmail.com</div>
+<footer class="site-footer px-container" style="background-color: #1b4332; padding: 4rem 3rem; color: #f2f0e8;">
+<div class="site-footer-cta" style="padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+<h2 class="logo-font" style="font-size: 3rem; color: #f2f0e8; margin-bottom: 2rem;">
+Let's start an adventure</h2>
+<div class="btn-group">
+<a class="btn-primary" href="enquiries.html" style="background: var(--lime); color: var(--bark); padding: 1rem 2rem; border-radius: 8px; font-weight: 700;">Contact us</a>
+</div>
+</div>
+<div class="site-footer-main" style="padding: 3rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+<div class="site-footer-signup">
+<h3 style="font-family: var(--ff-display); font-size: 1.5rem; margin-bottom: 1.5rem;">Newsletter sign up</h3>
+<form action="https://basswoodscamp.us1.list-manage.com/subscribe/post?u=e33eee5e86362c3165c7e1676&id=a094635557&f_id=003d68e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="" style="display: flex; gap: 0.5rem;">
+<input type="email" name="EMAIL" class="f-ctrl" required="" value="" placeholder="Your email address" style="flex: 1; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem; color: #fff;">
+<button aria-label="subscribe" class="btn-primary" type="submit" name="subscribe" id="mc-embedded-subscribe" value="Subscribe" style="background: var(--lime); border: none; padding: 0.8rem 1.2rem; border-radius: 4px; cursor: pointer;">
+<i class="ri-arrow-right-line"></i>
+</button>
+</form>
+</div>
+<div class="site-footer-info">
+<div style="color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;">&copy; 2026 Basswoods Camp. Adventure company based in Northeast India.</div>
+<div style="color: rgba(255,255,255,0.7);">Guwahati, Assam, India 781001</div>
+</div>
+<div class="site-footer-info">
+<ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.7);">
+<li style="margin-bottom: 0.5rem;">
+<span>T:</span>
+<a href="tel:+918011228979" style="color: #fff;">8011228979</a>
+<span style="font-size: 0.8rem;">(Bookings)</span>
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span>T:</span>
+<a href="tel:+917577911795" style="color: #fff;">7577911795</a>
+<span style="font-size: 0.8rem;">(Rentals)</span>
+</li>
+<li>
+<span>E:</span>
+<a href="mailto:basswoodscamp@gmail.com" style="color: #fff;">basswoodscamp@gmail.com</a>
+</li>
+</ul>
+</div>
+<div class="site-footer-info">
+<ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.7);">
+<li style="margin-bottom: 0.8rem; font-weight: 700; color: #fff;">Explore Our World</li>
+<li style="margin-bottom: 0.5rem;">
+<a href="https://www.instagram.com/basswoodscamp/" target="_blank" style="color: #fff;">Instagram:</a>
+<span style="font-size: 0.8rem;">Follow Our Adventures</span>
+</li>
+<li>
+<a href="index.html" style="color: #fff;">Basswoods Camp:</a>
+<span style="font-size: 0.8rem;">Camping · Rentals · Adventures</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="site-footer-bottom" style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+<ul style="list-style: none; padding: 0; display: flex; gap: 1.5rem;">
+          <li><a href="privacy.html" style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Privacy policy</a></li>
+          <li><a href="terms.html" style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Terms & conditions</a></li>
+        </ul>
+<div class="site-footer-social">
+<ul style="list-style: none; padding: 0; display: flex; gap: 1rem; font-size: 1.2rem;">
+<li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank" style="color: #fff;"><i class="ri-facebook-fill"></i></a></li>
+<li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank" style="color: #fff;"><i class="ri-instagram-fill"></i></a></li>
+<li><a aria-label="Follow us on youtube" href="https://www.youtube.com/@basswoodscamp" target="_blank" style="color: #fff;"><i class="ri-youtube-fill"></i></a></li>
+</ul>
+</div>
+</div>
 </footer>
 
 <!-- MODAL -->
@@ -672,3 +715,7 @@
 </script>
 </body>
 </html>
+
+
+
+

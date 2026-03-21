@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tour Packages ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Basswoods Camp</title>
+    <title>Tour Packages — Basswoods Camp</title>
 
   <!-- Remix Icon -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
   <style>
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ TOKENS ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ TOKENS Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     :root {
       --ink:       #0e110d;
       --bark:      #1c2018;
@@ -30,7 +30,7 @@
       --ease:      cubic-bezier(.16,1,.3,1);
     }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ RESET ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ RESET Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -42,7 +42,7 @@
     img { display: block; width: 100%; object-fit: cover; }
     a { text-decoration: none; color: inherit; }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ NOISE TEXTURE ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ NOISE TEXTURE Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -52,7 +52,7 @@
       opacity: .5;
     }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ NAV ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ NAV Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     .site-nav {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 100;
@@ -85,7 +85,7 @@
     }
     .nav-cta:hover { background: var(--rust-lt); transform: scale(1.04); }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ HERO ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ HERO Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     .hero {
       position: relative;
       height: 100svh;
@@ -181,7 +181,7 @@
     }
     .hero-stat-label { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--sand); margin-top: .2rem; }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ SECTION HEADERS ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ SECTION HEADERS Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     .section-eyebrow {
       display: inline-flex; align-items: center; gap: .6rem;
       font-size: .75rem; font-weight: 600;
@@ -206,7 +206,7 @@
     .section-title a { color: var(--lime); }
     .section-desc { font-size: 1rem; color: var(--sand); line-height: 1.75; max-width: 520px; margin-top: .9rem; }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ TOUR SECTION WRAPPER ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ TOUR SECTION WRAPPER Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     .tours-section {
       padding: 6rem 4rem;
       position: relative;
@@ -219,7 +219,7 @@
     }
     .tours-header-right { display: flex; gap: 1rem; align-items: center; }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ FILTER PILLS ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ FILTER PILLS Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     .filter-pills { display: flex; gap: .6rem; flex-wrap: wrap; }
     .pill {
       padding: .45rem 1.1rem;
@@ -238,7 +238,7 @@
       color: var(--white);
     }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ TOUR CARD ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ TOUR CARD Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     .tours-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -374,7 +374,7 @@
     }
     .card-btn:hover { background: var(--fern); transform: scale(1.04); }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ FEATURED WIDE CARD ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ FEATURED WIDE CARD Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     .tour-featured {
       grid-column: 1 / -1;
       display: grid;
@@ -417,7 +417,7 @@
     }
     .feat-link:hover { gap: .7rem; border-color: var(--lime); }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ REGION BANNER ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ REGION BANNER Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     .region-banner {
       display: flex; align-items: center; gap: 1.5rem;
       padding: 1.4rem 2rem;
@@ -441,7 +441,7 @@
     }
     .region-banner-text p { font-size: .83rem; color: var(--sand); }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ DIVIDER ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ DIVIDER Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     .section-divider {
       width: calc(100% - 8rem);
       margin: 0 4rem;
@@ -449,7 +449,7 @@
       border-top: 1px solid rgba(255,255,255,.07);
     }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ CTA STRIP ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ CTA STRIP Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     .cta-strip {
       margin: 3rem 4rem 6rem;
       background: linear-gradient(135deg, var(--moss) 0%, var(--ink) 100%);
@@ -492,7 +492,7 @@
     }
     .btn-lime:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 30px rgba(184,217,108,.25); }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ FADE-IN ANIMATION ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ FADE-IN ANIMATION Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -503,7 +503,7 @@
     .fade-up-d3 { animation-delay: .35s; }
     .fade-up-d4 { animation-delay: .5s; }
 
-    /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ RESPONSIVE ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+    /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ RESPONSIVE Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
     @media (max-width: 960px) {
       .site-nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -568,25 +568,25 @@
                 <div class="site-menu-images">
                     <div class="site-menu-images-container">
                         <div class="site-menu-images-item active" id="menu-item-image-295">
-                            <img src="assets/basswoods/menu_campings.png" alt="Campings" loading="lazy" />
+                            <img src="wp-content/IMAGES/menu_campings.png" alt="Campings" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-296">
-                            <img src="assets/basswoods/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy" />
+                            <img src="wp-content/IMAGES/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-rentals">
-                            <img src="assets/basswoods/menu_camping_equipment.png" alt="Camping Equipment" loading="lazy" />
+                            <img src="wp-content/IMAGES/menu_camping_equipment.png" alt="Camping Equipment" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-302">
-                            <img src="assets/basswoods/menu_tour_package.png" alt="Tour Package" loading="lazy" />
+                            <img src="wp-content/IMAGES/menu_tour_package.png" alt="Tour Package" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-298">
-                            <img src="assets/basswoods/camp-1.jpg" alt="Trekking" loading="lazy" />
+                            <img src="wp-content/IMAGES/camp-1.jpg" alt="Trekking" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-297">
-                            <img src="assets/basswoods/camp-2.jpg" alt="Outdoor Activities" loading="lazy" />
+                            <img src="wp-content/IMAGES/camp-2.jpg" alt="Outdoor Activities" loading="lazy" />
                         </div>
                         <div class="site-menu-images-item" id="menu-item-image-299">
-                            <img src="assets/basswoods/blue-sky-camp.jpg" alt="Offbeat Tours" loading="lazy" />
+                            <img src="wp-content/IMAGES/blue-sky-camp.jpg" alt="Offbeat Tours" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -612,7 +612,7 @@
   </ul>
   <a href="camping.html" class="nav-cta">Book Now</a>
 </nav>
-<!-- ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ HERO ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ -->
+<!-- Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ HERO Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-ring hero-ring-1"></div>
@@ -624,10 +624,10 @@
       <i class="ri-map-2-line"></i> Tour Packages
     </div>
     <h1 class="hero-title fade-up fade-up-d2">
-      Experience the magic<br>of the <em>Northeast</em><br>&amp; Festivals
+      Experience the magic<br>of the <em>Northeast</em><br>& Festivals
     </h1>
     <p class="hero-sub fade-up fade-up-d3">
-      From rugged Adirondack single-tracks to Himalayan ridge-lines ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â hand-curated Basswoods Adventure experiences led by expert guides.
+      From rugged Adirondack single-tracks to Himalayan ridge-lines Ãƒ ¢Ã¢”š ¬Ã¢â‚¬  hand-curated Basswoods Adventure experiences led by expert guides.
     </p>
     <div class="hero-btns fade-up fade-up-d4">
       <a href="#northeast" class="btn-primary">
@@ -655,9 +655,9 @@
   </div>
 </section>
 
-<!-- ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â
+<!-- Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ 
      NORTHEAST SECTION
-ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â -->
+Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚  -->
 <section class="tours-section" id="northeast">
   <div class="tours-header">
     <div>
@@ -679,8 +679,8 @@
   <div class="region-banner">
     <div class="region-banner-icon"><i class="ri-tree-line"></i></div>
     <div class="region-banner-text">
-      <h3>Northeast Season: May ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ October</h3>
-      <p>Peak foliage rides in SeptemberÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“October. Muddy spring trails open from late April. All tours include shuttle, guide &amp; snacks.</p>
+      <h3>Northeast Season: May Ãƒ ¢Ã¢”š ¬Ã¢â‚¬Å“ October</h3>
+      <p>Peak foliage rides in SeptemberÃƒ ¢Ã¢”š ¬Ã¢â‚¬Å“October. Muddy spring trails open from late April. All tours include shuttle, guide & snacks.</p>
     </div>
   </div>
 
@@ -689,7 +689,7 @@
 
     <article class="tours-listings-item tour-featured" data-difficulty="expert">
       <div class="tours-listings-media">
-        <img src="assets/basswoods/nagaland.jpeg" alt="Nagaland Trek"/>
+        <img src="wp-content/IMAGES/nagaland.jpeg" alt="Nagaland Trek"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row">
           <span class="badge badge-feat">Featured</span>
@@ -711,7 +711,7 @@
         <div class="feat-actions">
           <div>
             <div class="card-price-from">Per person from</div>
-            <div class="card-price-num">INR &#8377;6500</div>
+            <div class="card-price-num">INR ?6500</div>
           </div>
           <a href="#enquire" class="btn-primary" style="margin-left:auto">
             Book This Tour <i class="ri-arrow-right-line"></i>
@@ -724,13 +724,13 @@
     <!-- Card 2 -->
     <article class="tours-listings-item" data-difficulty="intermediate">
       <div class="tours-listings-media">
-        <img src="assets/basswoods/arunachal.jpeg" alt="Arunachal Music Festival"/>
+        <img src="wp-content/IMAGES/arunachal.jpeg" alt="Arunachal Music Festival"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Intermediate</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">INR &#8377;1200</div>
+          <div class="card-price-num">INR ?1200</div>
         </div>
       </div>
       <div class="tours-listings-details">
@@ -756,13 +756,13 @@
     <!-- Card 3 -->
     <article class="tours-listings-item" data-difficulty="beginner">
       <div class="tours-listings-media">
-        <img src="assets/basswoods/northeast culture.jpeg" alt="Nagaland Festival"/>
+        <img src="wp-content/IMAGES/northeast%20culture.jpeg" alt="Nagaland Festival"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Beginner</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">INR &#8377;4500</div>
+          <div class="card-price-num">INR ?4500</div>
         </div>
       </div>
       <div class="tours-listings-details">
@@ -788,13 +788,13 @@
     <!-- Card 4 -->
     <article class="tours-listings-item" data-difficulty="expert">
       <div class="tours-listings-media">
-        <img src="assets/basswoods/cherrybloassom festival.jpeg" alt="Meghalaya Nature"/>
+        <img src="wp-content/IMAGES/cherrybloassom%20festival.jpeg" alt="Meghalaya Nature"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Expert</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">INR &#8377;2500</div>
+          <div class="card-price-num">INR ?2500</div>
         </div>
       </div>
       <div class="tours-listings-details">
@@ -820,13 +820,13 @@
     <!-- Card 5 -->
     <article class="tours-listings-item" data-difficulty="family">
       <div class="tours-listings-media">
-        <img src="assets/basswoods/orange festival.jpeg" alt="Arunachal Orange Festival"/>
+        <img src="wp-content/IMAGES/orange%20festival.jpeg" alt="Arunachal Orange Festival"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Family</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">INR &#8377;3500</div>
+          <div class="card-price-num">INR ?3500</div>
         </div>
       </div>
       <div class="tours-listings-details">
@@ -852,13 +852,13 @@
     <!-- Card 6 -->
     <article class="tours-listings-item" data-difficulty="intermediate">
       <div class="tours-listings-media">
-        <img src="assets/basswoods/mizoram.jpeg" alt="Mizoram Hills"/>
+        <img src="wp-content/IMAGES/mizoram.jpeg" alt="Mizoram Hills"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Intermediate</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">INR &#8377;4200</div>
+          <div class="card-price-num">INR ?4200</div>
         </div>
       </div>
       <div class="tours-listings-details">
@@ -884,13 +884,13 @@
     <!-- Card 7 -->
     <article class="tours-listings-item" data-difficulty="intermediate">
       <div class="tours-listings-media">
-        <img src="assets/basswoods/manipur.jpeg" alt="Manipur Loktak Lake"/>
+        <img src="wp-content/IMAGES/manipur.jpeg" alt="Manipur Loktak Lake"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Intermediate</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">INR &#8377;4800</div>
+          <div class="card-price-num">INR ?4800</div>
         </div>
       </div>
       <div class="tours-listings-details">
@@ -916,13 +916,13 @@
     <!-- Card 8 -->
     <article class="tours-listings-item" data-difficulty="advanced">
       <div class="tours-listings-media">
-        <img src="assets/basswoods/sikkim.jpeg" alt="Sikkim Mountains"/>
+        <img src="wp-content/IMAGES/sikkhim.jpeg" alt="Sikkim Mountains"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Advanced</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">INR &#8377;6500</div>
+          <div class="card-price-num">INR ?6500</div>
         </div>
       </div>
       <div class="tours-listings-details">
@@ -948,13 +948,13 @@
     <!-- Card 9 -->
     <article class="tours-listings-item" data-difficulty="family">
       <div class="tours-listings-media">
-        <img src="assets/basswoods/tripura.jpeg" alt="Tripura Palace"/>
+        <img src="wp-content/IMAGES/tripurra.jpeg" alt="Tripura Palace"/>
         <div class="tours-listings-media-overlay"></div>
         <div class="badge-row"><span class="badge badge-diff">Family</span></div>
         <div class="card-wishlist"><i class="ri-heart-line"></i></div>
         <div class="card-price-overlay">
           <div class="card-price-from">From</div>
-          <div class="card-price-num">INR &#8377;3200</div>
+          <div class="card-price-num">INR ?3200</div>
         </div>
       </div>
       <div class="tours-listings-details">
@@ -982,9 +982,9 @@
 
 <hr class="section-divider"/>
 
-<!-- ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â
+<!-- Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ 
      WORLDWIDE SECTION
-ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â -->
+Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚ Ãƒ ¢Ã¢â‚¬ ¢Ã‚  -->
 <section class="tours-section" id="worldwide">
   <div class="tours-header">
     <div>
@@ -1007,7 +1007,7 @@
     <div class="region-banner-icon"><i class="ri-plane-line"></i></div>
     <div class="region-banner-text">
       <h3>All-Inclusive International Packages</h3>
-      <p>Flights not included. All tours cover accommodation, guides, gear shuttle, daily meals &amp; travel insurance. Depart year-round.</p>
+      <p>Flights not included. All tours cover accommodation, guides, gear shuttle, daily meals & travel insurance. Depart year-round.</p>
     </div>
   </div>
 
@@ -1126,7 +1126,7 @@
       </div>
       <div class="tours-listings-details">
         <div class="card-category">Atlas Mountains, Morocco</div>
-        <h3 class="card-title">Atlas Desert &amp; Kasbahs</h3>
+        <h3 class="card-title">Atlas Desert & Kasbahs</h3>
         <div class="card-meta">
           <span class="card-meta-item"><i class="ri-time-line"></i> 8 Days</span>
           <span class="card-meta-item"><i class="ri-route-line"></i> 220 km</span>
@@ -1179,11 +1179,11 @@
   </div><!-- /ww-grid -->
 </section>
 
-<!-- ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ CTA STRIP ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ -->
+<!-- Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ CTA STRIP Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ -->
 <div class="cta-strip" id="enquire">
   <div>
     <h2 class="cta-strip-title">Can't find your <em>perfect ride?</em></h2>
-    <p class="cta-strip-sub">Tell us your dream trail ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â we'll build a custom itinerary around it.</p>
+    <p class="cta-strip-sub">Tell us your dream trail Ãƒ ¢Ã¢”š ¬Ã¢â‚¬  we'll build a custom itinerary around it.</p>
   </div>
   <div class="cta-strip-btns">
     <a href="mailto:basswoodscamp@gmail.com" class="btn-lime">
@@ -1199,7 +1199,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ FILTER LOGIC ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+  /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ FILTER LOGIC Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
   function initFilters(filterGroupId, gridId, dataAttr) {
     const pills = document.querySelectorAll(`#${filterGroupId} .pill`);
     const cards = document.querySelectorAll(`#${gridId} .tours-listings-item`);
@@ -1225,7 +1225,7 @@
   initFilters('ne-filters', 'ne-grid', 'difficulty');
   initFilters('ww-filters', 'ww-grid', 'region');
 
-  /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ WISHLIST TOGGLE ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+  /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ WISHLIST TOGGLE Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
   document.querySelectorAll('.card-wishlist').forEach(btn => {
     btn.addEventListener('click', e => {
       e.stopPropagation();
@@ -1237,7 +1237,7 @@
     });
   });
 
-  /* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ INTERSECTION OBSERVER for lazy fade-in ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+  /* Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ INTERSECTION OBSERVER for lazy fade-in Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬Ãƒ ¢Ã¢â‚¬ Ã¢”š ¬ */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1257,8 +1257,80 @@
 </script>
 
   <script src="assets/js/basswoods-menu.js" defer></script>
+<footer class="site-footer px-container" style="background-color: #1b4332; padding: 4rem 3rem; color: #f2f0e8;">
+<div class="site-footer-cta" style="padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+<h2 class="logo-font" style="font-size: 3rem; color: #f2f0e8; margin-bottom: 2rem;">
+Let's start an adventure</h2>
+<div class="btn-group">
+<a class="btn-primary" href="enquiries.html" style="background: var(--lime); color: var(--bark); padding: 1rem 2rem; border-radius: 8px; font-weight: 700;">Contact us</a>
+</div>
+</div>
+<div class="site-footer-main" style="padding: 3rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+<div class="site-footer-signup">
+<h3 style="font-family: var(--ff-display); font-size: 1.5rem; margin-bottom: 1.5rem;">Newsletter sign up</h3>
+<form action="https://basswoodscamp.us1.list-manage.com/subscribe/post?u=e33eee5e86362c3165c7e1676&id=a094635557&f_id=003d68e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="" style="display: flex; gap: 0.5rem;">
+<input type="email" name="EMAIL" class="f-ctrl" required="" value="" placeholder="Your email address" style="flex: 1; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem; color: #fff;">
+<button aria-label="subscribe" class="btn-primary" type="submit" name="subscribe" id="mc-embedded-subscribe" value="Subscribe" style="background: var(--lime); border: none; padding: 0.8rem 1.2rem; border-radius: 4px; cursor: pointer;">
+<i class="ri-arrow-right-line"></i>
+</button>
+</form>
+</div>
+<div class="site-footer-info">
+<div style="color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;">&copy; 2026 Basswoods Camp. Adventure company based in Northeast India.</div>
+<div style="color: rgba(255,255,255,0.7);">Guwahati, Assam, India 781001</div>
+</div>
+<div class="site-footer-info">
+<ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.7);">
+<li style="margin-bottom: 0.5rem;">
+<span>T:</span>
+<a href="tel:+918011228979" style="color: #fff;">8011228979</a>
+<span style="font-size: 0.8rem;">(Bookings)</span>
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span>T:</span>
+<a href="tel:+917577911795" style="color: #fff;">7577911795</a>
+<span style="font-size: 0.8rem;">(Rentals)</span>
+</li>
+<li>
+<span>E:</span>
+<a href="mailto:basswoodscamp@gmail.com" style="color: #fff;">basswoodscamp@gmail.com</a>
+</li>
+</ul>
+</div>
+<div class="site-footer-info">
+<ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.7);">
+<li style="margin-bottom: 0.8rem; font-weight: 700; color: #fff;">Explore Our World</li>
+<li style="margin-bottom: 0.5rem;">
+<a href="https://www.instagram.com/basswoodscamp/" target="_blank" style="color: #fff;">Instagram:</a>
+<span style="font-size: 0.8rem;">Follow Our Adventures</span>
+</li>
+<li>
+<a href="index.html" style="color: #fff;">Basswoods Camp:</a>
+<span style="font-size: 0.8rem;">Camping · Rentals · Adventures</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="site-footer-bottom" style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+<ul style="list-style: none; padding: 0; display: flex; gap: 1.5rem;">
+          <li><a href="privacy.html" style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Privacy policy</a></li>
+          <li><a href="terms.html" style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Terms & conditions</a></li>
+        </ul>
+<div class="site-footer-social">
+<ul style="list-style: none; padding: 0; display: flex; gap: 1rem; font-size: 1.2rem;">
+<li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank" style="color: #fff;"><i class="ri-facebook-fill"></i></a></li>
+<li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank" style="color: #fff;"><i class="ri-instagram-fill"></i></a></li>
+<li><a aria-label="Follow us on youtube" href="https://www.youtube.com/@basswoodscamp" target="_blank" style="color: #fff;"><i class="ri-youtube-fill"></i></a></li>
+</ul>
+</div>
+</div>
+</footer>
 </body>
 </html>
+
+
+
+
 
 
 

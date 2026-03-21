@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -43,11 +43,14 @@
       font-weight: 400; font-style: italic; color: #fff; line-height: 1.4; margin-bottom: 2rem;
     }
     .quote-author { font-weight: 700; color: var(--lime); text-transform: uppercase; letter-spacing: .1em; font-size: .85rem; }
+    
+    .site-header-offset { padding-top: 90px; }
+    @media(max-width: 991px) { .site-header-offset { padding-top: 70px; } }
   </style>
     <link rel="stylesheet" href="assets/css/basswoods-menu.css">
 </head>
 <body>
-﻿                                                <div class="site-menu" data-lenis-prevent>
+                                                <div class="site-menu" data-lenis-prevent>
             <div class="site-menu-bg"></div>
             <div class="site-menu-header">
                 <div class="site-header-left">
@@ -58,7 +61,7 @@
                 </div>
                 <div class="site-header-logo">
                     <a aria-label="Basswoods Camp" href="index.html" style="text-decoration:none;">
-                        <span style="color: #f2f0e8; font-family: sans-serif; font-size: 24px; font-weight: bold; letter-spacing: 2px;">BASS WOODS</span>
+                        <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
                     </a>
                 </div>
                 <div class="site-header-right">
@@ -73,13 +76,12 @@
                 <div class="site-menu-main site-header-offset bg-charcoal">
                     <div class="site-menu-main-container px-container pb-md">
                         <ul id="menu-primary-menu" class="site-menu-nav ginto-normal-black py-xl">
-                            <li id="menu-item-new-1" class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-302" href="tours.html"><span>Tour package</span></a></li>
-                            <li id="menu-item-new-2" class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-296" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
-                            <li id="menu-item-new-3" class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="rentals.html"><span>Camping equipment rentals</span></a></li>
-                            <li id="menu-item-new-4" class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-295" href="camping.html"><span>Campings</span></a></li>
-                            <li id="menu-item-new-5" class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-298" href="#"><span>Trekking</span></a></li>
-                            <li id="menu-item-new-6" class="menu-item"><a title="Outdoor activities" class="site-menu-nav-item" data-image="menu-item-image-297" href="#"><span>Outdoor activities</span></a></li>
-                            <li id="menu-item-new-7" class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-299" href="#"><span>Off beat Tours</span></a></li>
+                            <li class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-tours" href="tours.html"><span>Tour package</span></a></li>
+                            <li class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
+                            <li class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-equipment" href="rentals.html"><span>Equipment Rentals</span></a></li>
+                            <li class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-camping" href="camping.html"><span>Campings</span></a></li>
+                            <li class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-trekking" href="trekking.html"><span>Trekking</span></a></li>
+                            <li class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-offbeat" href="offbeat.html"><span>Off beat Tours</span></a></li>
                         </ul>
                         <ul class="site-menu-social">
                             <li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a></li>
@@ -91,82 +93,39 @@
                 </div>
                 <div class="site-menu-images">
                     <div class="site-menu-images-container">
-                        <div class="site-menu-images-item active" id="menu-item-image-295">
-                            <img src="assets/basswoods/menu_campings.png" alt="Campings" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-296">
-                            <img src="assets/basswoods/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-rentals">
-                            <img src="assets/basswoods/menu_camping_equipment.png" alt="Camping Equipment" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-302">
-                            <img src="assets/basswoods/menu_tour_package.png" alt="Tour Package" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-298">
-                            <img src="assets/basswoods/camp-1.jpg" alt="Trekking" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-297">
-                            <img src="assets/basswoods/camp-2.jpg" alt="Outdoor Activities" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-299">
-                            <img src="assets/basswoods/blue-sky-camp.jpg" alt="Offbeat Tours" loading="lazy" />
-                        </div>
+                        <div class="site-menu-images-item active" id="menu-item-image-camping"><img src="wp-content/IMAGES/menu_campings.png" alt="Campings" loading="lazy"></div>
+                        <div class="site-menu-images-item" id="menu-item-image-rentals"><img src="wp-content/IMAGES/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy"></div>
+                        <div class="site-menu-images-item" id="menu-item-image-equipment"><img src="wp-content/IMAGES/menu_camping_equipment.png" alt="Equipment" loading="lazy"></div>
+                        <div class="site-menu-images-item" id="menu-item-image-tours"><img src="wp-content/IMAGES/menu_tour_package.png" alt="Tours" loading="lazy"></div>
+                        <div class="site-menu-images-item" id="menu-item-image-trekking"><img src="wp-content/IMAGES/camp-1.jpg" alt="Trekking" loading="lazy"></div>
+                        <div class="site-menu-images-item" id="menu-item-image-offbeat"><img src="wp-content/IMAGES/blue-sky-camp.jpg" alt="Offbeat" loading="lazy"></div>
                     </div>
                 </div>
             </div>
         </div>
 
-<header class="site-header ">
-                        <div class="site-header-container">
-                <div class="site-header-left">
+<header class="site-header">
+            <div class="site-header-container">
+                <div class="header-left-group">
                     <button class="site-menu-toggle">
                         <span class="site-menu-toggle-icon"></span>
-                        <span>Menu</span>
+                        <span class="d-none d-md-inline">Menu</span>
                     </button>
-                </div>
-                <div class="site-header-logo">
-                    <a aria-label="Basswoods Camp" href="index.html" style="text-decoration:none;">
-                        <span style="color: #f2f0e8; font-family: sans-serif; font-size: 24px; font-weight: bold; letter-spacing: 2px;">BASS WOODS</span>
+                    <a href="index.html" class="logo-font" style="text-decoration:none;">
+                        <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
                     </a>
-                                    </div>
+                </div>
                 <div class="site-header-right">
-                                            <a class="site-header-account-btn" data-no-swup href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
-                                                                                    <a class="btn btn-sm btn-inverted" data-no-swup href="tel:8011228979">Call<span class="d-none d-lg-inline-block ms-1"> Us</span></a>
-                                                        </div>
+                    <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
+                    <a class="btn btn-sm btn-inverted" href="tel:8011228979">
+                        <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
+                        <span class="d-none d-md-inline">Call Us</span>
+                    </a>
+                </div>
             </div>
         </header>
 
-
-<!-- ─── NAV ─── -->
-<nav class="nav">
-  <div class="nav-logo">Basswoods<span>Camp</span></div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="tours.html">Tours</a></li>
-    <li><a href="rentals.html">Rentals</a></li>
-    <li><a href="calendar.html">Calendar</a></li>
-    <li><a href="about.html" class="active">About</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="https://wa.me/918011228979" target="_blank" class="nav-cta">WhatsApp Us</a>
-    <button class="hamburger" id="ham" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<div class="mobile-menu" id="mob-menu">
-  <a href="index.html">Home <i class="ri-arrow-right-s-line"></i></a>
-  <a href="tours.html">Tours <i class="ri-arrow-right-s-line"></i></a>
-  <a href="rentals.html">Rentals <i class="ri-arrow-right-s-line"></i></a>
-  <a href="calendar.html">Calendar <i class="ri-arrow-right-s-line"></i></a>
-  <a href="about.html" class="active">About <i class="ri-arrow-right-s-line"></i></a>
-  <a href="https://wa.me/918011228979" class="mob-cta">Chat on WhatsApp</a>
-</div>
-
-<!-- ─── HERO ─── -->
-<section class="hero">
+<section class="hero site-header-offset">
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero-eyebrow fade-up d1"><i class="ri-history-line"></i> Since 2007</div>
@@ -214,15 +173,79 @@
 </div>
 
 <script>
-  /* HAM */
-  const ham = document.getElementById('ham'), mob = document.getElementById('mob-menu');
-  ham.onclick = () => { ham.classList.toggle('open'); mob.classList.toggle('open'); };
-
   /* REVEAL */
   const io = new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } })});
   document.querySelectorAll('.fade-up, .section').forEach(el=>io.observe(el));
 </script>
-<script src="assets/js/basswoods-menu.js"></script>
+
+						<footer class="site-footer px-container" style="background-color: #1b4332; padding: 4rem 3rem; color: #f2f0e8;">
+																<div class="site-footer-cta" style="padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+						<h2 class="logo-font" style="font-size: 3rem; color: #f2f0e8; margin-bottom: 2rem;">
+							Let's start an adventure						</h2>
+																											<div class="btn-group">
+									<a class="btn-primary" href="enquiries.html" style="background: var(--lime); color: var(--bark); padding: 1rem 2rem; border-radius: 8px; font-weight: 700;">Contact us</a>
+								</div>
+																		</div>
+										<div class="site-footer-main" style="padding: 3rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+				<div class="site-footer-signup">
+					<h3 style="font-family: var(--ff-display); font-size: 1.5rem; margin-bottom: 1.5rem;">Newsletter sign up</h3>
+					<form action="https://basswoodscamp.us1.list-manage.com/subscribe/post?u=e33eee5e86362c3165c7e1676&id=a094635557&f_id=003d68e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="" style="display: flex; gap: 0.5rem;">
+						<input type="email" name="EMAIL" class="f-ctrl" required="" value="" placeholder="Your email address" style="flex: 1; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem; color: #fff;">
+						<button aria-label="subscribe" class="btn-primary" type="submit" name="subscribe" id="mc-embedded-subscribe" value="Subscribe" style="background: var(--lime); border: none; padding: 0.8rem 1.2rem; border-radius: 4px; cursor: pointer;">
+							<i class="ri-arrow-right-line"></i>
+						</button>
+					</form>
+				</div>
+				<div class="site-footer-info">
+						<div style="color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;">&copy; 2026 Basswoods Camp. Adventure company based in Northeast India.</div>
+						<div style="color: rgba(255,255,255,0.7);">Guwahati, Assam, India 781001</div>
+				</div>
+				<div class="site-footer-info">
+						<ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.7);">
+																								<li style="margin-bottom: 0.5rem;">
+										<span>T:</span>
+										<a href="tel:+918011228979" style="color: #fff;">8011228979</a>
+										<span style="font-size: 0.8rem;">(Bookings)</span>
+									</li>
+																	<li style="margin-bottom: 0.5rem;">
+										<span>T:</span>
+										<a href="tel:+917577911795" style="color: #fff;">7577911795</a>
+										<span style="font-size: 0.8rem;">(Rentals)</span>
+									</li>
+																						<li>
+								<span>E:</span>
+								<a href="mailto:basswoodscamp@gmail.com" style="color: #fff;">basswoodscamp@gmail.com</a>
+							</li>
+						</ul>
+				</div>
+				<div class="site-footer-info">
+						<ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.7);">
+							<li style="margin-bottom: 0.8rem; font-weight: 700; color: #fff;">Explore Our World</li>
+																								<li style="margin-bottom: 0.5rem;">
+										<a href="https://www.instagram.com/basswoodscamp/" target="_blank" style="color: #fff;">Instagram:</a>
+										<span style="font-size: 0.8rem;">Follow Our Adventures</span>
+									</li>
+																	<li>
+										<a href="index.html" style="color: #fff;">Basswoods Camp:</a>
+										<span style="font-size: 0.8rem;">Camping · Rentals · Adventures</span>
+									</li>
+																					</ul>
+				</div>
+			</div>
+			<div class="site-footer-bottom" style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+				<ul style="list-style: none; padding: 0; display: flex; gap: 1.5rem;">
+          <li><a href="privacy.html" style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Privacy policy</a></li>
+          <li><a href="terms.html" style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Terms & conditions</a></li>
+        </ul>
+				<div class="site-footer-social">
+						<ul style="list-style: none; padding: 0; display: flex; gap: 1rem; font-size: 1.2rem;">
+																								<li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank" style="color: #fff;"><i class="ri-facebook-fill"></i></a></li>
+																								<li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank" style="color: #fff;"><i class="ri-instagram-fill"></i></a></li>
+																								<li><a aria-label="Follow us on youtube" href="https://www.youtube.com/@basswoodscamp" target="_blank" style="color: #fff;"><i class="ri-youtube-fill"></i></a></li>
+						</ul>
+				</div>
+			</div>
+		</footer>
 </body>
 </html>
 

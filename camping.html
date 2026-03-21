@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Camping Ã¢â‚¬â€ Basswoods Camp</title>
+  <title>Camping — Basswoods Camp</title>
 
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -13,7 +13,7 @@
 
   <style>
     /* ============================================================
-       ROOT TOKENS  Ã¢â‚¬â€ handi_theme brand injection layer
+       ROOT TOKENS  — handi_theme brand injection layer
     ============================================================ */
     :root {
       --ink:        #120D08;
@@ -118,7 +118,7 @@
       display: flex; align-items: center; justify-content: center;
       text-align: center;
       overflow: hidden;
-      background: linear-gradient(180deg, rgba(18,13,8,0.5) 0%, rgba(28,18,8,0.9) 100%), url('assets/basswoods/camp night stars.jpeg');
+      background: linear-gradient(180deg, rgba(18,13,0.5) 0%, rgba(28,18,0.9) 100%), url('wp-content/IMAGES/camp%20night%20stars.jpeg');
       background-size: cover;
       background-position: center;
       padding-top: 80px; /* Safe space for fixed header */
@@ -288,7 +288,7 @@
     .tlm-badges { position: absolute; top: 2rem; left: 2rem; display: flex; gap: 0.8rem; }
     .badge {
       padding: 0.5rem 1.1rem;
-      background: rgba(18,13,8,0.85);
+      background: rgba(18,13,0.85);
       backdrop-filter: blur(10px);
       border: 1px solid var(--border);
       border-radius: 99px;
@@ -567,7 +567,7 @@
     /* ============================================================
        MODAL
     ============================================================ */
-    .modal-veil { position: fixed; inset: 0; background: rgba(18,13,8,0.9); backdrop-filter: blur(15px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s var(--ease); padding: 2rem; }
+    .modal-veil { position: fixed; inset: 0; background: rgba(18,13,0.9); backdrop-filter: blur(15px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s var(--ease); padding: 2rem; }
     .modal-veil.show { opacity: 1; pointer-events: auto; }
     .modal-box { background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-lg); width: 100%; max-width: 580px; padding: 4rem; position: relative; transform: translateY(30px); transition: transform 0.4s var(--ease-spring); }
     .modal-veil.show .modal-box { transform: translateY(0); }
@@ -579,8 +579,8 @@
     /* Form UI */
     .f-grp { margin-bottom: 2rem; }
     .f-label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--mist); letter-spacing: 0.1em; margin-bottom: 0.8rem; }
-    .f-ctrl { width: 100%; background: rgba(18,13,8,0.5); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 1rem 1.2rem; color: var(--cream); font-family: var(--ff-body); font-size: 1rem; }
-    .f-ctrl:focus { outline: none; border-color: var(--ember); background: rgba(18,13,8,0.8); }
+    .f-ctrl { width: 100%; background: rgba(18,13,0.5); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 1rem 1.2rem; color: var(--cream); font-family: var(--ff-body); font-size: 1rem; }
+    .f-ctrl:focus { outline: none; border-color: var(--ember); background: rgba(18,13,0.8); }
     .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 
     /* ============================================================
@@ -621,7 +621,7 @@
 </head>
 <body>
 <!-- STANDALONE OFFCANVAS MENU -->
-                                                <div class="site-menu" data-lenis-prevent>
+        <div class="site-menu" data-lenis-prevent>
             <div class="site-menu-bg"></div>
             <div class="site-menu-header">
                 <div class="site-header-left">
@@ -631,7 +631,7 @@
                     </button>
                 </div>
                 <div class="site-header-logo">
-                    <a aria-label="Basswoods Camp" href="index.html" style="text-decoration:none;">
+                    <a aria-label="Basswoods Camp" href="index.html" class="logo-font" style="text-decoration:none;">
                         <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
                     </a>
                 </div>
@@ -647,61 +647,53 @@
                 <div class="site-menu-main site-header-offset bg-charcoal">
                     <div class="site-menu-main-container px-container pb-md">
                         <ul id="menu-primary-menu" class="site-menu-nav ginto-normal-black py-xl">
-                            <li id="menu-item-new-1" class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-302" href="tours.html"><span>Tour package</span></a></li>
-                            <li id="menu-item-new-2" class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-296" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
-                            <li id="menu-item-new-3" class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="rentals.html"><span>Camping equipment rentals</span></a></li>
-                            <li id="menu-item-new-4" class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-295" href="camping.html"><span>Campings</span></a></li>
-                            <li id="menu-item-new-5" class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-298" href="trekking.html"><span>Trekking</span></a></li>
-                            <li id="menu-item-new-6" class="menu-item"><a title="Outdoor activities" class="site-menu-nav-item" data-image="menu-item-image-297" href="trekking.html#activities"><span>Outdoor activities</span></a></li>
-                            <li id="menu-item-new-7" class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-299" href="offbeat.html"><span>Off beat Tours</span></a></li>
+                            <li class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-tours" href="tours.html"><span>Tour package</span></a></li>
+                            <li class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
+                            <li class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-equipment" href="rentals.html"><span>Equipment Rentals</span></a></li>
+                            <li class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-camping" href="camping.html"><span>Campings</span></a></li>
+                            <li class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-trekking" href="trekking.html"><span>Trekking</span></a></li>
+                            <li class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-offbeat" href="offbeat.html"><span>Off beat Tours</span></a></li>
                         </ul>
                         <ul class="site-menu-social">
                             <li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a></li>
                             <li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a></li>
                             <li><a aria-label="Location" href="camping.html" target="_blank"><i class="ri-map-pin-fill"></i></a></li>
-                            <li><a aria-label="Contact us" href="mailto:basswoodscamp@gmail.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
+                            <li><a aria-label="Contact us" href="mailto:bookings@basswoodscamp.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="site-menu-images">
                     <div class="site-menu-images-container">
-                        <div class="site-menu-images-item active" id="menu-item-image-295">
-                            <img src="assets/basswoods/menu_campings.png" alt="Campings" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-296">
-                            <img src="assets/basswoods/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-rentals">
-                            <img src="assets/basswoods/menu_camping_equipment.png" alt="Camping Equipment" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-302">
-                            <img src="assets/basswoods/menu_tour_package.png" alt="Tour Package" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-298">
-                            <img src="assets/basswoods/camp-1.jpg" alt="Trekking" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-297">
-                            <img src="assets/basswoods/camp-2.jpg" alt="Outdoor Activities" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-299">
-                            <img src="assets/basswoods/blue-sky-camp.jpg" alt="Offbeat Tours" loading="lazy" />
-                        </div>
+                        <div class="site-menu-images-item active" id="menu-item-image-camping"><img src="wp-content/IMAGES/menu_campings.png" alt="Campings" loading="lazy"></div>
+                        <div class="site-menu-images-item" id="menu-item-image-rentals"><img src="wp-content/IMAGES/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy"></div>
+                        <div class="site-menu-images-item" id="menu-item-image-equipment"><img src="wp-content/IMAGES/menu_camping_equipment.png" alt="Equipment" loading="lazy"></div>
+                        <div class="site-menu-images-item" id="menu-item-image-tours"><img src="wp-content/IMAGES/menu_tour_package.png" alt="Tours" loading="lazy"></div>
+                        <div class="site-menu-images-item" id="menu-item-image-trekking"><img src="wp-content/IMAGES/camp-1.jpg" alt="Trekking" loading="lazy"></div>
+                        <div class="site-menu-images-item" id="menu-item-image-offbeat"><img src="wp-content/IMAGES/blue-sky-camp.jpg" alt="Offbeat" loading="lazy"></div>
                     </div>
                 </div>
             </div>
         </div>
 
-<header class="header" id="hdr">
-  <div class="header-left-group">
-    <button class="site-menu-toggle" style="background:transparent; border:none; color:var(--cream); cursor:pointer; display:flex; align-items:center; gap:10px; font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; transition:color 0.2s;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-      <span class="d-none d-md-inline">Menu</span>
-    </button>
-    <a href="index.html" class="logo" style="text-decoration:none; color:inherit;">Basswoods<em>Camp</em></a>
-  </div>
-  <button class="btn-hdr" onclick="openModal()">
-    <i class="ri-tent-line"></i> <span class="d-none d-md-inline">Book a Campsite</span>
-  </button>
+<header class="site-header">
+    <div class="site-header-container">
+        <div class="header-left-group">
+            <button class="site-menu-toggle">
+                <span class="site-menu-toggle-icon"></span>
+                <span class="d-none d-md-inline">Menu</span>
+            </button>
+            <a href="index.html" class="logo-font" style="text-decoration:none;">
+                <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
+            </a>
+        </div>
+        <div class="site-header-right">
+            <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
+            <a class="btn btn-sm btn-inverted" href="tel:8011228979">
+                <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
+                <span class="d-none d-md-inline">Call Us</span>
+            </a>
+        </div>
+    </div>
 </header>
 
 <!-- ===== HERO ===== -->
@@ -752,10 +744,7 @@
       <!-- Featured: Cherry Blossom -->
       <div class="campsite-card reveal">
         <div class="tours-listings-media">
-          <div class="tlm-bg">
-            <div class="tlm-icon"><i class="ri-flower-line"></i></div>
-            <div class="tlm-overlay overlay-cherry"></div>
-          </div>
+          <img src="wp-content/IMAGES/cherrybloassom%20festival.jpeg" alt="Cherry Blossom Basecamp" style="width:100%; height:100%; object-fit:cover;">
           <div class="tlm-badges">
             <span class="badge"><i class="ri-star-fill"></i> Most Popular</span>
             <span class="badge">Near Shillong</span>
@@ -777,7 +766,7 @@
           <div class="card-foot">
             <div class="price-block">
               <div class="price-from">Starting from</div>
-              <div class="price-amt">INR &#8377;2,000</div>
+              <div class="price-amt">INR ₹ 2,000</div>
               <div class="price-note">/ person / night</div>
             </div>
             <button class="btn-book" onclick="openModal('Cherry Blossom Camp')">Book Now</button>
@@ -788,10 +777,7 @@
       <!-- Lum Er Pyngngad -->
       <div class="campsite-card reveal">
         <div class="tours-listings-media">
-          <div class="tlm-bg">
-            <div class="tlm-icon"><i class="ri-moon-line"></i></div>
-            <div class="tlm-overlay overlay-moon"></div>
-          </div>
+          <img src="wp-content/IMAGES/meghalaya%20lake.jpeg" alt="Lum Er Pyngngad Camp" style="width:100%; height:100%; object-fit:cover;">
           <div class="tlm-badges">
             <span class="badge">Hidden Gem</span>
           </div>
@@ -811,7 +797,7 @@
           <div class="card-foot">
             <div class="price-block">
               <div class="price-from">Starting from</div>
-              <div class="price-amt">INR &#8377;1,250</div>
+              <div class="price-amt">INR ₹1,250</div>
               <div class="price-note">/ person / night</div>
             </div>
             <button class="btn-book" onclick="openModal('Lum Er Pyngngad Camp')">Enquire</button>
@@ -841,7 +827,7 @@
           <div class="orbit-node" style="bottom:-28px;left:50%;transform:translateX(-50%);"><i class="ri-fishing-line"></i></div>
           <div class="orbit-node" style="top:50%;left:-28px;transform:translateY(-50%);"><i class="ri-bus-line"></i></div>
         </div>
-        <div class="orbit-center">Ã°Å¸Ââ€¢Ã¯Â¸Â</div>
+        <div class="orbit-center">🔥</div>
       </div>
 
       <div>
@@ -863,7 +849,7 @@
   <div class="container" style="position:relative; z-index:5;">
     <div class="eyebrow reveal">Things to Do</div>
     <h2 class="sec-h2 reveal">An Adventure <em>at Every Turn</em></h2>
-    <p class="sec-p reveal">Basswoods camps aren't just a place to sleep Ã¢â‚¬â€ they're the launchpad for the best experiences Northeast India has to offer.</p>
+    <p class="sec-p reveal">Basswoods camps aren't just a place to sleep — they're the launchpad for the best experiences Northeast India has to offer.</p>
   </div>
 
   <div class="act-scroll-track">
@@ -895,7 +881,7 @@
     <div class="act-card">
       <div class="act-icon"><i class="ri-music-2-line"></i></div>
       <div class="act-name">Jamming Sessions</div>
-      <div class="act-desc">Open jam circles around the fire Ã¢â‚¬â€ bring an instrument or just your voice.</div>
+      <div class="act-desc">Open jam circles around the fire — bring an instrument or just your voice.</div>
     </div>
     <div class="act-card">
       <div class="act-icon"><i class="ri-car-line"></i></div>
@@ -905,7 +891,7 @@
     <div class="act-card">
       <div class="act-icon"><i class="ri-star-line"></i></div>
       <div class="act-name">Stargazing</div>
-      <div class="act-desc">No light pollution, no distractions Ã¢â‚¬â€ just the Milky Way above your head.</div>
+      <div class="act-desc">No light pollution, no distractions — just the Milky Way above your head.</div>
     </div>
   </div>
 </section>
@@ -920,8 +906,8 @@
 
       <div class="festival-card reveal">
         <div class="fcard-head">
-          <span class="fcard-icon">Ã°Å¸Å½Âµ</span>
-          <span class="fcard-dates">Sep 25Ã¢â‚¬â€œ28</span>
+          <span class="fcard-icon">🎵</span>
+          <span class="fcard-dates">Sep 25–28</span>
         </div>
         <div class="fcard-name">Ziro Festival of Music</div>
         <div class="fcard-loc"><i class="ri-map-pin-line"></i> Ziro Valley, Arunachal Pradesh</div>
@@ -933,12 +919,12 @@
 
       <div class="festival-card reveal">
         <div class="fcard-head">
-          <span class="fcard-icon">Ã°Å¸Â¦â€¦</span>
-          <span class="fcard-dates">Dec 1Ã¢â‚¬â€œ10</span>
+          <span class="fcard-icon">📯</span>
+          <span class="fcard-dates">Dec 1–10</span>
         </div>
         <div class="fcard-name">Hornbill Festival</div>
         <div class="fcard-loc"><i class="ri-map-pin-line"></i> Kohima & Khonoma, Nagaland</div>
-        <div class="fcard-price">Starting from INR &#8377;3,000 <span>/ package</span></div>
+        <div class="fcard-price">Starting from INR ₹3,000 <span>/ package</span></div>
         <div class="fcard-tags">
           <div class="ftag">City Tour</div> <div class="ftag">Dz&#252;kou Trek</div> <div class="ftag">Ethnic Food</div>
         </div>
@@ -946,12 +932,12 @@
 
       <div class="festival-card reveal">
         <div class="fcard-head">
-          <span class="fcard-icon">Ã°Å¸Å’Â¸</span>
-          <span class="fcard-dates">Feb 15Ã¢â‚¬â€œ17</span>
+          <span class="fcard-icon">🌸</span>
+          <span class="fcard-dates">Feb 15–17</span>
         </div>
         <div class="fcard-name">Cherry Blossom Festival</div>
         <div class="fcard-loc"><i class="ri-map-pin-line"></i> Bhoirymbong, Ri Bhoi, Meghalaya</div>
-        <div class="fcard-price">INR &#8377;2,000 <span>/ person (2 nights + 1 meal)</span></div>
+        <div class="fcard-price">INR ₹2,000 <span>/ person (2 nights + 1 meal)</span></div>
         <div class="fcard-tags">
           <div class="ftag">Swimming Pool</div> <div class="ftag">Fishing</div> <div class="ftag">Karaoke</div>
         </div>
@@ -972,8 +958,8 @@
 
       <div class="price-card reveal">
         <div class="pc-tier">BYOT</div>
-        <div class="pc-price">INR â‚¹300<sub>/person</sub></div>
-        <div class="pc-period">per night Ã‚Â· Bring Your Own Tent</div>
+        <div class="pc-price">INR ₹300<sub>/person</sub></div>
+        <div class="pc-period">per night · Bring Your Own Tent</div>
         <div class="pc-divider"></div>
         <ul class="pc-list">
           <li><i class="ri-check-line yes"></i> Campsite access</li>
@@ -986,8 +972,8 @@
       <div class="price-card hot reveal">
         <span class="pc-tag">Best Value</span>
         <div class="pc-tier">Standard</div>
-        <div class="pc-price">INR â‚¹1,250<sub>/person</sub></div>
-        <div class="pc-period">per night Ã‚Â· Tent & bedding provided</div>
+        <div class="pc-price">INR ₹1,250<sub>/person</sub></div>
+        <div class="pc-period">per night · Tent & bedding provided</div>
         <div class="pc-divider"></div>
         <ul class="pc-list">
           <li><i class="ri-check-line yes"></i> Tent & bedding set</li>
@@ -999,8 +985,8 @@
 
       <div class="price-card reveal">
         <div class="pc-tier">All-Inclusive</div>
-        <div class="pc-price">INR â‚¹2,000<sub>/person</sub></div>
-        <div class="pc-period">per night Ã‚Â· Full experience</div>
+        <div class="pc-price">INR ₹2,000<sub>/person</sub></div>
+        <div class="pc-period">per night · Full experience</div>
         <div class="pc-divider"></div>
         <ul class="pc-list">
           <li><i class="ri-check-line yes"></i> All meals</li>
@@ -1032,7 +1018,7 @@
       </div>
       <div class="review-card reveal">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="review-text">"NYE under a full moon at Lum Er Pyngngad Ã¢â‚¬â€ I cannot put it into words. Book it."</div>
+        <div class="review-text">"NYE under a full moon at Lum Er Pyngngad — I cannot put it into words. Book it."</div>
         <div class="reviewer"><div class="reviewer-avatar">P</div><div><div class="reviewer-name">Priya K.</div><div class="reviewer-meta">Dec 2023</div></div></div>
       </div>
     </div>
@@ -1050,20 +1036,72 @@
 </div>
 
 <!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="footer-row">
-    <div class="footer-logo">Basswoods<em>Camp</em></div>
-    <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="tours.html">Tours</a>
-      <a href="camping.html">Camping</a>
-      <a href="trekking.html">Trekking</a>
-      <a href="offbeat.html">Offbeat</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-  <div class="footer-copy">Ã‚Â© 2024 Basswoods Camp. All rights reserved.</div>
-</footer>
+<footer class="site-footer px-container" style="background-color: #120D08; padding: 6rem 4rem 4rem; border-top: 1px solid var(--border); color: var(--cream);">
+																<div class="site-footer-cta" style="padding-bottom: 4rem; border-bottom: 1px solid var(--border); text-align: center;">
+						<h2 class="cta-h2 reveal" style="margin-bottom: 2rem;">
+							Let's start an adventure						</h2>
+																											<div class="btn-group">
+									<button class="btn-fire" onclick="openModal()">Reserve Your Spot</button>
+								</div>
+																		</div>
+										<div class="site-footer-main" style="padding: 4rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
+				<div class="site-footer-signup">
+					<h3 style="font-family: var(--ff-display); font-size: 1.8rem; margin-bottom: 1.5rem;">Newsletter sign up</h3>
+					<form action="https://basswoodscamp.us1.list-manage.com/subscribe/post?u=e33eee5e86362c3165c7e1676&id=a094635557&f_id=003d68e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="" style="display: flex; gap: 0.5rem;">
+						<input type="email" name="EMAIL" class="f-ctrl" required="" value="" placeholder="Your email address" style="flex: 1;">
+						<button aria-label="subscribe" class="btn-fire" type="submit" name="subscribe" id="mc-embedded-subscribe" value="Subscribe" style="padding: 0.8rem 1.2rem;">
+							<i class="ri-arrow-right-line"></i>
+						</button>
+					</form>
+				</div>
+				<div class="site-footer-info">
+						<div style="color: var(--mist); margin-bottom: 0.5rem;">&copy; 2026 Basswoods Camp. Adventure company based in Northeast India.</div>
+						<div style="color: var(--mist);">Guwahati, Assam, India 781001</div>
+				</div>
+				<div class="site-footer-info">
+						<ul style="list-style: none; padding: 0; color: var(--mist);">
+																								<li style="margin-bottom: 0.8rem;">
+										<span>T:</span>
+										<a href="tel:+918011228979" style="color: var(--cream);">8011228979</a>
+										<span style="font-size: 0.8rem;">(Bookings)</span>
+									</li>
+																	<li style="margin-bottom: 0.8rem;">
+										<span>T:</span>
+										<a href="tel:+917577911795" style="color: var(--cream);">7577911795</a>
+										<span style="font-size: 0.8rem;">(Rentals)</span>
+									</li>
+																						<li>
+								<span>E:</span>
+								<a href="mailto:basswoodscamp@gmail.com" style="color: var(--cream);">basswoodscamp@gmail.com</a>
+							</li>
+						</ul>
+				</div>
+				<div class="site-footer-info">
+						<ul style="list-style: none; padding: 0; color: var(--mist);">
+							<li style="margin-bottom: 1rem; font-weight: 700; color: var(--cream);">Explore Our World</li>
+																								<li style="margin-bottom: 0.8rem;">
+										<a href="https://www.instagram.com/basswoodscamp/" target="_blank" style="color: var(--cream);">Instagram</a>
+									</li>
+																	<li>
+										<a href="index.html" style="color: var(--cream);">Basswoods Camp</a>
+									</li>
+																					</ul>
+				</div>
+			</div>
+			<div class="site-footer-bottom" style="padding-top: 3rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+				<ul style="list-style: none; padding: 0; display: flex; gap: 2.5rem;">
+          <li><a href="privacy.html" style="color: var(--mist); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">Privacy policy</a></li>
+          <li><a href="terms.html" style="color: var(--mist); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">Terms & conditions</a></li>
+        </ul>
+				<div class="site-footer-social">
+						<ul style="list-style: none; padding: 0; display: flex; gap: 1.5rem; font-size: 1.5rem;">
+																								<li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank" style="color: var(--mist);"><i class="ri-facebook-fill"></i></a></li>
+																								<li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank" style="color: var(--mist);"><i class="ri-instagram-fill"></i></a></li>
+																								<li><a aria-label="Follow us on youtube" href="https://www.youtube.com/@basswoodscamp" target="_blank" style="color: var(--mist);"><i class="ri-youtube-fill"></i></a></li>
+						</ul>
+				</div>
+			</div>
+		</footer>
 
 <!-- ===== MODAL ===== -->
 <div class="modal-veil" id="modalVeil" onclick="handleVeilClick(event)">
@@ -1207,6 +1245,10 @@
   <script src="assets/js/basswoods-menu.js" defer></script>
 </body>
 </html>
+
+
+
+
 
 
 

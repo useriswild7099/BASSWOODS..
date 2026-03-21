@@ -1,4 +1,20 @@
-/* standalone custom offcanvas menu style for custom pages */
+/* site-header-offset for content below fixed header */
+.site-header-offset {
+    padding-top: 100px !important;
+}
+@media(max-width: 991px) {
+    .site-header-offset {
+        padding-top: 80px !important;
+    }
+}
+html {
+    scroll-padding-top: 110px;
+}
+@media(max-width: 991px) {
+    html {
+        scroll-padding-top: 90px;
+    }
+}
 
 @font-face {
     font-family: "Aeonik Fono";
@@ -133,11 +149,106 @@ body:has(.site-menu.is-active) nav.site-nav {
     .site-menu-nav-item { font-size: 1.8rem; }
 }
 
-/* Base button styles since theme CSS is missing */
+/* Base site-header styles for custom pages */
+.site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    transition: background 0.4s ease, border-color 0.4s ease;
+    border-bottom: 1px solid transparent;
+    background: rgba(8, 28, 21, 0.98); /* Almost opaque dark green background */
+    backdrop-filter: blur(12px);
+}
+.site-header-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-left-group {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+.site-menu-toggle {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0;
+}
+.site-menu-toggle-icon {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    position: relative;
+}
+.site-menu-toggle-icon::before,
+.site-menu-toggle-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%; height: 100%;
+    background: #fff;
+}
+.site-menu-toggle-icon::before { top: -6px; }
+.site-menu-toggle-icon::after { bottom: -6px; }
+
+.logo-font { text-decoration: none; display: flex; align-items: center; }
+.logo-font span { line-height: 1; }
+
+.site-header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Base button styles since theme CSS is missing or inconsistent */
 .btn-inverted {
-    background: #fff; color: #10120d; padding: 0.6rem 1.2rem; border-radius: 2rem;
-    text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+    background: #ffb703 !important; color: #000 !important; padding: 0.6rem 1.2rem; border-radius: 2rem;
+    text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em;
+    border: 1px solid #ffb703 !important;
+}
+.btn-inverted:hover {
+    background: #fff !important; color: #000 !important; border-color: #fff !important;
 }
 .site-header-account-btn {
-    color: #fff; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 1.5rem;
+    color: #fff; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; margin-right: 1.5rem;
+}
+
+/* Navbar Responsiveness Fixes */
+@media(max-width: 991px) {
+    .site-header { height: 70px; }
+    .site-header-container { padding: 0 1.5rem; }
+    .site-header-account-btn { display: none !important; }
+    .header-left-group { gap: 0.8rem; }
+    .btn-inverted { padding: 0.5rem 1rem !important; font-size: 0.75rem !important; }
+    .logo-font span { font-size: 22px !important; }
+}
+
+@media(max-width: 480px) {
+    .site-header-container { padding: 0 1rem; }
+    .site-header-logo span, .logo-font span { font-size: 18px !important; letter-spacing: 1px !important; }
+    .header-left-group { gap: 0.5rem; }
+    .btn-inverted { padding: 0.4rem 0.8rem !important; font-size: 0.7rem !important; }
+    .site-menu-toggle { gap: 0.4rem; }
+    .site-menu-toggle span { font-size: 0.7rem; }
+}
+
+@media(max-width: 360px) {
+    .site-header-logo span, .logo-font span { font-size: 15px !important; letter-spacing: 0px !important; }
+    .site-header-right { gap: 0.5rem; }
 }
