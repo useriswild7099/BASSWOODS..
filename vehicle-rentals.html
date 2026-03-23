@@ -66,42 +66,9 @@
         /* ============================================================
            HEADER (Integrated with Premium Menu)
         ============================================================ */
-        .site-header {
-            position: fixed; top: 0; left: 0; right: 0;
-            z-index: 100;
-            background: transparent;
-            border-bottom: 1px solid transparent;
-            transition: background 0.4s var(--ease), border-color 0.4s;
-        }
-        .site-header.stuck { background: rgba(18,13,8,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        /* Redundant header styles removed - now handled by assets/css/basswoods-menu.css */
 
-        .site-header-container {
-            max-width: 1400px; margin: 0 auto;
-            height: 80px; display: flex; align-items: center; justify-content: space-between;
-            padding: 0 3rem;
-        }
-
-        .site-header-left { flex: 1; }
-        .site-header-logo { flex: 1; text-align: center; }
-        .site-header-right { flex: 1; display: flex; justify-content: flex-end; gap: 1.5rem; align-items: center; }
-
-        .site-menu-toggle {
-            background: transparent; border: none; cursor: pointer;
-            display: flex; align-items: center; gap: 0.8rem;
-            color: var(--cream); font-size: 0.75rem; font-weight: 600;
-            letter-spacing: 0.15em; text-transform: uppercase;
-        }
-        .site-menu-toggle-icon {
-            width: 24px; height: 12px; position: relative;
-        }
-        .site-menu-toggle-icon::before, .site-menu-toggle-icon::after {
-            content: ''; position: absolute; left: 0; width: 100%; height: 1.5px; background: currentColor;
-            transition: transform 0.3s var(--ease);
-        }
-        .site-menu-toggle-icon::before { top: 0; }
-        .site-menu-toggle-icon::after { bottom: 0; }
-
-        .logo-font { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 700; letter-spacing: 2px; }
+        .logo-font { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 700; letter-spacing: 2px; text-decoration: none; }
         .logo-font em { font-style: italic; color: var(--ember); }
 
         .btn-hdr {
@@ -567,79 +534,63 @@
 </head>
 <body>
 
-    <!-- PREMIUM OFF-CANVAS MENU SNIPPET -->
-                                            <div class="site-menu" data-lenis-prevent>
-            <div class="site-menu-bg"></div>
-            <div class="site-menu-header">
-                <div class="site-header-left">
-                    <button class="site-menu-close">
-                        <span class="site-menu-close-icon"></span>
-                        <span>Close</span>
-                    </button>
-                </div>
-                <div class="site-header-logo">
-                    <a aria-label="Basswoods Camp" href="index.html" style="text-decoration:none;">
-                        <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
-                    </a>
-                </div>
-                <div class="site-header-right">
-                    <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
-                    <a class="btn btn-sm btn-inverted" href="tel:8011228979">
-                        <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
-                        <span class="d-none d-md-inline">Call Us</span>
-                    </a>
+<!-- THE PREMIUM MENU (Off-Canvas) -->
+    <div class="site-menu" data-lenis-prevent>
+        <div class="site-menu-bg"></div>
+        <div class="site-menu-header">
+            <div class="site-menu-close-container">
+                <button class="site-menu-close">
+                    <span class="site-menu-close-icon"></span>
+                    <span>Close</span>
+                </button>
+            </div>
+            <div class="site-header-logo">
+                <a aria-label="Basswoods Camp" href="index.html" class="logo-font">
+                    <span>Basswoods<em>Camp</em></span>
+                </a>
+            </div>
+            <div class="site-header-right">
+                <a class="site-header-account-btn" href="camping.html"><span>Book Now</span></a>
+                <a class="btn btn-sm btn-inverted" href="tel:8011228979">
+                    <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
+                    <span class="d-none d-md-inline">Call Us</span>
+                </a>
+            </div>
+        </div>
+        <div class="site-menu-body">
+            <div class="site-menu-main site-header-offset">
+                <div class="site-menu-main-container pb-md">
+                    <ul id="menu-primary-menu" class="site-menu-nav">
+                        <li class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-tours" href="tours.html"><span>Tour package</span></a></li>
+                        <li class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
+                        <li class="menu-item"><a title="Camping Equipment" class="site-menu-nav-item" data-image="menu-item-image-equipment" href="rentals.html"><span>Equipment Rentals</span></a></li>
+                        <li class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-camping" href="camping.html"><span>Campings</span></a></li>
+                        <li class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-trekking" href="trekking.html"><span>Trekking</span></a></li>
+                        <li class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-offbeat" href="offbeat.html"><span>Off beat Tours</span></a></li>
+                    </ul>
+                    <ul class="site-menu-social">
+                        <li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a></li>
+                        <li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a></li>
+                        <li><a aria-label="Location" href="camping.html" target="_blank"><i class="ri-map-pin-fill"></i></a></li>
+                        <li><a aria-label="Contact us" href="mailto:basswoodscamp@gmail.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="site-menu-body">
-                <div class="site-menu-main site-header-offset bg-charcoal">
-                    <div class="site-menu-main-container px-container pb-md">
-                        <ul id="menu-primary-menu" class="site-menu-nav ginto-normal-black py-xl">
-                            <li id="menu-item-new-1" class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-302" href="tours.html"><span>Tour package</span></a></li>
-                            <li id="menu-item-new-2" class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-296" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
-                            <li id="menu-item-new-3" class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="rentals.html"><span>Camping equipment rentals</span></a></li>
-                            <li id="menu-item-new-4" class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-295" href="camping.html"><span>Campings</span></a></li>
-                            <li id="menu-item-new-5" class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-298" href="trekking.html"><span>Trekking</span></a></li>
-                            <li id="menu-item-new-6" class="menu-item"><a title="Outdoor activities" class="site-menu-nav-item" data-image="menu-item-image-297" href="trekking.html#activities"><span>Outdoor activities</span></a></li>
-                            <li id="menu-item-new-7" class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-299" href="offbeat.html"><span>Off beat Tours</span></a></li>
-                        </ul>
-                        <ul class="site-menu-social">
-                            <li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a></li>
-                            <li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a></li>
-                            <li><a aria-label="Location" href="camping.html" target="_blank"><i class="ri-map-pin-fill"></i></a></li>
-                            <li><a aria-label="Contact us" href="mailto:basswoodscamp@gmail.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="site-menu-images">
-                    <div class="site-menu-images-container">
-                        <div class="site-menu-images-item active" id="menu-item-image-295">
-                            <img src="wp-content/IMAGES/menu_campings.png" alt="Campings" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-296">
-                            <img src="wp-content/IMAGES/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-rentals">
-                            <img src="wp-content/IMAGES/menu_camping_equipment.png" alt="Camping Equipment" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-302">
-                            <img src="wp-content/IMAGES/menu_tour_package.png" alt="Tour Package" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-298">
-                            <img src="wp-content/IMAGES/camp-1.jpg" alt="Trekking" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-297">
-                            <img src="wp-content/IMAGES/camp-2.jpg" alt="Outdoor Activities" loading="lazy" />
-                        </div>
-                        <div class="site-menu-images-item" id="menu-item-image-299">
-                            <img src="wp-content/IMAGES/blue-sky-camp.jpg" alt="Offbeat Tours" loading="lazy" />
-                        </div>
-                    </div>
+            <div class="site-menu-images">
+                <div class="site-menu-images-container">
+                    <div class="site-menu-images-item active" id="menu-item-image-camping"><img src="wp-content/IMAGES/menu_campings.png" alt="Campings" loading="lazy"></div>
+                    <div class="site-menu-images-item" id="menu-item-image-rentals"><img src="wp-content/IMAGES/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy"></div>
+                    <div class="site-menu-images-item" id="menu-item-image-equipment"><img src="wp-content/IMAGES/menu_camping_equipment.png" alt="Equipment" loading="lazy"></div>
+                    <div class="site-menu-images-item" id="menu-item-image-tours"><img src="wp-content/IMAGES/menu_tour_package.png" alt="Tours" loading="lazy"></div>
+                    <div class="site-menu-images-item" id="menu-item-image-trekking"><img src="wp-content/IMAGES/camp-1.jpg" alt="Trekking" loading="lazy"></div>
+                    <div class="site-menu-images-item" id="menu-item-image-offbeat"><img src="wp-content/IMAGES/blue-sky-camp.jpg" alt="Offbeat" loading="lazy"></div>
                 </div>
             </div>
         </div>
+    </div>
 
-<!-- MAIN HEADER -->
-    <header class="site-header" id="hdr">
+    <!-- MAIN HEADER -->
+    <header class="site-header">
         <div class="site-header-container">
             <div class="header-left-group">
                 <button class="site-menu-toggle">
@@ -908,24 +859,12 @@
     </div>
 
 
+    <!-- Scripts Linked via assets/js/basswoods-menu.js -->
+    <script src="assets/js/basswoods-menu.js"></script>
     <script>
-        const hdr = document.getElementById('hdr');
+        // Page specific logic
+        const hdr = document.querySelector('.site-header');
         addEventListener('scroll', () => hdr.classList.toggle('stuck', scrollY > 50));
-
-        // Off-canvas Menu Toggle Logic
-        const menuToggle = document.querySelector('.site-menu-toggle');
-        const menuClose = document.querySelector('.site-menu-close');
-        const siteMenu = document.querySelector('.site-menu');
-
-        menuToggle.addEventListener('click', () => {
-            siteMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        menuClose.addEventListener('click', () => {
-            siteMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
 
         // Tab Logic
         function switchTab(btn, id) {
@@ -964,19 +903,6 @@
             btn.textContent = 'COPIED!';
             setTimeout(() => btn.textContent = 'IOLI20', 2000);
         }
-
-        // Image Hover Logic inside Menu
-        const menuItems = document.querySelectorAll('.site-menu-nav-item');
-        const menuImages = document.querySelectorAll('.site-menu-images-item');
-
-        menuItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                const imageId = item.getAttribute('data-image');
-                menuImages.forEach(img => {
-                    img.classList.toggle('active', img.id === imageId);
-                });
-            });
-        });
     </script>
 </body>
 </html>
