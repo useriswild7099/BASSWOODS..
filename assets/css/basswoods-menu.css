@@ -1,6 +1,5 @@
-/* site-header-offset for content below fixed header */
 .site-header-offset {
-    padding-top: 100px !important;
+    padding-top: 70px !important;
 }
 @media(max-width: 991px) {
     .site-header-offset {
@@ -8,11 +7,11 @@
     }
 }
 html {
-    scroll-padding-top: 110px;
+    scroll-padding-top: 80px;
 }
 @media(max-width: 991px) {
     html {
-        scroll-padding-top: 90px;
+        scroll-padding-top: 70px;
     }
 }
 
@@ -154,13 +153,18 @@ body:has(.site-menu.is-active) nav.site-nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
-    height: 90px;
+    height: 70px;
     display: flex;
     align-items: center;
-    transition: background 0.4s ease, border-color 0.4s ease;
+    transition: all 0.4s var(--ease);
     border-bottom: 1px solid transparent;
-    background: rgba(8, 28, 21, 0.98); /* Almost opaque dark green background */
+    background: transparent;
+}
+.site-header.is-scrolled {
+    background: rgba(8, 28, 21, 0.85);
     backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    height: 60px;
 }
 .site-header-container {
     width: 100%;
@@ -231,7 +235,8 @@ body:has(.site-menu.is-active) nav.site-nav {
 
 /* Navbar Responsiveness Fixes */
 @media(max-width: 991px) {
-    .site-header { height: 70px; }
+    .site-header { height: 60px; }
+    .site-header.is-scrolled { height: 56px; }
     .site-header-container { padding: 0 1.5rem; }
     .site-header-account-btn { display: none !important; }
     .header-left-group { gap: 0.8rem; }

@@ -1,21 +1,68 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trekking & Adventures — Basswoods Camp</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MHV7XQKC');</script>
+    <!-- End Google Tag Manager -->
 
-  <!-- Remix Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
-  
-  <!-- Premium Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Basswoods Camp" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="index, follow" />
+    
+    <title>Trekking & Adventures | Basswoods Camp</title>
+    <meta name="description" content="Discover the untamed beauty of Northeast India with our curated trekking and outdoor adventures. From Dzüko Valley to the Living Root Bridges." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.basswoodscamp.com/trekking.html">
+    <meta property="og:title" content="Trekking & Adventures | Basswoods Camp">
+    <meta property="og:description" content="Northeast India's premier trekking experience.">
+    <meta property="og:image" content="https://www.basswoodscamp.com/wp-content/uploads/2025/07/1-1.jpg">
 
-  <!-- Basswoods Menu CSS -->
-  <link rel="stylesheet" href="assets/css/basswoods-menu.css">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trekking & Adventures | Basswoods Camp">
+    <meta name="twitter:description" content="Northeast India's premier trekking experience.">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="wp-content/themes/handi_theme/favicon.ico">
+    <link rel="apple-touch-icon" href="wp-content/themes/handi_theme/assets/img/favicon/apple-icon-180x180.png">
+    
+    <!-- Premium Assets -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    
+    <!-- Core Brand Layer -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/basswoods-menu.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-M6XFBLC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "GT-M6XFBLC");
+    </script>
+    
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c, l, a, r, i, t, y) {
+            c[a] = c[a] || function() {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "lxyp80epj4");
+    </script>
 
   <style>
-    /* â”€â”€â”€ BRAND TOKENS â”€â”€â”€ */
+    /* --- BRAND TOKENS --- */
     :root {
       --ink:       #120D08;
       --soil:      #1C1208;
@@ -49,7 +96,7 @@
     /* site-header-offset */
     .site-header-offset{padding-top:70px}
 
-    /* â”€â”€â”€ HERO â”€â”€â”€ */
+    /* --- HERO --- */
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
 
     .hero-bg{position:absolute;inset:0;
@@ -62,7 +109,7 @@
       background-position: center;
     }
 
-    /* Contour lines — topographic feel */
+    /* Contour lines � topographic feel */
     .contours{position:absolute;inset:0;overflow:hidden;pointer-events:none}
     .contour{position:absolute;border-radius:50%;border:1px solid rgba(58,74,32,.18);transform:translate(-50%,-50%)}
 
@@ -107,7 +154,7 @@
     .scroll-hint{position:absolute;bottom:2.5rem;left:3rem;z-index:5;display:flex;align-items:center;gap:.7rem;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
     .scroll-hint span{display:block;width:40px;height:1px;background:linear-gradient(to right,var(--mist),transparent)}
 
-    /* â”€â”€â”€ SECTION ATOMS â”€â”€â”€ */
+    /* --- SECTION ATOMS --- */
     .section{padding:6.5rem 3rem}
     .container{max-width:1260px;margin:0 auto}
     .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);margin-bottom:.9rem}
@@ -116,12 +163,12 @@
     .sec-h2 em{font-style:italic;color:var(--ember)}
     .sec-p{font-size:1rem;color:var(--fog);font-weight:300;max-width:540px;line-height:1.8}
 
-    /* â”€â”€â”€ DZÃœKOU FEATURE SECTION â”€â”€â”€ */
+    /* --- DZÜKOU FEATURE SECTION --- */
     .feature-sec{background:var(--soil);border-top:1px solid var(--border)}
 
     .feature-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:center}
 
-    /* Visual panel — elevation profile SVG */
+    /* Visual panel � elevation profile SVG */
     .visual-panel{position:relative}
 
     .elev-card{background:var(--bark);border:1px solid var(--border);border-radius:22px;padding:2rem;overflow:hidden;position:relative}
@@ -157,7 +204,7 @@
     .best-time-text{font-size:.84rem;color:var(--fog);line-height:1.5}
     .best-time-text strong{color:var(--gold)}
 
-    /* â”€â”€â”€ WHAT TO EXPECT — route timeline â”€â”€â”€ */
+    /* --- WHAT TO EXPECT � route timeline --- */
     .route-sec{background:var(--ink)}
 
     .route-timeline{position:relative;padding-left:3rem;margin-top:4rem}
@@ -181,7 +228,7 @@
     .route-meta-pill{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;color:var(--mist)}
     .route-meta-pill i{font-size:.8rem;color:var(--ember)}
 
-    /* â”€â”€â”€ ACTIVITIES GRID â”€â”€â”€ */
+    /* --- ACTIVITIES GRID --- */
     .activities-sec{background:var(--soil);border-top:1px solid var(--border)}
 
     .act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;margin-top:3.5rem}
@@ -200,7 +247,7 @@
     .act-avail{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mist)}
     .act-avail::before{content:'';width:6px;height:6px;border-radius:50%;background:#6FCF7A;box-shadow:0 0 5px #6FCF7A}
 
-    /* Ã¢”â‚¬Ã¢”â‚¬ OFFBEAT TOURS Ã¢”â‚¬Ã¢”â‚¬ */
+    /* â��€â��€ OFFBEAT TOURS â��€â��€ */
     .offbeat-sec{background:var(--ink)}
 
     .offbeat-hero-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center}
@@ -225,7 +272,7 @@
     .philosophy-text em{color:var(--ember)}
     .philosophy-attr{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);position:relative;z-index:1}
 
-    /* Ã¢”â‚¬Ã¢”â‚¬ GEAR & PREP SECTION Ã¢”â‚¬Ã¢”â‚¬ */
+    /* â��€â��€ GEAR & PREP SECTION â��€â��€ */
     .gear-sec{background:var(--soil);border-top:1px solid var(--border)}
 
     .gear-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3.5rem}
@@ -248,7 +295,7 @@
     .sl-dot{display:inline-flex;align-items:center;gap:.35rem}
     .sl-dot span{width:8px;height:8px;border-radius:2px;display:inline-block}
 
-    /* Ã¢”â‚¬Ã¢”â‚¬ CTA BAND Ã¢”â‚¬Ã¢”â‚¬ */
+    /* â��€â��€ CTA BAND â��€â��€ */
     .cta-band{position:relative;padding:8rem 3rem;text-align:center;overflow:hidden}
     .cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 65% 75% at 50% 50%,rgba(212,98,42,.18) 0%,transparent 65%),var(--bark)}
     /* animated contour rings on CTA */
@@ -264,7 +311,7 @@
     .cta-h2 em{font-style:italic;color:var(--ember)}
     .cta-p{font-size:1rem;color:var(--fog);margin-bottom:2.8rem}
 
-    /* Ã¢”â‚¬Ã¢”â‚¬ MODAL Ã¢”â‚¬Ã¢”â‚¬ */
+    /* â��€â��€ MODAL â��€â��€ */
     .m-veil{display:none;position:fixed;inset:0;background:rgba(8,5,3,.92);backdrop-filter:blur(12px);z-index:900;align-items:center;justify-content:center;padding:1.5rem}
     .m-veil.open{display:flex}
     .m-box{background:var(--soil);border:1px solid var(--border);border-radius:22px;width:100%;max-width:540px;overflow:hidden;animation:popIn .32s var(--spring)}
@@ -284,7 +331,7 @@
     .f-ctrl:focus{border-color:var(--ember)}
     .f-ctrl option{background:var(--ink)}
 
-    /* Ã¢”â‚¬Ã¢”â‚¬ FOOTER Ã¢”â‚¬Ã¢”â‚¬ */
+    /* â��€â��€ FOOTER â��€â��€ */
     .footer{background:var(--ink);border-top:1px solid var(--border);padding:2.5rem 3rem 1.8rem}
     .foot-inner{max-width:1260px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
     .foot-logo{font-family:var(--ff-d);font-size:1.3rem;font-weight:700}
@@ -294,7 +341,7 @@
     .foot-nav a:hover{color:var(--ember-lt)}
     .foot-copy{max-width:1260px;margin:0 auto;font-size:.74rem;color:var(--mist)}
 
-    /* Ã¢”â‚¬Ã¢”â‚¬ REVEAL Ã¢”â‚¬Ã¢”â‚¬ */
+    /* â��€â��€ REVEAL â��€â��€ */
     .rev{opacity:0;transform:translateY(22px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
     .rev.in{opacity:1;transform:none}
     .rev-left{opacity:0;transform:translateX(-24px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
@@ -305,7 +352,7 @@
     /* stagger delays */
     .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
-    /* Ã¢”â‚¬Ã¢”â‚¬ RESPONSIVE Ã¢”â‚¬Ã¢”â‚¬ */
+    /* â��€â��€ RESPONSIVE â��€â��€ */
     @media(max-width:1024px){
       .feature-layout,.offbeat-hero-layout,.gear-layout{grid-template-columns:1fr;gap:3rem}
     }
@@ -447,13 +494,13 @@
   </div>
 
   <div class="hero-body">
-    <div class="hero-kicker"><i class="ri-footprint-line"></i> Trekking & Outdoor Adventures · Northeast India</div>
+    <div class="hero-kicker"><i class="ri-footprint-line"></i> Trekking & Outdoor Adventures � Northeast India</div>
     <h1 class="hero-h1">
       <span class="line">Into the</span>
       <span class="line"><em>Wild</em> Valley.</span>
     </h1>
     <p class="hero-p">
-      Guided overnight treks, offbeat trails, waterfall walks, and fishing expeditions across the most breathtaking landscapes of Northeast India — with Basswoods Camp as your base.
+      Guided overnight treks, offbeat trails, waterfall walks, and fishing expeditions across the most breathtaking landscapes of Northeast India � with Basswoods Camp as your base.
     </p>
     <div class="hero-ctas">
       <button class="btn-primary" onclick="document.getElementById('dzukou').scrollIntoView({behavior:'smooth'})">
@@ -469,7 +516,7 @@
 </section>
 
 
-<!-- DZÃƒÅ“KOU VALLEY FEATURE -->
+<!-- DZÃœKOU VALLEY FEATURE -->
 <section class="section feature-sec" id="dzukou">
   <div class="container">
     <div class="feature-layout">
@@ -482,7 +529,7 @@
             <path d="M0 180 C30 180 50 170 80 155 C110 140 130 120 160 90 C185 65 200 52 230 48 C255 44 265 50 285 55 C310 62 330 58 360 65 C390 72 420 110 450 135 C470 150 485 160 500 165 L500 200 L0 200 Z" fill="url(#elevFill)" opacity=".6"/>
             <path d="M0 180 C30 180 50 170 80 155 C110 140 130 120 160 90 C185 65 200 52 230 48 C255 44 265 50 285 55 C310 62 330 58 360 65 C390 72 420 110 450 135 C470 150 485 160 500 165" fill="none" stroke="var(--ember)" stroke-width="2.5" stroke-linecap="round"/>
             <circle cx="230" cy="48" r="5" fill="var(--ember)"/>
-            <text x="230" y="14" fill="var(--gold)" font-size="10" font-family="'Cormorant Garamond',serif" font-style="italic" text-anchor="middle">Dzükou Valley</text>
+            <text x="230" y="14" fill="var(--gold)" font-size="10" font-family="'Cormorant Garamond',serif" font-style="italic" text-anchor="middle">Dz�kou Valley</text>
             <text x="230" y="26" fill="rgba(201,160,58,.6)" font-size="8" font-family="'DM Sans',sans-serif" text-anchor="middle">~2,452 m</text>
             <defs>
               <linearGradient id="elevFill" x1="0" y1="0" x2="0" y2="1">
@@ -491,11 +538,11 @@
               </linearGradient>
             </defs>
           </svg>
-          <div style="position:absolute;bottom:1rem;right:1.5rem;font-size:1.8rem;opacity:.4">Ã°Å¸ ”¢Ã¯ ¸ </div>
+          <div style="position:absolute;bottom:1rem;right:1.5rem;font-size:1.8rem;opacity:.4">ðŸ ���ï � �</div>
         </div>
         <div class="stat-bubbles">
           <div class="stat-bub rev d1">
-            <div class="stat-bub-num">₹5,499</div>
+            <div class="stat-bub-num">?5,499</div>
             <div class="stat-bub-lbl">Starting price / person</div>
           </div>
           <div class="stat-bub rev d2">
@@ -507,30 +554,30 @@
             <div class="stat-bub-lbl">Trek duration</div>
           </div>
           <div class="stat-bub rev d4">
-            <div class="stat-bub-num">Sep–Nov</div>
+            <div class="stat-bub-num">Sep�Nov</div>
             <div class="stat-bub-lbl">Best season</div>
           </div>
         </div>
       </div>
       <div class="rev-right">
         <div class="eyebrow">Signature Trek</div>
-        <h2 class="sec-h2">Dzükou Valley<br/><em>Overnight Trek</em></h2>
+        <h2 class="sec-h2">Dz�kou Valley<br/><em>Overnight Trek</em></h2>
         <span class="trek-tag overnight"><i class="ri-moon-line"></i> Overnight Expedition</span>
         <p style="font-size:.95rem;color:var(--fog);font-weight:300;line-height:1.8;margin-bottom:1.5rem">
-          One of Northeast India's most breathtaking landscapes — a high-altitude valley in Nagaland carpeted with the legendary Dzükou lily and framed by mist-wrapped ridgelines.
+          One of Northeast India's most breathtaking landscapes � a high-altitude valley in Nagaland carpeted with the legendary Dz�kou lily and framed by mist-wrapped ridgelines.
         </p>
         <div class="best-time">
           <i class="ri-flower-line"></i>
-          <div class="best-time-text">Best visited <strong>September to November</strong> — when the famous Dzükou lily blooms.</div>
+          <div class="best-time-text">Best visited <strong>September to November</strong> � when the famous Dz�kou lily blooms.</div>
         </div>
         <div class="detail-grid">
-          <div class="detail-cell rev d1"><div class="detail-lbl">Location</div><div class="detail-val">Dzükou Valley, Nagaland</div></div>
-          <div class="detail-cell rev d2"><div class="detail-lbl">Duration</div><div class="detail-val">Overnight · 1 night</div></div>
-          <div class="detail-cell rev d3"><div class="detail-lbl">Starting Price</div><div class="detail-val highlight">₹5,499 / person</div></div>
+          <div class="detail-cell rev d1"><div class="detail-lbl">Location</div><div class="detail-val">Dz�kou Valley, Nagaland</div></div>
+          <div class="detail-cell rev d2"><div class="detail-lbl">Duration</div><div class="detail-val">Overnight � 1 night</div></div>
+          <div class="detail-cell rev d3"><div class="detail-lbl">Starting Price</div><div class="detail-val highlight">?5,499 / person</div></div>
           <div class="detail-cell rev d4"><div class="detail-lbl">Difficulty</div><div class="detail-val">Moderate</div></div>
         </div>
         <div style="display:flex;gap:.8rem;flex-wrap:wrap">
-          <button class="btn-primary" onclick="openModal('Dzükou Valley Overnight Trek')"><i class="ri-calendar-check-line"></i> Book This Trek</button>
+          <button class="btn-primary" onclick="openModal('Dz�kou Valley Overnight Trek')"><i class="ri-calendar-check-line"></i> Book This Trek</button>
           <a href="tel:+918011228979" class="btn-ghost"><i class="ri-phone-line"></i> +91 8011228979</a>
         </div>
       </div>
@@ -554,12 +601,12 @@
         <div class="act-ico gold"><i class="ri-landscape-line"></i></div>
         <div class="act-name">Waterfall Walks</div>
         <div class="act-desc">Short to half-day walks to hidden waterfalls across Meghalaya and Arunachal Pradesh.</div>
-        <div class="act-avail">Seasonal · Jul–Nov ideal</div>
+        <div class="act-avail">Seasonal � Jul�Nov ideal</div>
       </div>
       <div class="act-card rev d3" style="--clr:var(--moss)">
         <div class="act-ico green"><i class="ri-fishing-line"></i></div>
         <div class="act-name">Traditional Fishing</div>
-        <div class="act-desc">Freshwater fishing in the streams and lakes of Ri Bhoi, Meghalaya — using traditional methods.</div>
+        <div class="act-desc">Freshwater fishing in the streams and lakes of Ri Bhoi, Meghalaya � using traditional methods.</div>
         <div class="act-avail">Cherry Blossom Camp</div>
       </div>
     </div>
@@ -573,7 +620,7 @@
       <div>
         <div class="eyebrow rev">Offbeat Packages</div>
         <h2 class="sec-h2 rev">Beyond the <em>Beaten Path</em></h2>
-        <p class="sec-p rev">Custom itineraries built around what matters to you — not a preset tourist trail.</p>
+        <p class="sec-p rev">Custom itineraries built around what matters to you � not a preset tourist trail.</p>
         <div class="offbeat-cards">
           <div class="offbeat-card rev d1">
             <div class="offbeat-card-ico"><i class="ri-footprint-line"></i></div>
@@ -588,8 +635,8 @@
       <div class="rev-right">
         <div class="philosophy-box">
           <div class="quote-mark">"</div>
-          <div class="philosophy-text">It's not all about the destination — sometimes it's about the <em>journey.</em></div>
-          <div class="philosophy-attr">— Basswoods Camp</div>
+          <div class="philosophy-text">It's not all about the destination � sometimes it's about the <em>journey.</em></div>
+          <div class="philosophy-attr">� Basswoods Camp</div>
         </div>
         <div style="margin-top:2rem;background:var(--soil);border:1px solid var(--border);border-radius:14px;padding:1.8rem">
           <button class="btn-primary" style="width:100%;justify-content:center" onclick="openModal('Offbeat Custom Package')"><i class="ri-compass-3-line"></i> Enquire for Custom Trek</button>
@@ -599,75 +646,55 @@
   </div>
 </section>
 
-<footer class="site-footer px-container" style="background-color: #1b4332; padding: 4rem 3rem; color: #f2f0e8;">
-<div class="site-footer-cta" style="padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
-<h2 class="logo-font" style="font-size: 3rem; color: #f2f0e8; margin-bottom: 2rem;">
-Let's start an adventure</h2>
-<div class="btn-group">
-<a class="btn-primary" href="enquiries.html" style="background: var(--lime); color: var(--bark); padding: 1rem 2rem; border-radius: 8px; font-weight: 700;">Contact us</a>
-</div>
-</div>
-<div class="site-footer-main" style="padding: 3rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
-<div class="site-footer-signup">
-<h3 style="font-family: var(--ff-display); font-size: 1.5rem; margin-bottom: 1.5rem;">Newsletter sign up</h3>
-<form action="https://basswoodscamp.us1.list-manage.com/subscribe/post?u=e33eee5e86362c3165c7e1676&id=a094635557&f_id=003d68e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="" style="display: flex; gap: 0.5rem;">
-<input type="email" name="EMAIL" class="f-ctrl" required="" value="" placeholder="Your email address" style="flex: 1; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem; color: #fff;">
-<button aria-label="subscribe" class="btn-primary" type="submit" name="subscribe" id="mc-embedded-subscribe" value="Subscribe" style="background: var(--lime); border: none; padding: 0.8rem 1.2rem; border-radius: 4px; cursor: pointer;">
-<i class="ri-arrow-right-line"></i>
-</button>
-</form>
-</div>
-<div class="site-footer-info">
-<div style="color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;">&copy; 2026 Basswoods Camp. Adventure company based in Northeast India.</div>
-<div style="color: rgba(255,255,255,0.7);">Guwahati, Assam, India 781001</div>
-</div>
-<div class="site-footer-info">
-<ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.7);">
-<li style="margin-bottom: 0.5rem;">
-<span>T:</span>
-<a href="tel:+918011228979" style="color: #fff;">8011228979</a>
-<span style="font-size: 0.8rem;">(Bookings)</span>
-</li>
-<li style="margin-bottom: 0.5rem;">
-<span>T:</span>
-<a href="tel:+917577911795" style="color: #fff;">7577911795</a>
-<span style="font-size: 0.8rem;">(Rentals)</span>
-</li>
-<li>
-<span>E:</span>
-<a href="mailto:basswoodscamp@gmail.com" style="color: #fff;">basswoodscamp@gmail.com</a>
-</li>
-</ul>
-</div>
-<div class="site-footer-info">
-<ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.7);">
-<li style="margin-bottom: 0.8rem; font-weight: 700; color: #fff;">Explore Our World</li>
-<li style="margin-bottom: 0.5rem;">
-<a href="https://www.instagram.com/basswoodscamp/" target="_blank" style="color: #fff;">Instagram:</a>
-<span style="font-size: 0.8rem;">Follow Our Adventures</span>
-</li>
-<li>
-<a href="index.html" style="color: #fff;">Basswoods Camp:</a>
-<span style="font-size: 0.8rem;">Camping · Rentals · Adventures</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="site-footer-bottom" style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
-<ul style="list-style: none; padding: 0; display: flex; gap: 1.5rem;">
-          <li><a href="privacy.html" style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Privacy policy</a></li>
-          <li><a href="terms.html" style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Terms & conditions</a></li>
-        </ul>
-<div class="site-footer-social">
-<ul style="list-style: none; padding: 0; display: flex; gap: 1rem; font-size: 1.2rem;">
-<li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank" style="color: #fff;"><i class="ri-facebook-fill"></i></a></li>
-<li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank" style="color: #fff;"><i class="ri-instagram-fill"></i></a></li>
-<li><a aria-label="Follow us on youtube" href="https://www.youtube.com/@basswoodscamp" target="_blank" style="color: #fff;"><i class="ri-youtube-fill"></i></a></li>
-</ul>
-</div>
-</div>
+<footer class="site-footer">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <div class="site-footer-grid">
+            <div>
+                <a href="index.html" class="site-footer-logo-text">
+                    Basswoods<em>Camp</em>
+                </a>
+                <p style="line-height: 1.7; font-weight: 300;">
+                    Northeast India's premier adventure company. From the peaks of Mizoram to the valleys of Meghalaya, we curate life-affirming camping and festival experiences.
+                </p>
+                <div class="site-footer-social-wrap">
+                    <a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-line"></i></a>
+                    <a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-line"></i></a>
+                    <a aria-label="Follow us on youtube" href="https://www.youtube.com/@basswoodscamp" target="_blank"><i class="ri-youtube-line"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="site-footer-h4">Navigation</h4>
+                <ul class="site-footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="trekking.html">Trekking</a></li>
+                    <li><a href="offbeat.html">Offbeat</a></li>
+                    <li><a href="camping.html">Camping</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="vehicle-rentals.html">Rentals</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="site-footer-h4">Connect</h4>
+                <div class="site-footer-contact">
+                    <p>
+                        Guwahati, Assam, India 781001<br>
+                        <strong>T:</strong> <a href="tel:+918011228979">8011228979</a> (Bookings)<br>
+                        <strong>T:</strong> <a href="tel:+917577911795">7577911795</a> (Rentals)<br>
+                        <strong>E:</strong> <a href="mailto:bookings@basswoodscamp.com">bookings@basswoodscamp.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="site-footer-bottom">
+            <div>&copy; 2026 Basswoods Camp. Adventure made in Northeast India.</div>
+            <div class="site-footer-legal">
+                <a href="privacy.html">Privacy policy</a>
+                <a href="terms.html">Terms & conditions</a>
+            </div>
+        </div>
+    </div>
 </footer>
-
 <!-- MODAL -->
 <div class="m-veil" id="mVeil" onclick="handleVeil(event)">
   <div class="m-box">
@@ -713,8 +740,12 @@ Let's start an adventure</h2>
   function handleVeil(e) { if (e.target === document.getElementById('mVeil')) closeModal(); }
   function submitModal() { alert('Enquiry sent!'); closeModal(); }
 </script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="assets/js/lenis-init.js"></script>
 </body>
 </html>
+
+
 
 
 

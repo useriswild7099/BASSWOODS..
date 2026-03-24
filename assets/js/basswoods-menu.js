@@ -38,4 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Scroll Header Behavior
+    const header = document.querySelector('.site-header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('is-scrolled');
+            } else {
+                header.classList.remove('is-scrolled');
+            }
+        });
+    }
 });
