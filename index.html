@@ -744,7 +744,7 @@ CAMPING				</div>
 }
 .ne-map-wrapper *, .ne-map-wrapper *::before, .ne-map-wrapper *::after { box-sizing: border-box; }
 
-/* Ã¢”â‚¬Ã¢”â‚¬ Section header Ã¢”â‚¬Ã¢”â‚¬ */
+/* A"a,A"a, Section header A"a,A"a, */
 .ne-map-wrapper .map-section-head {
   text-align: center;
   margin-bottom: 40px;
@@ -769,7 +769,7 @@ CAMPING				</div>
   font-size: .9rem; font-weight: 300; color: var(--w60); line-height: 1.75; margin: 0;
 }
 
-/* Ã¢”â‚¬Ã¢”â‚¬ Outer container Ã¢”â‚¬Ã¢”â‚¬ */
+/* A"a,A"a, Outer container A"a,A"a, */
 .ne-map-wrapper .map-outer {
   width: 100%; max-width: 1100px;
   border: 1px solid var(--w10); overflow: hidden;
@@ -778,7 +778,7 @@ CAMPING				</div>
   min-height: 540px;
 }
 
-/* Ã¢”â‚¬Ã¢”â‚¬ Left: SVG canvas Ã¢”â‚¬Ã¢”â‚¬ */
+/* A"a,A"a, Left: SVG canvas A"a,A"a, */
 .ne-map-wrapper .map-canvas {
   background: var(--bg4);
   display: flex; align-items: center; justify-content: center;
@@ -859,7 +859,7 @@ CAMPING				</div>
 }
 @keyframes fadeHint { 0%,70%{opacity:1} 100%{opacity:0;pointer-events:none} }
 
-/* Ã¢”â‚¬Ã¢”â‚¬ Right: Info panel Ã¢”â‚¬Ã¢”â‚¬ */
+/* A"a,A"a, Right: Info panel A"a,A"a, */
 .ne-map-wrapper .map-panel {
   border-left: 1px solid var(--w10);
   display: flex; flex-direction: column;
@@ -912,7 +912,7 @@ CAMPING				</div>
   background: none; border: none; padding: 0; width: fit-content;
 }
 .ne-map-wrapper .ps-back:hover { color: var(--wh); }
-.ne-map-wrapper .ps-back::before { content: 'Ã¢”  '; font-size: .8rem; }
+.ne-map-wrapper .ps-back::before { content: 'A"  '; font-size: .8rem; }
 
 .ne-map-wrapper .ps-name {
   font-family: var(--D); font-size: 2.4rem; font-weight: 900;
@@ -966,7 +966,7 @@ CAMPING				</div>
 .ne-map-wrapper .btn-wa  { background: var(--wa);  border-color: var(--wa);  color: #fff; margin-top: 6px; }
 .ne-map-wrapper .btn-wa:hover { background: #20bf5a; color: #fff; }
 
-/* Ã¢”â‚¬Ã¢”â‚¬ Stats bar below map Ã¢”â‚¬Ã¢”â‚¬ */
+/* A"a,A"a, Stats bar below map A"a,A"a, */
 .ne-map-wrapper .map-stats {
   width: 100%; max-width: 1100px;
   display: grid; grid-template-columns: repeat(4, 1fr);
@@ -987,7 +987,7 @@ CAMPING				</div>
   letter-spacing: .14em; text-transform: uppercase; color: var(--w60);
 }
 
-/* Ã¢”â‚¬Ã¢”â‚¬ Responsive Ã¢”â‚¬Ã¢”â‚¬ */
+/* A"a,A"a, Responsive A"a,A"a, */
 @media (max-width: 860px) {
   .ne-map-wrapper .map-outer { grid-template-columns: 1fr; }
   .ne-map-wrapper .map-panel { border-left: none; border-top: 1px solid var(--w10); max-height: none; }
@@ -1023,7 +1023,7 @@ CAMPING				</div>
 
     <!-- SVG MAP -->
     <div class="map-canvas">
-      <div class="map-hint">Click any state to explore →</div>
+      <div class="map-hint">Click any state to explore -></div>
 
       <svg id="ne-map" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -1033,7 +1033,7 @@ CAMPING				</div>
           </filter>
         </defs>
 
-        <!-- Ã¢”â‚¬Ã¢”â‚¬ STATE PATHS Ã¢”â‚¬Ã¢”â‚¬ -->
+        <!-- A"a,A"a, STATE PATHS A"a,A"a, -->
         <path id="path-arunachal" class="state-path" data-state="arunachal"
           d="M 185 42 L 210 28 L 255 22 L 310 20 L 365 24 L 410 32 L 450 48 L 468 72 L 462 100
              L 448 120 L 425 134 L 395 142 L 358 148 L 320 150 L 285 148 L 255 144 L 225 136
@@ -1086,7 +1086,7 @@ CAMPING				</div>
           onclick="selectState('sikkim')"/>
         <text class="state-label" x="66" y="104" text-anchor="middle" font-size="8">SIKKIM</text>
 
-        <!-- Ã¢”â‚¬Ã¢”â‚¬ PULSING LOCATION DOTS Ã¢”â‚¬Ã¢”â‚¬ -->
+        <!-- A"a,A"a, PULSING LOCATION DOTS A"a,A"a, -->
 
         <g class="dot-group" onclick="selectState('assam')" style="cursor:pointer">
           <circle class="loc-dot-ring" cx="155" cy="180" r="5"/>
@@ -1164,7 +1164,7 @@ CAMPING				</div>
           <circle class="loc-dot" cx="440" cy="245" r="5" filter="url(#glow)"/>
           <g class="dot-tooltip" transform="translate(448,233)">
             <rect x="0" y="0" width="95" height="22" rx="3" fill="#1a1a1a" stroke="#e85d2f" stroke-width="1"/>
-            <text x="6" y="14" font-family="Barlow" font-size="9.5" fill="white">Dzükou Valley Trek</text>
+            <text x="6" y="14" font-family="Barlow" font-size="9.5" fill="white">Dzukou Valley Trek</text>
           </g>
         </g>
       </svg>
@@ -1184,7 +1184,7 @@ CAMPING				</div>
         <div>
           <div style="font-family:var(--D);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--or);margin-bottom:8px">Our Coverage</div>
           <h3>8 States</h3>
-          <p>Basswoods Camp operates across all 8 Northeast Indian states – select any state on the map to see festivals, activities, and locations.</p>
+          <p>Basswoods Camp operates across all 8 Northeast Indian states  -  select any state on the map to see festivals, activities, and locations.</p>
           <div class="states-list" id="statesList">
             <div class="states-list-item" onclick="selectState('assam')" data-item="assam">
               <span class="sli-dot"></span>
@@ -1230,7 +1230,7 @@ CAMPING				</div>
         </div>
       </div>
 
-      <!-- STATE PANELS — one per state -->
+      <!-- STATE PANELS  -  one per state -->
 
       <!-- ASSAM -->
       <div class="panel-state" id="panel-assam">
@@ -1250,7 +1250,7 @@ CAMPING				</div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Umrangso, Dima Hasao</div><div class="ps-loc-type">Falcon Festival Camping - Feb</div></div></div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Nakkati Hill</div><div class="ps-loc-type">Adventure Campsite - Year-round</div></div></div>
         </div>
-        <a href="https://wa.me/918011228979?text=Hi%2C%20I%27m%20interested%20in%20Assam%20activities!" target="_blank" class="btn-ne btn-or">Book Assam →</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20I%27m%20interested%20in%20Assam%20activities!" target="_blank" class="btn-ne btn-or">Book Assam -></a>
         <a href="https://wa.me/917577911795?text=Hi%2C%20vehicle%20rental%20from%20Guwahati!" target="_blank" class="btn-ne btn-wa">Rentals: 7577911795</a>
       </div>
 
@@ -1272,7 +1272,7 @@ CAMPING				</div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Jowai</div><div class="ps-loc-type">NH7 Weekender - The Hills Festival</div></div></div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Sohra (Cherrapunji)</div><div class="ps-loc-type">Offbeat Camping - Waterfall Treks</div></div></div>
         </div>
-        <a href="https://wa.me/918011228979?text=Hi%2C%20Meghalaya%20camping%20enquiry!" target="_blank" class="btn-ne btn-or">Book Meghalaya →</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Meghalaya%20camping%20enquiry!" target="_blank" class="btn-ne btn-or">Book Meghalaya -></a>
         <a href="https://wa.me/918011228979?text=Hi%2C%20Cherry%20Blossom%20Festival%20camp!" target="_blank" class="btn-ne btn-wa">Cherry Blossom Camp</a>
       </div>
 
@@ -1280,7 +1280,7 @@ CAMPING				</div>
       <div class="panel-state" id="panel-nagaland">
         <button class="ps-back" type="button" onclick="resetMap()">All States</button>
         <div class="ps-name">Nagaland</div>
-        <div class="ps-tagline">Hornbill Country - Dzükou Valley</div>
+        <div class="ps-tagline">Hornbill Country - Dzukou Valley</div>
         <div class="ps-badges">
           <span class="ps-badge or">Hornbill Festival</span>
           <span class="ps-badge or">Trekking</span>
@@ -1288,12 +1288,12 @@ CAMPING				</div>
         </div>
         <div class="ps-loc-title">Locations & Activities</div>
         <div class="ps-locs">
-          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Kisama Heritage Village</div><div class="ps-loc-type">Hornbill Festival Official Camp - Dec 1–10</div></div></div>
-          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Dzükou Valley</div><div class="ps-loc-type">Multi-Day Trek - 2–4 Days - Moderate–Hard</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Kisama Heritage Village</div><div class="ps-loc-type">Hornbill Festival Official Camp - Dec 1 - 10</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Dzukou Valley</div><div class="ps-loc-type">Multi-Day Trek - 2 - 4 Days - Moderate - Hard</div></div></div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Dimapur</div><div class="ps-loc-type">Gateway City - Arrival Hub for Hornbill</div></div></div>
         </div>
-        <a href="https://wa.me/918011228979?text=Hi%2C%20Hornbill%20Festival%20camping%20enquiry!" target="_blank" class="btn-ne btn-or">Book Hornbill Camp →</a>
-        <a href="https://wa.me/918011228979?text=Hi%2C%20Dzukou%20Valley%20trek%20enquiry!" target="_blank" class="btn-ne btn-wa">Dzükou Trek</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Hornbill%20Festival%20camping%20enquiry!" target="_blank" class="btn-ne btn-or">Book Hornbill Camp -></a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Dzukou%20Valley%20trek%20enquiry!" target="_blank" class="btn-ne btn-wa">Dzukou Trek</a>
       </div>
 
       <!-- ARUNACHAL PRADESH -->
@@ -1311,7 +1311,7 @@ CAMPING				</div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Ziro Valley</div><div class="ps-loc-type">Ziro Festival of Music - Sep - Indie + Camping</div></div></div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Dambuk</div><div class="ps-loc-type">Orange Festival - Jan - Orchard Camping</div></div></div>
         </div>
-        <a href="https://wa.me/918011228979?text=Hi%2C%20Ziro%20Festival%20camping%20enquiry!" target="_blank" class="btn-ne btn-or">Book Ziro Camp →</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Ziro%20Festival%20camping%20enquiry!" target="_blank" class="btn-ne btn-or">Book Ziro Camp -></a>
         <a href="https://wa.me/918011228979?text=Hi%2C%20Orange%20Festival%20Dambuk%20enquiry!" target="_blank" class="btn-ne btn-wa">Orange Festival</a>
       </div>
 
@@ -1323,14 +1323,14 @@ CAMPING				</div>
         <div class="ps-badges">
           <span class="ps-badge or">Paragliding</span>
           <span class="ps-badge or">Hot Air Balloon</span>
-          <span class="ps-badge">Dec 9–14</span>
+          <span class="ps-badge">Dec 9 - 14</span>
         </div>
         <div class="ps-loc-title">Locations & Activities</div>
         <div class="ps-locs">
-          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Serchipp</div><div class="ps-loc-type">Paragliding - Dec 9–14 - Tandem + Solo</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Serchipp</div><div class="ps-loc-type">Paragliding - Dec 9 - 14 - Tandem + Solo</div></div></div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Mizoram (TBC)</div><div class="ps-loc-type">Hot Air Balloon Joy Rides - Sunrise Flights</div></div></div>
         </div>
-        <a href="https://wa.me/918011228979?text=Hi%2C%20Paragliding%20at%20Serchipp%20Dec%209-14%20enquiry!" target="_blank" class="btn-ne btn-or">Book Paragliding →</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Paragliding%20at%20Serchipp%20Dec%209-14%20enquiry!" target="_blank" class="btn-ne btn-or">Book Paragliding -></a>
         <a href="https://wa.me/918011228979?text=Hi%2C%20Hot%20Air%20Balloon%20Mizoram%20enquiry!" target="_blank" class="btn-ne btn-wa">Hot Air Balloon</a>
       </div>
 
@@ -1349,23 +1349,23 @@ CAMPING				</div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Unakoti</div><div class="ps-loc-type">Rock Carving Trails - Heritage Tours</div></div></div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Agartala</div><div class="ps-loc-type">Ujjayanta Palace - Cultural Experiences</div></div></div>
         </div>
-        <a href="https://wa.me/918011228979?text=Hi%2C%20Tripura%20heritage%20tours!" target="_blank" class="btn-ne btn-or">Book Tripura →</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Tripura%20heritage%20tours!" target="_blank" class="btn-ne btn-or">Book Tripura -></a>
       </div>
 
       <!-- MANIPUR -->
       <div class="panel-state" id="panel-manipur">
         <button class="ps-back" type="button" onclick="resetMap()">All States</button>
         <div class="ps-name">Manipur</div>
-        <div class="ps-tagline">Dzükou Valley Gateway</div>
+        <div class="ps-tagline">Dzukou Valley Gateway</div>
         <div class="ps-badges">
           <span class="ps-badge or">Trekking</span>
-          <span class="ps-badge">Dzükou Valley</span>
+          <span class="ps-badge">Dzukou Valley</span>
         </div>
         <div class="ps-loc-title">Locations & Activities</div>
         <div class="ps-locs">
-          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Dzükou Valley (Manipur Entry)</div><div class="ps-loc-type">Trek Entry from Manipur Side - 2–4 Days</div></div></div>
+          <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Dzukou Valley (Manipur Entry)</div><div class="ps-loc-type">Trek Entry from Manipur Side - 2 - 4 Days</div></div></div>
         </div>
-        <a href="https://wa.me/918011228979?text=Hi%2C%20Dzukou%20Valley%20trek%20from%20Manipur%20side!" target="_blank" class="btn-ne btn-or">Book Dzükou Trek →</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Dzukou%20Valley%20trek%20from%20Manipur%20side!" target="_blank" class="btn-ne btn-or">Book Dzukou Trek -></a>
       </div>
 
       <!-- SIKKIM -->
@@ -1383,7 +1383,7 @@ CAMPING				</div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Kangchenjunga BC</div><div class="ps-loc-type">Advanced Trekking - High-Altitude Camping</div></div></div>
           <div class="ps-loc"><div class="ps-loc-dot"></div><div><div class="ps-loc-name">Rumtek</div><div class="ps-loc-type">Monastery Retreats - Spiritual Tours</div></div></div>
         </div>
-        <a href="https://wa.me/918011228979?text=Hi%2C%20Sikkim%20trekking%20enquiry!" target="_blank" class="btn-ne btn-or">Book Sikkim →</a>
+        <a href="https://wa.me/918011228979?text=Hi%2C%20Sikkim%20trekking%20enquiry!" target="_blank" class="btn-ne btn-or">Book Sikkim -></a>
       </div>
 
     </div><!-- /mapPanel -->
@@ -1400,7 +1400,7 @@ CAMPING				</div>
 </div>
 
 <script>
-// ─── SELECT STATE ───
+// --- SELECT STATE ---
 function selectState(state) {
   // Deactivate all paths
   document.querySelectorAll('.state-path').forEach(p => p.classList.remove('active'));
@@ -1424,7 +1424,7 @@ function selectState(state) {
   }
 }
 
-// ─── RESET MAP ───
+// --- RESET MAP ---
 function resetMap() {
   document.querySelectorAll('.state-path').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.states-list-item').forEach(i => i.classList.remove('active'));
@@ -1432,7 +1432,7 @@ function resetMap() {
   document.getElementById('panelDefault').style.display = '';
 }
 
-// ─── KEYBOARD: ESC to reset ───
+// --- KEYBOARD: ESC to reset ---
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') resetMap();
 });
@@ -1559,74 +1559,74 @@ document.addEventListener('keydown', e => {
 		<div class="col-lg-6 col-xxl-5">
 			<div class="reviews-carousel-images">
 				<div class="swiper-wrapper">
-					<!-- Slide 1: Nagaland — Hornbill Festival -->
+					<!-- Slide 1: Nagaland  -  Hornbill Festival -->
 					<div class="swiper-slide">
 						<div class="reviews-carousel-images-item">
 							<img width="1200" height="1012" src="wp-content/IMAGES/camp%20night%20stars.jpeg" alt="Campsite under the stars at Hornbill Festival, Nagaland" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;" />
 							<div class="review-img-article">
 								<span class="ria-badge">&#x1F3D5; Nagaland &bull; Hornbill Festival</span>
 								<div class="ria-title">Mountains & Myths of Nagaland</div>
-								<div class="ria-desc">A carefully curated journey through tribal heritage villages and misty mountain trails around Kisama — warrior dances, traditional Naga cuisine, and pristine forest treks.</div>
+								<div class="ria-desc">A carefully curated journey through tribal heritage villages and misty mountain trails around Kisama  -  warrior dances, traditional Naga cuisine, and pristine forest treks.</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Slide 2: Ziro Valley — Ziro Festival -->
+					<!-- Slide 2: Ziro Valley  -  Ziro Festival -->
 					<div class="swiper-slide">
 						<div class="reviews-carousel-images-item">
 							<img width="1200" height="900" src="wp-content/IMAGES/cherrybloassom%20festival.jpeg" alt="Festival camping at Ziro Valley, Arunachal Pradesh" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;" />
 							<div class="review-img-article">
 								<span class="ria-badge">&#x1F3B6; Arunachal Pradesh &bull; Ziro Festival</span>
 								<div class="ria-title">All-Time Spectacular at Ziro Valley</div>
-								<div class="ria-desc">Camp right at the heart of India's biggest indie music festival. Breathtaking rice-paddy views by day, live music under the stars by night — pure festival magic.</div>
+								<div class="ria-desc">Camp right at the heart of India's biggest indie music festival. Breathtaking rice-paddy views by day, live music under the stars by night  -  pure festival magic.</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Slide 3: Meghalaya — Cherry Blossom Festival -->
+					<!-- Slide 3: Meghalaya  -  Cherry Blossom Festival -->
 					<div class="swiper-slide">
 						<div class="reviews-carousel-images-item">
 							<img width="1200" height="835" src="wp-content/IMAGES/northeast%20culture.jpeg" alt="Cultural experience at the Cherry Blossom Festival, Meghalaya" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;" />
 							<div class="review-img-article">
 								<span class="ria-badge">&#x1F338; Meghalaya &bull; Cherry Blossom Festival</span>
 								<div class="ria-title">A Dream Week in Meghalaya</div>
-								<div class="ria-desc">Expert-guided camping in the Khasi Hills during the Cherry Blossom season — curated food trails, scenic viewpoints, and the vibrant colours of Northeast India's favourite autumn festival.</div>
+								<div class="ria-desc">Expert-guided camping in the Khasi Hills during the Cherry Blossom season  -  curated food trails, scenic viewpoints, and the vibrant colours of Northeast India's favourite autumn festival.</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Slide 4: Assam — Wilderness Camping -->
+					<!-- Slide 4: Assam  -  Wilderness Camping -->
 					<div class="swiper-slide">
 						<div class="reviews-carousel-images-item">
 							<img width="1200" height="675" src="wp-content/IMAGES/blue%20sky%20camp.jpeg" alt="Wilderness camping under open skies in Assam" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;" />
 							<div class="review-img-article">
 								<span class="ria-badge">&#x26FA; Assam &bull; Wilderness Camp</span>
 								<div class="ria-title">One for the Bucket List</div>
-								<div class="ria-desc">An immersive wilderness escape through Assam's tea gardens, river islands, and nature reserves — guided by local experts who know every hidden trail and secret viewpoint.</div>
+								<div class="ria-desc">An immersive wilderness escape through Assam's tea gardens, river islands, and nature reserves  -  guided by local experts who know every hidden trail and secret viewpoint.</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Slide 5: Cherrapunji — Living Root Bridges -->
+					<!-- Slide 5: Cherrapunji  -  Living Root Bridges -->
 					<div class="swiper-slide">
 						<div class="reviews-carousel-images-item">
 							<img width="1200" height="900" src="wp-content/IMAGES/living%20root%20bridge%20meghalaya.jpeg" alt="Living Root Bridges trek in Cherrapunji, Meghalaya" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;" />
 							<div class="review-img-article">
 								<span class="ria-badge">&#x1F333; Cherrapunji &bull; Living Root Trek</span>
 								<div class="ria-title">First Rate Cherrapunji Experience</div>
-								<div class="ria-desc">Trek to the legendary living root bridges, explore thundering waterfalls, and camp under the clouds at the wettest place on Earth — an adventure unlike any other.</div>
+								<div class="ria-desc">Trek to the legendary living root bridges, explore thundering waterfalls, and camp under the clouds at the wettest place on Earth  -  an adventure unlike any other.</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Slide 6: Meghalaya — Trip of a Lifetime -->
+					<!-- Slide 6: Meghalaya  -  Trip of a Lifetime -->
 					<div class="swiper-slide">
 						<div class="reviews-carousel-images-item">
 							<img width="1200" height="900" src="wp-content/IMAGES/meghalaya%20lake.jpeg" alt="Serene lake view in Meghalaya" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;" />
 							<div class="review-img-article">
 								<span class="ria-badge">&#x1F30F; Meghalaya &bull; Explorer Tour</span>
 								<div class="ria-title">Trip of a Lifetime in Meghalaya</div>
-								<div class="ria-desc">Crystal-clear rivers, ancient root bridges, cascading waterfalls, and tribal heritage — every single day revealed a landscape more breathtaking than the last.</div>
+								<div class="ria-desc">Crystal-clear rivers, ancient root bridges, cascading waterfalls, and tribal heritage  -  every single day revealed a landscape more breathtaking than the last.</div>
 							</div>
 						</div>
 					</div>
@@ -1653,9 +1653,9 @@ document.addEventListener('keydown', e => {
 																																														<div class="reviews-carousel-title">
 														Mountains & Myths													</div>
 																																																<div class="richtext text-block-40">
-														I did the Nagaland Hornbill Festival tour at the end of December, and it exceeded all expectations—another unforgettable adventure that truly lives up to Basswoods Camp standards.<br />
+														I did the Nagaland Hornbill Festival tour at the end of December, and it exceeded all expectations - another unforgettable adventure that truly lives up to Basswoods Camp standards.<br />
 <br />
-The experience was absolutely outstanding: carefully curated, from the tribal heritage villages to the misty mountain trails around Kisama. Every day brought something new and exciting — traditional Naga food, warrior dances, and treks through pristine forest paths.													</div>
+The experience was absolutely outstanding: carefully curated, from the tribal heritage villages to the misty mountain trails around Kisama. Every day brought something new and exciting  -  traditional Naga food, warrior dances, and treks through pristine forest paths.													</div>
 																																										</div>
 									<div class="reviews-carousel-footer">
 										<ul class="reviews-carousel-ref">
@@ -1679,7 +1679,7 @@ The experience was absolutely outstanding: carefully curated, from the tribal he
 																																																<div class="richtext text-block-40">
 														5 of us friends booked the Ziro Festival camping experience in Arunachal Pradesh. It was all-time spectacular and I couldn't have asked for a better adventure.<br />
 <br />
-The campsite setup was incredible — right at the heart of the festival with live indie music all around. The views of the Ziro Valley rice paddies were breathtaking.<br />
+The campsite setup was incredible  -  right at the heart of the festival with live indie music all around. The views of the Ziro Valley rice paddies were breathtaking.<br />
 <br />
 Our Basswoods guide was fantastic, so easy going and made sure everything was taken care of. Highly recommend this experience!													</div>
 																																										</div>
@@ -1775,7 +1775,7 @@ I would highly recommend Basswoods Camp.													</div>
 																																														<div class="reviews-carousel-title">
 														Trip of a lifetime!													</div>
 																																																<div class="richtext text-block-40">
-														This trip was unreal. The views we saw were the most beautiful I've ever seen. I couldn't believe how different every day was. Our guide was incredible — his knowledge of Meghalaya's living root bridges, waterfalls, and tribal history was impressive and endearing.<br />
+														This trip was unreal. The views we saw were the most beautiful I've ever seen. I couldn't believe how different every day was. Our guide was incredible  -  his knowledge of Meghalaya's living root bridges, waterfalls, and tribal history was impressive and endearing.<br />
 <br />
 The Basswoods Camp staff went above and beyond to make sure we had everything we needed. 													</div>
 																																										</div>
