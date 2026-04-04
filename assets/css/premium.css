@@ -32,14 +32,13 @@
     --space-s: 0.5rem;
     --space-m: 1rem;
     --space-l: clamp(1rem, 2vw, 1.5rem);
-    --space-xl: clamp(1.5rem, 4vw, 2.5rem);
-    --space-xxl: clamp(2.5rem, 6vw, 4rem);
-    --section-gap: clamp(60px, 8vw, 100px);
-    --component-gap: clamp(20px, 4vw, 32px);
-
-    --container-width: 1200px;
-    --container-wide: 1600px; 
-    --radius: 6px;
+    /* Fluid Spacing Tokens - Using rem for Auto-Scaling */
+    --section-gap: 8rem;
+    --card-padding: 3rem;
+    --component-gap: 2rem;
+    --container-width: 80rem; /* 1280px / 16 */
+    --container-wide: 100rem;  /* 1600px / 16 */
+    --radius: 0.75rem;
 }
 
 /* ═══════════════════════════════
