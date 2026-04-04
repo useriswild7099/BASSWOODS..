@@ -1,274 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MHV7XQKC');</script>
-    <!-- End Google Tag Manager -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Heritage | BASSWOODS</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+  
+    <link href="assets/css/premium.css" rel="stylesheet"/>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Basswoods Camp" />
-    <meta name="format-detection" content="telephone=no">
-    <meta name="robots" content="index, follow" />
-    
-    <title>Our Story | Basswoods Camp</title>
-    <meta name="description" content="Learn about Basswoods Camp, Northeast India's premier adventure company. Our journey from passion to professional camping and festival experiences." />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.basswoodscamp.com/about.html">
-    <meta property="og:title" content="Our Story | Basswoods Camp">
-    <meta property="og:description" content="The story behind Northeast India's favorite adventure partner.">
-    <meta property="og:image" content="https://www.basswoodscamp.com/wp-content/uploads/2025/07/1-1.jpg">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Our Story | Basswoods Camp">
-    <meta name="twitter:description" content="The story behind Northeast India's favorite adventure partner.">
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="wp-content/themes/handi_theme/favicon.ico">
-    <link rel="apple-touch-icon" href="wp-content/themes/handi_theme/assets/img/favicon/apple-icon-180x180.png">
-    
-    <!-- Core Assets -->
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/basswoods-menu.css">
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-M6XFBLC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
-        gtag("js", new Date());
-        gtag("config", "GT-M6XFBLC");
-    </script>
-
-    <style>
-        /* ======================================
-           PAGE-SPECIFIC STYLES (ABOUT)
-           ====================================== */
-        
-        .hero-bg {
-          position: absolute; inset: 0;
-          background: linear-gradient(to bottom, rgba(14,17,13,.3), var(--bark)),
-                      url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=80&auto=format&fit=crop');
-          background-size: cover; background-position: center;
-        }
-
-        .story-grid {
-          display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
-        }
-        @media (max-width: 900px) { .story-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
-
-        .story-content p {
-          color: var(--sand); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.05rem;
-        }
-
-        .quote-box {
-          margin-top: 5rem; padding: 4rem;
-          background: var(--card-bg); border: 1px solid var(--card-bdr); border-radius: 24px;
-          text-align: center; position: relative;
-        }
-        .quote-box::after {
-          content: '"'; position: absolute; top: 1rem; left: 50%; transform: translateX(-50%);
-          font-family: 'Fraunces', serif; font-size: 8rem; color: var(--lime); opacity: .1;
-        }
-        .quote-text {
-          font-family: 'Fraunces', serif; font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-          font-weight: 400; font-style: italic; color: #fff; line-height: 1.4; margin-bottom: 2rem;
-        }
-        .quote-author { font-weight: 700; color: var(--lime); text-transform: uppercase; letter-spacing: .1em; font-size: .85rem; }
-        
-        .site-header-offset { padding-top: 90px; }
-        @media(max-width: 991px) { .site-header-offset { padding-top: 70px; } }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-                                                <div class="site-menu" data-lenis-prevent>
-            <div class="site-menu-bg"></div>
-            <div class="site-menu-header">
-                <div class="site-header-left">
-                    <button class="site-menu-close">
-                        <span class="site-menu-close-icon"></span>
-                        <span>Close</span>
-                    </button>
+    <!-- Navigation -->
+    <nav class="nav-premium">
+        <a href="index.html" class="nav-logo gold-text">BASSWOODS</a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tours.html">Tours</a>
+            <a href="offbeat.html">Offbeat</a>
+            <a href="trekking.html">Trekking</a>
+            <a href="vehicle-rentals.html">Vehicles</a>
+            <a href="rentals.html">Gear</a>
+            <a href="camping.html">Camping</a>
+            <a href="about.html" class="active">About</a>
+            <a href="enquiries.html">Contact</a>
+        </div>
+        <div class="nav-btns">
+            <a href="camping.html" class="btn-gold">Book Now</a>
+            <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero-premium">
+        <div class="hero-bg" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('wp-content/IMAGES/arunachal.jpeg'); background-size: cover; background-position: center; position: absolute; inset:0; z-index:-1;"></div>
+        <div class="container hero-content">
+            <p class="hero-eyebrow fade-in delay-1">EST. 2019</p>
+            <h1 class="hero-title fade-in delay-2">
+                <span class="gold-text">UNLEASH</span>
+                <span>THE WILD</span>
+            </h1>
+            <p class="hero-desc fade-in delay-3">Native to the Northeast. We specialise in crafting life-affirming camping, touring, and festival experiences for the global nomad.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="section bg-black">
+      <div class="container">
+        <div class="grid" style="align-items: start;">
+          <div class="rev-left">
+            <div class="section-eyebrow">The Origin</div>
+            <h2 class="section-title">Made from <em>Adventure</em></h2>
+            <div style="margin-top: 2rem; border-radius: 24px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 16/9;">
+              <img src="wp-content/IMAGES/northeast culture.jpeg" alt="Northeast Culture" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+          </div>
+          <div class="rev-right" style="padding-top: 2rem;">
+            <p class="section-desc" style="margin-bottom: 2rem; color: var(--white-muted);">We're BASSWOODS, and we're made from adventure. Since our first festival expedition in 2019, we have been committed to showcasing the raw, unfiltered beauty of Northeast India. We believe that stepping outdoors shapes us, moulds us, and makes us who we are.</p>
+            <p class="section-desc" style="margin-bottom: 2rem; color: var(--white-muted);">What started as a passion for exploration has grown into an end-to-end adventure ecosystem. We operate on six core pillars: <strong>Unique Campsites, High-Altitude Tours, Thrilling Sports, Adventure Activities, Global Events,</strong> and <strong>Premium Vehicle Rentals</strong>.</p>
+            <p class="section-desc" style="color: var(--white-muted);">From the music-filled valleys of Ziro to the tribal heritage of Kohima, our footprint spans Meghalaya, Assam, Nagaland, Arunachal Pradesh, and Mizoram. With expert local teams and premium gear, BASSWOODS is your gatekeeper to the last wild frontier.</p>
+          </div>
+        </div>
+
+        <!-- Quote -->
+        <!-- Quote -->
+        <div class="rev card" style="margin-top: var(--section-gap); background: var(--soil); border: 1px solid var(--border); text-align: center;">
+          <p class="premium-font" style="color: var(--white); margin-bottom: 2rem;">"Northeast India isn't just a destination; it's a profound <span class="gold-text">reconnection</span> with the elements."</p>
+          <div class="section-eyebrow" style="color: var(--gold);">— The BASSWOODS Manifesto</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->    <footer class="footer-premium">
+        <div class="container-wide">
+            <div class="footer-grid">
+                <div>
+                    <p class="footer-logo gold-text">BASSWOODS</p>
+                    <p class="footer-about">Crafting life-affirming events and adventure holidays in Northeast India. Award-winning service, premium gear, untamed locations.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a>
+                        <a href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a>
+                        <a href="tel:8011228979"><i class="ri-phone-fill"></i></a>
+                        <a href="mailto:basswoodscamp@gmail.com"><i class="ri-mail-fill"></i></a>
+                    </div>
                 </div>
-                <div class="site-header-logo">
-                    <a aria-label="Basswoods Camp" href="index.html" style="text-decoration:none;">
-                        <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
-                    </a>
+                <div>
+                    <h4 class="premium-font footer-heading">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="tours.html">Event Tours</a></li>
+                        <li><a href="offbeat.html">Offbeat Tours</a></li>
+                        <li><a href="trekking.html">Trekking</a></li>
+                        <li><a href="camping.html">Campsites</a></li>
+                    </ul>
                 </div>
-                <div class="site-header-right">
-                    <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
-                    <a class="btn btn-sm btn-inverted" href="tel:8011228979">
-                        <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
-                        <span class="d-none d-md-inline">Call Us</span>
-                    </a>
+                <div>
+                    <h4 class="premium-font footer-heading">Rentals</h4>
+                    <ul class="footer-links">
+                        <li><a href="vehicle-rentals.html">4x4 Vehicles</a></li>
+                        <li><a href="vehicle-rentals.html">Motorcycles</a></li>
+                        <li><a href="rentals.html">Camping Gear</a></li>
+                        <li><a href="rentals.html">Professional Kits</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="premium-font footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="enquiries.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="site-menu-body">
-                <div class="site-menu-main site-header-offset bg-charcoal">
-                    <div class="site-menu-main-container px-container pb-md">
-                        <ul id="menu-primary-menu" class="site-menu-nav ginto-normal-black py-xl">
-                            <li class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-tours" href="tours.html"><span>Tour package</span></a></li>
-                            <li class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
-                            <li class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-equipment" href="rentals.html"><span>Equipment Rentals</span></a></li>
-                            <li class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-camping" href="camping.html"><span>Campings</span></a></li>
-                            <li class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-trekking" href="trekking.html"><span>Trekking</span></a></li>
-                            <li class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-offbeat" href="offbeat.html"><span>Off beat Tours</span></a></li>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BASSWOODS. All Rights Reserved.</p>
+                <p>Designed for the Bold.</p>
+            </div>
+        </div>
+    </footer>
+
+            <!-- EXPEDITION COLLECTIVE (ULTRA-HIGH DENSITY SECTION) -->
+            <!-- EXPEDITION COLLECTIVE -->
+            <div style="margin-top: var(--section-gap); border-top: 1px solid var(--border); padding-top: var(--section-gap);">
+                <div class="section-eyebrow rev">The Squad</div>
+                <h2 class="section-title rev">Expedition <em>Collective</em></h2>
+                <p class="section-desc rev">BASSWOODS is powered by a diverse collective of explorers, native guides, and logistical specialists. We don't just know the trails; we belong to them.</p>
+                
+                <div class="grid">
+                    <!-- Team 1 -->
+                    <!-- Team 1 -->
+                    <div class="rev card" style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: var(--gold); border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-impact); font-size: 2rem; color: var(--black);">PR</div>
+                        <h4 style="color: var(--white); font-size: 1.4rem; margin-bottom: 0.5rem;">Prince</h4>
+                        <div style="color: var(--gold); font-size: 0.7rem; letter-spacing: 0.23em; text-transform: uppercase; margin-bottom: 1.5rem;">Expedition Director</div>
+                        <p style="color: var(--white-muted); font-size: 0.85rem; line-height: 1.8;">Strategist of the Last Frontier. Prince handles high-level regional permits and route scouting for unmapped territories.</p>
+                    </div>
+                    <!-- Team 2 -->
+                    <!-- Team 2 -->
+                    <div class="rev card" style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: var(--gold); border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-impact); font-size: 2rem; color: var(--black);">TA</div>
+                        <h4 style="color: var(--white); font-size: 1.4rem; margin-bottom: 0.5rem;">Tasso</h4>
+                        <div style="color: var(--gold); font-size: 0.7rem; letter-spacing: 0.23em; text-transform: uppercase; margin-bottom: 1.5rem;">Apatani Guide Lead</div>
+                        <p style="color: var(--white-muted); font-size: 0.85rem; line-height: 1.8;">Ziro Valley native. Tasso manages nuestra cultural integrations and ensures every camper experiences the authentic Apatani way of life.</p>
+                    </div>
+                    <!-- Team 3 -->
+                    <!-- Team 3 -->
+                    <div class="rev card" style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: var(--gold); border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-impact); font-size: 2rem; color: var(--black);">KM</div>
+                        <h4 style="color: var(--white); font-size: 1.4rem; margin-bottom: 0.5rem;">Khumlo</h4>
+                        <div style="color: var(--gold); font-size: 0.7rem; letter-spacing: 0.23em; text-transform: uppercase; margin-bottom: 1.5rem;">Dzukou Alpine Lead</div>
+                        <p style="color: var(--white-muted); font-size: 0.85rem; line-height: 1.8;">Technical trekking expert. Khumlo has summited every major ridge in Nagaland and handles high-altitude safety protocols.</p>
+                    </div>
+                    <!-- Team 4 -->
+                    <!-- Team 4 -->
+                    <div class="rev card" style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: var(--gold); border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-impact); font-size: 2rem; color: var(--black);">SG</div>
+                        <h4 style="color: var(--white); font-size: 1.4rem; margin-bottom: 0.5rem;">Sangita</h4>
+                        <div style="color: var(--gold); font-size: 0.7rem; letter-spacing: 0.23em; text-transform: uppercase; margin-bottom: 1.5rem;">Guest Experience Hub</div>
+                        <p style="color: var(--white-muted); font-size: 0.85rem; line-height: 1.8;">The voice of BASSWOODS. Sangita manages all festival bookings and ensures seamless transition from hub to campsite.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HISTORY OF THE FRONTIER -->
+            <div style="margin-top: var(--section-gap); border-top: 1px solid var(--gold); padding-top: var(--section-gap);">
+                <div class="section-eyebrow rev">Historical Context</div>
+                <h2 class="section-title rev">History of the <em>Frontier</em></h2>
+                <p class="section-desc rev">To explore the Northeast is to walk through layers of ancient sovereign history. Our mission is to preserve this narrative through a technical and cultural lens.</p>
+                
+                <div style="display: grid; gap: var(--section-gap);">
+                    <!-- Chapter 1 -->
+                    <div class="rev">
+                        <div class="grid" style="align-items: start;">
+                            <div style="text-align: left;">
+                                <h3 class="premium-font" style="font-size: clamp(2rem, 4vw, 3rem); color: var(--gold); margin-bottom: 2.5rem;">CH. 01: THE <em>AHOM EGERA</em></h3>
+                                <div style="font-family: var(--font-impact); color: var(--mist); opacity: 0.1; font-size: clamp(4rem, 8vw, 6rem); line-height: 1; margin-top: -1rem;">600 YRS.</div>
+                            </div>
+                            <div style="border-left: 2px solid var(--gold); padding: 0 0 0 4rem; margin-left: 0.5rem;">
+                                <h4 style="color: var(--white); font-size: 1.3rem; margin-bottom: 2rem; text-transform: uppercase;">Unbroken Sovereignty</h4>
+                                <p style="color: var(--white-muted); line-height: 2.2; font-size: 1.1rem; margin-bottom: 3rem;">The Ahom dynasty ruled the Brahmaputra valley for over 600 years (1228–1826), successfully repelling the Mughal Empire in 17 major battles, including the legendary Battle of Saraighat. Their architecture, water management systems, and agricultural innovations form the bedrock of modern Assam's frontier identity.</p>
+                                <div class="grid-responsive" style="--min-col-width: 250px; gap: 3rem;">
+                                    <div style="background: rgba(255,255,255,0.02); padding: var(--card-padding); border-radius: 12px; border: 1px solid var(--border);">
+                                        <h5 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">KEY MONARCHS</h5>
+                                        <p style="color: var(--mist); font-size: 0.85rem; line-height: 1.8;">Sukaphaa (Founder), Lachit Borphukan (General), Rudra Singha.</p>
+                                    </div>
+                                    <div style="background: rgba(255,255,255,0.02); padding: var(--card-padding); border-radius: 12px; border: 1px solid var(--border);">
+                                        <h5 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">LEGACY</h5>
+                                        <p style="color: var(--mist); font-size: 0.85rem; line-height: 1.8;">Buranjis (historical chronicles), Kareng Ghar (royal palace), Maidams.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 2 -->
+                    <div class="rev">
+                        <div class="grid" style="align-items: start;">
+                            <div style="text-align: left;">
+                                <h3 class="premium-font" style="font-size: clamp(2rem, 4vw, 3rem); color: var(--gold); margin-bottom: 2.5rem;">CH. 02: THE <em>NAGA SAGA</em></h3>
+                                <div style="font-family: var(--font-impact); color: var(--mist); opacity: 0.1; font-size: clamp(4rem, 8vw, 6rem); line-height: 1; margin-top: -1rem;">HILL SOIL.</div>
+                            </div>
+                            <div style="border-left: 2px solid var(--gold); padding: 0 0 0 4rem; margin-left: 0.5rem;">
+                                <h4 style="color: var(--white); font-size: 1.3rem; margin-bottom: 2rem; text-transform: uppercase;">Ancient Tribal Jurisdictions</h4>
+                                <p style="color: var(--white-muted); line-height: 2.2; font-size: 1.1rem; margin-bottom: 3rem;">The Naga tribes maintained mountain independence for millennia, governed by complex village republics and warrior councils. The transition from traditional Morung systems to modern statehood is a testament to the resilience of Naga cultural DNA. Their history is orally preserved through chants and woven through textile patterns of the 'Log-Drum' era.</p>
+                                <div class="grid-responsive" style="--min-col-width: 250px; gap: 3rem;">
+                                    <div style="background: rgba(255,255,255,0.02); padding: var(--card-padding); border-radius: 12px; border: 1px solid var(--border);">
+                                        <h5 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">KEY GOVERNANCE</h5>
+                                        <p style="color: var(--mist); font-size: 0.85rem; line-height: 1.8;">Naga Village Republics, Clan Councils, Ancestral Totemism.</p>
+                                    </div>
+                                    <div style="background: rgba(255,255,255,0.02); padding: var(--card-padding); border-radius: 12px; border: 1px solid var(--border);">
+                                        <h5 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">LEGACY</h5>
+                                        <p style="color: var(--mist); font-size: 0.85rem; line-height: 1.8;">Log-Drums, Morungs, Angami Stone Cairns, Tribal Folklore.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERTISE & CERTIFICATIONS -->
+            <div style="margin-top: var(--section-gap); border-top: 1px solid var(--border); padding-top: var(--section-gap);">
+                <div class="section-eyebrow rev">Technical Standards</div>
+                <h2 class="section-title rev">Expedition <em>Expertise</em></h2>
+                <div class="grid" style="margin-top: 4rem;">
+                    <div class="rev card">
+                        <h4 style="color: var(--gold); font-family: var(--font-impact); font-size: 1.50rem; margin-bottom: 2rem;">Wilderness First Responder (WFR)</h4>
+                        <p style="color: var(--white-muted); line-height: 1.8; font-size: 0.9rem;">Level 5 certification for all lead guides. Technical proficiency in remote medicine, HAPE/HACE protocol, and wilderness trauma management.</p>
+                        <div style="font-size: 0.75rem; color: var(--mist); border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 2rem;">STATUS: SQUAD MANDATORY</div>
+                    </div>
+                    <div class="rev card">
+                        <h4 style="color: var(--gold); font-family: var(--font-impact); font-size: 1.50rem; margin-bottom: 2rem;">SAR Technical SAR-1</h4>
+                        <p style="color: var(--white-muted); line-height: 1.8; font-size: 0.9rem;">Lead logistics coordinators certified in high-altitude Search & Rescue and technical rope rescue systems (NIM/HMI grades).</p>
+                        <div style="font-size: 0.75rem; color: var(--mist); border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 2rem;">STATUS: LOGISTICS CORE</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CULTURAL & LINGUISTIC HERITAGE ARCHIVE -->
+            <div style="margin-top: var(--section-gap); border-top: 1px solid var(--gold); padding-top: var(--section-gap);">
+                <div class="section-eyebrow rev">Anthropological Core</div>
+                <h2 class="section-title rev">Cultural <em>Archive</em>: Vol V</h2>
+                <p class="section-desc rev">The BASSWOODS Cultural Archive is a technical repository of the 200+ distinct ethnic lineages that define the Northeast frontier. Volume V focuses on the linguistic roots and ancestral etiquette of the Hill Tribes.</p>
+                
+                <div style="display: grid; gap: var(--component-gap);">
+                    <!-- Chapter 1: Linguistic Lexicon -->
+                    <div class="rev">
+                        <h3 class="premium-font" style="color: var(--gold); font-size: 2rem; margin-bottom: 2rem; letter-spacing: 0.1em;">01. THE <em>FRONTIER</em> LEXICON</h3>
+                        <div class="table-container">
+                            <table style="width: 100%; border-collapse: collapse; min-width: 1100px; color: var(--mist); font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 2px solid var(--gold); text-align: left; background: rgba(255,255,255,0.02);">
+                                        <th style="padding: 2.5rem; color: var(--white); text-transform: uppercase;">Language Group</th>
+                                        <th style="padding: 2.5rem; color: var(--white); text-transform: uppercase;">Greeting (Local)</th>
+                                        <th style="padding: 2.5rem; color: var(--white); text-transform: uppercase;">Phonetic Guide</th>
+                                        <th style="padding: 2.5rem; color: var(--white); text-transform: uppercase;">Cultural Context</th>
+                                        <th style="padding: 2.5rem; color: var(--white); text-transform: uppercase;">BASSWOODS Usage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: 2rem; color: var(--white); font-weight: 700;">MONPA (Tawang)</td>
+                                        <td style="padding: 2rem;">Tashi Delek</td>
+                                        <td style="padding: 2rem;">Ta-shee De-lek</td>
+                                        <td style="padding: 2rem;">Universal blessing/greeting</td>
+                                        <td style="padding: 2rem;">Morning arrival at base-hubs</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: 2rem; color: var(--white); font-weight: 700;">KONYAK (Nagaland)</td>
+                                        <td style="padding: 2rem;">Nung-ngo-ne</td>
+                                        <td style="padding: 2rem;">Noong-ngo-nay</td>
+                                        <td style="padding: 2rem;">Standard well-being check</td>
+                                        <td style="padding: 2rem;">Village liaison checkpoints</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: 2rem; color: var(--white); font-weight: 700;">AO (Nagaland)</td>
+                                        <td style="padding: 2rem;">Nen-ti-me</td>
+                                        <td style="padding: 2rem;">Nen-tee-may</td>
+                                        <td style="padding: 2rem;">Respected elder greeting</td>
+                                        <td style="padding: 2rem;">Engaging with Clan Heads</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: 2rem; color: var(--white); font-weight: 700;">APATANI (Ziro)</td>
+                                        <td style="padding: 2rem;">Ar-ree-lee</td>
+                                        <td style="padding: 2rem;">Ar-ree-lee</td>
+                                        <td style="padding: 2rem;">Seasonal fertility blessing</td>
+                                        <td style="padding: 2rem;">Myoko festival deployments</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 2: Ancestral Law -->
+                    <div class="rev">
+                        <div class="grid" style="align-items: start;">
+                            <div style="text-align: left;">
+                                <h3 class="premium-font" style="font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--gold); margin-bottom: 1.5rem;">ANCESTRAL <em>LAW</em></h3>
+                                <div style="font-family: var(--font-impact); color: var(--mist); opacity: 0.1; font-size: clamp(3rem, 7vw, 5rem); line-height: 1; margin-top: -1rem;">JURIS.</div>
+                            </div>
+                            <div style="border-left: 2px solid var(--gold); padding: 0 0 0 4rem; margin-left: 0.5rem;">
+                                <h4 style="color: var(--white); font-size: 1.3rem; margin-bottom: 2rem; text-transform: uppercase;">Village Governance Protocols</h4>
+                                <p style="color: var(--white-muted); line-height: 2.2; font-size: 1.1rem; margin-bottom: 3rem;">Northeast frontier villages are often governed by the sixth schedule of the Indian constitution, acknowledging traditional village councils (Gaon Buras). BASSWOODS strictly adheres to the 'Permission-Architecture' of these councils. Every campsite, trail transit, and drone deployment is pre-validated through indigenous protocol meetings to ensure total sovereignty respect.</p>
+                                <div class="grid-responsive" style="--min-col-width: 250px; gap: 3rem;">
+                                    <div style="background: rgba(255,255,255,0.02); padding: 3rem; border-radius: 12px; border: 1px solid var(--border);">
+                                        <h5 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">GB PROTOCOL</h5>
+                                        <p style="color: var(--mist); font-size: 0.85rem; line-height: 1.8;">Formal recognition of the Gaon Bura with local symbolic offerings.</p>
+                                    </div>
+                                    <div style="background: rgba(255,255,255,0.02); padding: 3rem; border-radius: 12px; border: 1px solid var(--border);">
+                                        <h5 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">SACRED ZONES</h5>
+                                        <p style="color: var(--mist); font-size: 0.85rem; line-height: 1.8;">Technical avoidance of sacred groves and ancestral burial mounds.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REGIONAL LOGISTICS HUBS -->
+            <div style="margin-top: var(--section-gap); border-top: 1px solid var(--border); padding-top: var(--section-gap); margin-bottom: var(--section-gap);">
+                <div class="section-eyebrow rev">Infrastructure</div>
+                <h2 class="section-title rev">Base <em>Hubs</em></h2>
+                <div class="grid" style="margin-top: 4rem;">
+                    <div class="rev card" style="background: var(--soil);">
+                        <h4 style="color: var(--white); font-size: 1.8rem; margin-bottom: 2rem;">GUWAHATI HUB</h4>
+                        <p style="color: var(--mist); font-size: 0.95rem; line-height: 2;">Our central nervous system. Located near the gateway to the Northeast, this hub handles fleet logistics, bulk camping supplies, and the primary coordination cell for Arunachal and Meghalaya deployments.</p>
+                        <ul style="list-style: none; color: var(--gold); font-size: 0.8rem; line-height: 2; margin-top: 2rem;">
+                            <li>- Fleet Maintenance Cell</li>
+                            <li>- Central Gear Warehouse</li>
+                            <li>- Permit Coordination Office</li>
                         </ul>
-                        <ul class="site-menu-social">
-                            <li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a></li>
-                            <li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a></li>
-                            <li><a aria-label="Location" href="camping.html" target="_blank"><i class="ri-map-pin-fill"></i></a></li>
-                            <li><a aria-label="Contact us" href="mailto:bookings@basswoodscamp.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
+                    </div>
+                    <div class="rev card" style="background: var(--soil);">
+                        <h4 style="color: var(--white); font-size: 1.8rem; margin-bottom: 2rem;">KOHIMA HUB</h4>
+                        <p style="color: var(--mist); font-size: 0.95rem; line-height: 2;">Strategically positioned for Naga Hills exploration. This hub focuses on high-altitude gear maintenance, Dzukou Valley logistics, and local tribal liaison for the Hornbill season.</p>
+                        <ul style="list-style: none; color: var(--gold); font-size: 0.8rem; line-height: 2; margin-top: 2rem;">
+                            <li>- Alpine Gear Sterilization</li>
+                            <li>- Tribal Liaison Network</li>
+                            <li>- Search & Rescue Coordination</li>
                         </ul>
                     </div>
                 </div>
-                <div class="site-menu-images">
-                    <div class="site-menu-images-container">
-                        <div class="site-menu-images-item active" id="menu-item-image-camping"><img src="wp-content/IMAGES/menu_campings.png" alt="Campings" loading="lazy"></div>
-                        <div class="site-menu-images-item" id="menu-item-image-rentals"><img src="wp-content/IMAGES/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy"></div>
-                        <div class="site-menu-images-item" id="menu-item-image-equipment"><img src="wp-content/IMAGES/menu_camping_equipment.png" alt="Equipment" loading="lazy"></div>
-                        <div class="site-menu-images-item" id="menu-item-image-tours"><img src="wp-content/IMAGES/menu_tour_package.png" alt="Tours" loading="lazy"></div>
-                        <div class="site-menu-images-item" id="menu-item-image-trekking"><img src="wp-content/IMAGES/camp-1.jpg" alt="Trekking" loading="lazy"></div>
-                        <div class="site-menu-images-item" id="menu-item-image-offbeat"><img src="wp-content/IMAGES/blue-sky-camp.jpg" alt="Offbeat" loading="lazy"></div>
-                    </div>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BASSWOODS. All Rights Reserved.</p>
+                <p>Designed for the Bold.</p>
             </div>
         </div>
+    </footer>
 
-<header class="site-header">
-            <div class="site-header-container">
-                <div class="header-left-group">
-                    <button class="site-menu-toggle">
-                        <span class="site-menu-toggle-icon"></span>
-                        <span class="d-none d-md-inline">Menu</span>
-                    </button>
-                    <a href="index.html" class="logo-font" style="text-decoration:none;">
-                        <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
-                    </a>
-                </div>
-                <div class="site-header-right">
-                    <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
-                    <a class="btn btn-sm btn-inverted" href="tel:8011228979">
-                        <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
-                        <span class="d-none d-md-inline">Call Us</span>
-                    </a>
-                </div>
-            </div>
-        </header>
+    <!-- Reveal Script -->
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
 
-<section class="hero site-header-offset">
-  <div class="hero-bg"></div>
-  <div class="hero-inner">
-    <div class="hero-eyebrow fade-up d1"><i class="ri-history-line"></i> Since 2007</div>
-    <h1 class="hero-title fade-up d2">Our<br><em>Story</em></h1>
-    <p class="hero-sub fade-up d3">
-      Crafting life-affirming camping, thrilling sports, and event adventures across Northeast India.
-    </p>
-  </div>
-</section>
-
-<!-- --- CONTENT --- -->
-<section class="section">
-  <div class="story-grid">
-    <div class="fade-up">
-      <div class="eyebrow">The Origin</div>
-      <h2 class="section-title" style="margin-bottom: 2rem;">Made from <em>adventure</em></h2>
-      <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=800&q=80&auto=format&fit=crop" alt="Campfire" style="border-radius: 20px; aspect-ratio: 4/3;">
-    </div>
-    <div class="story-content fade-up d1">
-      <p>We're Basswoods Camp, and we're made from adventure. We believe that stepping outdoors shapes us, moulds us, and makes us who we are. That's why we specialise in crafting life-affirming camping, touring, and festival experiences across Northeast India.</p>
-      <p>Basswoods Camp grew from a passion for exploration and a desire to offer end-to-end adventure solutions. The traditional style of travel  -  predictable itineraries and boring stays  -  didn't excite us. We wanted to provide the ultimate blend of thrilling sports, unique campsite stays, and premium car/bike rentals so you can truly unleash the adventurer in you.</p>
-      <p>Our journey has led us to partner with the region's most iconic events, from the Ziro Festival of Music and Cherry Blossom Festival to the Orange Festival. We don't just set up tents; we curate unforgettable experiences, whether it's an after-party in Cherrapunji or an ATV ride in Shillong.</p>
-      <p>Today, our footprint spans Meghalaya, Assam, Nagaland, Arunachal Pradesh, and Mizoram. With our expert local teams, premium camping equipment, and a community of passionate explorers, Basswoods Camp is your ultimate travel guide to conquering Northeast India.</p>
-    </div>
-  </div>
-
-  <div class="quote-box fade-up">
-    <div class="quote-text">
-      "These trips are never just a 'camping holiday' for me. They are life-altering experiences that not only make me a better adventurer, but a better human as well."
-    </div>
-    <div class="quote-author">Campers of Northeast India</div>
-  </div>
-</section>
-
-<!-- --- CTA --- -->
-<div class="cta-strip">
-  <div>
-    <h2 class="cta-title">Start your <em>journey</em></h2>
-    <p class="cta-sub">Join us for an experience that will stay with you forever.</p>
-  </div>
-  <div class="cta-btns">
-    <a href="tours.html" class="btn-lime">View Tours</a>
-    <a href="https://wa.me/918011228979" class="btn-primary">WhatsApp Us</a>
-  </div>
-</div>
-
-<script>
-  /* REVEAL */
-  const io = new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } })});
-  document.querySelectorAll('.fade-up, .section').forEach(el=>io.observe(el));
-</script>
-
-						<footer class="site-footer">
-    <div class="container" style="max-width: 1200px; margin: 0 auto;">
-        <div class="site-footer-grid">
-            <div>
-                <a href="index.html" class="site-footer-logo-text">
-                    Basswoods<em>Camp</em>
-                </a>
-                <p style="line-height: 1.7; font-weight: 300;">
-                    Northeast India's premier adventure company. From the peaks of Mizoram to the valleys of Meghalaya, we curate life-affirming camping and festival experiences.
-                </p>
-                <div class="site-footer-social-wrap">
-                    <a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-line"></i></a>
-                    <a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-line"></i></a>
-                    <a aria-label="Follow us on youtube" href="https://www.youtube.com/@basswoodscamp" target="_blank"><i class="ri-youtube-line"></i></a>
-                </div>
-            </div>
-            <div>
-                <h4 class="site-footer-h4">Navigation</h4>
-                <ul class="site-footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="trekking.html">Trekking</a></li>
-                    <li><a href="offbeat.html">Offbeat</a></li>
-                    <li><a href="camping.html">Camping</a></li>
-                    <li><a href="tours.html">Tours</a></li>
-                    <li><a href="vehicle-rentals.html">Rentals</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="site-footer-h4">Connect</h4>
-                <div class="site-footer-contact">
-                    <p>
-                        Guwahati, Assam, India 781001<br>
-                        <strong>T:</strong> <a href="tel:+918011228979">8011228979</a> (Bookings)<br>
-                        <strong>T:</strong> <a href="tel:+917577911795">7577911795</a> (Rentals)<br>
-                        <strong>E:</strong> <a href="mailto:bookings@basswoodscamp.com">bookings@basswoodscamp.com</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="site-footer-bottom">
-            <div>&copy; 2026 Basswoods Camp. Adventure made in Northeast India.</div>
-            <div class="site-footer-legal">
-                <a href="privacy.html">Privacy policy</a>
-                <a href="terms.html">Terms & conditions</a>
-            </div>
-        </div>
-    </div>
-</footer>
-<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-<script src="assets/js/lenis-init.js"></script>
-<script src="assets/js/basswoods-menu.js"></script>
+        document.querySelectorAll('.rev, .rev-left, .rev-right').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
-
-
-
-

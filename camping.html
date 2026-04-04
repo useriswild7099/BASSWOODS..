@@ -1,1291 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MHV7XQKC');</script>
-    <!-- End Google Tag Manager -->
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Basswoods Camp" />
-    <meta name="format-detection" content="telephone=no">
-    <meta name="robots" content="index, follow" />
-    
-    <title>Camping | Basswoods Camp</title>
-    <meta name="description" content="Northeast India's premier adventure company. From the peaks of Mizoram to the valleys of Meghalaya, we curate life-affirming camping and festival experiences." />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.basswoodscamp.com/camping.html">
-    <meta property="og:title" content="Camping | Basswoods Camp">
-    <meta property="og:description" content="Experience life-affirming camping and festival experiences in Northeast India.">
-    <meta property="og:image" content="https://www.basswoodscamp.com/wp-content/uploads/2025/07/1-1.jpg">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Camping | Basswoods Camp">
-    <meta name="twitter:description" content="Experience life-affirming camping and festival experiences in Northeast India.">
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="wp-content/themes/handi_theme/favicon.ico">
-    <link rel="apple-touch-icon" href="wp-content/themes/handi_theme/assets/img/favicon/apple-icon-180x180.png">
-    
-    <!-- Premium Assets -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-    
-    <!-- Core Brand Layer -->
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/basswoods-menu.css">
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-M6XFBLC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
-        gtag("js", new Date());
-        gtag("config", "GT-M6XFBLC");
-    </script>
-    
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c, l, a, r, i, t, y) {
-            c[a] = c[a] || function() {
-                (c[a].q = c[a].q || []).push(arguments)
-            };
-            t = l.createElement(r);
-            t.async = 1;
-            t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0];
-            y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "lxyp80epj4");
-    </script> 
-
-  <style>
-    /* ============================================================
-       ROOT TOKENS   -  handi_theme brand injection layer
-    ============================================================ */
-    :root {
-      --ink:        #120D08;
-      --soil:       #1C1208;
-      --bark:       #2B1D0E;
-      --moss:       #3A4A20;
-      --ember:      #D4622A;
-      --ember-lt:   #E8854E;
-      --gold:       #C9A03A;
-      --cream:      #F4EFE4;
-      --fog:        #B8AE9C;
-      --mist:       #7A7060;
-      --border:     rgba(255,255,255,0.08);
-      
-      --ff-display: 'Cormorant Garamond', Georgia, serif;
-      --ff-body:    'DM Sans', system-ui, sans-serif;
-
-      --ease:        cubic-bezier(0.23, 1, 0.32, 1);
-      --ease-spring: cubic-bezier(0.68, -0.6, 0.32, 1.6);
-      
-      --r-sm: 4px;
-      --r-md: 12px;
-      --r-lg: 24px;
-    }
-
-    /* Basic Reset */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--ff-body);
-      background: var(--ink);
-      color: var(--cream);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Grain Overlay */
-    body::after {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    a { text-decoration: none; color: inherit; }
-    button { font-family: inherit; }
-
-    /* ============================================================
-       HEADER
-    ============================================================ */
-    .header {
-      position: fixed; top: 0; left: 0; right: 0;
-      height: 80px;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 4rem; /* Increased horizontal padding */
-      z-index: 1000;
-      transition: background 0.4s var(--ease), border-bottom 0.4s, height 0.4s;
-    }
-
-    .header.stuck {
-      background: rgba(18, 13, 8, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      height: 70px;
-    }
-
-    .logo { font-family: var(--ff-display); font-size: 1.8rem; font-weight: 700; flex-shrink: 0; }
-    .logo em { color: var(--ember); font-style: italic; }
-
-    .nav { display: flex; gap: 2.8rem; /* Increased horizontal gap */ }
-    .nav a {
-      font-size: 0.8rem; font-weight: 500; text-transform: uppercase;
-      letter-spacing: 0.15em; color: var(--fog);
-      transition: color 0.3s, transform 0.3s;
-    }
-    .nav a:hover, .nav a.on { color: var(--ember-lt); }
-
-    .btn-hdr {
-      background: var(--ember);
-      color: var(--ink);
-      border: none;
-      padding: 0.7rem 1.6rem;
-      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.12em;
-      border-radius: var(--r-sm);
-      cursor: pointer;
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      transition: background 0.3s, transform 0.2s;
-      flex-shrink: 0;
-    }
-    .btn-hdr:hover { background: var(--ember-lt); transform: translateY(-1px); }
-
-    /* ============================================================
-       HERO SECTION
-    ============================================================ */
-    .hero {
-      position: relative;
-      height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(18,13,0.5) 0%, rgba(28,18,0.9) 100%), url('wp-content/IMAGES/camp%20night%20stars.jpeg');
-      background-size: cover;
-      background-position: center;
-      padding-top: 80px; /* Safe space for fixed header */
-    }
-
-    .hero-atmo {
-      position: absolute; inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(212,98,42,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .stars {
-      position: absolute; inset: 0;
-      pointer-events: none;
-    }
-
-    .campfire-glow {
-      position: absolute; bottom: -100px; left: 50%;
-      width: 600px; height: 300px;
-      background: radial-gradient(circle, rgba(212,98,42,0.18) 0%, transparent 70%);
-      transform: translateX(-50%);
-      filter: blur(40px);
-    }
-
-    .mountains {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 35vh;
-      z-index: 2;
-    }
-    .mountains svg { width: 100%; height: 100%; }
-
-    .hero-body { 
-      position: relative; z-index: 5; 
-      padding: 2rem; 
-      max-width: 1000px; 
-      margin-top: -40px; /* Offset to center within visible space */
-    }
-
-    .hero-kicker {
-      font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.35em; color: var(--ember-lt);
-      margin-bottom: 2.5rem;
-      display: flex; align-items: center; justify-content: center; gap: 1rem;
-    }
-
-    .hero-h1 {
-      font-family: var(--ff-display);
-      font-size: clamp(3.5rem, 9.5vw, 8.5rem);
-      font-weight: 700; line-height: 0.85;
-      color: var(--cream);
-      margin-bottom: 3rem;
-    }
-    .hero-h1 span { display: block; }
-    .hero-h1 .italic { font-style: italic; color: var(--ember); font-weight: 400; }
-
-    .hero-p {
-      font-size: 1.2rem; color: var(--fog);
-      max-width: 680px; margin: 0 auto 4rem;
-      font-weight: 300;
-      line-height: 1.8;
-    }
-
-    .hero-ctas { display: flex; gap: 1.5rem; justify-content: center; }
-
-    .btn-fire {
-      background: var(--ember);
-      color: var(--ink);
-      border: none;
-      padding: 1.1rem 2.5rem;
-      font-size: 0.88rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.12em;
-      border-radius: var(--r-sm);
-      cursor: pointer;
-      display: inline-flex; align-items: center; gap: 0.7rem;
-      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-    }
-    .btn-fire:hover { background: var(--ember-lt); transform: translateY(-2px); box-shadow: 0 15px 35px rgba(212,98,42,0.35); }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--cream);
-      border: 1px solid var(--border);
-      padding: 1.1rem 2.5rem;
-      font-size: 0.88rem; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.12em;
-      border-radius: var(--r-sm);
-      cursor: pointer;
-      display: inline-flex; align-items: center; gap: 0.7rem;
-      transition: border-color 0.3s, background 0.3s;
-    }
-    .btn-ghost:hover { border-color: var(--ember); background: rgba(255,255,255,0.05); }
-
-    .scroll-hint {
-      position: absolute; bottom: 3rem; left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.35em;
-      color: var(--mist);
-      display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
-    }
-    .scroll-hint span { width: 1px; height: 60px; background: linear-gradient(to bottom, var(--ember), transparent); }
-
-    /* ============================================================
-       SECTION ATOMS
-    ============================================================ */
-    .section { padding: 10rem 4rem; }
-    .container { max-width: 1300px; margin: 0 auto; }
-
-    .eyebrow {
-      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.45em; color: var(--ember);
-      margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1.2rem;
-    }
-    .eyebrow::after { content: ''; width: 50px; height: 1px; background: var(--ember); }
-
-    .sec-h2 {
-      font-family: var(--ff-display);
-      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-      font-weight: 700; color: var(--cream);
-      line-height: 1.05; margin-bottom: 2.5rem;
-    }
-    .sec-h2 em { font-style: italic; color: var(--ember); font-weight: 400; }
-
-    .sec-p {
-      font-size: 1.2rem; color: var(--fog);
-      max-width: 700px; margin-bottom: 5rem;
-      font-weight: 300; line-height: 1.85;
-    }
-    /* ============================================================
-       CAMPSITE CARDS
-    ============================================================ */
-    .campsites-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3.5rem; /* Increased gap */
-      margin-bottom: 8rem;
-    }
-
-    .campsite-card {
-      background: var(--soil);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.4s var(--ease), box-shadow 0.4s;
-    }
-
-    .campsite-card:hover { transform: translateY(-10px); box-shadow: 0 40px 80px rgba(0,0,0,0.6); border-color: rgba(212,98,42,0.4); }
-
-    .tours-listings-media {
-      position: relative;
-      height: 320px; /* Slightly taller */
-      background: var(--bark);
-      overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-    }
-
-    .tlm-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0.15; }
-    .tlm-icon { font-size: 10rem; color: var(--fog); transform: rotate(-5deg); transition: transform 0.6s var(--ease); }
-    .campsite-card:hover .tlm-icon { transform: rotate(0deg) scale(1.1); color: var(--ember); }
-
-    .tlm-overlay { position: absolute; inset: 0; mix-blend-mode: overlay; pointer-events: none; }
-    .overlay-cherry { background: radial-gradient(circle, #D4622A 0%, transparent 100%); }
-    .overlay-moon   { background: radial-gradient(circle, #7A7060 0%, transparent 100%); }
-    .overlay-forest { background: radial-gradient(circle, #3A4A20 0%, transparent 100%); }
-
-    .tlm-badges { position: absolute; top: 2rem; left: 2rem; display: flex; gap: 0.8rem; }
-    .badge {
-      padding: 0.5rem 1.1rem;
-      background: rgba(18,13,0.85);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--border);
-      border-radius: 99px;
-      font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em;
-      color: var(--amber-lt);
-    }
-    .badge-gold { color: var(--gold); border-color: rgba(201,160,58,0.3); }
-
-    .tlm-tag { position: absolute; top: 2rem; right: 2rem; }
-    .avail-dot { width: 12px; height: 12px; border-radius: 50%; display: block; }
-    .dot-open { background: #6FCF7A; box-shadow: 0 0 15px #6FCF7A; }
-    .dot-limited { background: var(--gold); box-shadow: 0 0 15px var(--gold); }
-
-    .tours-listings-details { padding: 3rem; flex: 1; display: flex; flex-direction: column; }
-
-    .card-location {
-      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.18em; color: var(--ember);
-      margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem;
-    }
-
-    .card-title {
-      font-family: var(--ff-display);
-      font-size: 2.8rem; font-weight: 700;
-      color: var(--cream); margin-bottom: 1.5rem;
-      line-height: 1.1;
-    }
-
-    .card-desc { font-size: 1.05rem; color: var(--fog); margin-bottom: 2.5rem; line-height: 1.8; font-weight: 300; }
-
-    .amenity-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
-    .amen {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      font-size: 0.82rem; font-weight: 500; color: var(--mist);
-      padding: 0.45rem 1rem;
-      background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: var(--r-sm);
-    }
-    .amen i { color: var(--ember); font-size: 1rem; }
-
-    .card-foot {
-      margin-top: auto;
-      padding-top: 2.5rem; border-top: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-
-    .price-block { line-height: 1.2; }
-    .price-from { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--mist); margin-bottom: 0.4rem; }
-    .price-amt { font-family: var(--ff-display); font-size: 2.4rem; font-weight: 700; color: var(--ember); }
-    .price-note { font-size: 0.8rem; color: var(--mist); }
-
-    .btn-book {
-      background: var(--ember);
-      color: var(--ink);
-      border: none;
-      padding: 0.9rem 2rem;
-      font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.12em;
-      border-radius: var(--r-sm);
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .btn-book:hover { background: var(--ember-lt); transform: scale(1.05); }
-    /* ============================================================
-       AMENITIES VISUAL (ORBIT)
-    ============================================================ */
-    .amenities-section { background: var(--soil); border-top: 1px solid var(--border); }
-    .amenities-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-
-    .amenities-visual {
-      position: relative;
-      height: 520px;
-      display: flex; align-items: center; justify-content: center;
-    }
-
-    .av-glow {
-      position: absolute; width: 340px; height: 340px;
-      background: radial-gradient(circle, rgba(212,98,42,0.12) 0%, transparent 70%);
-      filter: blur(50px);
-    }
-
-    .orbit-ring {
-      position: absolute;
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 50%;
-      animation: orbit var(--speed) linear infinite;
-    }
-    .orbit-ring.reverse { animation-direction: reverse; }
-
-    .orbit-node {
-      position: absolute;
-      width: 56px; height: 56px;
-      background: var(--bark);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.35rem; color: var(--ember);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-      animation: counter-orbit var(--speed) linear infinite;
-    }
-    .orbit-ring.reverse .orbit-node { animation-direction: reverse; }
-
-    .orbit-center {
-      position: relative; z-index: 10;
-      width: 90px; height: 90px;
-      background: var(--ember);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.2rem;
-      box-shadow: 0 0 40px rgba(212,98,42,0.45);
-    }
-
-    @keyframes orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    @keyframes counter-orbit { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-
-    .amen-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-    .amen-item { display: flex; align-items: center; gap: 1.2rem; }
-    .amen-ico { width: 48px; height: 48px; border-radius: var(--r-sm); background: rgba(212,98,42,0.15); color: var(--ember); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
-    .amen-name { font-size: 0.95rem; font-weight: 600; color: var(--cream); }
-    .amen-note { font-size: 0.75rem; color: var(--mist); }
-
-    /* ============================================================
-       ACTIVITIES REVOLVER (3D)
-    ============================================================ */
-    .activities-strip {
-      perspective: 2500px;
-      overflow: hidden;
-      padding-bottom: 15rem;
-      position: relative;
-      cursor: grab;
-      user-select: none;
-    }
-    .activities-strip:active { cursor: grabbing; }
-
-    .act-scroll-track {
-      position: relative;
-      width: 100%;
-      height: 520px;
-      margin-top: 8rem;
-      transform-style: preserve-3d;
-      display: flex;
-      align-items: center; justify-content: center;
-      transition: transform 0.1s linear;
-      will-change: transform;
-    }
-
-    .act-card {
-      position: absolute;
-      width: 320px;
-      height: 420px;
-      background: var(--bark);
-      border: 1px solid var(--border);
-      border-radius: var(--r-md);
-      padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      backface-visibility: hidden;
-      transition: border-color 0.3s, background 0.3s, transform 0.5s var(--ease);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-    }
-    .act-card:hover { border-color: var(--ember); background: var(--soil); }
-
-    .act-card:nth-child(1) { transform: rotateY(0deg) translateZ(520px); }
-    .act-card:nth-child(2) { transform: rotateY(45deg) translateZ(520px); }
-    .act-card:nth-child(3) { transform: rotateY(90deg) translateZ(520px); }
-    .act-card:nth-child(4) { transform: rotateY(135deg) translateZ(520px); }
-    .act-card:nth-child(5) { transform: rotateY(180deg) translateZ(520px); }
-    .act-card:nth-child(6) { transform: rotateY(225deg) translateZ(520px); }
-    .act-card:nth-child(7) { transform: rotateY(270deg) translateZ(520px); }
-    .act-card:nth-child(8) { transform: rotateY(315deg) translateZ(520px); }
-
-    .act-icon { font-size: 3.5rem; color: var(--ember); margin-bottom: 2.5rem; opacity: 0.9; }
-    .act-name { font-family: var(--ff-display); font-size: 1.8rem; font-weight: 700; color: var(--cream); margin-bottom: 1.2rem; line-height: 1.2; }
-    .act-desc { font-size: 1.05rem; color: var(--fog); line-height: 1.75; font-weight: 300; }
-    /* ============================================================
-       FESTIVAL SECTION
-    ============================================================ */
-    .festival-section { border-top: 1px solid var(--border); }
-    .festival-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-
-    .festival-card {
-      background: var(--bark);
-      border: 1px solid var(--border);
-      border-radius: var(--r-md);
-      padding: 2.5rem;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .festival-card:hover { border-color: var(--gold); transform: translateY(-7px); }
-
-    .fcard-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
-    .fcard-icon { font-size: 1.8rem; }
-    .fcard-dates { font-size: 0.78rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; }
-
-    .fcard-name { font-family: var(--ff-display); font-size: 2rem; font-weight: 700; color: var(--cream); margin-bottom: 1rem; }
-    .fcard-loc { font-size: 0.88rem; color: var(--mist); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.6rem; }
-    .fcard-price { font-size: 1rem; font-weight: 600; color: var(--ember-lt); margin-bottom: 2rem; }
-    .fcard-price span { font-size: 0.8rem; color: var(--mist); font-weight: 400; }
-
-    .fcard-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-    .ftag { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fog); padding: 0.25rem 0.75rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 4px; }
-
-    /* ============================================================
-       PRICING TABLES
-    ============================================================ */
-    .pricing-section { background: var(--soil); border-top: 1px solid var(--border); }
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
-
-    .price-card {
-      background: var(--bark);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 4rem 3rem;
-      position: relative;
-      display: flex; flex-direction: column;
-      transition: transform 0.4s var(--ease);
-    }
-    .price-card.hot { border-color: var(--ember); transform: scale(1.05); z-index: 5; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
-    .price-card.hot::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(circle at 50% 0%, rgba(212,98,42,0.12) 0%, transparent 70%); pointer-events: none; }
-
-    .pc-tag { position: absolute; top: 1.8rem; left: 50%; transform: translateX(-50%); background: var(--ember); color: var(--ink); padding: 0.4rem 1.2rem; border-radius: 99px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; }
-
-    .pc-tier { font-family: var(--ff-display); font-size: 2.5rem; font-weight: 700; color: var(--cream); margin-bottom: 0.6rem; }
-    .pc-price { font-size: 3.2rem; font-weight: 700; color: var(--ember); margin-bottom: 0.3rem; }
-    .pc-price sub { font-size: 1.1rem; color: var(--mist); font-weight: 400; bottom: 0.4rem; }
-    .pc-period { font-size: 0.9rem; color: var(--mist); margin-bottom: 3rem; }
-
-    .pc-divider { height: 1px; background: var(--border); margin-bottom: 3rem; }
-
-    .pc-list { display: flex; flex-direction: column; gap: 0.8rem; flex: 1; margin-bottom: 2.5rem; }
-    .pc-list li { display: flex; align-items: center; gap: 0.8rem; font-size: 0.9rem; color: var(--fog); }
-    .pc-list li i { font-size: 1.1rem; }
-    .pc-list li i.yes { color: #6FCF7A; }
-    .pc-list li i.no  { color: var(--mist); }
-
-    .btn-tier { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; border-radius: var(--r-sm); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border: none; transition: background 0.25s, transform 0.15s; }
-    .btn-tier-solid { background: var(--ember); color: var(--ink); }
-    .btn-tier-solid:hover { background: var(--ember-lt); transform: translateY(-1px); }
-    .btn-tier-outline { background: transparent; color: var(--fog); border: 1px solid var(--border) !important; }
-    .btn-tier-outline:hover { border-color: var(--ember) !important; color: var(--ember-lt); }
-
-    /* ============================================================
-       TESTIMONIALS
-    ============================================================ */
-    .reviews-section { background: var(--soil); border-top: 1px solid var(--border); }
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
-    .review-card { background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-md); padding: 2.22rem; }
-    .review-stars { color: var(--gold); font-size: 1rem; letter-spacing: 0.08em; margin-bottom: 1.2rem; }
-    .review-text { font-family: var(--ff-display); font-size: 1.15rem; font-style: italic; color: var(--cream); line-height: 1.7; margin-bottom: 1.5rem; }
-
-    .reviewer { display: flex; align-items: center; gap: 1rem; }
-    .reviewer-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--ember); display: flex; align-items: center; justify-content: center; font-family: var(--ff-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); flex-shrink: 0; }
-    .reviewer-name { font-size: 0.92rem; font-weight: 600; color: var(--cream); }
-    .reviewer-meta { font-size: 0.75rem; color: var(--mist); }
-    /* ============================================================
-       CTA BAND
-    ============================================================ */
-    .cta-band { position: relative; background: var(--soil); padding: 10rem 4rem; text-align: center; overflow: hidden; border-top: 1px solid var(--border); }
-    .cta-bg { position: absolute; inset: 0; background: radial-gradient(circle at 50% 120%, rgba(212,98,42,0.18) 0%, transparent 60%); pointer-events: none; }
-    .cta-content { position: relative; z-index: 2; }
-    .cta-h2 { font-family: var(--ff-display); font-size: clamp(3rem, 6.5vw, 5rem); font-weight: 700; color: var(--cream); line-height: 1.1; margin-bottom: 2rem; }
-    .cta-h2 em { font-style: italic; color: var(--ember); }
-    .cta-p { font-size: 1.2rem; color: var(--fog); max-width: 650px; margin: 0 auto 4rem; font-weight: 300; }
-
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    .footer { background: var(--ink); padding: 6rem 4rem 4rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 4rem; }
-    .footer-row { display: flex; justify-content: space-between; align-items: center; }
-    .footer-logo { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 700; }
-    .footer-nav { display: flex; gap: 2.5rem; }
-    .footer-nav a { font-size: 0.8rem; color: var(--mist); text-transform: uppercase; letter-spacing: 0.12em; transition: color 0.25s; }
-    .footer-nav a:hover { color: var(--ember-lt); }
-    .footer-copy { font-size: 0.78rem; color: var(--mist); text-align: center; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.04); }
-
-    /* ============================================================
-       MODAL
-    ============================================================ */
-    .modal-veil { position: fixed; inset: 0; background: rgba(18,13,0.9); backdrop-filter: blur(15px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s var(--ease); padding: 2rem; }
-    .modal-veil.show { opacity: 1; pointer-events: auto; }
-    .modal-box { background: var(--bark); border: 1px solid var(--border); border-radius: var(--r-lg); width: 100%; max-width: 580px; padding: 4rem; position: relative; transform: translateY(30px); transition: transform 0.4s var(--ease-spring); }
-    .modal-veil.show .modal-box { transform: translateY(0); }
-    .modal-x { position: absolute; top: 1.8rem; right: 1.8rem; background: rgba(255,255,255,0.06); border: 1px solid var(--border); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--mist); cursor: pointer; transition: color 0.2s, background 0.2s; }
-    .modal-x:hover { color: var(--ember-lt); background: rgba(255,255,255,0.1); }
-    .modal-title { font-family: var(--ff-display); font-size: 2.4rem; font-weight: 700; color: var(--cream); margin-bottom: 1rem; }
-    .modal-sub { font-size: 1rem; color: var(--fog); margin-bottom: 2.5rem; line-height: 1.7; }
-
-    /* Form UI */
-    .f-grp { margin-bottom: 2rem; }
-    .f-label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--mist); letter-spacing: 0.1em; margin-bottom: 0.8rem; }
-    .f-ctrl { width: 100%; background: rgba(18,13,0.5); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 1rem 1.2rem; color: var(--cream); font-family: var(--ff-body); font-size: 1rem; }
-    .f-ctrl:focus { outline: none; border-color: var(--ember); background: rgba(18,13,0.8); }
-    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-
-    /* ============================================================
-       ANIMATIONS & RESPONSIVE
-    ============================================================ */
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 1200px) {
-      .header { padding: 0 2rem; }
-      .nav { gap: 1.5rem; }
-      .campsites-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 1024px) {
-      .nav { display: none; }
-      .amenities-layout { grid-template-columns: 1fr; gap: 4rem; }
-      .amenities-visual { display: none; }
-      .festival-grid, .pricing-grid, .reviews-grid { grid-template-columns: 1fr 1fr; }
-      .activities-strip { perspective: none; padding-bottom: 8rem; }
-      .act-scroll-track { transform-style: flat; transform: none !important; flex-wrap: wrap; height: auto; gap: 2rem; margin-top: 3rem; }
-      .act-card { position: static; transform: none !important; width: 100%; height: auto; padding: 2.5rem; }
-    }
-
-    @media (max-width: 768px) {
-      .hero-body { padding: 0 1.5rem; }
-      .hero-h1 { font-size: 3.8rem; }
-      .section { padding: 6rem 1.5rem; }
-      .festival-grid, .pricing-grid, .reviews-grid { grid-template-columns: 1fr; }
-      .f-row { grid-template-columns: 1fr; }
-      .modal-box { padding: 2.5rem; }
-      .footer { padding: 4rem 1.5rem; }
-      .footer-row { flex-direction: column; gap: 2rem; text-align: center; }
-    }
-  </style>
-
-  <link href="assets/css/basswoods-menu.css" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Camping & Glamping in Northeast India | BASSWOODS</title>
+  <meta name="description" content="Premium camping and glamping experiences in Northeast India. Ziro, Hornbill, and offbeat wilderness sites." />
+  <link rel="canonical" href="camping.html" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/premium.css"/>
+  <link rel="stylesheet" href="assets/css/basswoods-menu.css"/>
+  
 </head>
 <body>
-<!-- STANDALONE OFFCANVAS MENU -->
-        <div class="site-menu" data-lenis-prevent>
-            <div class="site-menu-bg"></div>
-            <div class="site-menu-header">
-                <div class="site-header-left">
-                    <button class="site-menu-close">
-                        <span class="site-menu-close-icon"></span>
-                        <span>Close</span>
-                    </button>
-                </div>
-                <div class="site-header-logo">
-                    <a aria-label="Basswoods Camp" href="index.html" class="logo-font" style="text-decoration:none;">
-                        <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
-                    </a>
-                </div>
-                <div class="site-header-right">
-                    <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
-                    <a class="btn btn-sm btn-inverted" href="tel:8011228979">
-                        <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
-                        <span class="d-none d-md-inline">Call Us</span>
-                    </a>
-                </div>
+
+    <!-- Navigation -->
+    <nav class="nav-premium">
+        <a href="index.html" class="nav-logo gold-text">BASSWOODS</a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tours.html">Tours</a>
+            <a href="offbeat.html">Offbeat</a>
+            <a href="trekking.html">Trekking</a>
+            <a href="vehicle-rentals.html">Vehicles</a>
+            <a href="rentals.html">Gear</a>
+            <a href="camping.html" class="active">Camping</a>
+            <a href="about.html">About</a>
+            <a href="enquiries.html">Contact</a>
+        </div>
+        <div class="nav-btns">
+            <a href="camping.html" class="btn-gold">Book Now</a>
+            <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-premium">
+        <div class="hero-bg" style="background: linear-gradient(to bottom, rgba(12,18,10,0.6), rgba(12,18,10,0.9)), url('wp-content/IMAGES/camp night stars.jpeg'); background-size: cover; background-position: center;"></div>
+        <div class="container hero-content">
+            <p class="hero-eyebrow fade-in delay-1">Pristine Wilderness</p>
+            <h1 class="hero-title fade-in delay-2">
+                <span class="gold-text">BASSWOODS</span>
+                <span>CAMPING</span>
+            </h1>
+            <p class="hero-desc fade-in delay-3">From the silent starry nights of Ziro Valley to the festive pulse of Kohima — we provide the gold standard of premium camping gear and locations in Northeast India.</p>
+        </div>
+    </section>
+
+    <!-- Campsites Section -->
+    <section class="section bg-black">
+        <div class="container">
+            <div class="section-heading-centered">
+                <h2 class="section-title">Signature <em>Campsites</em></h2>
             </div>
-            <div class="site-menu-body">
-                <div class="site-menu-main site-header-offset bg-charcoal">
-                    <div class="site-menu-main-container px-container pb-md">
-                        <ul id="menu-primary-menu" class="site-menu-nav ginto-normal-black py-xl">
-                            <li class="menu-item"><a title="Tour package" class="site-menu-nav-item" data-image="menu-item-image-tours" href="tours.html"><span>Tour package</span></a></li>
-                            <li class="menu-item"><a title="Vehicles Rentals" class="site-menu-nav-item" data-image="menu-item-image-rentals" href="vehicle-rentals.html"><span>Vehicles Rentals</span></a></li>
-                            <li class="menu-item"><a title="Camping equipment rentals" class="site-menu-nav-item" data-image="menu-item-image-equipment" href="rentals.html"><span>Equipment Rentals</span></a></li>
-                            <li class="menu-item"><a title="Campings" class="site-menu-nav-item" data-image="menu-item-image-camping" href="camping.html"><span>Campings</span></a></li>
-                            <li class="menu-item"><a title="Trekking" class="site-menu-nav-item" data-image="menu-item-image-trekking" href="trekking.html"><span>Trekking</span></a></li>
-                            <li class="menu-item"><a title="Off beat Tours" class="site-menu-nav-item" data-image="menu-item-image-offbeat" href="offbeat.html"><span>Off beat Tours</span></a></li>
-                        </ul>
-                        <ul class="site-menu-social">
-                            <li><a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a></li>
-                            <li><a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a></li>
-                            <li><a aria-label="Location" href="camping.html" target="_blank"><i class="ri-map-pin-fill"></i></a></li>
-                            <li><a aria-label="Contact us" href="mailto:bookings@basswoodscamp.com" target="_blank"><i class="ri-mail-fill"></i></a></li>
-                        </ul>
+            
+            <div class="grid">
+                <!-- Site 1: Cherry Blossom Camp -->
+                <div class="act-card rev">
+                    <div style="aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; margin-bottom: 2rem; position: relative;">
+                        <img src="wp-content/IMAGES/blue sky camp.jpeg" alt="Cherry Blossom Camp at Bhoirymbong" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; top: 1.5rem; left: 1.5rem; background: var(--gold); color: var(--rich-black); padding: 0.4rem 1rem; border-radius: 99px; font-weight: 700; font-size: 0.75rem;">FESTIVAL READY (FEB & NOV)</div>
+                    </div>
+                    <div class="stat-bub-lbl" style="color: var(--gold); margin-bottom: 0.5rem;">Bhoirymbong, Meghalaya | Nearby Venue</div>
+                    <h3 class="act-name">Cherry Blossom Camp</h3>
+                    <p class="act-desc">Primacy campsite for the world-renowned Cherry Blossom festival. Features premium pre-pitched tents just 2km from the venue.</p>
+                    <div style="display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
+                        <span style="font-size: 0.8rem; color: var(--white-muted); background: rgba(255,255,255,0.05); padding: 0.3rem 0.8rem; border-radius: 4px;"><i class="ri-drop-line"></i> Hot Shower</span>
+                        <span style="font-size: 0.8rem; color: var(--white-muted); background: rgba(255,255,255,0.05); padding: 0.3rem 0.8rem; border-radius: 4px;"><i class="ri-flashlight-line"></i> Power Points</span>
+                        <span style="font-size: 0.8rem; color: var(--white-muted); background: rgba(255,255,255,0.05); padding: 0.3rem 0.8rem; border-radius: 4px;"><i class="ri-bus-line"></i> Shuttle Service</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                        <div><div class="stat-bub-lbl">Festival Rate</div><div class="stat-bub-num">₹1,499</div></div>
+                        <a href="enquiries.html" class="btn-primary" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">Book Site</a>
                     </div>
                 </div>
-                <div class="site-menu-images">
-                    <div class="site-menu-images-container">
-                        <div class="site-menu-images-item active" id="menu-item-image-camping"><img src="wp-content/IMAGES/menu_campings.png" alt="Campings" loading="lazy"></div>
-                        <div class="site-menu-images-item" id="menu-item-image-rentals"><img src="wp-content/IMAGES/menu_vehicle_rentals.png" alt="Vehicle Rentals" loading="lazy"></div>
-                        <div class="site-menu-images-item" id="menu-item-image-equipment"><img src="wp-content/IMAGES/menu_camping_equipment.png" alt="Equipment" loading="lazy"></div>
-                        <div class="site-menu-images-item" id="menu-item-image-tours"><img src="wp-content/IMAGES/menu_tour_package.png" alt="Tours" loading="lazy"></div>
-                        <div class="site-menu-images-item" id="menu-item-image-trekking"><img src="wp-content/IMAGES/camp-1.jpg" alt="Trekking" loading="lazy"></div>
-                        <div class="site-menu-images-item" id="menu-item-image-offbeat"><img src="wp-content/IMAGES/blue-sky-camp.jpg" alt="Offbeat" loading="lazy"></div>
+
+                <!-- Site 2: Lum Er Pyngngad -->
+                <div class="act-card rev">
+                    <div style="aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; margin-bottom: 2rem; position: relative;">
+                        <img src="wp-content/IMAGES/green scenary.jpeg" alt="Lum Er Pyngngad Camp Umbir" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; top: 1.5rem; left: 1.5rem; background: var(--gold); color: var(--rich-black); padding: 0.4rem 1rem; border-radius: 99px; font-weight: 700; font-size: 0.75rem;">NEW YEAR SPECIAL (DEC 31)</div>
+                    </div>
+                    <div class="stat-bub-lbl" style="color: var(--gold); margin-bottom: 0.5rem;">Umbir, Ri Bhoi | Full Moon Vibe</div>
+                    <h3 class="act-name">Lum Er Pyngngad Camp</h3>
+                    <p class="act-desc">Serene natural surroundings overlooking the full moon festival. Perfect for New Year celebrations with live DJ sets and after-parties.</p>
+                    <div style="display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
+                        <span style="font-size: 0.8rem; color: var(--white-muted); background: rgba(255,255,255,0.05); padding: 0.3rem 0.8rem; border-radius: 4px;"><i class="ri-music-2-line"></i> Live DJ</span>
+                        <span style="font-size: 0.8rem; color: var(--white-muted); background: rgba(255,255,255,0.05); padding: 0.3rem 0.8rem; border-radius: 4px;"><i class="ri-fire-line"></i> Large Bonfire</span>
+                        <span style="font-size: 0.8rem; color: var(--white-muted); background: rgba(255,255,255,0.05); padding: 0.3rem 0.8rem; border-radius: 4px;"><i class="ri-restaurant-2-line"></i> BBQ Included</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                        <div><div class="stat-bub-lbl">All Inclusive</div><div class="stat-bub-num">₹1,499</div></div>
+                        <a href="enquiries.html" class="btn-primary" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">Celebrate</a>
                     </div>
                 </div>
             </div>
-        </div>
 
-<header class="site-header">
-    <div class="site-header-container">
-        <div class="header-left-group">
-            <button class="site-menu-toggle">
-                <span class="site-menu-toggle-icon"></span>
-                <span class="d-none d-md-inline">Menu</span>
-            </button>
-            <a href="index.html" class="logo-font" style="text-decoration:none;">
-                <span style="color: #f2f0e8; font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; letter-spacing: 0.5px;">Basswoods<em>Camp</em></span>
-            </a>
-        </div>
-        <div class="site-header-right">
-            <a class="site-header-account-btn" href="camping.html"><span class="d-none d-lg-inline">Book Now</span></a>
-            <a class="btn btn-sm btn-inverted" href="tel:8011228979">
-                <span class="d-block d-md-none"><i class="ri-phone-fill"></i></span>
-                <span class="d-none d-md-inline">Call Us</span>
-            </a>
-        </div>
-    </div>
-</header>
-
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-atmo"></div>
-  <div class="stars" id="stars"></div>
-  <div class="campfire-glow"></div>
-  
-  <div class="mountains">
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-      <path fill="#0E0A05" d="M0,224L60,202.7C120,181,240,139,360,138.7C480,139,600,181,720,202.7C840,224,960,224,1080,208C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-    </svg>
-  </div>
-
-  <div class="hero-body">
-    <div class="hero-kicker reveal">
-      <i class="ri-fire-line"></i> Adventure Awaits
-    </div>
-    <h1 class="hero-h1 reveal">
-      <span class="line">The Best Place</span>
-      <span class="line">to <span class="italic">Wake Up.</span></span>
-    </h1>
-    <p class="hero-p reveal">From early bird festival spots to quiet valley escapes, Basswoods brings high-fidelity camping to the wild hills of Northeast India.</p>
-    <div class="hero-ctas reveal">
-      <button class="btn-fire" onclick="openModal()">
-        <i class="ri-campfire-line"></i> Book a Campsite
-      </button>
-      <a href="#festivals" class="btn-ghost">
-        <i class="ri-calendar-event-line"></i> Festival Camps
-      </a>
-    </div>
-  </div>
-
-  <div class="scroll-hint">
-    Scroll <span></span>
-  </div>
-</section>
-
-<!-- ===== CAMPSITE LISTINGS ===== -->
-<section class="section">
-  <div class="container">
-    <div class="eyebrow reveal">Our Locations</div>
-    <h2 class="sec-h2 reveal">Sleep Under the <em>Northeast Sky</em></h2>
-    <p class="sec-p reveal">Choose from our permanent basecamps or seasonal festival sites. Every spot is scouted for privacy, views, and that perfect morning mist.</p>
-
-    <div class="campsites-grid">
-
-      <!-- Featured: Cherry Blossom -->
-      <div class="campsite-card reveal">
-        <div class="tours-listings-media">
-          <img src="wp-content/IMAGES/cherrybloassom%20festival.jpeg" alt="Cherry Blossom Basecamp" style="width:100%; height:100%; object-fit:cover;">
-          <div class="tlm-badges">
-            <span class="badge"><i class="ri-star-fill"></i> Most Popular</span>
-            <span class="badge">Near Shillong</span>
-          </div>
-          <div class="tlm-tag">
-            <span class="avail-dot dot-open"></span>
-          </div>
-        </div>
-        <div class="tours-listings-details">
-          <div class="card-location"><i class="ri-map-pin-line"></i> Bhoirymbong, Ri Bhoi, Meghalaya</div>
-          <h3 class="card-title">Cherry Blossom Basecamp</h3>
-          <p class="card-desc">Our flagship permanent site. Nestled in the rolling hills of Ri Bhoi, this camp offers a blend of wild nature and reliable amenities. Perfect for weekenders and first-time campers who want comfort without losing the edge.</p>
-          <div class="amenity-row">
-            <div class="amen"><i class="ri-temp-hot-line"></i> Hot Shower</div>
-            <div class="amen"><i class="ri-wifi-line"></i> Basic WiFi</div>
-            <div class="amen"><i class="ri-fire-line"></i> BBQ Pit</div>
-            <div class="amen"><i class="ri-restaurant-line"></i> Cafe Access</div>
-          </div>
-          <div class="card-foot">
-            <div class="price-block">
-              <div class="price-from">Starting from</div>
-              <div class="price-amt">INR 2,000</div>
-              <div class="price-note">/ person / night</div>
-            </div>
-            <button class="btn-book" onclick="openModal('Cherry Blossom Camp')">Book Now</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Lum Er Pyngngad -->
-      <div class="campsite-card reveal">
-        <div class="tours-listings-media">
-          <img src="wp-content/IMAGES/meghalaya%20lake.jpeg" alt="Lum Er Pyngngad Camp" style="width:100%; height:100%; object-fit:cover;">
-          <div class="tlm-badges">
-            <span class="badge">Hidden Gem</span>
-          </div>
-          <div class="tlm-tag">
-            <span class="avail-dot dot-limited"></span>
-          </div>
-        </div>
-        <div class="tours-listings-details">
-          <div class="card-location"><i class="ri-map-pin-line"></i> Umran, Meghalaya</div>
-          <h3 class="card-title">Lum Er Pyngngad Camp</h3>
-          <p class="card-desc">Known as the 'Hill of Cool Breezes'. This site sits atop a ridge with 360-degree views of the Assam plains and Meghalaya hills. Remote, quiet, and incredibly atmospheric.</p>
-          <div class="amenity-row">
-            <div class="amen"><i class="ri-flashlight-line"></i> Solar Power</div>
-            <div class="amen"><i class="ri-windy-line"></i> High Altitude</div>
-            <div class="amen"><i class="ri-parking-box-line"></i> Road Access</div>
-          </div>
-          <div class="card-foot">
-            <div class="price-block">
-              <div class="price-from">Starting from</div>
-              <div class="price-amt">INR 1,250</div>
-              <div class="price-note">/ person / night</div>
-            </div>
-            <button class="btn-book" onclick="openModal('Lum Er Pyngngad Camp')">Enquire</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== AMENITIES ===== -->
-<section class="section amenities-section">
-  <div class="container">
-    <div class="amenities-layout">
-      <div class="amenities-visual">
-        <div class="av-glow"></div>
-        <div class="orbit-ring" style="width:360px;height:360px;--speed:40s;">
-          <div class="orbit-node" style="top:-28px;left:50%;transform:translateX(-50%);"><i class="ri-fire-line"></i></div>
-          <div class="orbit-node" style="top:50%;right:-28px;transform:translateY(-50%);"><i class="ri-water-flash-line"></i></div>
-          <div class="orbit-node" style="bottom:-28px;left:50%;transform:translateX(-50%);"><i class="ri-restaurant-line"></i></div>
-          <div class="orbit-node" style="top:50%;left:-28px;transform:translateY(-50%);"><i class="ri-parking-box-line"></i></div>
-        </div>
-        <div class="orbit-ring reverse" style="width:230px;height:230px;--speed:25s;">
-          <div class="orbit-node" style="top:-28px;left:50%;transform:translateX(-50%);"><i class="ri-music-2-line"></i></div>
-          <div class="orbit-node" style="top:50%;right:-28px;transform:translateY(-50%);"><i class="ri-charging-pile-line"></i></div>
-          <div class="orbit-node" style="bottom:-28px;left:50%;transform:translateX(-50%);"><i class="ri-fishing-line"></i></div>
-          <div class="orbit-node" style="top:50%;left:-28px;transform:translateY(-50%);"><i class="ri-bus-line"></i></div>
-        </div>
-        <div class="orbit-center">Camp</div>
-      </div>
-
-      <div>
-        <div class="eyebrow reveal">What's Included</div>
-        <h2 class="sec-h2 reveal">Every Camp, <em>Fully Equipped</em></h2>
-        <p class="sec-p reveal">No hunting for gear or driving for supplies. From your first breath of campfire smoke to your last cup of chai, we have everything covered.</p>
-        <div class="amen-list">
-          <div class="amen-item reveal"><div class="amen-ico"><i class="ri-fire-line"></i></div><div><div class="amen-name">Bonfire & BBQ</div><div class="amen-note">Nightly at all campsites</div></div></div>
-          <div class="amen-item reveal"><div class="amen-ico"><i class="ri-temp-hot-line"></i></div><div><div class="amen-name">Hot Showers</div><div class="amen-note">Cherry Blossom Camp</div></div></div>
-          <div class="amen-item reveal"><div class="amen-ico"><i class="ri-restaurant-line"></i></div><div><div class="amen-name">Meals Included</div><div class="amen-note">Ethnic & local cuisine</div></div></div>
-          <div class="amen-item reveal"><div class="amen-ico"><i class="ri-charging-pile-line"></i></div><div><div class="amen-name">Charging Stations</div><div class="amen-note">USB & power bank rental</div></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ===== ACTIVITIES ===== -->
-<section class="section activities-strip">
-  <div class="container" style="position:relative; z-index:5;">
-    <div class="eyebrow reveal">Things to Do</div>
-    <h2 class="sec-h2 reveal">An Adventure <em>at Every Turn</em></h2>
-    <p class="sec-p reveal">Basswoods camps aren't just a place to sleep  -  they're the launchpad for the best experiences Northeast India has to offer.</p>
-  </div>
-
-  <div class="act-scroll-track">
-    <div class="act-card">
-      <div class="act-icon"><i class="ri-footprint-line"></i></div>
-      <div class="act-name">Trekking</div>
-      <div class="act-desc">Guided trails through forests, valleys, and tea-garden hillsides. All skill levels welcome.</div>
-    </div>
-    <div class="act-card">
-      <div class="act-icon"><i class="ri-fishing-line"></i></div>
-      <div class="act-name">Fishing & Angling</div>
-      <div class="act-desc">Traditional freshwater fishing in the streams and lakes of Ri Bhoi, Meghalaya.</div>
-    </div>
-    <div class="act-card">
-      <div class="act-icon"><i class="ri-bike-line"></i></div>
-      <div class="act-name">Mountain Biking</div>
-      <div class="act-desc">Rent a hardtail or eBasswoods and tackle the Basswoods trail network in the hills.</div>
-    </div>
-    <div class="act-card">
-      <div class="act-icon"><i class="ri-landscape-line"></i></div>
-      <div class="act-name">Village Tours</div>
-      <div class="act-desc">Walk through living villages with local guides; taste ethnic food and hear stories.</div>
-    </div>
-    <div class="act-card">
-      <div class="act-icon"><i class="ri-gamepad-line"></i></div>
-      <div class="act-name">Outdoor Games</div>
-      <div class="act-desc">American outdoor games, interactive sessions, and bonfire night challenges.</div>
-    </div>
-    <div class="act-card">
-      <div class="act-icon"><i class="ri-music-2-line"></i></div>
-      <div class="act-name">Jamming Sessions</div>
-      <div class="act-desc">Open jam circles around the fire  -  bring an instrument or just your voice.</div>
-    </div>
-    <div class="act-card">
-      <div class="act-icon"><i class="ri-car-line"></i></div>
-      <div class="act-name">Self-Drive Rentals</div>
-      <div class="act-desc">Bikes and cars available at most festival sites for independent exploration.</div>
-    </div>
-    <div class="act-card">
-      <div class="act-icon"><i class="ri-star-line"></i></div>
-      <div class="act-name">Stargazing</div>
-      <div class="act-desc">No light pollution, no distractions  -  just the Milky Way above your head.</div>
-    </div>
-  </div>
-</section>
-<!-- ===== FESTIVAL CAMPS ===== -->
-<section class="section festival-section" id="festivals">
-  <div class="container">
-    <div class="eyebrow reveal">Festival Season</div>
-    <h2 class="sec-h2 reveal">Camp at the <em>Heart of the Festivals</em></h2>
-    <p class="sec-p reveal">Basswoods sets up premium campsites at Northeast India's most iconic cultural and music festivals every year.</p>
-
-    <div class="festival-grid">
-
-      <div class="festival-card reveal">
-        <div class="fcard-head">
-          <span class="fcard-icon">Event</span>
-          <span class="fcard-dates">Sep 25 - 28</span>
-        </div>
-        <div class="fcard-name">Ziro Festival of Music</div>
-        <div class="fcard-loc"><i class="ri-map-pin-line"></i> Ziro Valley, Arunachal Pradesh</div>
-        <div class="fcard-price">Custom Quote <span>/ package</span></div>
-        <div class="fcard-tags">
-          <div class="ftag">Camping</div> <div class="ftag">Meals</div> <div class="ftag">Transport</div>
-        </div>
-      </div>
-
-      <div class="festival-card reveal">
-        <div class="fcard-head">
-          <span class="fcard-icon">Travel</span>
-          <span class="fcard-dates">Dec 1 - 10</span>
-        </div>
-        <div class="fcard-name">Hornbill Festival</div>
-        <div class="fcard-loc"><i class="ri-map-pin-line"></i> Kohima & Khonoma, Nagaland</div>
-        <div class="fcard-price">Starting from INR 3,000 <span>/ package</span></div>
-        <div class="fcard-tags">
-          <div class="ftag">City Tour</div> <div class="ftag">Dz&#252;kou Trek</div> <div class="ftag">Ethnic Food</div>
-        </div>
-      </div>
-
-      <div class="festival-card reveal">
-        <div class="fcard-head">
-          <span class="fcard-icon">Live</span>
-          <span class="fcard-dates">Feb 15 - 17</span>
-        </div>
-        <div class="fcard-name">Cherry Blossom Festival</div>
-        <div class="fcard-loc"><i class="ri-map-pin-line"></i> Bhoirymbong, Ri Bhoi, Meghalaya</div>
-        <div class="fcard-price">INR 2,000 <span>/ person (2 nights + 1 meal)</span></div>
-        <div class="fcard-tags">
-          <div class="ftag">Swimming Pool</div> <div class="ftag">Fishing</div> <div class="ftag">Karaoke</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== PRICING ===== -->
-<section class="section pricing-section">
-  <div class="container">
-    <div class="eyebrow reveal">Camping Rates</div>
-    <h2 class="sec-h2 reveal">Simple, <em>Transparent Pricing</em></h2>
-    <p class="sec-p reveal">All rates include tent & bedding. Bring your own tent (BYOT) for the lowest rates. Group & custom packages available on request.</p>
-
-    <div class="pricing-grid">
-
-      <div class="price-card reveal">
-        <div class="pc-tier">BYOT</div>
-        <div class="pc-price">INR 300<sub>/person</sub></div>
-        <div class="pc-period">per night - Bring Your Own Tent</div>
-        <div class="pc-divider"></div>
-        <ul class="pc-list">
-          <li><i class="ri-check-line yes"></i> Campsite access</li>
-          <li><i class="ri-check-line yes"></i> Bonfire</li>
-          <li><i class="ri-close-line no"></i> Tent & bedding</li>
-        </ul>
-        <button class="btn-tier btn-tier-outline" onclick="openModal('BYOT Package')">Enquire</button>
-      </div>
-
-      <div class="price-card hot reveal">
-        <span class="pc-tag">Best Value</span>
-        <div class="pc-tier">Standard</div>
-        <div class="pc-price">INR 1,250<sub>/person</sub></div>
-        <div class="pc-period">per night - Tent & bedding provided</div>
-        <div class="pc-divider"></div>
-        <ul class="pc-list">
-          <li><i class="ri-check-line yes"></i> Tent & bedding set</li>
-          <li><i class="ri-check-line yes"></i> Breakfast included</li>
-          <li><i class="ri-check-line yes"></i> Bonfire & BBQ</li>
-        </ul>
-        <button class="btn-tier btn-tier-solid" onclick="openModal('Standard Package')">Book Now</button>
-      </div>
-
-      <div class="price-card reveal">
-        <div class="pc-tier">All-Inclusive</div>
-        <div class="pc-price">INR 2,000<sub>/person</sub></div>
-        <div class="pc-period">per night - Full experience</div>
-        <div class="pc-divider"></div>
-        <ul class="pc-list">
-          <li><i class="ri-check-line yes"></i> All meals</li>
-          <li><i class="ri-check-line yes"></i> Shuttle service</li>
-          <li><i class="ri-check-line yes"></i> Guided village tour</li>
-        </ul>
-        <button class="btn-tier btn-tier-outline" onclick="openModal('All-Inclusive Package')">Book Now</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIALS ===== -->
-<section class="section reviews-section">
-  <div class="container">
-    <div class="eyebrow reveal">From the Campfire</div>
-    <h2 class="sec-h2 reveal">Camper <em>Stories</em></h2>
-    <div class="reviews-grid">
-      <div class="review-card reveal">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="review-text">"Woke up to mist in the valley and the smell of chai. Basswoods makes it feel effortless."</div>
-        <div class="reviewer"><div class="reviewer-avatar">S</div><div><div class="reviewer-name">Sneha R.</div><div class="reviewer-meta">Feb 2024</div></div></div>
-      </div>
-      <div class="review-card reveal">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="review-text">"The Hornbill Festival camping package was perfectly organised. The Dz&#252;kou overnight was the highlight."</div>
-        <div class="reviewer"><div class="reviewer-avatar">A</div><div><div class="reviewer-name">Arjun M.</div><div class="reviewer-meta">Dec 2023</div></div></div>
-      </div>
-      <div class="review-card reveal">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="review-text">"NYE under a full moon at Lum Er Pyngngad  -  I cannot put it into words. Book it."</div>
-        <div class="reviewer"><div class="reviewer-avatar">P</div><div><div class="reviewer-name">Priya K.</div><div class="reviewer-meta">Dec 2023</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA BAND ===== -->
-<div class="cta-band">
-  <div class="cta-bg"></div>
-  <div class="cta-content">
-    <h2 class="cta-h2 reveal">Your Campsite is <em>Waiting.</em></h2>
-    <p class="cta-p reveal">Advance booking required. Spots fill fast at every festival.</p>
-    <button class="btn-fire" onclick="openModal()">Reserve Your Spot</button>
-  </div>
-</div>
-
-<!-- ===== FOOTER ===== -->
-<footer class="site-footer">
-    <div class="container" style="max-width: 1200px; margin: 0 auto;">
-        <div class="site-footer-grid">
-            <div>
-                <a href="index.html" class="site-footer-logo-text">
-                    Basswoods<em>Camp</em>
-                </a>
-                <p style="line-height: 1.7; font-weight: 300;">
-                    Northeast India's premier adventure company. From the peaks of Mizoram to the valleys of Meghalaya, we curate life-affirming camping and festival experiences.
-                </p>
-                <div class="site-footer-social-wrap">
-                    <a aria-label="Follow us on instagram" href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-line"></i></a>
-                    <a aria-label="Follow us on facebook" href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-line"></i></a>
-                    <a aria-label="Follow us on youtube" href="https://www.youtube.com/@basswoodscamp" target="_blank"><i class="ri-youtube-line"></i></a>
+            <!-- BYOT & EQUIPMENT GRID -->
+            <div class="grid" style="margin-top: var(--section-gap);">
+                <div class="stat-bub" style="padding: var(--card-padding); border-color: rgba(201,160,58,0.2); background: rgba(201,160,58,0.02); text-align: center;">
+                    <div class="stat-bub-lbl" style="color: var(--gold); margin-bottom: 1rem;">BYOT Option</div>
+                    <div class="stat-bub-num" style="margin-bottom: 1rem;">₹300</div>
+                    <p class="stat-bub-lbl" style="font-size: 0.8rem; opacity: 0.6;">Bring Your Own Tent & access all amenities including hygiene facilities and charging booths.</p>
+                </div>
+                
+                <div class="stat-bub" style="padding: var(--card-padding); border-color: rgba(201,160,58,0.2); background: rgba(201,160,58,0.02); text-align: center;">
+                    <div class="stat-bub-lbl" style="color: var(--gold); margin-bottom: 1rem;">Equipment Bundles</div>
+                    <div class="stat-bub-num" style="margin-bottom: 1rem;">₹1,250 - ₹2,000</div>
+                    <p class="stat-bub-lbl" style="font-size: 0.8rem; opacity: 0.6;">Full pre-pitched setup: Weather-appropriate sleeping bags, mattresses, pillows, and lanterns.</p>
+                </div>
+                
+                <div class="stat-bub" style="padding: var(--card-padding); border-color: rgba(201,160,58,0.2); background: rgba(201,160,58,0.02); text-align: center;">
+                    <div class="stat-bub-lbl" style="color: var(--gold); margin-bottom: 1rem;">Group Packages</div>
+                    <div class="stat-bub-num" style="margin-bottom: 1rem;">Custom Quote</div>
+                    <p class="stat-bub-lbl" style="font-size: 0.8rem; opacity: 0.6;">Bespoke arrangements for corporate groups or large festival squads. Contact our expedition leads.</p>
                 </div>
             </div>
-            <div>
-                <h4 class="site-footer-h4">Navigation</h4>
-                <ul class="site-footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="trekking.html">Trekking</a></li>
-                    <li><a href="offbeat.html">Offbeat</a></li>
-                    <li><a href="camping.html">Camping</a></li>
-                    <li><a href="tours.html">Tours</a></li>
-                    <li><a href="vehicle-rentals.html">Rentals</a></li>
+
+            <!-- INCLUSIONS MATRIX -->
+            <div class="card" style="margin-top: var(--section-gap); background: var(--soil); border: 1px solid var(--border);">
+                <div class="section-eyebrow">Technical Detail</div>
+                <h3 class="premium-font" style="margin-bottom: 2rem;">Camp <em>Inclusions</em> Matrix</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>BYOT</th>
+                                <th>Standard</th>
+                                <th>Glamping VIP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem; color: var(--gold); font-weight: 700;">Weatherproof Tent</td>
+                                <td style="padding: 1.5rem;">User-Provided</td>
+                                <td style="padding: 1.5rem;">Premium 3-Season</td>
+                                <td style="padding: 1.5rem;">High-Altitude Canvas</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem; color: var(--gold); font-weight: 700;">Mattress System</td>
+                                <td style="padding: 1.5rem;">User-Provided</td>
+                                <td style="padding: 1.5rem;">Single Layer EVA</td>
+                                <td style="padding: 1.5rem;">Dual Layer High-Density</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem; color: var(--gold); font-weight: 700;">Charging Sockets</td>
+                                <td style="padding: 1.5rem;">Communal Hub</td>
+                                <td style="padding: 1.5rem;">Communal Hub</td>
+                                <td style="padding: 1.5rem;">In-Tent Dedicated</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem; color: var(--gold); font-weight: 700;">Hygiene Access</td>
+                                <td style="padding: 1.5rem;">Standard WC</td>
+                                <td style="padding: 1.5rem;">Premium + Shower</td>
+                                <td style="padding: 1.5rem;">Private Tent En-suite</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+</section>
+
+<!-- EXPEDITION PACKING LIST -->
+<section class="section bg-black" id="packing">
+    <div class="container">
+        <div class="section-eyebrow rev">Preparation</div>
+        <h2 class="section-title rev">Expedition <em>Gear</em> Matrix</h2>
+        <p class="section-desc rev">Northeast India's weather is a force of nature. Use our multi-category list to ensure your gear matches the terrain.</p>
+        
+        <div class="grid">
+            <!-- Category: Clothing -->
+            <div class="rev-left" style="background: rgba(255,255,255,0.02); padding: var(--card-padding); border-radius: 12px; border: 1px solid var(--border);">
+                <i class="ri-shirt-line" style="font-size: 2.5rem; color: var(--gold); display: block; margin-bottom: 1.5rem;"></i>
+                <h4 class="premium-font" style="font-size: 1.4rem; color: var(--white); margin-bottom: 2rem;">1. Layering Core</h4>
+                <ul style="list-style: none; color: var(--fog); font-size: 0.9rem; line-height: 2;">
+                    <li>[ ] Moisture-wicking base layer</li>
+                    <li>[ ] Mid-layer microfleece</li>
+                    <li>[ ] Synthetic insulated jacket (Down is risky in rain)</li>
+                    <li>[ ] GORE-TEX or similar waterproof shell</li>
+                    <li>[ ] Thermal inner-wear (for peaks)</li>
+                    <li>[ ] Quick-dry trekking trousers</li>
                 </ul>
             </div>
-            <div>
-                <h4 class="site-footer-h4">Connect</h4>
-                <div class="site-footer-contact">
-                    <p>
-                        Guwahati, Assam, India 781001<br>
-                        <strong>T:</strong> <a href="tel:+918011228979">8011228979</a> (Bookings)<br>
-                        <strong>T:</strong> <a href="tel:+917577911795">7577911795</a> (Rentals)<br>
-                        <strong>E:</strong> <a href="mailto:bookings@basswoodscamp.com">bookings@basswoodscamp.com</a>
-                    </p>
-                </div>
+            <!-- Category: Tech -->
+            <div class="rev-right" style="background: rgba(255,255,255,0.02); padding: var(--card-padding); border-radius: 12px; border: 1px solid var(--border);">
+                <i class="ri-scan-2-line" style="font-size: 2.5rem; color: var(--gold); display: block; margin-bottom: 1.5rem;"></i>
+                <h4 class="premium-font" style="font-size: 1.4rem; color: var(--white); margin-bottom: 2rem;">2. Tech & Tools</h4>
+                <ul style="list-style: none; color: var(--fog); font-size: 0.9rem; line-height: 2;">
+                    <li>[ ] High-capacity Power Bank (20,000mAh+)</li>
+                    <li>[ ] LED Headlamp (with spare batteries)</li>
+                    <li>[ ] Multi-tool or folding survival knife</li>
+                    <li>[ ] Universal plug adapter</li>
+                    <li>[ ] Offline Maps (Downloaded)</li>
+                </ul>
             </div>
-        </div>
-        <div class="site-footer-bottom">
-            <div>&copy; 2026 Basswoods Camp. Adventure made in Northeast India.</div>
-            <div class="site-footer-legal">
-                <a href="privacy.html">Privacy policy</a>
-                <a href="terms.html">Terms & conditions</a>
+            <!-- Category: Hygiene -->
+            <div class="rev-left" style="background: rgba(255,255,255,0.02); padding: var(--card-padding); border-radius: 12px; border: 1px solid var(--border);">
+                <i class="ri-health-recom-line" style="font-size: 2.5rem; color: var(--gold); display: block; margin-bottom: 1.5rem;"></i>
+                <h4 class="premium-font" style="font-size: 1.4rem; color: var(--white); margin-bottom: 2rem;">3. Hygiene & Survival</h4>
+                <ul style="list-style: none; color: var(--fog); font-size: 0.9rem; line-height: 2;">
+                    <li>[ ] Personal First-Aid kit (Altitude meds)</li>
+                    <li>[ ] Biodegradable wet-wipes</li>
+                    <li>[ ] SPF 50+ Sunscreen (UV is high at Alt)</li>
+                    <li>[ ] Personal water purifier (Straw or drops)</li>
+                    <li>[ ] Quick-dry microfiber towel</li>
+                </ul>
             </div>
         </div>
     </div>
-</footer>
+</section>
 
-<!-- ===== MODAL ===== -->
-<div class="modal-veil" id="modalVeil" onclick="handleVeilClick(event)">
-  <div class="modal-box">
-    <button class="modal-x" onclick="closeModal()"><i class="ri-close-line"></i></button>
-    <h2 class="modal-title">Book your Spot</h2>
-    <p class="modal-sub">Tell us when you're coming and which camp you're interested in. We'll reply within 24 hours.</p>
-    <div class="f-grp"><label class="f-label">Full Name</label><input type="text" class="f-ctrl" id="mName" placeholder="Enter your name"/></div>
-    <div class="f-grp"><label class="f-label">Email Address</label><input type="email" class="f-ctrl" id="mEmail" placeholder="you@example.com"/></div>
-    <div class="f-grp"><label class="f-label">Campsite</label><input type="text" class="f-ctrl" id="mSite" placeholder="e.g. Cherry Blossom"/></div>
-    <button class="btn-fire" style="width:100%; justify-content:center;" onclick="submitBooking()">Send Booking Request</button>
-  </div>
-</div>
+<!-- LEAVE NO TRACE MANUAL -->
+<section class="section bg-deep-charcoal" id="ethics">
+    <div class="container">
+        <div class="section-eyebrow rev">Sustainability</div>
+        <h2 class="section-title rev">Leave No <em>Trace</em></h2>
+        <div style="margin-top: var(--section-gap); line-height: 1.8; color: var(--white-muted); font-size: 1.1rem;">
+            <p style="margin-bottom: 2.5rem;">Basswoods operates in some of India's last pristine biological hotspots. Our presence must be invisible. We follow the 7 international principles of Leave No Trace:</p>
+            <div style="display: grid; gap: 2.5rem;">
+                <div style="display: flex; gap: 2rem;">
+                    <div style="font-family: var(--font-impact); font-size: 2.5rem; color: var(--gold); opacity: 0.2;">01</div>
+                    <div><h4 style="color: var(--white); margin-bottom: 0.5rem;">Plan & Prepare</h4><p style="font-size: 0.9rem;">Know the regulations. Avoid high-use areas during sensitive times. Repackage food to minimize waste.</p></div>
+                </div>
+                <div style="display: flex; gap: 2rem;">
+                    <div style="font-family: var(--font-impact); font-size: 2.5rem; color: var(--gold); opacity: 0.2;">02</div>
+                    <div><h4 style="color: var(--white); margin-bottom: 0.5rem;">Travel & Camp on Durable Surfaces</h4><p style="font-size: 0.9rem;">Concentrate use on existing trails and campsites. Keep campsites small.</p></div>
+                </div>
+                <div style="display: flex; gap: 2rem;">
+                    <div style="font-family: var(--font-impact); font-size: 2.5rem; color: var(--gold); opacity: 0.2;">03</div>
+                    <div><h4 style="color: var(--white); margin-bottom: 0.5rem;">Dispose of Waste Properly</h4><p style="font-size: 0.9rem;">Pack it in, pack it out. Deposit human waste in catholes at least 200ft from water.</p></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Camping FAQ -->
+        <div style="margin-top: var(--section-gap); border-top: 1px solid var(--border); padding-top: var(--section-gap);">
+            <div class="section-eyebrow rev">Specific Rules</div>
+            <h3 class="premium-font" style="margin-bottom: 2rem;">Camping <em>Logistics</em> FAQ</h3>
+            <div style="display: grid; gap: 1rem;">
+                <details style="padding: 2.5rem; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--border);">
+                    <summary style="font-size: 1.1rem; color: var(--white); cursor: pointer; list-style: none;">What is the check-in time for festival camps?</summary>
+                    <p style="margin-top: 1.5rem; color: var(--white-muted); line-height: 1.8;">Standard check-in is 2:00 PM. Early check-in can be requested but is subject to site availability.</p>
+                </details>
+                <details style="padding: 2.5rem; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--border);">
+                    <summary style="font-size: 1.1rem; color: var(--white); cursor: pointer; list-style: none;">Are pets allowed in the campsites?</summary>
+                    <p style="margin-top: 1.5rem; color: var(--white-muted); line-height: 1.8;">Usually yes, but with strict controls. Pets must remain leashed at all times to protect local wildlife and ensure other guest comfort. A nominal pet cleaning fee may apply.</p>
+                </details>
+            </div>
+        </div>
+    </div>
+</section>
+    </div>
+</section>
 
-<script>
-  // Header state
-  const hdr = document.getElementById('hdr');
-  window.addEventListener('scroll', () => {
-    hdr.classList.toggle('stuck', window.scrollY > 50);
-  });
+        <!-- REGIONAL CAMPSITE BIOS -->
+        <div style="margin-top: var(--section-gap); border-top: 1px solid var(--border); padding-top: var(--section-gap);">
+            <div class="section-eyebrow rev">Our Grid</div>
+            <h2 class="section-title rev">Expedition <em>Campsite</em> Bios</h2>
+            <p class="section-desc rev" style="max-width: 900px;">BASSWOODS maintains a network of strategic campsites across the Northeast. Each site is location-vetted for safety, drainage, and biological impact. Explore our primary deployment zones.</p>
+            
+            <div style="display: grid; gap: var(--section-gap);">
+                <!-- Site 1 -->
+                <div class="rev">
+                    <h3 class="premium-font" style="margin-bottom: 2rem;">01. ZIRO VALLEY BASECAMP <span style="font-size: 1rem; color: var(--mist); opacity: 0.5;">(Arunachal)</span></h3>
+                    <div class="grid">
+                        <div style="background: var(--soil); padding: 4rem; border-radius: 20px;">
+                            <h4 style="color: var(--white); margin-bottom: 1.5rem;">Terrain & Climate</h4>
+                            <p style="color: var(--white-muted); line-height: 1.8; font-size: 0.9rem;">Located at 5,538 ft, our Ziro camp is nestled in the heart of the Apatani plateau. The terrain is composed of soft peat and pine needles. Expect high-humidity early mornings and crisp, clear nights during the festival season.</p>
+                        </div>
+                        <div style="background: var(--soil); padding: 4rem; border-radius: 20px;">
+                            <h4 style="color: var(--white); margin-bottom: 1.5rem;">Site Technicals</h4>
+                            <ul style="list-style: none; color: var(--fog); font-size: 0.85rem; line-height: 2.2;">
+                                <li>- Capacity: 50 Units (Standard/VIP)</li>
+                                <li>- Power: 24/7 Solar-Grid Hybrid</li>
+                                <li>- Hygiene: 10 Premium WC Units</li>
+                                <li>- Security: 360 Perimeter Patrol</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-  // Reveal animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
+                <!-- Site 2 -->
+                <div class="rev">
+                    <h3 class="premium-font" style="margin-bottom: 2rem;">02. DZUKOU ALPILNE DEPOT <span style="font-size: 1rem; color: var(--mist); opacity: 0.5;">(Nagaland)</span></h3>
+                    <div class="grid">
+                        <div style="background: var(--soil); padding: 4rem; border-radius: 20px;">
+                            <h4 style="color: var(--white); margin-bottom: 1.5rem;">Terrain & Climate</h4>
+                            <p style="color: var(--white-muted); line-height: 1.8; font-size: 0.9rem;">Deployment at 8,000 ft in the legendary Dzukou Valley. This is a high-altitude wilderness camp where temperatures often drop to -5°C. Logistics here are primitive but robust, focusing on thermal integrity and weight-to-heat ratios.</p>
+                        </div>
+                        <div style="background: var(--soil); padding: 4rem; border-radius: 20px;">
+                            <h4 style="color: var(--white); margin-bottom: 1.5rem;">Site Technicals</h4>
+                            <ul style="list-style: none; color: var(--fog); font-size: 0.85rem; line-height: 2.2;">
+                                <li>- Capacity: 15 Units (Alpine only)</li>
+                                <li>- Power: Portable Power Banks only</li>
+                                <li>- Hygiene: Trench WC (Zero impact)</li>
+                                <li>- Security: Guide-led night watch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+                <!-- Site 3 -->
+                <div class="rev">
+                    <h3 class="premium-font" style="margin-bottom: 2rem;">03. UMRANGSO LAKE SIDE <span style="font-size: 1rem; color: var(--mist); opacity: 0.5;">(Assam)</span></h3>
+                    <div class="grid">
+                        <div style="background: var(--soil); padding: 4rem; border-radius: 20px;">
+                            <h4 style="color: var(--white); margin-bottom: 1.5rem;">Terrain & Climate</h4>
+                            <p style="color: var(--white-muted); line-height: 1.8; font-size: 0.9rem;">Overlooking the Kapili reservoir. The terrain is undulating grassland (Golf Course). Very breezy nights. Perfect for stargazing due to zero light pollution.</p>
+                        </div>
+                        <div style="background: var(--soil); padding: 4rem; border-radius: 20px;">
+                            <h4 style="color: var(--white); margin-bottom: 1.5rem;">Site Technicals</h4>
+                            <ul style="list-style: none; color: var(--fog); font-size: 0.85rem; line-height: 2.2;">
+                                <li>- Capacity: 30 Units (Glamping focus)</li>
+                                <li>- Power: Genset Support (6PM - 11PM)</li>
+                                <li>- Hygiene: Mobile WC Vans</li>
+                                <li>- Security: Local Dima-Hasao guard team</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  // Stars generation
-  const starsContainer = document.getElementById('stars');
-  if (starsContainer) {
-    for (let i = 0; i < 150; i++) {
-      const star = document.createElement('div');
-      star.style.position = 'absolute';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.top = Math.random() * 100 + '%';
-      star.style.width = Math.random() * 2 + 'px';
-      star.style.height = star.style.width;
-      star.style.background = '#fff';
-      star.style.borderRadius = '50%';
-      star.style.opacity = Math.random();
-      star.style.animation = `twinkle ${2 + Math.random() * 3}s infinite`;
-      starsContainer.appendChild(star);
-    }
-  }
+        <!-- EXPEDITION SECURITY PROTOCOL -->
+        <div style="margin-top: var(--section-gap); border-top: 1px solid var(--border); padding-top: var(--section-gap);">
+            <div class="section-eyebrow rev">Guest Protection</div>
+            <h2 class="section-title rev">Expedition <em>Security</em> Protocol</h2>
+            <div class="grid" style="margin-top: var(--space-xl);">
+                <div class="rev" style="background: rgba(255,255,255,0.02); padding: 4rem; border: 1px solid var(--border); border-radius: 20px;">
+                    <h4 style="color: var(--white); font-family: var(--font-impact); font-size: 1.4rem; margin-bottom: 2.5rem;">1. Perimeter Control</h4>
+                    <p style="color: var(--white-muted); line-height: 1.8; font-size: 0.9rem;">Every BASSWOODS camp features a multi-tiered security layer. We collaborate with village 'Gao-Burras' (Heads) to ensure that the surrounding communities are stakeholders in your safety. 24-hour internal patrols are standard across all major festival campsites.</p>
+                </div>
+                <div class="rev" style="background: rgba(255,255,255,0.02); padding: 4rem; border: 1px solid var(--border); border-radius: 20px;">
+                    <h4 style="color: var(--white); font-family: var(--font-impact); font-size: 1.4rem; margin-bottom: 2.5rem;">2. Wildlife Mitigation</h4>
+                    <p style="color: var(--white-muted); line-height: 1.8; font-size: 0.9rem;">In remote Arunachal and Assam hubs, we use non-invasive acoustic sensors and fire-barriers to prevent human-wildlife conflict. Our waste-management protocol ensures zero food-scent drift, which is the primary cause of animal attraction.</p>
+                </div>
+                <div class="rev" style="background: rgba(255,255,255,0.02); padding: 4rem; border: 1px solid var(--border); border-radius: 20px;">
+                    <h4 style="color: var(--white); font-family: var(--font-impact); font-size: 1.4rem; margin-bottom: 2.5rem;">3. Medical Readiness</h4>
+                    <p style="color: var(--white-muted); line-height: 1.8; font-size: 0.9rem;">Our campsites are equipped with Level-1 Trauma kits and oxygen cylinders for high-altitude zones. Every site lead is certified in Wilderness First Aid (WFA) and has a direct radio link to the nearest regional medical evacuation center.</p>
+                </div>
+            </div>
+        </div>
 
-  // Modal logic
-  const modalVeil = document.getElementById('modalVeil');
-  function openModal(siteName = '') {
-    if (siteName) document.getElementById('mSite').value = siteName;
-    modalVeil.classList.add('show');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    modalVeil.classList.remove('show');
-    document.body.style.overflow = '';
-  }
-  function handleVeilClick(e) {
-    if (e.target === modalVeil) closeModal();
-  }
-  function submitBooking() {
-    const name = document.getElementById('mName').value;
-    if (!name) return alert('Please enter your name.');
-    alert(`Thanks ${name}! Your request has been sent.`);
-    closeModal();
-  }
+        <!-- BIO-WASTE MANAGEMENT -->
+        <div style="margin-top: var(--section-gap); border-top: 1px solid var(--border); padding-top: var(--section-gap); margin-bottom: var(--section-gap);">
+            <div class="section-eyebrow rev">Ecology</div>
+            <h2 class="section-title rev">Bio-Waste <em>Logic</em></h2>
+            <div style="max-width: 800px; margin: 3rem auto; text-align: center;">
+                <p style="color: var(--fog); font-size: 1.1rem; line-height: 2;">BASSWOODS uses a proprietary 'Deep-Ridge' composting system for all organic waste. For non-biodegradables, we maintain a strict 'Down-Carry' policy—where every kilogram of plastic or metal brought into the high-altitude zone is accounted for and carried back to our base hubs for industrial recycling.</p>
+            </div>
+        </div>
 
-  /* 3D Activities Revolver Sync & Drag */
-  const actTrack = document.querySelector('.act-scroll-track');
-  const actSection = document.querySelector('.activities-strip');
-  
-  if (actTrack && actSection) {
-    let scrollRotation = 0;
-    let dragRotation = 0;
-    let isDragging = false;
-    let startX = 0;
+        <!-- EXPEDITION WILDLIFE MATRIX (ULTRA-HIGH DENSITY SECTION) -->
+        <section class="section-padding bg-black" id="wildlife" style="border-top: 1px solid var(--border); padding-top: var(--section-gap);">
+            <div class="container">
+                <div class="section-eyebrow rev">Bio-Security</div>
+                <h2 class="section-title rev">Expedition <em>Wildlife</em> Matrix</h2>
+                <p class="section-desc rev" style="max-width: 900px; margin-bottom: 4rem;">Northeast frontier camps are located in active biodiversity corridors. Understanding the local bio-rhythms and safety protocols is technical baseline for all explorers.</p>
+                
+                <div class="grid">
+                    <!-- Wildlife 1 -->
+                    <div class="rev" style="background: rgba(255,255,255,0.01); border: 1px solid var(--border); padding: 5rem 3rem; border-radius: 20px;">
+                        <h4 style="color: var(--gold); font-family: var(--font-impact); font-size: 1.5rem; margin-bottom: 2rem;">ELEPHANT CORRIDORS: Kaziranga/Manas</h4>
+                        <p style="color: var(--white-muted); line-height: 1.8; font-size: 0.95rem; margin-bottom: 2.5rem;"><strong>Safety Protocol:</strong> Maintain 50m minimum distance. No nocturnal movement outside camp perimeter in corridor zones. Use low-frequency acoustic deterrents if path is obstructed.</p>
+                        <div style="font-size: 0.75rem; color: var(--mist); border-top: 1px solid var(--border); padding-top: 1.5rem;">CRITICAL: 'Food-Seal' sanitation mandatory</div>
+                    </div>
+                    <!-- Wildlife 2 -->
+                    <div class="rev" style="background: rgba(255,255,255,0.01); border: 1px solid var(--border); padding: 5rem 3rem; border-radius: 20px;">
+                        <h4 style="color: var(--gold); font-family: var(--font-impact); font-size: 1.5rem; margin-bottom: 2rem;">HIMALAYAN BEAR: Mishmi Hills</h4>
+                        <p style="color: var(--white-muted); line-height: 1.8; font-size: 0.95rem; margin-bottom: 2.5rem;"><strong>Safety Protocol:</strong> Bear-hang all food and toiletries 10ft above ground and 100m from sleep zone. Constant verbal communication during trail transits to prevent surprise encounters.</p>
+                        <div style="font-size: 0.75rem; color: var(--mist); border-top: 1px solid var(--border); padding-top: 1.5rem;">CRITICAL: Bear-grade waste canisters provided</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    // SCROLL SYNC
-    window.addEventListener('scroll', () => {
-      const rect = actSection.getBoundingClientRect();
-      const winH = window.innerHeight;
-      const scrollProgress = (winH - rect.top) / (winH + rect.height);
-      
-      if (scrollProgress >= 0 && scrollProgress <= 1) {
-        scrollRotation = scrollProgress * 220; 
-        updateRotation();
-      }
-    });
+        <!-- POWER & OPS LOGISTICS (ULTRA-HIGH DENSITY SECTION) -->
+        <section class="section-padding bg-deep-charcoal" id="power-ops" style="border-top: 1px solid var(--border);">
+            <div class="container">
+                <div class="section-eyebrow rev">Off-Grid Systems</div>
+                <h2 class="section-title rev">Power & <em>Ops</em> Logistics</h2>
+                <div class="grid" style="margin-top: 4rem;">
+                    <div class="rev" style="background: var(--soil); padding: 4rem 3rem; border-radius: 12px; border: 1px solid var(--border);">
+                        <h4 style="color: var(--white); font-size: 1.3rem; margin-bottom: 2rem;">Solar Infrastructure</h4>
+                        <ul style="list-style: none; padding-left: 0; color: var(--mist); font-size: 0.9rem; line-height: 2.2;">
+                            <li>- Monocrystalline 400W portable arrays</li>
+                            <li>- LiFePO4 battery storage banks (2kWh)</li>
+                            <li>- 220V AC Pure Sine Wave inverters</li>
+                        </ul>
+                    </div>
+                    <div class="rev" style="background: var(--soil); padding: 4rem 3rem; border-radius: 12px; border: 1px solid var(--border);">
+                        <h4 style="color: var(--white); font-size: 1.3rem; margin-bottom: 2rem;">Sat-Comms Support</h4>
+                        <ul style="list-style: none; padding-left: 0; color: var(--mist); font-size: 0.9rem; line-height: 2.2;">
+                            <li>- Iridium satellite network emergency beacons</li>
+                            <li>- Garmin InReach 24/7 SOS monitoring</li>
+                            <li>- High-gain VHF/UHF tactical radio links</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    // DRAG LOGIC
-    const startDrag = (x) => {
-      isDragging = true;
-      startX = x;
-    };
+    <!-- WILDERNESS EQUIPMENT ARCHIVE: VOL IV (ULTRA-HIGH DENSITY SECTION) -->
+    <section class="section-padding bg-black" id="equipment-archive" style="border-top: 1px solid var(--gold); margin-top: var(--section-gap);">
+        <div class="container">
+            <div class="section-eyebrow rev">Inventory Technicals</div>
+            <h2 class="section-title rev" style="font-size: clamp(2.5rem, 5vw, 4.2rem);">Equipment <em>Technical</em> Archive</h2>
+            <p class="section-desc rev" style="max-width: 900px; margin-bottom: var(--component-gap);">The BASSWOODS Inventory is a curated collection of high-altitude life-support systems. Volume IV documents the technical specifications and maintenance cycles of our core shelter and survival gear.</p>
+            
+            <div style="display: grid; gap: var(--component-gap);">
+                <!-- Gear Item 1 -->
+                <div class="rev">
+                    <div class="grid-responsive" style="--min-col-width: 300px; gap: var(--component-gap); align-items: start;">
+                        <div style="text-align: left;">
+                            <h3 class="premium-font" style="font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--gold); margin-bottom: 1.5rem;">SHELTER: <em>MSR HUBBA HUBBA</em></h3>
+                            <div style="font-family: var(--font-impact); color: var(--mist); opacity: 0.1; font-size: clamp(3rem, 7vw, 5rem); line-height: 1; margin-top: -1rem;">3-SEASON NX.</div>
+                        </div>
+                        <div style="border-left: 2px solid var(--gold); padding: 0 0 0 4rem; margin-left: 0.5rem;">
+                            <h4 style="color: var(--white); font-size: 1.3rem; margin-bottom: 2rem; text-transform: uppercase;">Technical Schematic</h4>
+                            <p style="color: var(--white-muted); line-height: 2.2; font-size: 1.1rem; margin-bottom: 3rem;">The Hubba Hubba NX series is our primary alpine shelter for trekking deployments. Engineered with lightweight Xtreme Shield™ waterproof coating and DAC Featherlite NFL poles. Its unified hub-and-pole system allows for rapid 3-minute deployment during sudden Himalayan squalls. High-tenacity nylon ripstop ensures durability against high-altitude UV degradation.</p>
+                            <div class="grid-responsive" style="--min-col-width: 250px; gap: 3rem;">
+                                <div style="background: rgba(255,255,255,0.02); padding: 3rem; border-radius: 12px; border: 1px solid var(--border);">
+                                    <h5 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">HYDROSTATIC HEAD</h5>
+                                    <p style="color: var(--mist); font-size: 0.85rem; line-height: 1.8;">Rainfly: 1,200mm | Floor: 3,000mm. Optimized for rapid drainage in tropical monsoon zones.</p>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.02); padding: 3rem; border-radius: 12px; border: 1px solid var(--border);">
+                                    <h5 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">STERILIZATION LOG</h5>
+                                    <p style="color: var(--mist); font-size: 0.85rem; line-height: 1.8;">UV-C disinfection post-expedition. Nikwax SolarProof treatment applied every 15 field days.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    const moveDrag = (x) => {
-      if (!isDragging) return;
-      const dx = x - startX;
-      dragRotation += dx * 0.2; // Sensitivity
-      startX = x;
-      updateRotation();
-    };
+                <!-- Gear Item 2 -->
+                <div class="rev">
+                    <div class="grid-responsive" style="--min-col-width: 300px; gap: var(--component-gap); align-items: start;">
+                        <div style="text-align: left;">
+                            <h3 class="premium-font" style="font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--gold); margin-bottom: 1.5rem;">THERMAL: <em>TNF INFERNO</em></h3>
+                            <div style="font-family: var(--font-impact); color: var(--mist); opacity: 0.1; font-size: clamp(3rem, 7vw, 5rem); line-height: 1; margin-top: -1rem;">-20°C RATING.</div>
+                        </div>
+                        <div style="border-left: 2px solid var(--gold); padding: 0 0 0 4rem; margin-left: 0.5rem;">
+                            <h4 style="color: var(--white); font-size: 1.3rem; margin-bottom: 2rem; text-transform: uppercase;">Technical Schematic</h4>
+                            <p style="color: var(--white-muted); line-height: 2.2; font-size: 1.1rem; margin-bottom: 3rem;">For high-altitude winter deployments (Dec-Feb), we utilize Pro-grade 800-fill ProDown™ systems. The Inferno series features center-zips for rapid thermoregulation and NeoVent Air™ fabric on hood/footbox to prevent moisture accumulation from respiratory vapor. Essential for survival at base camps above 12,000ft.</p>
+                            <div class="grid-responsive" style="--min-col-width: 250px; gap: 3rem;">
+                                <div style="background: rgba(255,255,255,0.02); padding: 3rem; border-radius: 12px; border: 1px solid var(--border);">
+                                    <h5 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">LOFT RETENTION</h5>
+                                    <p style="color: var(--mist); font-size: 0.85rem; line-height: 1.8;">Water-resistant down treatment maintains 90% loft even in high-humidity rainforest transits.</p>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.02); padding: 3rem; border-radius: 12px; border: 1px solid var(--border);">
+                                    <h5 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 0.85rem; letter-spacing: 0.1em;">CARE CYCLES</h5>
+                                    <p style="color: var(--mist); font-size: 0.85rem; line-height: 1.8;">Industrial ozone cleaning post-squad deployment. Stored in high-volume mesh loft bags.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    const stopDrag = () => { isDragging = false; };
+<!-- Footer -->
+    <footer class="footer-premium">
+        <div class="container-wide">
+            <div class="footer-grid">
+                <div>
+                    <p class="footer-logo gold-text">BASSWOODS</p>
+                    <p class="footer-about">Crafting life-affirming events and adventure holidays in Northeast India. Award-winning service, premium gear, untamed locations.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a>
+                        <a href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a>
+                        <a href="tel:8011228979"><i class="ri-phone-fill"></i></a>
+                        <a href="mailto:basswoodscamp@gmail.com"><i class="ri-mail-fill"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="premium-font footer-heading">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="tours.html">Event Tours</a></li>
+                        <li><a href="offbeat.html">Offbeat Tours</a></li>
+                        <li><a href="trekking.html">Trekking</a></li>
+                        <li><a href="camping.html">Campsites</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="premium-font footer-heading">Rentals</h4>
+                    <ul class="footer-links">
+                        <li><a href="vehicle-rentals.html">4x4 Vehicles</a></li>
+                        <li><a href="vehicle-rentals.html">Motorcycles</a></li>
+                        <li><a href="rentals.html">Camping Gear</a></li>
+                        <li><a href="rentals.html">Professional Kits</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="premium-font footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="enquiries.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BASSWOODS. All Rights Reserved.</p>
+                <p>Designed for the Bold.</p>
+            </div>
+        </div>
+    </footer>
 
-    actSection.addEventListener('mousedown', e => startDrag(e.pageX));
-    window.addEventListener('mousemove', e => moveDrag(e.pageX));
-    window.addEventListener('mouseup', stopDrag);
+<script src="assets/js/basswoods-menu.js"></script>
 
-    actSection.addEventListener('touchstart', e => startDrag(e.touches[0].pageX), { passive: true });
-    window.addEventListener('touchmove', e => moveDrag(e.touches[0].pageX), { passive: true });
-    window.addEventListener('touchend', stopDrag);
-
-    function updateRotation() {
-      if (window.innerWidth > 1024) {
-        const finalRotation = -(scrollRotation + dragRotation);
-        actTrack.style.transform = `rotateY(${finalRotation}deg)`;
-      } else {
-        actTrack.style.transform = 'none';
-      }
-    }
-
-    if (window.innerWidth <= 1024) {
-      actTrack.style.transform = 'none';
-    }
-  }
-</script>
-
-<style>
-  @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
-</style>
-
-
-
-
-
-  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-  <script src="assets/js/lenis-init.js"></script>
-  <script src="assets/js/basswoods-menu.js" defer></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
