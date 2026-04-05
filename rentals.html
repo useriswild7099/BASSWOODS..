@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -166,17 +166,27 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 BASSWOODS. All Rights Reserved.</p>
-                <p>Designed for the Bold.</p>
             </div>
         </div>
     </footer>
 
+    <script src="assets/js/basswoods-menu.js"></script>
+    <script src="assets/js/responsive.js"></script>
 
-  <script src="assets/js/basswoods-menu.js"></script>
+    <!-- BASSWOODS Reveal Engine -->
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
 
-<script src="assets/js/responsive.js"></script>
+        document.querySelectorAll('.rev, .rev-left, .rev-right').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
-
-
-
-
+</html>

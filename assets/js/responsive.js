@@ -23,19 +23,19 @@ const BasswoodsResponsive = (() => {
         const width = window.innerWidth;
         const root = document.documentElement;
 
-        // Mobile Safeguard: Ensure base 16px for readability on handhelds
+        // Mobile: Use the 12px root defined in premium.css (33% zoom-out)
         if (width < 1024) {
-            root.style.fontSize = '16px';
+            root.style.fontSize = '12px';
             return;
         }
 
         // Fluid Scaling Logic for Desktop (Auto-Optimize)
-        // Calculated proportionally to 1440px base design
+        // Calculated proportionally to 1440px base design at 12px root
         const baseWidth = 1440;
-        const targetSize = (width / baseWidth) * 16;
+        const targetSize = (width / baseWidth) * 12;
         
-        // Clamp between 14px and 22px for premium readability
-        const clampedSize = Math.min(Math.max(targetSize, 14), 22);
+        // Clamp between 11px and 14px for premium density
+        const clampedSize = Math.min(Math.max(targetSize, 11), 14);
         
         root.style.fontSize = `${clampedSize}px`;
     };
