@@ -1,0 +1,17 @@
+{
+  "name": "BASSWOODS",
+  "short_name": "BASSWOODS",
+  "description": "The Gold Standard of Northeast India Adventure.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#d4af37",
+  "icons": [
+    {
+      "src": "assets/pwa-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

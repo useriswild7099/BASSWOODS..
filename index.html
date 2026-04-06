@@ -11,7 +11,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/premium.css">
+    <link rel="stylesheet" href="assets/css/premium.css?v=22.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#d4af37">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="assets/pwa-icon.png">
 </head>
 <body>
     <nav class="nav-premium">
@@ -150,15 +154,14 @@
     <section class="section-padding reveal">
         <div class="container-wide">
             <div class="destination-split">
-                <div class="dest-img-stack">
-                    <img src="wp-content/IMAGES/green scenary.jpeg" alt="Meghalaya" class="dest-img-1" loading="lazy" decoding="async">
-                    <img src="wp-content/IMAGES/nagaland.jpeg" alt="Nagaland" class="dest-img-2" loading="lazy" decoding="async">
+                <div class="dest-cube-container">
+                    <img src="wp-content/IMAGES/green scenary.jpeg" alt="Meghalaya Green Scenery" class="dest-cube-img" loading="lazy" decoding="async">
                 </div>
                 <div class="dest-content">
-                    <h2 class="premium-font gold-text section-heading-centered">Curated Regions</h2>
-                    <h3 class="premium-font" style="font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 25px;">IMMERSE IN THE <span class="gold-text">ROOTS</span></h3>
-                    <p class="mission-text">From the living root bridges of Meghalaya to the vibrant Hornbill Festival of Nagaland, we take you deep into the heart of tribal culture and untouched nature.</p>
-                    <a href="offbeat.html" class="btn-gold">Discover Locations</a>
+                    <h2 class="premium-font" style="text-align: left !important; color: #FFD700 !important; margin-bottom: 1rem;">Curated Regions</h2>
+                    <h3 class="premium-font" style="text-align: left !important; font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1.5rem; line-height: 1.1;">IMMERSE IN THE <span class="gold-text">ROOTS</span></h3>
+                    <p class="mission-text" style="text-align: left !important; max-width: 100%; opacity: 0.85; margin-inline: 0 !important;">From the living root bridges of Meghalaya to the vibrant Hornbill Festival of Nagaland, we take you deep into the heart of tribal culture and untouched nature.</p>
+                    <a href="offbeat.html" class="btn-gold" style="text-align: left !important; margin-left: 0 !important; margin-top: 2rem;">Discover Locations</a>
                 </div>
             </div>
         </div>
@@ -169,17 +172,17 @@
             <h3 class="premium-font" style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: var(--space-l);">THE <span class="gold-text">TECHNICAL</span> EDGE</h3>
             <div class="tech-grid">
                 <div class="tech-item">
-                    <img src="wp-content/IMAGES/vector art/WhatsApp Image 2026-04-03 at 4.55.12 PM.jpeg" alt="Technical Detail" loading="lazy" decoding="async">
+                    <img src="wp-content/IMAGES/alpine pro tent.jpeg" alt="Technical Detail" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;" loading="lazy" decoding="async">
                     <h4 class="premium-font">Grade-A Isolation</h4>
                     <p>Our tents are engineered for the extreme humidity and sudden temperature drops of the Ziro plateau and Nagaland peaks.</p>
                 </div>
                 <div class="tech-item">
-                    <img src="wp-content/IMAGES/vector art/WhatsApp Image 2026-04-03 at 4.55.12 PM (1).jpeg" alt="Technical Detail" loading="lazy" decoding="async">
+                    <img src="wp-content/IMAGES/suv_thar.png" alt="Technical Detail" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;" loading="lazy" decoding="async">
                     <h4 class="premium-font">4x4 Articulation</h4>
                     <p>Every vehicle in our fleet is fitted with heavy-duty suspension systems to handle the 'Unseen' Northeast tracks with ease.</p>
                 </div>
                 <div class="tech-item">
-                    <img src="wp-content/IMAGES/suv rent.jpeg" alt="Technical Detail" style="width: 100%; border-radius: 12px; margin-top: 1.5rem; opacity: 0.6; filter: grayscale(0.5);" loading="lazy" decoding="async">
+                    <img src="wp-content/IMAGES/suv rent.jpeg" alt="Technical Detail" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem;" loading="lazy" decoding="async">
                     <h4 class="premium-font">Survival Standard</h4>
                     <p>From satellite comms to professional grade medical kits, we bridge the gap between absolute wild and absolute safety.</p>
                 </div>
@@ -364,59 +367,84 @@
         </div>
     </section>
     <section class="section-padding bg-deep-charcoal" id="faq" style="padding-top: 3rem;">
-        <div class="container-tight">
+        <div class="container-wide">
             <div class="section-eyebrow rev">Learning Center</div>
-            <h2 class="section-title rev">Expedition <em>FAQ</em></h2>
-            <div class="faq-accordion" style="margin-top: 1.5rem;">
-                <div class="stat-bub-lbl" style="color: var(--gold); margin-bottom: 0px; letter-spacing: 0.3em; margin-top: 1.5rem;">LOGISTICS & PERMITS</div>
-                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
-                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Do I need special permits for Northeast India?</summary>
-                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Yes, Indian citizens require an Inner Line Permit (ILP) for Arunachal Pradesh, Nagaland, and Mizoram. Foreign nationals require RAP/PAP. Basswoods offers free coordination for all confirmed bookings.</p>
-                </details>
-                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
-                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Where is the best pickup point for vehicle rentals?</summary>
-                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Our primary vehicle hub is in Guwahati (Assam), conveniently located near the airport (GAU). However, we can arrange drop-0ffs in Shillong or Kohima for specific expedition packages.</p>
-                </details>
-                <div class="stat-bub-lbl" style="color: var(--gold); margin-bottom: 0px; letter-spacing: 0.3em; margin-top: 1.5rem;">CAMPING & FACILITIES</div>
-                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
-                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">What kind of toilets do your campsites have?</summary>
-                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">All our festival and permanent hubs feature hygienic western-style private toilets with running water. For high-wilderness expeditions, we use eco-friendly portable systems to protect the environment.</p>
-                </details>
-                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
-                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Is charging available at festival campsites?</summary>
-                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Yes, every Basswoods camp features high-capacity communal charging docks for mobile units and professional camera equipment. Our Dima Hasao and Kohima hubs use 24/7 solar-backup units.</p>
-                </details>
-                <div class="stat-bub-lbl" style="color: var(--gold); margin-bottom: 0px; letter-spacing: 0.3em; margin-top: 1.5rem;">SAFETY & SUPPORT</div>
-                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
-                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">What happens in case of a medical emergency?</summary>
-                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Every expedition team carries a Level-2 medical kit and has satellite-sync for remote coordinates. We maintain direct links with regional medical centers in Shillong, Kohima, and Itanagar for emergency evacuation protocols.</p>
-                </details>
+            <h2 class="section-title rev" style="margin-bottom: 3rem;">Technical <em>Repository</em></h2>
+            
+            <div class="grid grid-2" style="gap: 4rem; align-items: start;">
+                <!-- ═══════════════════════════════
+                     OPERATIONAL FAQ
+                     ═══════════════════════════════ -->
+                <div class="faq-column">
+                    <h3 class="premium-font gold-text" style="font-size: 1.2rem; margin-bottom: 2rem; letter-spacing: 0.2em;">EXPEDITION FAQ</h3>
+                    
+                    <div class="stat-bub-lbl" style="color: var(--white); opacity: 0.4; margin-bottom: 10px; letter-spacing: 0.2em; font-size: 0.7rem;">LOGISTICS & PERMITS</div>
+                    <details style="padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--glass-border);">
+                        <summary style="font-size: 1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Do I need special permits for Northeast India?</summary>
+                        <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.7; font-size: 0.9rem;">Yes, Indian citizens require an ILP for Arunachal, Nagaland, and Mizoram. Foreigners need RAP/PAP. We coordinate all permits post-booking.</p>
+                    </details>
+                    
+                    <details style="padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 2rem; border: 1px solid var(--glass-border);">
+                        <summary style="font-size: 1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Where is the best pickup point?</summary>
+                        <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.7; font-size: 0.9rem;">Our primary vehicle hub is Guwahati (GAU). We offer remote drop-offs in Shillong or Kohima for custom itineraries.</p>
+                    </details>
 
-                <div class="stat-bub-lbl" style="color: var(--gold); margin-bottom: 0px; letter-spacing: 0.3em; margin-top: 2rem;">FRONTIER HANDBOOK: WILDERNESS PROTOCOLS</div>
-                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
-                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">The Zero Footprint Rule</summary>
-                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Sustainability is our core mandate. We operate on a 'Leave No Trace' principle—all waste is carried back out, camping sites are restored to their natural state, and we use local biodegradable resources whenever possible to preserve the Northeast wilderness.</p>
-                </details>
-                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
-                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">High-Altitude Acclimatization</summary>
-                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">For expeditions above 3,000m (like Tawang or Dzukou), we factor in mandatory 'rest-sync' days. Our guides monitor hydration and oxygen saturation levels regularly. We recommend a minimal cardio-prep 2 weeks prior to deployment.</p>
-                </details>
-                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
-                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">The Tribal Code & Etiquette</summary>
-                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">You aren't just visiting a place; you're entering a community. We strictly adhere to local customs—always ask before photography, respect sacred groves (forbidden to take anything from them), and always accept tea offered by a village headman—it's the highest sign of mutual respect.</p>
-                </details>
-                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
-                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Emergency Gear Essentials</summary>
-                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Pack light, pack smart. Our Handbook mandates: 1. Thermal-base layers (even in summer). 2. Headlamps with spare cells. 3. Personal lifestraw/filtration. 4. Multitool. We provide all secondary technical gear (tents, ropes, kitchen), but personal readiness is non-negotiable.</p>
-                </details>
-                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
-                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Connectivity & Sat-Link Protocols</summary>
-                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Most frontier zones have zero cellular coverage. Our lead vehicles carry satellite-mesh units for emergency coords and weather-sync. We recommend downloading offline 'Topo-Maps' before deployment. Expect a 'Digital Detox' during the core mission days.</p>
-                </details>
-                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
-                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Mountain Sickness (AMS) Protocol</summary>
-                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Ascend slow, sleep low. If you feel persistent headaches or dizziness, alert your guide immediately. We carry portable oxygen canisters and Diamox in all Level-2 kits. Hydration (3-4L daily) is your primary defense against elevation-pressure.</p>
-                </details>
+                    <div class="stat-bub-lbl" style="color: var(--white); opacity: 0.4; margin-bottom: 10px; letter-spacing: 0.2em; font-size: 0.7rem;">CAMPING & FACILITIES</div>
+                    <details style="padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--glass-border);">
+                        <summary style="font-size: 1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">What toilet facilities do you provide?</summary>
+                        <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.7; font-size: 0.9rem;">Western-style private toilets at festival hubs. Eco-friendly portable systems for high-wilderness expeditions.</p>
+                    </details>
+                    
+                    <details style="padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 2rem; border: 1px solid var(--glass-border);">
+                        <summary style="font-size: 1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Is charging available at campsites?</summary>
+                        <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.7; font-size: 0.9rem;">Yes, communal high-capacity charging docks and solar-backup units are standard across all Basswoods hubs.</p>
+                    </details>
+
+                    <div class="stat-bub-lbl" style="color: var(--white); opacity: 0.4; margin-bottom: 10px; letter-spacing: 0.2em; font-size: 0.7rem;">SAFETY & SUPPORT</div>
+                    <details style="padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--glass-border);">
+                        <summary style="font-size: 1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Medical emergency protocols?</summary>
+                        <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.7; font-size: 0.9rem;">Level-2 med-kits and satellite-sync coordinates are standard. Direct links with regional centers for rapid evacuation.</p>
+                    </details>
+                </div>
+
+                <!-- ═══════════════════════════════
+                     FRONTIER HANDBOOK
+                     ═══════════════════════════════ -->
+                <div class="faq-column">
+                    <h3 class="premium-font gold-text" style="font-size: 1.2rem; margin-bottom: 2rem; letter-spacing: 0.2em;">FRONTIER HANDBOOK</h3>
+                    
+                    <div class="stat-bub-lbl" style="color: var(--white); opacity: 0.4; margin-bottom: 10px; letter-spacing: 0.2em; font-size: 0.7rem;">WILDERNESS PROTOCOLS</div>
+                    
+                    <details style="padding: 1.25rem; background: rgba(212,175,55,0.03); border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--gold);">
+                        <summary style="font-size: 1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">The Zero Footprint Rule</summary>
+                        <p style="margin-top: 1.5rem; color: var(--white-muted); line-height: 1.7; font-size: 0.9rem;">Strict 'Leave No Trace' policy. All waste is extracted; environments are restored to pre-camp states.</p>
+                    </details>
+                    
+                    <details style="padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--glass-border);">
+                        <summary style="font-size: 1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">High-Altitude Acclimatization</summary>
+                        <p style="margin-top: 1.5rem; color: var(--white-muted); line-height: 1.7; font-size: 0.9rem;">Mandatory rest-sync days above 3,000m. Oxygen saturation and hydration monitored by expedition leads.</p>
+                    </details>
+                    
+                    <details style="padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--glass-border);">
+                        <summary style="font-size: 1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">The Tribal Code & Etiquette</summary>
+                        <p style="margin-top: 1.5rem; color: var(--white-muted); line-height: 1.7; font-size: 0.9rem;">Respect sacred groves. Always accept tea. Always ask before photography. You are a guest in a living community.</p>
+                    </details>
+                    
+                    <details style="padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--glass-border);">
+                        <summary style="font-size: 1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Emergency Gear Essentials</summary>
+                        <p style="margin-top: 1.5rem; color: var(--white-muted); line-height: 1.7; font-size: 0.9rem;">Mandatory: Multi-tool, headlamp, thermal base-layers, and water filtration. Personal readiness is technical readiness.</p>
+                    </details>
+                    
+                    <details style="padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--glass-border);">
+                        <summary style="font-size: 1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Connectivity & Sat-Link</summary>
+                        <p style="margin-top: 1.5rem; color: var(--white-muted); line-height: 1.7; font-size: 0.9rem;">Lead vehicles carry satellite-mesh for emergency weather and coordinate synchronization. Expect complete digital detox.</p>
+                    </details>
+                    
+                    <details style="padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--glass-border);">
+                        <summary style="font-size: 1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Mountain Sickness (AMS) Protocol</summary>
+                        <p style="margin-top: 1.5rem; color: var(--white-muted); line-height: 1.7; font-size: 0.9rem;">'Ascend slow, sleep low.' We carry localized O2 canisters and AMS medication. Alert guide if persistent headache occurs.</p>
+                    </details>
+                </div>
             </div>
         </div>
     </section>
@@ -532,6 +560,15 @@
         document.querySelectorAll('.reveal, .rev, .rev-left, .rev-right').forEach(el => {
             observer.observe(el);
         });
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('[PWA] Service Worker Registered', reg))
+                    .catch(err => console.error('[PWA] Registration Failed', err));
+            });
+        }
     </script>
 </body>
 </html>

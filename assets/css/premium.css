@@ -607,6 +607,26 @@ h4 {
     .nav-toggle-label {
         display: block;
     }
+    .destination-split {
+        flex-direction: column;
+        text-align: left;
+        gap: 2rem;
+    }
+    .dest-cube-container, .dest-img-stack {
+        max-width: 100%;
+        width: 100%;
+        min-height: auto !important;
+    }
+    .dest-cube-img, .dest-img-stack img {
+        width: 150px !important;
+        height: 150px !important;
+        aspect-ratio: 1/1 !important;
+        object-fit: cover !important;
+        margin: 0;
+    }
+    .dest-content {
+        padding-left: 0 !important;
+    }
     .nav-links {
         position: fixed;
         top: 0;
@@ -1011,12 +1031,12 @@ td {
     gap: var(--space-xl);
 }
 
-.dest-img-stack {
-    position: relative;
-    flex: 1;
-    min-height: 400px;
-    height: auto;
+.dest-img-stack img {
+    width: 65%;          /* Adjust width as needed */
+    aspect-ratio: 1/1;   /* Forces the cube shape */
+    object-fit: cover;   /* Ensures the image fills the cube without stretching */
 }
+
 
 .dest-img-stack img {
     position: absolute;
@@ -1555,6 +1575,39 @@ td {
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
     .footer-bottom { flex-direction: column; gap: 4px; text-align: center; }
     .elev-card { padding: 1.2rem; }
+
+    /* Curated Regions Mobile: High-Density Mini-Cube */
+    .destination-split {
+        flex-direction: column;
+        text-align: left;
+        gap: 2rem;
+    }
+    .dest-cube-container, .dest-img-stack {
+        max-width: 100%;
+        width: 100%;
+        min-height: 200px !important;
+    }
+    .dest-cube-img, .dest-img-stack img {
+        width: 220px !important;
+        height: 220px !important;
+        aspect-ratio: 1/1 !important;
+        object-fit: cover !important;
+        margin: 0;
+    }
+    .dest-img-1 { top: 0; left: 0; }
+    .dest-img-2 { top: 40px; left: 40px; }
+    .dest-content {
+        padding-left: 0 !important;
+    }
+
+    /* Vehicle Listings Mobile: Contain Proportions */
+    .tours-listings-media img {
+        object-fit: contain !important;
+        background: #000;
+    }
+    .tours-listings-details {
+        padding: 1.25rem !important;
+    }
 }
 
 /* ═══════════════════════════════

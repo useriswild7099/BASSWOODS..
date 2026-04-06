@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASSWOODS | Lost Signal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --white-muted: rgba(255, 255, 255, 0.7);
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            padding: 2rem;
+            position: relative;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 4rem;
+            display: block;
+            text-decoration: none;
+        }
+        .signal-icon {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+        p {
+            color: var(--white-muted);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        .info-card {
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .info-title {
+            color: var(--gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.5rem;
+        }
+        .btn-retry {
+            margin-top: 3rem;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-retry:hover {
+            background-color: var(--gold);
+            color: var(--black);
+        }
+        .bg-pattern {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30rem;
+            opacity: 0.02;
+            z-index: -1;
+            font-weight: 800;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern">SIGNAL</div>
+    <div class="container">
+        <a href="index.html" class="logo">BASSWOODS</a>
+        <div class="signal-icon"><i class="ri-radar-line"></i></div>
+        <h1>Lost <em>Signal</em></h1>
+        <p>You're venturing deep into the wild. While our full connection is lost, your cached BASSWOODS resources are still active.</p>
+        
+        <div class="info-card">
+            <div class="info-title">Emergency Contact</div>
+            <div style="font-size: 1.2rem; font-weight: 600;">+91 8011228979</div>
+            <div style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--white-muted);">Satellite Link Available</div>
+        </div>
+
+        <a href="index.html" class="btn-retry">Check Connection</a>
+    </div>
+</body>
+</html>

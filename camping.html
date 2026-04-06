@@ -8,6 +8,10 @@
   <link rel="canonical" href="camping.html" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/css/premium.css"/>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#d4af37">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="assets/pwa-icon.png">
   <link rel="stylesheet" href="assets/css/basswoods-menu.css"/>
 </head>
 <body>
@@ -265,6 +269,15 @@
         document.querySelectorAll('.reveal, .rev, .rev-left, .rev-right').forEach(el => {
             observer.observe(el);
         });
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('[PWA] Service Worker Registered', reg))
+                    .catch(err => console.error('[PWA] Registration Failed', err));
+            });
+        }
     </script>
 </body>
 </html>
