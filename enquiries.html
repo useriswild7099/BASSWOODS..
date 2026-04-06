@@ -50,43 +50,61 @@
         <div class="container">
             <div class="grid" style="align-items: start;">
                 <!-- Left: Info -->
-                <div class="rev-left">
+                <div class="rev-left" style="padding-right: 2rem;">
                     <div class="section-eyebrow">Connect</div>
                     <h2 class="section-title">Get in <em>Touch</em></h2>
-                    <p class="section-desc" style="margin: 1.5rem 0;">Our specialists are ready to guide your journey through the last wild frontier.</p>
-                    <div style="display: grid; gap: 1.5rem;">
-                        <div class="card" style="border-left: 4px solid var(--gold); background: transparent;">
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <i class="ri-map-pin-line" style="color: var(--gold); font-size: 1.5rem;"></i>
-                                <div><div style="color: var(--white); font-weight: 700;">Base: Mawbri, Shillong</div><div style="font-size: 0.8rem; color: var(--mist);">Meghalaya, 793103</div></div>
+                    <p class="section-desc" style="margin: 1.5rem 0; opacity: 0.8;">Our specialists are ready to guide your journey through the last wild frontier. Expect a response within 4 tactical hours.</p>
+                    
+                    <div style="display: grid; gap: 1.2rem; margin-top: 2rem;">
+                        <div class="card" style="border: 1px solid var(--glass-border); background: var(--surface); padding: 1.5rem; transition: transform 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(201,160,58,0.1); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.3rem;">
+                                    <i class="ri-map-pin-line"></i>
+                                </div>
+                                <div>
+                                    <div style="color: var(--white); font-weight: 700; font-size: 0.9rem;">Operational Base</div>
+                                    <div style="font-size: 0.8rem; color: var(--gold); opacity: 0.8; margin-top: 0.2rem;">Mawbri, Shillong, 793103</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="card" style="border-left: 4px solid var(--gold); background: transparent;">
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <i class="ri-phone-line" style="color: var(--gold); font-size: 1.5rem;"></i>
-                                <a href="tel:8011228979" style="color: var(--white); font-weight: 700;">+91 80112 28979</a>
+                        <div class="card" style="border: 1px solid var(--glass-border); background: var(--surface); padding: 1.5rem; transition: transform 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(201,160,58,0.1); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.3rem;">
+                                    <i class="ri-phone-line"></i>
+                                </div>
+                                <div>
+                                    <div style="color: var(--white); font-weight: 700; font-size: 0.9rem;">Fleet Manager</div>
+                                    <a href="tel:8011228979" style="font-size: 0.8rem; color: var(--gold); opacity: 0.8; text-decoration: none; margin-top: 0.2rem;">+91 80112 28979</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right: Form -->
-                <div class="rev-right card">
-                    <form class="contact-form-premium" style="display: grid; gap: 1.5rem;">
-                        <div class="grid-responsive" style="--min-col-width: 180px; gap: 1.5rem;">
-                            <input type="text" placeholder="Full Name *" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--white); padding: 1rem; border-radius: 8px; outline: none;" required>
-                            <input type="tel" placeholder="Phone *" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--white); padding: 1rem; border-radius: 8px; outline: none;" required>
-                        </div>
-                        <input type="email" placeholder="Email Address *" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--white); padding: 1rem; border-radius: 8px; outline: none;" required>
-                        <select style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--white); padding: 1rem; border-radius: 8px; outline: none;">
-                            <option>General Interest</option>
-                            <option>Music Festivals</option>
-                            <option>Vehicle Rentals</option>
-                            <option>Trekking</option>
-                        </select>
-                        <textarea rows="4" placeholder="Your Message *" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--white); padding: 1rem; border-radius: 8px; outline: none;" required></textarea>
-                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 1.2rem;">Send Request <i class="ri-send-plane-fill"></i></button>
-                    </form>
+                <div class="rev-right">
+                    <div class="card" style="padding: 3rem; background: var(--surface); border: 1px solid var(--glass-border); border-radius: 20px; box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
+                        <form class="contact-form-premium" style="display: grid; gap: 1.5rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Full Name *" class="premium-input" required style="width: 100%; background: #000; border: 1px solid var(--border); color: #fff; padding: 1.2rem; border-radius: 4px; font-family: inherit;">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" placeholder="WhatsApp Number *" class="premium-input" required style="width: 100%; background: #000; border: 1px solid var(--border); color: #fff; padding: 1.2rem; border-radius: 4px; font-family: inherit;">
+                                </div>
+                            </div>
+                            <input type="email" placeholder="Email Address *" class="premium-input" required style="width: 100%; background: #000; border: 1px solid var(--border); color: #fff; padding: 1.2rem; border-radius: 4px; font-family: inherit;">
+                            <select class="premium-input" style="width: 100%; background: #000; border: 1px solid var(--border); color: #fff; padding: 1.2rem; border-radius: 4px; font-family: inherit; appearance: none;">
+                                <option>Expedition Category</option>
+                                <option>Music Festivals</option>
+                                <option>Vehicle Rentals</option>
+                                <option>Trekking</option>
+                                <option>Custom Circuit</option>
+                            </select>
+                            <textarea rows="4" placeholder="Your Expedition Details *" class="premium-input" required style="width: 100%; background: #000; border: 1px solid var(--border); color: #fff; padding: 1.2rem; border-radius: 4px; font-family: inherit;"></textarea>
+                            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 1.5rem; letter-spacing: 0.2em;">Send Request <i class="ri-send-plane-fill"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
 

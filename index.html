@@ -29,7 +29,7 @@
             <a href="enquiries.html">Contact</a>
         </div>
         <div class="nav-btns">
-            <a href="camping.html" class="btn-gold">Book Now</a>
+            <a href="enquiries.html" class="btn-gold">Book Now</a>
             <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
         </div>
     </nav>
@@ -143,6 +143,8 @@
                     <p>We respect the wild. Our glamping operations are designed to leave zero footprint while providing maximum luxury.</p>
                 </div>
             </div>
+
+
         </div>
     </section>
     <section class="section-padding reveal">
@@ -184,14 +186,143 @@
             </div>
         </div>
     </section>
-    <section class="section bg-black">
-        <div class="container centered-layout">
-            <h2 class="section-heading">Native to the Northeast</h2>
-            <h3 class="premium-font">ESTABLISHED <span class="gold-text">2019</span></h3>
-            <p class="hero-sub">Rooted in the spirit of the Northeast, BASSWOODS was born around the fires of the 2019 Orange Festival. From a single campsite to the region's premier adventure collective, we've spent every season pushing deeper into the last wild frontier.</p>
+
+    <!-- ═══════════════════════════════
+         INSTA / BOOKING GALLERY
+         ═══════════════════════════════ -->
+    <section class="section-padding bg-black" style="padding-bottom: 0;">
+        <div class="container-wide">
+            <div class="section-eyebrow rev" style="text-align: center;">Join the Expedition</div>
+            <h2 class="premium-font gold-text section-heading-centered rev" style="margin-bottom: 2rem;">Into the Wild</h2>
+            <style>
+                .expedition-gallery {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-auto-rows: minmax(200px, 1fr);
+                    gap: 15px;
+                    margin-top: 3rem;
+                }
+                .gallery-book-link {
+                    display: block;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: var(--radius);
+                    border: 1px solid var(--glass-border);
+                }
+                
+                /* Perfect Flush Mosaic Layout */
+                .gallery-book-link:nth-child(1) {
+                    grid-column: span 2;
+                    grid-row: span 2;
+                }
+                .gallery-book-link:nth-child(2),
+                .gallery-book-link:nth-child(3),
+                .gallery-book-link:nth-child(4),
+                .gallery-book-link:nth-child(5) {
+                    grid-column: span 1;
+                    grid-row: span 1;
+                }
+
+                .gallery-book-link img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                    filter: saturate(0.8) contrast(1.1);
+                }
+                .gallery-book-link:hover img {
+                    transform: scale(1.08); /* Slow, premium zoom */
+                    filter: saturate(1.2) contrast(1.1);
+                }
+                .gallery-overlay {
+                    position: absolute;
+                    inset: 0;
+                    background: rgba(10, 10, 10, 0.7);
+                    backdrop-filter: blur(2px);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0;
+                    transition: opacity 0.4s var(--ease);
+                }
+                .gallery-book-link:hover .gallery-overlay {
+                    opacity: 1;
+                }
+                .gallery-overlay span {
+                    color: var(--gold);
+                    font-family: var(--font-heading);
+                    font-weight: 700;
+                    letter-spacing: 0.15em;
+                    font-size: 0.85rem;
+                    text-transform: uppercase;
+                    margin-top: 10px;
+                }
+                .gallery-overlay i {
+                    color: var(--white);
+                    font-size: 2rem;
+                }
+                @media (max-width: 900px) {
+                    .expedition-gallery {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .gallery-book-link:nth-child(1) {
+                        grid-column: span 2;
+                        grid-row: span 2;
+                    }
+                }
+            </style>
+
+            <div class="expedition-gallery rev">
+                <a href="camping.html" class="gallery-book-link">
+                    <img src="wp-content/IMAGES/insta photos/atv rental.jpeg" alt="ATV EXPEDITIONS" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="ri-arrow-right-up-line"></i>
+                        <span>BOOK NOW</span>
+                    </div>
+                </a>
+                <a href="camping.html" class="gallery-book-link">
+                    <img src="wp-content/IMAGES/insta photos/camping.jpeg" alt="PREMIUM CAMPING" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="ri-arrow-right-up-line"></i>
+                        <span>BOOK NOW</span>
+                    </div>
+                </a>
+                <a href="camping.html" class="gallery-book-link">
+                    <img src="wp-content/IMAGES/insta photos/car rental.jpeg" alt="4x4 RENTALS" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="ri-arrow-right-up-line"></i>
+                        <span>BOOK NOW</span>
+                    </div>
+                </a>
+                <a href="camping.html" class="gallery-book-link">
+                    <img src="wp-content/IMAGES/insta photos/dzokou.jpeg" alt="DZUKOU VALLEY TREK" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="ri-arrow-right-up-line"></i>
+                        <span>BOOK NOW</span>
+                    </div>
+                </a>
+                <a href="camping.html" class="gallery-book-link">
+                    <img src="wp-content/IMAGES/insta photos/hornbil.jpeg" alt="HORNBILL FESTIVAL" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="ri-arrow-right-up-line"></i>
+                        <span>BOOK NOW</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
-    <section class="section-padding bg-black" id="reviews">
+
+    <section class="section" style="position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 65vh; background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('wp-content/IMAGES/vector%20art/road%20biker.jpeg') center/cover no-repeat; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
+        <!-- Foregound Content -->
+        <div class="container centered-layout" style="position: relative; z-index: 2;">
+            <h2 class="section-heading rev" style="color: var(--white); text-shadow: 0 4px 12px rgba(0,0,0,0.5);">Native to the Northeast</h2>
+            <h3 class="premium-font rev" style="color: var(--gold); letter-spacing: 0.4em;">ESTABLISHED 2019</h3>
+            <p class="hero-sub rev" style="max-width: 800px; margin-inline: auto; margin-top: 1.5rem; color: var(--white); opacity: 1; font-weight: 400; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Rooted in the spirit of the Northeast, BASSWOODS was born around the fires of the 2019 Orange Festival. From a single campsite to the region's premier adventure collective, we've spent every season pushing deeper into the last wild frontier.</p>
+        </div>
+    </section>
+    <section class="section-padding bg-black" id="reviews" style="padding-bottom: 2rem;">
         <div class="container">
             <div class="section-eyebrow rev">Social Proof</div>
             <h2 class="section-title rev">Explorer <em>Echoes</em></h2>
@@ -207,32 +338,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="act-card rev">
-                    <p style="font-size: 0.9rem; color: var(--gold); border: 2px solid var(--gold); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;"><i class="ri-double-quotes-l"></i></p>
-                    <p style="font-size: 1rem; line-height: 1.8; color: var(--fog); margin-bottom: 2.5rem; font-style: italic;">"Rented a Mahindra Thar for my solo drive to Tawang. The vehicle was in mint condition, and the maintenance support team was just a call away. Best way to explore the frontier."</p>
-                    <div style="display: flex; align-items: center; gap: 1.5rem; border-top: 1px solid var(--border); padding-top: 2rem;">
-                        <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--rich-black);">SB</div>
+                <div class="act-card card rev">
+                    <p class="quote-ico"><i class="ri-double-quotes-l"></i></p>
+                    <p class="quote-text">"Rented a Mahindra Thar for my solo drive to Tawang. The vehicle was in mint condition, and the maintenance support team was just a call away. Best way to explore the frontier."</p>
+                    <div class="quote-author">
+                        <div class="author-avatar">SB</div>
                         <div>
-                            <div class="stat-bub-lbl" style="color: var(--gold);">Sandeep Bhuyan</div>
-                            <div style="font-size: 0.75rem; color: var(--white-muted);">Self-Drive 4x4 Expedition</div>
+                            <div class="author-name">Sandeep Bhuyan</div>
+                            <div class="author-meta">Self-Drive 4x4 Expedition</div>
                         </div>
                     </div>
                 </div>
-                <div class="act-card rev">
-                    <p style="font-size: 0.9rem; color: var(--gold); border: 2px solid var(--gold); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;"><i class="ri-double-quotes-l"></i></p>
-                    <p style="font-size: 1rem; line-height: 1.8; color: var(--fog); margin-bottom: 2.5rem; font-style: italic;">"Dzukou Valley trek is hard, but Basswoods made it a memory for life. Our guide was native to the valley and the heritage stories shared were magical."</p>
-                    <div style="display: flex; align-items: center; gap: 1.5rem; border-top: 1px solid var(--border); padding-top: 2rem;">
-                        <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--rich-black);">ML</div>
+                <div class="act-card card rev">
+                    <p class="quote-ico"><i class="ri-double-quotes-l"></i></p>
+                    <p class="quote-text">"Dzukou Valley trek is hard, but Basswoods made it a memory for life. Our guide was native to the valley and the heritage stories shared were magical."</p>
+                    <div class="quote-author">
+                        <div class="author-avatar">ML</div>
                         <div>
-                            <div class="stat-bub-lbl" style="color: var(--gold);">Maya Lyngdoh</div>
-                            <div style="font-size: 0.75rem; color: var(--white-muted);">Trekking Expeditions</div>
+                            <div class="author-name">Maya Lyngdoh</div>
+                            <div class="author-meta">Trekking Expeditions</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section-padding bg-deep-charcoal" id="faq">
+    <section class="section-padding bg-deep-charcoal" id="faq" style="padding-top: 3rem;">
         <div class="container-tight">
             <div class="section-eyebrow rev">Learning Center</div>
             <h2 class="section-title rev">Expedition <em>FAQ</em></h2>
@@ -259,6 +390,32 @@
                 <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
                     <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">What happens in case of a medical emergency?</summary>
                     <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Every expedition team carries a Level-2 medical kit and has satellite-sync for remote coordinates. We maintain direct links with regional medical centers in Shillong, Kohima, and Itanagar for emergency evacuation protocols.</p>
+                </details>
+
+                <div class="stat-bub-lbl" style="color: var(--gold); margin-bottom: 0px; letter-spacing: 0.3em; margin-top: 2rem;">FRONTIER HANDBOOK: WILDERNESS PROTOCOLS</div>
+                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
+                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">The Zero Footprint Rule</summary>
+                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Sustainability is our core mandate. We operate on a 'Leave No Trace' principle—all waste is carried back out, camping sites are restored to their natural state, and we use local biodegradable resources whenever possible to preserve the Northeast wilderness.</p>
+                </details>
+                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
+                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">High-Altitude Acclimatization</summary>
+                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">For expeditions above 3,000m (like Tawang or Dzukou), we factor in mandatory 'rest-sync' days. Our guides monitor hydration and oxygen saturation levels regularly. We recommend a minimal cardio-prep 2 weeks prior to deployment.</p>
+                </details>
+                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
+                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">The Tribal Code & Etiquette</summary>
+                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">You aren't just visiting a place; you're entering a community. We strictly adhere to local customs—always ask before photography, respect sacred groves (forbidden to take anything from them), and always accept tea offered by a village headman—it's the highest sign of mutual respect.</p>
+                </details>
+                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
+                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Emergency Gear Essentials</summary>
+                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Pack light, pack smart. Our Handbook mandates: 1. Thermal-base layers (even in summer). 2. Headlamps with spare cells. 3. Personal lifestraw/filtration. 4. Multitool. We provide all secondary technical gear (tents, ropes, kitchen), but personal readiness is non-negotiable.</p>
+                </details>
+                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
+                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Connectivity & Sat-Link Protocols</summary>
+                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Most frontier zones have zero cellular coverage. Our lead vehicles carry satellite-mesh units for emergency coords and weather-sync. We recommend downloading offline 'Topo-Maps' before deployment. Expect a 'Digital Detox' during the core mission days.</p>
+                </details>
+                <details style="padding: 0.5rem 2rem 1.25rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 0.75rem; border: 1px solid var(--border);">
+                    <summary style="font-size: 1.1rem; color: var(--white); font-weight: 600; cursor: pointer; list-style: none;">Mountain Sickness (AMS) Protocol</summary>
+                    <p style="margin-top: 1rem; color: var(--white-muted); line-height: 1.8; font-size: 0.95rem;">Ascend slow, sleep low. If you feel persistent headaches or dizziness, alert your guide immediately. We carry portable oxygen canisters and Diamox in all Level-2 kits. Hydration (3-4L daily) is your primary defense against elevation-pressure.</p>
                 </details>
             </div>
         </div>
@@ -372,7 +529,7 @@
                 }
             });
         }, observerOptions);
-        document.querySelectorAll('.rev, .rev-left, .rev-right').forEach(el => {
+        document.querySelectorAll('.reveal, .rev, .rev-left, .rev-right').forEach(el => {
             observer.observe(el);
         });
     </script>
