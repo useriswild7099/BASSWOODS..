@@ -4,7 +4,7 @@
    ══════════════════════════════════════
    Clean. Precise. Award-Winning.
 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* ═══════════════════════════════
    DESIGN TOKENS
@@ -27,7 +27,7 @@
     --font-impact: 'Impact', 'Arial Narrow Bold', sans-serif;
 
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
-    --transition: all 0.4s var(--ease);
+    --transition: all 0.6s var(--ease);
 
     --space-xs: 0.25rem;
     --space-s: 0.5rem;
@@ -41,6 +41,23 @@
     --container-width: 1400px; 
     --container-wide: 1600px;  
     --radius: 0.75rem;
+    --r-lg:    32px; /* Masterclass Roundedness */
+    
+    /* ═══════════════════════════════
+       LIQUID GLASS PRIMITIVES (ID #34)
+       ═══════════════════════════════ */
+    --liquid-bg: rgba(255, 255, 255, 0.04);
+    --liquid-border: rgba(212, 175, 55, 0.25);
+    --liquid-blur: blur(40px) saturate(200%);
+    --m-shadow: 0 40px 100px rgba(0,0,0,0.6); /* Masterclass Depth */
+    --hologram-glow: 0 0 30px rgba(212, 175, 55, 0.15);
+    
+    /* ═══════════════════════════════
+       MINIMALIST PRIMITIVES (ID #84)
+       ═══════════════════════════════ */
+    --thin-gold: 1px solid rgba(212, 175, 55, 0.15);
+    --minimal-glass: rgba(255, 255, 255, 0.01);
+    --soft-shadow: 0 10px 40px rgba(0,0,0,0.1);
 }
 
 /* ═══════════════════════════════
@@ -84,6 +101,7 @@
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 body {
@@ -91,6 +109,8 @@ body {
     color: var(--white);
     font-family: var(--font-body);
     line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 a {
@@ -134,7 +154,7 @@ h3, .premium-font {
     font-family: var(--font-impact);
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.12em; /* Refined for modern professional feel */
     line-height: 1.05;
     color: var(--white);
 }
@@ -171,6 +191,137 @@ h4 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    font-size: clamp(1.2rem, 7vw, 2.5rem); /* Refined for better mobile parity */
+}
+
+/* ═══════════════════════════════
+   GLASS VISUAL SYSTEM
+   ═══════════════════════════════ */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.4),
+        inset 0 1px 1px rgba(255,255,255,0.05);
+    transition: 0.5s var(--ease);
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-10px);
+}
+
+/* ═══════════════════════════════
+   BENTO BOX SYSTEM (ID #21)
+   ═══════════════════════════════ */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 240px;
+    gap: 1.5rem;
+}
+
+.bento-item {
+    position: relative;
+    overflow: hidden;
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.bento-2x2 { grid-column: span 2; grid-row: span 2; }
+.bento-2x1 { grid-column: span 2; grid-row: span 1; }
+.bento-1x2 { grid-column: span 1; grid-row: span 2; }
+
+@media (max-width: 1024px) {
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+    .bento-grid { display: flex; flex-direction: column; }
+    .bento-item { height: 350px; }
+}
+
+/* ═══════════════════════════════
+   LIQUID GLASS (ID #34)
+   ═══════════════════════════════ */
+.liquid-glass {
+    background: var(--liquid-bg);
+    backdrop-filter: var(--liquid-blur);
+    -webkit-backdrop-filter: var(--liquid-blur);
+    border: 1px solid var(--liquid-border);
+    border-radius: var(--r-lg);
+    box-shadow: var(--m-shadow);
+    transition: 0.8s var(--ease);
+}
+
+.liquid-glass:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 50px 120px rgba(0,0,0,0.8), var(--hologram-glow);
+}
+
+/* ═══════════════════════════════
+   MINIMALIST UTILITIES (ID #84)
+   ═══════════════════════════════ */
+.ghost-card {
+    background: var(--minimal-glass);
+    border: var(--thin-gold);
+    border-radius: var(--radius);
+    padding: var(--card-padding);
+    transition: 0.8s var(--ease);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.ghost-card:hover {
+    border-color: rgba(212, 175, 55, 0.6);
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateY(-5px);
+}
+
+.ultra-thin {
+    font-weight: 200;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    color: var(--white-muted);
+}
+
+.massive-whitespace {
+    padding: clamp(6rem, 15vw, 12rem) 0;
+}
+
+/* RESPONSIVE IMAGE ARCHITECTURE (ID #84) */
+.img-responsive-lg {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.img-responsive-md {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+@media (max-width: 767px) {
+    .img-responsive-lg { height: 350px; }
+    .img-responsive-md { height: 300px; }
+    .flex-responsive { flex-direction: column !important; gap: 3rem !important; }
+}
+
+.radial-blur-accent {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1; /* Always behind content */
 }
 
 .tours-listings-item, .vehicle-card {
@@ -1478,13 +1629,21 @@ td {
 }
 
 /* ═══════════════════════════════
-   SCROLL REVEAL & VISIBILITY
+   SCROLL REVEAL & VISIBILITY (Safe Mode)
    ═══════════════════════════════ */
 .reveal, .rev, .rev-left, .rev-right {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
     will-change: transform, opacity;
+}
+
+/* Fallback: if browser doesn't support IntersectionObserver or if we want better initial load */
+@media (prefers-reduced-motion: reduce) {
+    .reveal, .rev, .rev-left, .rev-right {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
 
 .rev-left { transform: translateX(-30px); }
@@ -1496,6 +1655,27 @@ td {
 .rev-right.is-visible {
     opacity: 1 !important;
     transform: translate(0, 0) !important;
+}
+
+/* Staggered Delay Utilities */
+.delay-1 { transition-delay: 100ms !important; }
+.delay-2 { transition-delay: 200ms !important; }
+.delay-3 { transition-delay: 300ms !important; }
+.delay-4 { transition-delay: 400ms !important; }
+.delay-5 { transition-delay: 500ms !important; }
+.delay-6 { transition-delay: 600ms !important; }
+.delay-7 { transition-delay: 700ms !important; }
+.delay-8 { transition-delay: 800ms !important; }
+
+/* Text Fade Reveal */
+.fade-up-text {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
+}
+.fade-up-text.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Tab System Visibility */
