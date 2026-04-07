@@ -9,6 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/basswoods-menu.css">
     <link rel="stylesheet" href="assets/css/premium.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#d4af37">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="assets/pwa-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -38,7 +42,7 @@
 
     <!-- Hero Section -->
     <section class="hero-premium">
-        <div class="hero-bg" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('wp-content/IMAGES/suv rent.jpeg'); background-size: cover; background-position: center; position: absolute; inset:0; z-index:-1;"></div>
+        <div class="hero-bg" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('wp-content/IMAGES/vehicles/suv-rent.jpeg'); background-size: cover; background-position: center; position: absolute; inset:0; z-index:-1;"></div>
         <div class="container hero-content">
             <p class="hero-eyebrow fade-in delay-1">Guwahati | Shillong Base</p>
             <h1 class="hero-title fade-in delay-2">
@@ -66,7 +70,7 @@
             <div class="tab-panel active" id="tab-bikes">
                 <div class="grid">
                     <div class="vehicle-card reveal">
-                        <div class="tours-listings-media" style="height: 180px;"><div class="tlm-inner"><img src="wp-content/IMAGES/royal_enfield_himalayan.png" alt="RE Himalayan 450" style="width:100%; height:100%; object-fit:cover;"></div><div class="avail-badge"><span class="dot dot-on"></span> Available</div></div>
+                        <div class="tours-listings-media" style="height: 180px;"><div class="tlm-inner"><img src="wp-content/IMAGES/vehicles/royal-enfield-himalayan.png" alt="RE Himalayan 450" style="width:100%; height:100%; object-fit:cover;"></div><div class="avail-badge"><span class="dot dot-on"></span> Available</div></div>
                         <div class="tours-listings-details" style="padding: 1.25rem;">
                             <h3 class="vcard-title" style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--gold);">RE Himalayan 450</h3>
                             <p class="vcard-desc" style="font-size: 0.75rem; margin-bottom: 1rem;">The ultimate all-terrain tourer. 450cc liquid-cooled engine.</p>
@@ -74,7 +78,7 @@
                         </div>
                     </div>
                     <div class="vehicle-card reveal">
-                        <div class="tours-listings-media" style="height: 180px;"><div class="tlm-inner"><img src="wp-content/IMAGES/blue sky camp.jpeg" alt="Hero Xpulse 200" style="width:100%; height:100%; object-fit:cover;"></div><div class="avail-badge"><span class="dot dot-on"></span> Available</div></div>
+                        <div class="tours-listings-media" style="height: 180px;"><div class="tlm-inner"><img src="wp-content/IMAGES/backgrounds/blue-sky-camp.jpeg" alt="Hero Xpulse 200" style="width:100%; height:100%; object-fit:cover;"></div><div class="avail-badge"><span class="dot dot-on"></span> Available</div></div>
                         <div class="tours-listings-details" style="padding: 1.25rem;">
                             <h3 class="vcard-title" style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--gold);">Hero Xpulse 200 4V</h3>
                             <p class="vcard-desc" style="font-size: 0.75rem; margin-bottom: 1rem;">Trail-blasting agility. Perfect for Meghalaya's single tracks.</p>
@@ -88,7 +92,7 @@
             <div class="tab-panel" id="tab-cars">
                 <div class="grid">
                     <div class="vehicle-card reveal">
-                        <div class="tours-listings-media" style="height: 180px;"><div class="tlm-inner"><img src="wp-content/IMAGES/suv_thar.png" alt="Mahindra Thar" style="width:100%; height:100%; object-fit:cover;"></div><div class="avail-badge"><span class="dot dot-on"></span> Available</div></div>
+                        <div class="tours-listings-media" style="height: 180px;"><div class="tlm-inner"><img src="wp-content/IMAGES/vehicles/suv-thar.png" alt="Mahindra Thar" style="width:100%; height:100%; object-fit:cover;"></div><div class="avail-badge"><span class="dot dot-on"></span> Available</div></div>
                         <div class="tours-listings-details" style="padding: 1.25rem;">
                             <h3 class="vcard-title" style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--gold);">Mahindra Thar 4x4</h3>
                             <p class="vcard-desc" style="font-size: 0.75rem; margin-bottom: 1rem;">The undisputed king of Northeast off-roading.</p>
@@ -218,6 +222,15 @@
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.rev, .rev-left, .rev-right, .reveal').forEach(el => observer.observe(el));
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('[PWA] Service Worker Registered', reg))
+                    .catch(err => console.error('[PWA] Registration Failed', err));
+            });
+        }
     </script>
 </body>
 </html>
