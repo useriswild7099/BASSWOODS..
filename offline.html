@@ -123,5 +123,18 @@
 
         <a href="index.html" class="btn-retry">Check Connection</a>
     </div>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="assets/js/lenis-init.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('[PWA] Service Worker Registered', reg))
+                    .catch(err => console.error('[PWA] Registration Failed', err));
+            });
+        }
+    </script>
 </body>
 </html>
