@@ -1,4 +1,4 @@
-const CACHE_NAME = 'basswoods-cache-v25';
+const CACHE_NAME = 'basswoods-cache-v27';
 const ASSETS_TO_CACHE = [
   './',
   'index.html',
@@ -16,7 +16,13 @@ const ASSETS_TO_CACHE = [
   'assets/js/basswoods-menu.js',
   'assets/js/responsive.js',
   'assets/pwa-icon.png',
-  'wp-content/IMAGES/basswoods-logo.png',
+  'wp-content/IMAGES/global/basswoods-logo.png',
+  'wp-content/IMAGES/tours/ziro-festival.jpeg',
+  'wp-content/IMAGES/tours/green-scenery.jpeg',
+  'wp-content/IMAGES/tours/northeast-culture.jpeg',
+  'wp-content/IMAGES/tours/bonfire-lake.jpeg',
+  'wp-content/IMAGES/backgrounds/road-biker.jpeg',
+  'wp-content/IMAGES/backgrounds/van.jpeg',
   'offline.html'
 ];
 

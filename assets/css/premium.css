@@ -173,21 +173,26 @@ h4 {
     display: inline-block;
 }
 
-.vehicle-card {
-    background: var(--surface);
-    border: 1px solid var(--glass-border);
+.tours-listings-item, .vehicle-card {
+    background: var(--deep-charcoal);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
-    transition: var(--transition);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.tours-listings-item:hover, .vehicle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-color: var(--gold);
 }
 
 .tours-listings-media {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Lock every vehicle to same ratio */
+    aspect-ratio: 16/10;
     overflow: hidden;
     position: relative;
     background: #000;
@@ -200,20 +205,17 @@ h4 {
     transition: transform 0.6s var(--ease);
 }
 
-.vehicle-card:hover img { transform: scale(1.05); }
+.tours-listings-item:hover .tours-listings-media img, 
+.vehicle-card:hover .tours-listings-media img {
+    transform: scale(1.1);
+}
 
 .tours-listings-details {
-    padding: 1.5rem;
-    flex-grow: 1; /* Push the footer section to the bottom */
+    padding: 2rem;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.vehicle-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.1);
 }
 
 .table-container {
@@ -1609,13 +1611,13 @@ td {
         padding-left: 0 !important;
     }
 
-    /* Vehicle Listings Mobile: Contain Proportions */
+    /* Tours & Listings Mobile: Edge-to-Edge */
     .tours-listings-media img {
-        object-fit: contain !important;
-        background: #000;
+        object-fit: cover !important;
+        height: 100% !important;
     }
     .tours-listings-details {
-        padding: 1.25rem !important;
+        padding: 1.5rem !important;
     }
 }
 
