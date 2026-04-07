@@ -32,13 +32,14 @@
             position: relative;
         }
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 0.3em;
-            color: var(--gold);
+            display: flex;
+            justify-content: center;
             margin-bottom: 4rem;
-            display: block;
             text-decoration: none;
+        }
+        .logo img {
+            height: 50px;
+            width: auto;
         }
         .signal-icon {
             font-size: 4rem;
@@ -107,7 +108,9 @@
 <body>
     <div class="bg-pattern">SIGNAL</div>
     <div class="container">
-        <a href="index.html" class="logo">BASSWOODS</a>
+        <a href="index.html" class="logo">
+            <img src="wp-content/IMAGES/basswoods-logo.png" alt="BASSWOODS Logo">
+        </a>
         <div class="signal-icon"><i class="ri-radar-line"></i></div>
         <h1>Lost <em>Signal</em></h1>
         <p>You're venturing deep into the wild. While our full connection is lost, your cached BASSWOODS resources are still active.</p>

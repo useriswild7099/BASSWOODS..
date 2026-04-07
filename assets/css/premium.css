@@ -525,11 +525,17 @@ h4 {
 }
 
 .nav-logo {
-    font-family: var(--font-impact);
-    font-size: 1.4rem;
-    font-weight: 400;
-    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
     z-index: 1001;
+    text-decoration: none;
+}
+
+.nav-logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -1408,11 +1414,15 @@ td {
 }
 
 .footer-logo {
-    font-family: var(--font-impact);
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.footer-logo img {
+    height: 50px;
+    width: auto;
     display: block;
-    letter-spacing: 0.05em;
 }
 
 .footer-about {
