@@ -1,4 +1,4 @@
-const CACHE_NAME = 'basswoods-cache-v27';
+const CACHE_NAME = 'basswoods-cache-v29';
 const ASSETS_TO_CACHE = [
   './',
   'index.html',
