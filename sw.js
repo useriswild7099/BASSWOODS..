@@ -1,6 +1,6 @@
-const CACHE_NAME = 'basswoods-cache-v22';
+const CACHE_NAME = 'basswoods-cache-v23';
 const ASSETS_TO_CACHE = [
-  '/',
+  './',
   'index.html',
   'assets/css/premium.css',
   'assets/css/basswoods-menu.css',
@@ -15,9 +15,14 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[SW] Pre-caching core BASSWOODS assets');
-      return cache.addAll(ASSETS_TO_CACHE);
+      return Promise.all(
+        ASSETS_TO_CACHE.map(url => {
+          return cache.add(url).catch(err => console.error(`[SW] Failed to cache: ${url}`, err));
+        })
+      );
     })
   );
+  self.skipWaiting();
 });
 
 // Activate Event
@@ -34,17 +39,19 @@ self.addEventListener('activate', (event) => {
       );
     })
   );
+  self.clients.claim();
 });
 
 // Fetch Event
 self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET') return;
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
         return cachedResponse;
       }
       return fetch(event.request).catch(() => {
-        // Offline Fallback for HTML pages
         if (event.request.mode === 'navigate') {
           return caches.match('offline.html');
         }
@@ -52,3 +59,4 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
+
