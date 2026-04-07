@@ -1,4 +1,4 @@
-const CACHE_NAME = 'basswoods-cache-v23';
+const CACHE_NAME = 'basswoods-cache-v24';
 const ASSETS_TO_CACHE = [
   './',
   'index.html',
@@ -7,6 +7,7 @@ const ASSETS_TO_CACHE = [
   'assets/js/basswoods-menu.js',
   'assets/js/responsive.js',
   'assets/pwa-icon.png',
+  'wp-content/IMAGES/basswoods-logo.png',
   'offline.html'
 ];
 
