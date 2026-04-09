@@ -1911,3 +1911,24 @@ td {
     .modal-body { padding: 1.5rem; }
     .hero-title { font-size: 2.2rem !important; }
 }
+/* ═══════════════════════════════
+   RESPONSIVE ALIGNMENT HARDENING
+   ═══════════════════════════════ */
+@media (max-width: 768px) {
+    .img-responsive-md, 
+    .site-menu-images-item img,
+    .hero-bg img,
+    section img {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .grid, .container {
+        text-align: center;
+    }
+    
+    .section-title, .section-eyebrow, .ultra-thin {
+        text-align: center !important;
+    }
+}
