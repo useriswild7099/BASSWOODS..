@@ -1,94 +1,76 @@
-const CACHE_NAME = 'basswoods-cache-v29';
-const ASSETS_TO_CACHE = [
-  './',
-  'index.html',
-  'about.html',
-  'camping.html',
-  'enquiries.html',
-  'offbeat.html',
-  'privacy.html',
-  'rentals.html',
-  'tours.html',
-  'trekking.html',
-  'vehicle-rentals.html',
-  'assets/css/premium.css',
-  'assets/css/basswoods-menu.css',
-  'assets/js/basswoods-menu.js',
-  'assets/js/responsive.js',
-  'assets/pwa-icon.png',
-  'wp-content/IMAGES/global/basswoods-logo.png',
-  'wp-content/IMAGES/tours/ziro-festival.jpeg',
-  'wp-content/IMAGES/tours/green-scenery.jpeg',
-  'wp-content/IMAGES/tours/northeast-culture.jpeg',
-  'wp-content/IMAGES/tours/bonfire-lake.jpeg',
-  'wp-content/IMAGES/backgrounds/road-biker.jpeg',
-  'wp-content/IMAGES/backgrounds/van.jpeg',
-  'offline.html'
-];
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
 
-// Install Event
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log('[SW] Pre-caching core BASSWOODS assets');
-      return Promise.all(
-        ASSETS_TO_CACHE.map(url => {
-          return cache.add(url).catch(err => console.error(`[SW] Failed to cache: ${url}`, err));
-        })
-      );
+if (workbox) {
+  console.log('[SW] BASSWOODS Workbox loaded');
+
+  // Cache names
+  const CACHE_VERSION = 'v35';
+  const PRECACHE_NAME = `basswoods-precache-${CACHE_VERSION}`;
+  const IMAGE_CACHE_NAME = `basswoods-images-${CACHE_VERSION}`;
+
+  // 1. Pre-caching Core UI Assets
+  workbox.precaching.precacheAndRoute([
+    { url: './', revision: CACHE_VERSION },
+    { url: 'index.html', revision: CACHE_VERSION },
+    { url: 'about.html', revision: CACHE_VERSION },
+    { url: 'camping.html', revision: CACHE_VERSION },
+    { url: 'enquiries.html', revision: CACHE_VERSION },
+    { url: 'offbeat.html', revision: CACHE_VERSION },
+    { url: 'privacy.html', revision: CACHE_VERSION },
+    { url: 'rentals.html', revision: CACHE_VERSION },
+    { url: 'tours.html', revision: CACHE_VERSION },
+    { url: 'trekking.html', revision: CACHE_VERSION },
+    { url: 'vehicle-rentals.html', revision: CACHE_VERSION },
+    { url: 'assets/css/premium.css', revision: CACHE_VERSION },
+    { url: 'assets/css/basswoods-menu.css', revision: CACHE_VERSION },
+    { url: 'assets/js/basswoods-menu.js', revision: CACHE_VERSION },
+    { url: 'assets/js/responsive.js', revision: CACHE_VERSION },
+    { url: 'wp-content/IMAGES/backgrounds/green-artistic.jpeg', revision: CACHE_VERSION },
+    { url: 'offline.html', revision: CACHE_VERSION },
+    { url: '404.html', revision: CACHE_VERSION },
+    { url: 'menu_snippet.html', revision: CACHE_VERSION },
+    { url: 'map_snippet.html', revision: CACHE_VERSION }
+  ]);
+
+  // 2. CSS & JS (Stale-While-Revalidate)
+  workbox.routing.registerRoute(
+    ({ request }) => request.destination === 'style' || request.destination === 'script',
+    new workbox.strategies.StaleWhileRevalidate({
+      cacheName: 'basswoods-static-resources',
     })
   );
-  self.skipWaiting();
-});
 
-// Activate Event
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
-            console.log('[SW] Clearing old cache');
-            return caches.delete(cache);
-          }
-        })
-      );
+  // 3. Images (Cache First)
+  workbox.routing.registerRoute(
+    ({ request }) => request.destination === 'image',
+    new workbox.strategies.CacheFirst({
+      cacheName: IMAGE_CACHE_NAME,
+      plugins: [
+        new workbox.expiration.ExpirationPlugin({
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        }),
+      ],
     })
   );
-  self.clients.claim();
-});
 
-// Fetch Event - Stale While Revalidate / Dynamic Caching
-self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
-  // Exclude chrome-extension, APIs, etc.
-  if (!event.request.url.startsWith('http')) return;
-
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      const fetchPromise = fetch(event.request).then((networkResponse) => {
-        // Dynamically cache successful responses
-        if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
-          const responseToCache = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
-          });
-        }
-        return networkResponse;
-      }).catch(() => {
-        // Network failed (offline). If we have a cached response, it was already handled above? No, we return it either way.
-        return null;
-      });
-
-      // Return cached response immediately if available (stale), while network fetch happens in background
-      // If not in cache, wait for the network fetch
-      return cachedResponse || fetchPromise.then(res => res || Promise.reject('no-network-and-no-cache'));
-    }).catch(() => {
-      // If both cache and network fail, show offline fallback for navigation requests
-      if (event.request.mode === 'navigate') {
+  // 4. Navigation Fallback
+  workbox.routing.registerRoute(
+    ({ request }) => request.mode === 'navigate',
+    async ({ event }) => {
+      try {
+        return await new workbox.strategies.NetworkFirst({
+          cacheName: 'basswoods-pages',
+        }).handle({ event, request: event.request });
+      } catch (error) {
         return caches.match('offline.html');
       }
-    })
+    }
   );
-});
+
+} else {
+  console.log('[SW] Workbox failed to load');
+}
+
+
 

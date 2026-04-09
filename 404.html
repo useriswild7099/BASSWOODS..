@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Lost in the Wilderness - BASSWOODS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap&v=35" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/premium.css?v=35">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container { max-width: 600px; padding: 2rem; }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.05em;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .icon { font-size: 4rem; color: var(--gold); margin-bottom: 2rem; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 200; margin-bottom: 1.5rem; }
+        p { opacity: 0.6; line-height: 1.8; margin-bottom: 3rem; font-weight: 200; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon"><i class="ri-compass-3-line"></i></div>
+        <div class="error-code">404</div>
+        <h1>Off the <em>Trail</em></h1>
+        <p>It seems your expedition has veered into uncharted territory. This path doesn't exist in our current coordinate system.</p>
+        <a href="index.html" class="btn-gold" style="border: 1px solid var(--gold); background: transparent; border-radius: 0; padding: 1.2rem 3rem; text-transform: uppercase; letter-spacing: 0.4em; font-size: 0.7rem;">Return to Command</a>
+    </div>
+
+    <script>
+        // Automatic redirect after 10 seconds
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 10000);
+    </script>
+</body>
+</html>

@@ -8,12 +8,13 @@
     <title>Contact Us | BASSWOODS</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/basswoods-menu.css">
-    <link rel="stylesheet" href="assets/css/premium.css">
+    <link rel="stylesheet" href="assets/css/premium.css?v=35">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#d4af37">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="assets/pwa-icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap&v=35" rel="stylesheet">
+
 </head>
 <body class="bg-black">
     <!-- Navigation -->
@@ -34,7 +35,8 @@
             <a href="enquiries.html" class="active">Contact</a>
         </div>
         <div class="nav-btns">
-            <a href="camping.html" class="btn-gold">Book Now</a>
+            <a href="enquiries.html" class="btn-gold">Book Now</a>
+
             <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
         </div>
     </nav>
@@ -44,7 +46,7 @@
         <div class="hero-bg" style="background: linear-gradient(rgba(0,0,0,0.6), var(--rich-black)), url('wp-content/IMAGES/backgrounds/green-forest.jpeg'); background-size: cover; background-position: center; position: absolute; inset:0; z-index:-1;"></div>
         <div class="container hero-content" style="text-align: center;">
             <div class="ultra-thin fade-in delay-1" style="margin-bottom: 2rem;">EXPEDITION PLANNING · CODE: IOLI20</div>
-            <h1 class="fade-in delay-2" style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 6rem); font-weight: 200; line-height: 1.1; margin-bottom: 3rem;">
+            <h1 class="fade-in delay-2" style="font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 8vw, 6rem); font-weight: 200; line-height: 1.1; margin-bottom: 3rem;">
                 Initiate<br><em>Protocol</em>
             </h1>
             <p class="fade-in delay-3" style="font-size: 1.1rem; opacity: 0.8; max-width: 600px; margin: 0 auto; line-height: 2; font-weight: 200;">Our specialists are ready to guide your journey through the last wild frontier. Expect a response within 4 tactical hours.</p>
@@ -63,36 +65,36 @@
                     <div style="display: grid; gap: 4rem;">
                         <div>
                             <div class="ultra-thin" style="font-size: 0.6rem; opacity: 0.4; margin-bottom: 1rem;">OPERATIONAL BASE</div>
-                            <div style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 200;">Mawbri, Shillong<br>Meghalaya, 793103</div>
+                            <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 200;">Mawbri, Shillong<br>Meghalaya, 793103</div>
                         </div>
                         <div>
                             <div class="ultra-thin" style="font-size: 0.6rem; opacity: 0.4; margin-bottom: 1rem;">FLEET MANAGER</div>
-                            <a href="tel:8011228979" style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 200; color: var(--white); text-decoration: none;">+91 80112 28979</a>
+                            <a href="tel:8011228979" style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 200; color: var(--white); text-decoration: none;">+91 80112 28979</a>
                         </div>
                         <div>
                             <div class="ultra-thin" style="font-size: 0.6rem; opacity: 0.4; margin-bottom: 1rem;">EMAIL PROTOCOL</div>
-                            <a href="mailto:basswoodscamp@gmail.com" style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 200; color: var(--white); text-decoration: none;">expeditions@basswoods.in</a>
+                            <a href="mailto:basswoodscamp@gmail.com" style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 200; color: var(--white); text-decoration: none;">expeditions@basswoods.in</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right: Ghost Form -->
                 <div class="rev delay-1">
-                    <form style="display: grid; gap: 4rem;">
+                    <form id="missionForm" style="display: grid; gap: 4rem;">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
                             <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
                                 <label class="ultra-thin" style="font-size: 0.6rem; opacity: 0.4; display: block; margin-bottom: 0.5rem;">FULL NAME</label>
-                                <input type="text" placeholder="Aditya Kapoor" style="width: 100%; background: transparent; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 200; color: var(--white); outline: none;">
+                                <input type="text" name="name" placeholder="Aditya Kapoor" required style="width: 100%; background: transparent; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 200; color: var(--white); outline: none;">
                             </div>
                             <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
                                 <label class="ultra-thin" style="font-size: 0.6rem; opacity: 0.4; display: block; margin-bottom: 0.5rem;">WHATSAPP</label>
-                                <input type="tel" placeholder="+91 ..." style="width: 100%; background: transparent; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 200; color: var(--white); outline: none;">
+                                <input type="tel" name="whatsapp" placeholder="+91 ..." required style="width: 100%; background: transparent; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 200; color: var(--white); outline: none;">
                             </div>
                         </div>
                         
                         <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
                             <label class="ultra-thin" style="font-size: 0.6rem; opacity: 0.4; display: block; margin-bottom: 0.5rem;">CATEGORY</label>
-                            <select style="width: 100%; background: transparent; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 200; color: var(--white); outline: none; appearance: none; cursor: pointer;">
+                            <select name="category" style="width: 100%; background: transparent; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 200; color: var(--white); outline: none; appearance: none; cursor: pointer;">
                                 <option style="background: #000;">General Enquiry</option>
                                 <option style="background: #000;">Festival Camping</option>
                                 <option style="background: #000;">Vehicle Rentals</option>
@@ -102,11 +104,17 @@
 
                         <div style="border-bottom: 1px solid var(--gold); padding-bottom: 1rem;">
                             <label class="ultra-thin" style="font-size: 0.6rem; opacity: 0.4; display: block; margin-bottom: 0.5rem; color: var(--gold);">MISSION DETAILS</label>
-                            <textarea rows="3" placeholder="Describe your technical requirements..." style="width: 100%; background: transparent; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 200; color: var(--white); outline: none; resize: none;"></textarea>
+                            <textarea name="details" rows="3" placeholder="Describe your technical requirements..." style="width: 100%; background: transparent; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 200; color: var(--white); outline: none; resize: none;"></textarea>
                         </div>
 
                         <button type="submit" class="btn-gold" style="border-bottom: 1px solid var(--gold); background: transparent; padding: 0.8rem 0; border-radius: 0; font-size: 0.8rem; letter-spacing: 0.4em;">INITIATE MISSION</button>
                     </form>
+                    <div id="formSuccess" style="display: none; text-align: center; padding: 4rem; border: 1px solid var(--gold); background: rgba(212,175,55,0.05);">
+                        <div class="ultra-thin" style="color: var(--gold); margin-bottom: 2rem;">SUCCESS</div>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 200; margin-bottom: 2rem;">Mission Inhibited</h3>
+                        <p style="opacity: 0.6; font-weight: 200;">Your protocol has been logged. A BASSWOODS specialist will contact you shortly.</p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -144,11 +152,12 @@
                     </a>
                     <p class="footer-about">Crafting life-affirming events and adventure holidays in Northeast India. Award-winning service, premium gear, untamed locations.</p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/basswoodscamp" target="_blank"><i class="ri-facebook-fill"></i></a>
-                        <a href="https://www.instagram.com/basswoodscamp/" target="_blank"><i class="ri-instagram-fill"></i></a>
+                        <a href="https://www.facebook.com/basswoodscamp" target="_blank" rel="noopener noreferrer"><i class="ri-facebook-fill"></i></a>
+                        <a href="https://www.instagram.com/basswoodscamp/" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-fill"></i></a>
                         <a href="tel:8011228979"><i class="ri-phone-fill"></i></a>
                         <a href="mailto:basswoodscamp@gmail.com"><i class="ri-mail-fill"></i></a>
                     </div>
+
                 </div>
                 <div>
                     <h4 class="premium-font footer-heading">Explore</h4>
@@ -195,6 +204,15 @@
         document.querySelectorAll('.rev, .rev-left, .rev-right').forEach(el => observer.observe(el));
     </script>
     <script>
+        document.getElementById('missionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+            
+            // Simulation: In production, send data to backend here.
+            console.log('Mission Protocol Initiated:', new FormData(this));
+        });
+
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js')
@@ -203,5 +221,6 @@
             });
         }
     </script>
+
 </body>
 </html>

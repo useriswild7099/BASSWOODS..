@@ -1,12 +1,14 @@
 {
+  "id": "com.basswoods.app",
   "name": "BASSWOODS",
   "short_name": "BASSWOODS",
-  "description": "The Gold Standard of Northeast India Adventure.",
+  "description": "The Gold Standard of Northeast India Adventure. Premium camping, vehicle rentals, and bespoke tours.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#d4af37",
+  "categories": ["travel", "adventure", "lifestyle"],
   "icons": [
     {
       "src": "assets/pwa-icon.png",
@@ -18,7 +20,24 @@
       "src": "assets/pwa-icon.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "wp-content/IMAGES/tours/ziro-festival.jpeg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "BASSWOODS Adventure Hub"
+    },
+    {
+      "src": "wp-content/IMAGES/backgrounds/green-artistic.jpeg",
+      "sizes": "720x1280",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Frontier Experiences"
     }
   ]
 }
+
